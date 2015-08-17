@@ -48,7 +48,9 @@ class Phenolyzer:
 
             else:
                 sys.stderr.write( self.error_message % out_dir)
-        os.mkdir(out_dir)
+        else: 
+            os.mkdir(out_dir)
+            return True
 
     def run(self, mode):
         if mode == "from_nucleotides":
@@ -100,22 +102,22 @@ class Phenolyzer:
         hmmer_commands = []
         for i in range(len(in_samples)):
             hmmer_commands.append(hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample":in_samples[i], "out_sample":out_samples[i], "a_dir":a_dir, "phenolyzer":self.phenolyzer_dir, "in_dir" : in_dir, "pfam_hmms" : self.config["pfam_hmms"]})
-        if is_recompute:
-            self.execute_commands(hmmer_commands)
         #run gff extraction
         #run filtering and best domain hit aggregation
         filter_and_aggregate = "%(phenolyzer)s/code/hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat 10e-02 25 "
         fae_commands = []
         for i in range(len(in_samples)):
             fae_commands.append(filter_and_aggregate % {"a_dir":a_dir, "in_sample":in_samples[i], "out_sample":out_samples[i], "phenolyzer":self.phenolyzer_dir})
-        self.execute_commands(fae_commands)
         #run summary matrix computation
         #write temp sample file to disk
         #TODO modify this piece of code so that there is no temp file required anymore
         best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
         best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
         domtblout2gene_generic = "%(phenolyzer)s/code/domtblout2gene_generic.py %(a_dir)s/summary.dat  %(samples)s %(phenolyzer)s/data/sorted_accessions.txt"%{"samples" : "/tmp/samples_best.txt", "a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
-        subprocess.call(domtblout2gene_generic,executable = "/bin/bash", shell = True, env = env)
+        if is_recompute:
+            self.execute_commands(hmmer_commands)
+            self.execute_commands(fae_commands)
+            subprocess.call(domtblout2gene_generic,executable = "/bin/bash", shell = True, env = env)
 
 
     def run_phenotype_prediction(self, in_samples):
@@ -156,7 +158,7 @@ if __name__ == "__main__":
     #import package parallel 
     #subprocess.call("importpackage Prodigal", executable = "/bin/bash", shell = True)
     import argparse
-    parser = argparse.ArgumentParser("run phenolyzer program")
+    parser = argparse.ArgumentParser("run phenolyzer program (try: phenolyzer.py -h for help on the sub programs)")
     subparsers = parser.add_subparsers()
     main_p = subparsers.add_parser("phenotype", help = "run annotation and prediction") 
     main_p.add_argument("input_dir", help='directory with the input data')
@@ -165,8 +167,9 @@ if __name__ == "__main__":
     main_p.add_argument("output_dir", help='directory for the output directory; will be created if it doesn\'t exist yet', default='phenolyzer_output')
     main_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
     main_p.set_defaults(func = phenolyze)
-    data_p = subparsers.add_parser("data", help = "download neccessary data to run traitAR, mainly Pfam HMMs") 
-    data_p.add_argument("download_dest", help = "download directory")
+    data_p = subparsers.add_parser("config", help = "download neccessary data to run traitAR, mainly Pfam HMMs") 
+    data_p.add_argument("download_dest",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
+    data_p.add_argument("--local", "-l", action = 'store_true', help = "the Pfam HMMs are in the above directory with name 'Pfam-A.hmm'")
     data_p.set_defaults(func = get_external_data.download)
     args = parser.parse_args()
     args.func(args)
