@@ -11,7 +11,8 @@ def apply_thresholds(infile_f, eval_threshold, bit_score_thresh, out_filt_f, out
     infile_f.readline()
     infile_f.readline()
     infile_f.readline()
-    cleaned = "".join(["\t".join(i.split(None, 22)) for i in infile_f.readlines()])
+    #replace whitespace by tabs and skip lines which start with a # char
+    cleaned = "".join(filter(lambda x: not x.startswith("#"), ["\t".join(i.split(None, 22)) for i in infile_f.readlines()]))
     #read  tab delimited hmmer output file with pandas via stringIO
     m = ps.read_csv(StringIO(cleaned), sep = "\t",  header = None)
     m.columns = hmmer_colnames
