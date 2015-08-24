@@ -49,9 +49,9 @@ def comb_preds(phypat_dir, phypat_GGL_dir, out_dir, k):
 
     
     #combine predictions of phypat and phypat+GGL into one matrix 
-    m = ps.concat([m1, m2], axis = 1)
-    m_maj = ps.concat([m1_maj, m2_maj], axis = 1)
-    m_scores = ps.concat([m1_scores, m2_scores], axis = 1)
+    m = m1 + m2
+    m_maj = ((m1_maj + m2_maj) > 0).astype('int')
+    m_scores = (m1_scores +  m2_scores)/2
     
     #write named majority, single vote and mean score version of combined, phypat and phypat+GGL 
     m.to_csv("%s/predictions_aggr_preds_single-votes_comb.csv"%out_dir, sep = "\t")
