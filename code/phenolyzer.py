@@ -111,9 +111,9 @@ class Phenolyzer:
         #run summary matrix computation
         #write temp sample file to disk
         #TODO modify this piece of code so that there is no temp file required anymore
-        best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
-        best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
-        domtblout2gene_generic = "%(phenolyzer)s/code/domtblout2gene_generic.py %(a_dir)s/summary.dat  %(samples)s %(phenolyzer)s/data/sorted_accessions.txt"%{"samples" : "/tmp/samples_best.txt", "a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
+        #best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
+        #best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
+        domtblout2gene_generic = "%(phenolyzer)s/code/domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(phenolyzer)s/data/sorted_accessions.txt"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
         if is_recompute:
             self.execute_commands(hmmer_commands)
             self.execute_commands(fae_commands)
@@ -136,9 +136,17 @@ class Phenolyzer:
         if is_recompute:
             subprocess.call(predict_phypat,executable = "/bin/bash", shell = True, env = env)
             subprocess.call(predict_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
-        #run postprocessing
+        #combine phypat and phypat+GGL predictions
         merge_preds = "%(phenolyzer)s/code/merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_ggl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : phypat_dir, "phypat_ggl_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir } 
         subprocess.call(merge_preds, executable = "/bin/bash",shell = True, env = env)
+        #generate a heatmap from the results
+        hm_cmd = "%(phenolyzer)s/code/heatmap.py %(pred_dir)s/predictions_aggr_majority-vote_comb.tsv %(pred_dir)s/heatmap_comb.png" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
+        hm_cmd_phypat = "%(phenolyzer)s/code/heatmap.py %(phypat_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat.png" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
+        hm_cmd_phypat_ggl = "%(phenolyzer)s/code/heatmap.py %(phypat_ggl_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat_ggl.png" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
+        subprocess.call(hm_cmd, executable = "/bin/bash",shell = True, env = env)
+        subprocess.call(hm_cmd_phypat, executable = "/bin/bash",shell = True, env = env)
+        subprocess.call(hm_cmd_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
+    
 
     def run_feature_track_generation(self):
         #create output directory for the pfam annotation 

@@ -9,7 +9,8 @@ def gene2hmm(domtblout_fs, acc_f, gene2hmm_out):
     domtblout_list = [i.strip() for i in f.readlines()] 
     f.close()
     sum_df = ps.DataFrame(ps.np.zeros((len(domtblout_list), len(accs))))
-    sum_df.index = domtblout_list
+    #set index to the actual files by getting rid of the preceding path
+    sum_df.index = [i.split("/")[-1].replace("_filtered_best.dat", "") for i in domtblout_list]
     sum_df.columns = accs
     #create a gene2hmm dictionary
     gene2hmm = {}  
@@ -26,7 +27,7 @@ def gene2hmm(domtblout_fs, acc_f, gene2hmm_out):
             else:
                 gene2hmm[f][gene].append(query)
             #add annotations to summary file
-            sum_df.loc[f, query] += 1
+            sum_df.loc[f.split("/")[-1].replace("_filtered_best.dat", ""), query] += 1
     #write annotation summary to disk
     sum_df.to_csv(gene2hmm_out, sep = "\t")
     #write gene2hmm to disk 

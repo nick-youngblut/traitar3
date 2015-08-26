@@ -33,10 +33,10 @@ def aggregate(pred_df, k):
         #conservative vote
         maj_pred_dfs[2].iloc[:,i / k] = pred_df.iloc[:, i: i + k].apply(filter_pred, axis = 1, is_majority = False, k = k) 
         maj_pred_dfs[3].iloc[:,i / k] = (pred_df.iloc[:, i: i + k].apply(filter_pred, axis = 1, is_majority = False, k = k) > 0).astype('int')
-    maj_pred_dfs[0][maj_pred_dfs[0] == 0.0] = None 
-    maj_pred_dfs[1][maj_pred_dfs[1] == 0.0] = None 
-    maj_pred_dfs[2][maj_pred_dfs[2] == 0.0] = None 
-    maj_pred_dfs[3][maj_pred_dfs[3] == 0.0] = None 
+    #maj_pred_dfs[0][maj_pred_dfs[0] == 0.0] = None 
+    #maj_pred_dfs[1][maj_pred_dfs[1] == 0.0] = None 
+    #maj_pred_dfs[2][maj_pred_dfs[2] == 0.0] = None 
+    #maj_pred_dfs[3][maj_pred_dfs[3] == 0.0] = None 
     return maj_pred_dfs
     
 
@@ -55,7 +55,12 @@ def majority_predict(pt, model_tar, test_data, k):
     #build prediction matrix with the k best models
     preds = ps.np.zeros((test_data.shape[0], k))
     for i in range(k):
-        preds[:, i] = test_data_n.dot(predictors.iloc[:, i].values)
+        #preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
+        preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
+        #print preds[:, i]
+        #print predictors.iloc[:, i]
+        #print test_data
+        #sys.exit(0)
         pred_df = ps.DataFrame(preds, index = test_data.index)
     #set column names
     pred_df.columns = ["%s_%s" %(pt, predictors.columns[i].split("_")[0]) for i in range(k)]
@@ -71,6 +76,7 @@ def annotate_and_predict(pt_range, model_tar, summary_f, pfam_pts_mapping_f, out
     m = ps.read_csv(summary_f, sep="\t", index_col = 0)
     #restrict to those pfams contained in the model
     m_red = m.loc[:, pfam_pts_mapping.iloc[:-93, 0] ].astype('int')
+    m_red.columns = pfam_pts_mapping.index[:-93]
     for pt in range(pt_range[0], pt_range[1] + 1):
         #predict an append to prediction df
         preds = majority_predict(pt, model_tar, m_red, k)
