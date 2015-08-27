@@ -49,6 +49,8 @@ def majority_predict(pt, model_tar, test_data, k):
     #check if classification model exists for the requested phenotype
     try: 
         extracted_f = model_tar.extractfile("%s_feats.txt"%(pt))
+        bias_f = model_tar.extractfile("%s_bias.txt"%(pt))
+        bias = ps.read_csv(bias_f, sep = "\t", index_col = 0, header = None)
         predictors = ps.read_csv(extracted_f, sep = "\t",  index_col = 0 )
     except KeyError:
         return ps.DataFrame()
@@ -56,11 +58,7 @@ def majority_predict(pt, model_tar, test_data, k):
     preds = ps.np.zeros((test_data.shape[0], k))
     for i in range(k):
         #preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
-        preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
-        #print preds[:, i]
-        #print predictors.iloc[:, i]
-        #print test_data
-        #sys.exit(0)
+        preds[:, i] = bias.iloc[i, 0] +  test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
         pred_df = ps.DataFrame(preds, index = test_data.index)
     #set column names
     pred_df.columns = ["%s_%s" %(pt, predictors.columns[i].split("_")[0]) for i in range(k)]
