@@ -41,7 +41,7 @@ def aggregate(pred_df, k):
     
 
     
-def majority_predict(pt, model_tar, test_data, k):
+def majority_predict(pt, model_tar, test_data, k, bias_weight = 1):
     """predict the class label based on a committee vote of the models in models""" 
     #TODO if the classification model is trained on non binary data we would require the same normalization applied to the training data 
     #binarize
@@ -58,7 +58,9 @@ def majority_predict(pt, model_tar, test_data, k):
     preds = ps.np.zeros((test_data.shape[0], k))
     for i in range(k):
         #preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
-        preds[:, i] = bias.iloc[i, 0] +  test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
+        #print predictors.index
+        #print test_data_n.columns
+        preds[:, i] = bias.iloc[i, 0] * bias_weight +  test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
         pred_df = ps.DataFrame(preds, index = test_data.index)
     #set column names
     pred_df.columns = ["%s_%s" %(pt, predictors.columns[i].split("_")[0]) for i in range(k)]
