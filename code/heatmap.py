@@ -20,7 +20,9 @@
 #################
 ### Imports an tab-delimited expression matrix and produces and hierarchically clustered heatmap
 #################
-
+import matplotlib
+#pick non-x display
+matplotlib.use('Agg')
 import matplotlib.pyplot as pylab
 from matplotlib import mpl
 import scipy
