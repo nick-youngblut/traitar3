@@ -4,7 +4,7 @@ import os
 import subprocess
 import sys
 import shutil
-import get_external_data
+from traitar import get_external_data
 import json
 import os
 import sys
