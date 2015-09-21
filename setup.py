@@ -9,6 +9,6 @@ setup(name='traitar',
         license='GNU General Public License, version 3 (GPL-3.0)',
         packages=['traitar'],
         scripts = ['traitar/phenolyzer.py', 'traitar/merge_preds.py', 'traitar/heatmap.py', 'traitar/domtblout2gene_generic.py', 'traitar/predict.py', 'traitar/hmmer2filtered_best.py'],
-        data_files = [("data", ["data/sorted_accessions.txt"]), ("data/models/", ["data/models/phypat+GGL.tar.gz", "data/models/phypat.tar.gz"])],
+        package_data = {"traitar": ["data/sorted_accessions.txt", "data/models/phypat+GGL.tar.gz", "data/models/phypat.tar.gz"]},
         zip_safe=False,
         install_requires = ["pandas >= 0.14.1", "matplotlib >= 1.0", "scipy >= 0.9.0"])
