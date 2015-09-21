@@ -4,7 +4,8 @@ import os
 import subprocess
 import sys
 import shutil
-import get_external_data
+from traitar import get_external_data
+import traitar
 import json
 import os
 import sys
@@ -23,7 +24,7 @@ class Phenolyzer:
         self.cpu = cpu
         self.input_dir = input_dir
         self.output_dir = output_dir
-        self.phenolyzer_dir = "/".join(sys.argv[0].split("/")[:-2])
+        self.phenolyzer_dir = os.path.abspath(os.path.dirname(traitar.__file__)) 
         with open(os.path.join(self.phenolyzer_dir, "config.json" ), "r") as cf:
             self.config = json.load(cf)
         #create output dir
@@ -69,6 +70,7 @@ class Phenolyzer:
         if self.cpu > 1:
             #run with parallel
             ps.DataFrame(commands).to_csv('/tmp/commands.txt', index = False, header = False) 
+            #TODO avoid commands.txt by using a pipe
             subprocess.call("cat /tmp/commands.txt | parallel -j %s" % self.cpu, shell = True, executable = "/bin/bash",  env = env)
         else:
             #run in sequential order
@@ -104,7 +106,7 @@ class Phenolyzer:
             hmmer_commands.append(hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample":in_samples[i], "out_sample":out_samples[i], "a_dir":a_dir, "phenolyzer":self.phenolyzer_dir, "in_dir" : in_dir, "pfam_hmms" : self.config["pfam_hmms"]})
         #run gff extraction
         #run filtering and best domain hit aggregation
-        filter_and_aggregate = "%(phenolyzer)s/code/hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat 10e-02 25 "
+        filter_and_aggregate = "hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat 10e-02 25 "
         fae_commands = []
         for i in range(len(in_samples)):
             fae_commands.append(filter_and_aggregate % {"a_dir":a_dir, "in_sample":in_samples[i], "out_sample":out_samples[i], "phenolyzer":self.phenolyzer_dir})
@@ -113,7 +115,7 @@ class Phenolyzer:
         #TODO modify this piece of code so that there is no temp file required anymore
         #best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
         #best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
-        domtblout2gene_generic = "%(phenolyzer)s/code/domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(phenolyzer)s/data/sorted_accessions.txt"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
+        domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(phenolyzer)s/data/sorted_accessions.txt"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
         if is_recompute:
             self.execute_commands(hmmer_commands)
             self.execute_commands(fae_commands)
@@ -131,18 +133,18 @@ class Phenolyzer:
         if not os.path.exists(phypat_ggl_dir):
             os.mkdir(phypat_ggl_dir)
         #run phenotype prediction for phypat and phypat+GGL
-        predict_phypat = "%(phenolyzer)s/code/predict.py %(phenolyzer)s/data/models/phypat.tar.gz %(pred_dir)s 8476-8568 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : phypat_dir, "phenolyzer" : self.phenolyzer_dir} 
-        predict_phypat_ggl = "%(phenolyzer)s/code/predict.py %(phenolyzer)s/data/models/phypat+GGL.tar.gz %(pred_dir)s 8682-8774 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir} 
+        predict_phypat = "predict.py %(phenolyzer)s/data/models/phypat.tar.gz %(pred_dir)s 8476-8568 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : phypat_dir, "phenolyzer" : self.phenolyzer_dir} 
+        predict_phypat_ggl = "predict.py %(phenolyzer)s/data/models/phypat+GGL.tar.gz %(pred_dir)s 8682-8774 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir} 
         if is_recompute:
             subprocess.call(predict_phypat,executable = "/bin/bash", shell = True, env = env)
             subprocess.call(predict_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
         #combine phypat and phypat+GGL predictions
-        merge_preds = "%(phenolyzer)s/code/merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_ggl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : phypat_dir, "phypat_ggl_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir } 
+        merge_preds = "merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_ggl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : phypat_dir, "phypat_ggl_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir } 
         subprocess.call(merge_preds, executable = "/bin/bash",shell = True, env = env)
         #generate a heatmap from the results
-        hm_cmd = "%(phenolyzer)s/code/heatmap.py %(pred_dir)s/predictions_aggr_majority-vote_comb.tsv %(pred_dir)s/heatmap_comb.png" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
-        hm_cmd_phypat = "%(phenolyzer)s/code/heatmap.py %(phypat_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat.png" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
-        hm_cmd_phypat_ggl = "%(phenolyzer)s/code/heatmap.py %(phypat_ggl_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat_ggl.png" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
+        hm_cmd = "heatmap.py %(pred_dir)s/predictions_aggr_majority-vote_comb.tsv %(pred_dir)s/heatmap_comb.png" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
+        hm_cmd_phypat = "heatmap.py %(phypat_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat.png" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
+        hm_cmd_phypat_ggl = "heatmap.py %(phypat_ggl_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat_ggl.png" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
         subprocess.call(hm_cmd, executable = "/bin/bash",shell = True, env = env)
         subprocess.call(hm_cmd_phypat, executable = "/bin/bash",shell = True, env = env)
         subprocess.call(hm_cmd_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
