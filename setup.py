@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='traitar',
-        version='0.1.0',
+        version='0.1.3',
         description='traitAR - The microbial trait analyzer',
         url = 'http://github.com/aweimann/traitAR',
         author='Aaron Weimann',
