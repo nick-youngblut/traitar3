@@ -46,7 +46,8 @@ traitAR can benefit from parallel execution. The ``-c`` parameter sets the numbe
 ``traitar phenotype <in dir>  <sample file> from_nucleotides out_dir -c 2`` 
 
 This requires installing GNU parallel as noted above.
-
+##Run traitAR with packaged sample data
+``traitar phenotype <traitar_dir>/traitar/data/sample_data <traitar_dir>/traitar/data/sample_data/samples.txt from_nucelotides <out_dir> -c 2`` will trigger phenotyping of Mycoplasma pneumoniae 309 and Mycoplasma genitalium G37.Computation should be done within 5 minutes. 
 ## Output
 traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``. The phenotype prediction is summarized in heatmaps individually for each of the two algorithms and combined. Flat files and tab separated files provide access to the raw prediction results.
 

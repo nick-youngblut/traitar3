@@ -38,7 +38,7 @@ import getopt
 
 def heatmap(x, row_header, column_header, row_method,
             column_method, row_metric, column_metric,
-            color_gradient, filename):
+            mode, filename):
     
     print "\nPerforming hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
         
@@ -52,29 +52,36 @@ def heatmap(x, row_header, column_header, row_method,
     
     ### Define the color gradient to use based on the provided name
     n = len(x[0]); m = len(x)
-    if color_gradient == 'red_white_blue':
-        cmap=pylab.cm.bwr
-    if color_gradient == 'red_black_sky':
-        cmap=RedBlackSkyBlue()
-    if color_gradient == 'red_black_blue':
-        cmap=RedBlackBlue()
-    if color_gradient == 'red_black_green':
-        cmap=RedBlackGreen()
-    if color_gradient == 'yellow_black_blue':
-        cmap=YellowBlackBlue()
-    if color_gradient == 'seismic':
-        cmap=pylab.cm.seismic
-    if color_gradient == 'green_white_purple':
-        cmap=pylab.cm.PiYG_r
-    if color_gradient == 'coolwarm':
-        cmap=pylab.cm.coolwarm
+    if mode == "single":
+        cmaplist = ["grey", "green"]
+    if mode == "combined":
+        cmaplist = ["grey", "blue", "magenta", "green"]
+    cmap = mpl.colors.ListedColormap(cmaplist)
+    bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
+    norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
+    #if color_gradient == 'red_white_blue':
+    #    cmap=pylab.cm.bwr
+    #if color_gradient == 'red_black_sky':
+    #    cmap=RedBlackSkyBlue()
+    #if color_gradient == 'red_black_blue':
+    #    cmap=RedBlackBlue()
+    #if color_gradient == 'red_black_green':
+    #    cmap=RedBlackGreen()
+    #if color_gradient == 'yellow_black_blue':
+    #    cmap=YellowBlackBlue()
+    #if color_gradient == 'seismic':
+    #    cmap=pylab.cm.seismic
+    #if color_gradient == 'green_white_purple':
+    #    cmap=pylab.cm.PiYG_r
+    #if color_gradient == 'coolwarm':
+    #    cmap=pylab.cm.coolwarm
 
     ### Scale the max and min colors so that 0 is white/black
-    vmin=x.min()
-    vmax=x.max()
-    vmax = max([vmax,abs(vmin)])
-    vmin = vmax*-1
-    norm = mpl.colors.Normalize(vmin/2, vmax/2) ### adjust the max and min to scale these colors
+    #vmin=x.min()
+    #vmax=x.max()
+    #vmax = max([vmax,abs(vmin)])
+    #vmin = vmax*-1
+    #norm = mpl.colors.Normalize(vmin/2, vmax/2) ### adjust the max and min to scale these colors
 
     ### Scale the Matplotlib window size
     default_window_hight = 8.5
@@ -114,7 +121,7 @@ def heatmap(x, row_header, column_header, row_method,
     ax2_w = axc_w
 
     # axcb - placement of the color legend
-    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.07,0.88,0.18,0.09]
+    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.07,0.88,0.11,0.09]
 
     # Compute and plot top dendrogram
     if column_method != None:
@@ -211,10 +218,16 @@ def heatmap(x, row_header, column_header, row_method,
 
     # Plot color legend
     axcb = fig.add_axes([axcb_x, axcb_y, axcb_w, axcb_h], frame_on=False)  # axes for colorbar
-    cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, orientation='horizontal')
+    #cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, orientation='horizontal')
+    cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
+    if mode == "single":
+        axcb.set_yticklabels(["negative", "positive"])
+        axcb.yaxis.set_ticks([0.25, 0.75])
+    if mode == "combined":
+        axcb.set_yticklabels(["negative", "phypat positive", "phypat+GGL positive", "double positive"])
+        axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
     axcb.set_title("colorkey")
     
-    cb.set_label("Phenotypes")
     #exportFlatClusterData(filename, new_row_header,new_column_header,xt,ind1,ind2)
 
     ### Render the graphic
@@ -397,7 +410,7 @@ if __name__ == '__main__':
     column_method = 'single'
     row_metric = 'cityblock' #cosine
     column_metric = 'euclidean'
-    color_gradient = 'red_white_blue'
+    #color_gradient = 'red_white_blue'
     import argparse
     parser = argparse.ArgumentParser("generate a heatmap with dendrograms from the phenotype predictions")
     parser.add_argument("data_f", help= 'tab delimited file with row and column names')
@@ -406,16 +419,16 @@ if __name__ == '__main__':
     parser.add_argument("--column_method", help= 'method to use for the column dendrogram', default = 'single')
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'euclidean')
-    parser.add_argument("--color_gradient", help= 'color gradient for the heatmap', default = 'red_white_blue')
+    parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
     args = parser.parse_args()
     matrix, column_header, row_header = importData(args.data_f)
 
     try:
-        heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.color_gradient, args.out_f)
+        heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f)
     except Exception:
         print 'Error using %s ... trying euclidean instead' % row_metric
         args.row_metric = 'euclidean'
         try:
-            heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.color_gradient,  args.out_f)
+            heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode,  args.out_f)
         except IOError:
             print 'Error with clustering encountered'

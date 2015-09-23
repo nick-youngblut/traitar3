@@ -1,0 +1,2 @@
+NC_000908.fna	Mycoplasma_genitalium_G37
+NC_016807.fna	Mycoplasma_pneumoniae_309
