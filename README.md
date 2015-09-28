@@ -7,9 +7,12 @@ traitAR is available for Linux via the python packaging index. We strongly encou
 
 ``pip install -i https://testpypi.python.org/pypi  --user traitar``
 
-You need to adjust the PATH variable in the ~/.bashrc so that the bash finds the executables provided by packages installed with pip
+You might need further packages that are not available via pip e.g. freetype, which can be installed via your software managment system. Please let us know, if you have troubles installing this software, so that we can assist you with the installation. 
+You need to add the following line to your ~/.bashrc to adjust the PATH variable so that the bash finds the executables provided by packages installed with pip. 
 
 ``PATH=$PATH:~/.local/bin/``
+
+You may need to run ``source ~/.bashrc`` once in your current session.
 
 You can also install globally with
 
@@ -46,10 +49,16 @@ traitAR can benefit from parallel execution. The ``-c`` parameter sets the numbe
 ``traitar phenotype <in dir>  <sample file> from_nucleotides out_dir -c 2`` 
 
 This requires installing GNU parallel as noted above.
-##Run traitAR with packaged sample data
-``traitar phenotype <traitar_dir>/traitar/data/sample_data <traitar_dir>/traitar/data/sample_data/samples.txt from_nucelotides <out_dir> -c 2`` will trigger phenotyping of Mycoplasma pneumoniae 309 and Mycoplasma genitalium G37.Computation should be done within 5 minutes. 
+##Run traitAR with packaged sample data.
+``traitar phenotype <traitar_dir>/data/sample_data <traitar_dir>/data/sample_data/samples.txt from_nucleotides <out_dir> -c 2`` will trigger phenotyping of Mycoplasma pneumoniae 309 and Mycoplasma genitalium G37. Computation should be done within 5 minutes. You can find out ``<traitar_dir>`` by running
+
+``python``
+
+``>>> import traitar``
+
+``>>> traitar.__path__``
 ## Output
-traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``. The phenotype prediction is summarized in heatmaps individually for each of the two algorithms and combined. Flat files and tab separated files provide access to the raw prediction results.
+traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``. The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png```. These heatmaps are based on tab separated text files e.g. ``predictions_majority-votes_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+GGL``.
 
 # Web service
 traitAR is also offered as a web service at
