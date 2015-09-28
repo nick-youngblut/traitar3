@@ -31,7 +31,7 @@ traitAR requires the Pfam 27.0 HMM models. These are not distributed with this p
 will download and extract the Pfam models to the specified folder. The download can take a while depending on you internet connection. The Pfam models are extracted automatically to the same folder. This can slow down some machines. 
 You may also download and extract the Pfam models manually from ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz and run 
 
-``traitar config --local <path to extracted Pfam model file>``
+``traitar config --local <path to extracted Pfam model folder>``
 
 to let traitAR know where.
 # Basic usage
