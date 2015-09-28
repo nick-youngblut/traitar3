@@ -11,28 +11,28 @@ def flatten_df(df1, df2, out):
 
 def comb_preds(phypat_dir, phypat_GGL_dir, out_dir, k):
     #phypat only predictions
-    m1_raw = ps.read_csv("%s/predictions.csv"%phypat_dir, index_col = 0, sep = "\t")
+    m1_raw = ps.read_csv("%s/predictions_raw.txt"%phypat_dir, index_col = 0, sep = "\t")
     m1 = ps.DataFrame(ps.np.zeros((m1_raw.shape[0], m1_raw.shape[1] / 5)))
     m1.index = m1_raw.index
     for i in range(m1_raw.shape[1] / 5):
         m1.iloc[:, i] = m1_raw.iloc[:, i*5 : i*5 + 5].apply(lambda x: (x > 0).sum(), axis = 1 )
-    m1_scores = ps.read_csv("%s/predictions_scores_majority-vote.csv"%phypat_dir, index_col = 0, sep = "\t")
+    m1_scores = ps.read_csv("%s/predictions_majority-vote_mean-score.txt"%phypat_dir, index_col = 0, sep = "\t")
     #write to disk a single vote version of the predictions
     m1.columns = m1_scores.columns
     m1.index = m1_scores.index
-    m1.to_csv("%s/predictions_single-votes.csv"%phypat_dir, sep = "\t")
+    m1.to_csv("%s/predictions_single-votes.txt"%phypat_dir, sep = "\t")
     #phypat plus ml predictions
-    m2_raw = ps.read_csv("%s/predictions.csv"%phypat_GGL_dir, index_col = 0,  sep = "\t")
+    m2_raw = ps.read_csv("%s/predictions_raw.txt"%phypat_GGL_dir, index_col = 0,  sep = "\t")
     m2 = ps.DataFrame(ps.np.zeros((m2_raw.shape[0], m2_raw.shape[1] / 5)))
     m2.index = m1_raw.index
     #aggregate single predictor outcomes
     for i in range(m2_raw.shape[1] / 5):
         m2.iloc[:, i] = m2_raw.iloc[:, i*5 : i*5 + 5].apply(lambda x: (x > 0).sum(), axis = 1 )
-    m2_scores = ps.read_csv("%s/predictions_scores_majority-vote.csv"%phypat_GGL_dir, index_col = 0, sep = "\t")
+    m2_scores = ps.read_csv("%s/predictions_majority-vote_mean-score.txt"%phypat_GGL_dir, index_col = 0, sep = "\t")
     #write to disk a single vote version of the predictions
     m2.index = m2_scores.index
     m2.columns = m2_scores.columns
-    m2.to_csv("%s/predictions_single-votes.csv"%phypat_GGL_dir, sep = "\t")
+    m2.to_csv("%s/predictions_single-votes.txt"%phypat_GGL_dir, sep = "\t")
     #set NAs to zero
     m1[ps.isnull(m1)] = 0
     m2[ps.isnull(m2)] = 0
@@ -57,15 +57,15 @@ def comb_preds(phypat_dir, phypat_GGL_dir, out_dir, k):
     m_scores = (m1_scores +  m2_scores)/2
     
     #write named majority, single vote and mean score version of combined, phypat and phypat+GGL 
-    m.to_csv("%s/predictions_aggr_preds_single-votes_comb.csv"%out_dir, sep = "\t")
-    m_maj.to_csv("%s/predictions_aggr_majority-vote_comb.tsv"%out_dir, index_label = None, sep = "\t")
-    m_scores.to_csv("%s/predictions_aggr_majority-vote_mean-score_comb.tsv"%out_dir, index_label = None, sep = "\t")
+    m.to_csv("%s/predictions_single-votes_combined.txt"%out_dir, sep = "\t")
+    m_maj.to_csv("%s/predictions_majority-vote_combined.txt"%out_dir, index_label = None, sep = "\t")
+    m_scores.to_csv("%s/predictions_majority-vote_mean-score_combined.txt"%out_dir, index_label = None, sep = "\t")
     #m1.to_csv("%s/predictions_aggr_phypat_majority-vote_named.csv"%out_dir, index_col = 0, sep = "\t")
     #m1_scores.to_csv("%s/predictions_aggr_phypat_majority-vote_mean-score_named.csv"%out_dir, index_col = 0, sep = "\t")
     #m2.to_csv("%s/predictions_aggr_phypat+ml_majority-vote_named.csv"%out_dir, index_col = 0,  sep = "\t")
     #m2_scores.to_csv("%s/predictions_aggr_phypat+ml_majority-vote_mean-score_named.csv"%out_dir, index_col = 0,  sep = "\t")
-    flatten_df(m1_maj, m2_maj, "%s/preds_flat_maj_comb.txt"%out_dir)
-    flatten_df(m1, m2, "%s/preds_flat_single_votes_comb.txt"%out_dir)
+    flatten_df(m1_maj, m2_maj, "%s/predictions_flat_majority-votes_combined.txt"%out_dir)
+    flatten_df(m1, m2, "%s/predictions_flat_single-votes_combined.txt"%out_dir)
 
 
 if __name__ == "__main__":

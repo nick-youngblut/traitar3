@@ -1,2 +1,2 @@
-NC_000908.fna	Mycoplasma_genitalium_G37
-NC_016807.fna	Mycoplasma_pneumoniae_309
+1457190.3.RefSeq.faa	Listeria_ivanovii_WSLC3009
+525367.9.RefSeq.faa	Listeria_grayi_DSM_20601

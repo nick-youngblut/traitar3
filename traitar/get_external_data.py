@@ -12,11 +12,11 @@ def download(args):
     if not args.local: 
         while attempts < 3:
             try:
-                response = urllib2.urlopen("ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz", timeout = 5, stream = True)
+                response = urllib2.urlopen("ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz", timeout = 5)
                 with open(os.path.join(args.download_dest, "Pfam-A.hmm.gz"), 'w' ) as f:
                     CHUNK = 1000000
                     while True:
-                        chunk = reponse.read(CHUNK)
+                        chunk = response.read(CHUNK)
                         if not chunk:
                             break
                         else:

@@ -25,11 +25,43 @@ class Phenolyzer:
         self.input_dir = input_dir
         self.output_dir = output_dir
         self.phenolyzer_dir = os.path.abspath(os.path.dirname(traitar.__file__)) 
+        self.is_gnu_parallel_available = self.is_exe("parallel")
+        if cpu != 1 and not self.is_gnu_parallel_available:
+            sys.stderr.write("GNU parallel is not available on the command line; make sure you installed it properly or decrease number of cpus to 1\n")
+            sys.exit(0)
+        #check if executables are available 
+        if not self.is_exe("hmmsearch"):
+            sys.stderr.write("hmmsearch not available on command line; please make sure you have properly installed it\n")
+            sys.exit(0)
+        if not self.is_exe("prodigal"):
+            sys.stderr.write("prodigal not available on command line; please make sure you have properly installed it\n")
+            sys.exit(0)
+        #check if config exists
+        if not os.path.isfile(os.path.join(self.phenolyzer_dir, "config.json")):
+            sys.stderr.write("config.json does not exists; make sure that you have run traitar config")
+        #check if Pfam hmm specified in config.json exists
         with open(os.path.join(self.phenolyzer_dir, "config.json" ), "r") as cf:
             self.config = json.load(cf)
+        if not os.path.isfile(self.config["pfam_hmms"]):
+            sys.stderr.write("Pfam HMM file does not exist (%s), make sure you have run traitar config --local <Pfam hmm>" % self.config["pfam_hmms"])
         #create output dir
         self.check_dir(output_dir)
-
+    
+    def is_exe(self, program):
+        def is_exe(fpath):
+            return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
+        fpath, fname = os.path.split(program)
+        if fpath:
+            if is_exe(program):
+                return True 
+        else:
+            for path in os.environ["PATH"].split(os.pathsep):
+                path = path.strip('"')
+                exe_file = os.path.join(path, program)
+                if is_exe(exe_file):
+                    return True 
+                else:
+                    False 
 
     def check_dir(self, out_dir):
         if os.path.exists(out_dir):
@@ -71,7 +103,6 @@ class Phenolyzer:
         if self.cpu > 1:
             #run with parallel
             ps.DataFrame(commands).to_csv('/tmp/commands.txt', index = False, header = False) 
-            #TODO avoid commands.txt by using a pipe
             subprocess.call("cat /tmp/commands.txt | parallel -j %s" % self.cpu, stdout = devnull, shell = True, executable = "/bin/bash", env = env)
         else:
             #run in sequential order
@@ -143,9 +174,9 @@ class Phenolyzer:
         merge_preds = "merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_ggl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : phypat_dir, "phypat_ggl_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir } 
         subprocess.call(merge_preds, executable = "/bin/bash",shell = True, env = env)
         #generate a heatmap from the results
-        hm_cmd = "heatmap.py %(pred_dir)s/predictions_aggr_majority-vote_comb.tsv %(pred_dir)s/heatmap_comb.png --mode combined" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
-        hm_cmd_phypat = "heatmap.py %(phypat_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
-        hm_cmd_phypat_ggl = "heatmap.py %(phypat_ggl_dir)s/predictions_bin_majority-vote.csv %(pred_dir)s/heatmap_phypat_ggl.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
+        hm_cmd = "heatmap.py %(pred_dir)s/predictions_majority-vote_combined.txt %(pred_dir)s/heatmap_comb.png --mode combined" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
+        hm_cmd_phypat = "heatmap.py %(phypat_dir)s/predictions_majority-vote.txt %(pred_dir)s/heatmap_phypat.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
+        hm_cmd_phypat_ggl = "heatmap.py %(phypat_ggl_dir)s/predictions_majority-vote.txt %(pred_dir)s/heatmap_phypat_ggl.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
         subprocess.call(hm_cmd, executable = "/bin/bash",shell = True, env = env)
         subprocess.call(hm_cmd_phypat, executable = "/bin/bash",shell = True, env = env)
         subprocess.call(hm_cmd_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
@@ -169,7 +200,7 @@ if __name__ == "__main__":
     #import package parallel 
     #subprocess.call("importpackage Prodigal", executable = "/bin/bash", shell = True)
     import argparse
-    parser = argparse.ArgumentParser("run phenolyzer program (try: phenolyzer.py -h for help on the sub programs)")
+    parser = argparse.ArgumentParser("run traitar (try: traitar {config, phenotype} -h for help on the sub programs)")
     subparsers = parser.add_subparsers()
     main_p = subparsers.add_parser("phenotype", help = "run annotation and prediction") 
     main_p.add_argument("input_dir", help='directory with the input data')

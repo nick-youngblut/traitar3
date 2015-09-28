@@ -88,6 +88,7 @@ def heatmap(x, row_header, column_header, row_method,
     default_window_width = 12
     fig = pylab.figure(figsize=(default_window_width,default_window_hight)) ### could use m,n to scale here
     color_bar_w = 0.015 ### Sufficient size to show
+    color_bar_w = 0 ### Sufficient size to show
         
     ## calculate positions for all elements
     # ax1, placement of dendrogram 1, on the left of the heatmap
@@ -196,25 +197,25 @@ def heatmap(x, row_header, column_header, row_method,
 
     # Plot colside colors
     # axc --> axes for column side colorbar
-    if column_method != None:
-        axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
-        cmap_c = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
-        dc = numpy.array(ind2, dtype=int)
-        dc.shape = (1,len(ind2)) 
-        im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_c)
-        axc.set_xticks([]) ### Hides ticks
-        axc.set_yticks([])
+    #if column_method != None:
+    #    axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
+    #    cmap_c = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
+    #    dc = numpy.array(ind2, dtype=int)
+    #    dc.shape = (1,len(ind2)) 
+    #    im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_c)
+    #    axc.set_xticks([]) ### Hides ticks
+    #    axc.set_yticks([])
     
     # Plot rowside colors
     # axr --> axes for row side colorbar
-    if row_method != None:
-        axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for column side colorbar
-        dr = numpy.array(ind1, dtype=int)
-        dr.shape = (len(ind1),1)
-        cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
-        im_r = axr.matshow(dr, aspect='auto', origin='lower', cmap=cmap_r)
-        axr.set_xticks([]) ### Hides ticks
-        axr.set_yticks([])
+    #if row_method != None:
+    #    axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for column side colorbar
+    #    dr = numpy.array(ind1, dtype=int)
+    #    dr.shape = (len(ind1),1)
+    #    cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
+    #    im_r = axr.matshow(dr, aspect='auto', origin='lower', cmap=cmap_r)
+    #    axr.set_xticks([]) ### Hides ticks
+    #    axr.set_yticks([])
 
     # Plot color legend
     axcb = fig.add_axes([axcb_x, axcb_y, axcb_w, axcb_h], frame_on=False)  # axes for colorbar

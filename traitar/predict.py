@@ -82,17 +82,17 @@ def annotate_and_predict(pt_range, model_tar, summary_f, pfam_pts_mapping_f, out
         preds = majority_predict(pt, model_tar, m_red, k)
         pred_df = ps.concat([pred_df, preds], axis = 1)
     pred_df.index = m_red.index
-    pred_df.to_csv("%s/predictions.csv"%out_dir, sep = "\t", float_format='%.3f')
+    pred_df.to_csv("%s/predictions_raw.txt"%out_dir, sep = "\t", float_format='%.3f')
     #aggregate predictions
-    out = ["scores_majority-vote", "bin_majority-vote", "scores_conservative-vote", "bin_conservative-vote"]
+    out = ["majority-vote_mean-score", "majority-vote", "scores_conservative-vote_mean-score", "conservative-vote"]
     aggr_dfs = aggregate(pred_df, k)
     for i in range(len(out)):
         aggr_dfs[i].columns = pfam_pts_mapping.loc[aggr_dfs[i].columns, ].iloc[:,0]
         aggr_dfs[i].index = m_red.index
         if i % 2 == 0:
-            aggr_dfs[i].to_csv("%s/predictions_%s.csv"%(out_dir, out[i]), sep = "\t", float_format='%.3f')
+            aggr_dfs[i].to_csv("%s/predictions_%s.txt"%(out_dir, out[i]), sep = "\t", float_format='%.3f')
         else:
-            aggr_dfs[i].to_csv("%s/predictions_%s.csv"%(out_dir, out[i]), sep = "\t", float_format='%.0f')
+            aggr_dfs[i].to_csv("%s/predictions_%s.txt"%(out_dir, out[i]), sep = "\t", float_format='%.0f')
     return pred_df
 
 
