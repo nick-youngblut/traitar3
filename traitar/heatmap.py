@@ -33,6 +33,7 @@ import string
 import time
 import sys, os
 import getopt
+import numpy as np
 
 ################# Perform the hierarchical clustering #################
 
@@ -53,9 +54,9 @@ def heatmap(x, row_header, column_header, row_method,
     ### Define the color gradient to use based on the provided name
     n = len(x[0]); m = len(x)
     if mode == "single":
-        cmaplist = ["grey", "green"]
+        cmaplist = np.array([[247,247,247],[31,120,180]])/256.0
     if mode == "combined":
-        cmaplist = ["grey", "blue", "magenta", "green"]
+        cmaplist = np.array([[247,247,247],[166,206,227],[178,223,138],[31,120,180]])/256.0
     cmap = mpl.colors.ListedColormap(cmaplist)
     bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
     norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
@@ -189,7 +190,7 @@ def heatmap(x, row_header, column_header, row_method,
     for i in range(x.shape[1]):
         if column_method != None:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 7}, rotation=270, verticalalignment="top") # rotation could also be degrees
+            axm.text(i-0.5, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 7}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])
         else: ### When not clustering columns
             axm.text(i, -0.5, ' '+column_header[i], rotation=270, verticalalignment="top")
