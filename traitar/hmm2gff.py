@@ -10,18 +10,25 @@ def get_protein_acc(fasta_id):
     return fasta_id.split("|")[3]
 
 
-def read_rel_feats(rel_feats_f):
-    f = open(rel_feats_f, 'r')
-    rel_feats_dict = {}
-    i = 1
-    for l in f:
-        acc, _ = l.split("\t")
-        rel_feats_dict[acc] = i
-        i += 1
-    f.close()
-    return rel_feats_dict
-
-# read in gene prediction gff file as a dictionary
+def read_rel_feats(model_tar, pts):
+    """read in pfams relevant for all predicted phenotypes"""
+    #pfam to phenotype mapping
+    pf2pt = {}
+    #store relevant pfam lists
+    rel_feat_list = []
+    #extract pfam lists
+    for pt in pts:
+        rel_feat_list.append(model_tar.extractfile("%s_majority_features+weights.txt" % pt))
+    #process pfam lists
+    for i in range(len(rel_feat_list)): 
+        pfs = ps.read_csv(rel_feat_list[i], sep = "\t", index_col = 0)
+        for pf in pfs.index:
+            if not pf in pf2pt:
+                pf2pt[pfs.loc[pf, "Pfam_acc"]] = [(pts[i], pfs.loc[pf, "cor"])]
+            else:
+                if not pt in pf2pt[pf]:
+                    pf2pt[pf].append(pts[i])
+    return pf2pt
 
 
 def read_gff(gff_file, mode):
@@ -35,7 +42,7 @@ def read_gff(gff_file, mode):
         if l.startswith("#") or l.startswith("\n"):
             continue
         else:
-            if mode == "gm":
+            if mode == "metagenemark":
                 read_genemark_entry(l, gene_dict)
             elif mode == "prodigal":
                 read_prodigal_entry(l, gene_dict)
@@ -49,9 +56,8 @@ def read_genemark_entry(l, gene_dict):
     """read and parse one line from a genemark gff"""
     elems = l.strip().split("\t")
     gene_dict[
-        elems[8].replace(
-            " ", "_")] = (
-        elems[0].split(" ")[0], int(
+        elems[8].split(" ")[0].strip(",").replace("=", "_")] = (
+        elems[1].split(" ")[0], int(
             elems[3]), int(
             elems[4]), elems[6])
 
@@ -91,10 +97,16 @@ def get_coords(gene_start, gene_end, ali_from, ali_to, strand):
     #    return (gene_end - n_end, gene_end  - n_start)
 
 
-def write_hmm_gff(hmmer_file, out_gff_f, gene_dict, skip_genes, mode, rel_feats_f, description = False):
+def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode,  model_tar, predicted_phenotypes, description = False):
     #read in pfam accession to description mapping
     if description:
+        pfam_pts_mapping_f = "pfam_pts_names_nl_desc.txt"
+        acc2desc = ps.read_csv(model_tar.extractfile(pfam_pts_mapping_f), header=None, index_col = 1, sep = "\t") 
+        acc2desc.iloc[:, 0] = acc2desc.iloc[:, 0] - 1
         id2desc = ps.read_csv(model_tar.extractfile(pfam_pts_mapping_f), header=None, index_col = 0, sep = "\t") 
+        id2desc.index = id2desc.index.values - 1 
+        print id2desc.index
+    out_table = []
     with open(hmmer_file, 'r') as hmmer_fo:
         # skip param line and header
         hmmer_fo.readline()
@@ -102,12 +114,16 @@ def write_hmm_gff(hmmer_file, out_gff_f, gene_dict, skip_genes, mode, rel_feats_
         hmmer_fo.readline()
         rel_feats_dict = None
         # read in relevant which shall be highlighted
-        if rel_feats_f is not None:
-            rel_feats_dict = read_rel_feats(rel_feats_f)
+        pts = predicted_phenotypes.split(",") 
+        if pts is not None:
+            pf2pt = read_rel_feats(model_tar, pts)
         #print rel_feats_dict
-        # open out gff for reading
-        with open(out_gff_f, 'w') as out_gff:
-            out_gff.write("""##gff-version 3\n""")
+        # open global output table
+        # open out gffs for reading
+        out_gffs = dict([(i, open("%s/%s_%s.gff"%(out_gff_dir, sample, i), 'w')) for i in pts])
+        #gff heade, r
+        for i in out_gffs:
+            out_gffs[i].write("""##gff-version 3\n""")
             for l in hmmer_fo:
                 elems = l.strip().split("\t")
                 # change pfam accession PF00001.3 into PF00001
@@ -129,29 +145,43 @@ def write_hmm_gff(hmmer_file, out_gff_f, gene_dict, skip_genes, mode, rel_feats_
                 # check if this feature is among the highest ranking features and add
                 # colour and rank if so 
                 #print acc, rel_feats_dict 
-                if rel_feats_dict is None or acc in rel_feats_dict:
+                if pf2pt is None or acc in pf2pt:
                     description_string = ""
                     if description:
-                        description_string = ";Description=%s" % (id2desc.loc[acc,].iloc[0])
+                        description_string = ";Description=%s" % (acc2desc.loc[acc,].iloc[1])
                     #if not rel_feats_dict is None:
                     #    colour = ";colour=3;rank=%s" % (rel_feats_dict[acc])
-                    out_gff.write(
-                        "%s\tHMMER\tPfam\t%s\t%s\t%s\t%s\t.\tParent=%s;Name=%s;Note=%s%s%s\n" %
-                        (contig_name, hmm_coords[0], hmm_coords[1], ieval, strand, gid, acc, name, description_string, colour))
+                    for i in pf2pt[acc]:
+                        out_gffs[i[0]].write(
+                            "%s\tHMMER\tPfam\t%s\t%s\t%s\t%s\t.\tParent=%s;Name=%s;Note=%s%s%s\n" %
+                            (contig_name, hmm_coords[0], hmm_coords[1], ieval, strand, gid, acc, name, description_string, colour))
+                        out_table.append("%s\t%s\t%s\t%s\t%s\n" %(id2desc.loc[int(i[0]),].iloc[0], gid, acc, acc2desc.loc[acc,].iloc[1], i[1]))
+    import StringIO
+    out_table_df = ps.read_csv(StringIO.StringIO("".join(out_table)), sep = "\t", header = None)
+    out_table_df.columns = ["Phenotype", "gene_id", "Pfam_acc", "Pfam_description", "cor"]
+    out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s.dat" % (out_gff_dir, sample), sep = "\t")
+    #close out gffs
+    for i in out_gffs:
+        out_gffs[i].close()
 
 # extract the information from the hmmer hit file which goes into the
 # output gff file and extract the original position in the genome/contig
-def run(in_file, out_gff_f, gene_gff_f,  gene_gff_mode, rel_feats_f=None):
+def run(in_file, out_gff_f, gene_gff_f, sample, gene_gff_mode, model_tar, predicted_pts = None):
     gene_dict = read_gff(gene_gff_f, gene_gff_mode)
-    write_hmm_gff(in_file, out_gff_f, gene_dict, False, gene_gff_mode, rel_feats_f)
+    #print gene_dict
+    write_hmm_gff(in_file, out_gff_f, gene_dict, sample, False, gene_gff_mode, model_tar, predicted_pts, True)
 
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser("predict phenotypes from hmmer Pfam annotation")
     parser.add_argument("input_hmm", help= 'input HMMer file')
     parser.add_argument("gene_gff", help= 'gene prediction gff file')
-    parser.add_argument("output_gff", help= 'output GFF file')
+    parser.add_argument("output_gff_dir", help= 'output GFF file')
+    parser.add_argument("sample", help= 'sample file')
     parser.add_argument("gene_gff_mode", choices = ["prodigal", "ncbi", "metagenemark"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
-    parser.add_argument("--relevant_features", "-r", help='file with some relevant annotation features', default = None)
+    parser.add_argument("model_tar", help = "tar.gz file with relevant features etc.")
+    parser.add_argument("--predicted_pts", "-r", help='file with some relevant annotation features', default = None)
     args = parser.parse_args()
-    run(args.input_hmm, args.output_gff, args.gene_gff, args.gene_gff_mode,  args.relevant_features)
+    model_tar =  tarfile.open(args.model_tar)
+    run(args.input_hmm, args.output_gff_dir, args.gene_gff, args.sample, args.gene_gff_mode,  model_tar, args.predicted_pts)
+    model_tar.close()
