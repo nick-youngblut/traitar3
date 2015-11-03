@@ -20,11 +20,10 @@
 #################
 ### Imports an tab-delimited expression matrix and produces and hierarchically clustered heatmap
 #################
-import matplotlib
+import matplotlib as mpl
 #pick non-x display
-matplotlib.use('Agg')
+mpl.use('Agg')
 import matplotlib.pyplot as pylab
-from matplotlib import mpl
 import scipy
 import scipy.cluster.hierarchy as sch
 import scipy.spatial.distance as dist
@@ -34,6 +33,7 @@ import time
 import sys, os
 import getopt
 import numpy as np
+import pandas as ps
 
 ################# Perform the hierarchical clustering #################
 
@@ -41,7 +41,7 @@ def heatmap(x, row_header, column_header, row_method,
             column_method, row_metric, column_metric,
             mode, filename):
     
-    print "\nPerforming hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
+    print "\nrunning hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
         
     """
     This below code is based in large part on the protype methods:
@@ -144,7 +144,9 @@ def heatmap(x, row_header, column_header, row_method,
     # Compute and plot left dendrogram.
     if row_method != None:
         start_time = time.time()
-        d1 = dist.pdist(x)
+        x_bin = x.copy()
+        x_bin[x_bin > 0] = 1
+        d1 = dist.pdist(x_bin)
         D1 = dist.squareform(d1)  # full matrix
         ax1 = fig.add_axes([ax1_x, ax1_y, ax1_w, ax1_h], frame_on=True) # frame_on may be False
         Y1 = sch.linkage(D1, method=row_method, metric=row_metric) ### gene-clustering metric - 'average', 'single', 'centroid', 'complete'
@@ -178,14 +180,18 @@ def heatmap(x, row_header, column_header, row_method,
     new_row_header=[]
     new_column_header=[]
     for i in range(x.shape[0]):
+        if len(row_header) > 100 :
+            fontdict = {'fontsize': 5},
+        if len(row_header) > 200:
+            fontdict = {'fontsize': 2},
         if row_method != None:
-            if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
-                axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
-                axm.text(x.shape[1]-0.5, i, '  '+row_header[idx1[i]])
+            #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
+            axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
+            axm.text(x.shape[1]-0.5, i, '  '+row_header[idx1[i]])
             new_row_header.append(row_header[idx1[i]])
         else:
             if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
-                axm.text(x.shape[1]-0.5, i, '  '+row_header[i]) ### When not clustering rows
+                axm.text(x.shape[1]-0.5, i, '  '+row_header[i], fontdict = fontdict) ### When not clustering rows
             new_row_header.append(row_header[i])
     for i in range(x.shape[1]):
         if column_method != None:
@@ -311,7 +317,7 @@ def RedBlackSkyBlue():
                        (1.0, 0.0, 0.0))
             }
 
-    my_cmap = matplotlib.colors.LinearSegmentedColormap('my_colormap',cdict,256)
+    my_cmap = mpl.colors.LinearSegmentedColormap('my_colormap',cdict,256)
     return my_cmap
 
 def RedBlackBlue():
@@ -327,7 +333,7 @@ def RedBlackBlue():
                        (1.0, 0.0, 0.0))
             }
 
-    my_cmap = matplotlib.colors.LinearSegmentedColormap('my_colormap',cdict,256)
+    my_cmap = mpl.colors.LinearSegmentedColormap('my_colormap',cdict,256)
     return my_cmap
 
 def RedBlackGreen():
@@ -343,7 +349,7 @@ def RedBlackGreen():
                        (1.0, 0.0, 0.0))
             }
     
-    my_cmap = matplotlib.colors.LinearSegmentedColormap('my_colormap',cdict,256)
+    my_cmap = mpl.colors.LinearSegmentedColormap('my_colormap',cdict,256)
     return my_cmap
 
 def YellowBlackBlue():
@@ -361,40 +367,9 @@ def YellowBlackBlue():
             }
     ### yellow is created by adding y = 1 to RedBlackSkyBlue green last tuple
     ### modulate between blue and cyan using the last y var in the first green tuple
-    my_cmap = matplotlib.colors.LinearSegmentedColormap('my_colormap',cdict,256)
+    my_cmap = mpl.colors.LinearSegmentedColormap('my_colormap',cdict,256)
     return my_cmap
 
-################# General data import methods #################
-
-def importData(filename):
-    start_time = time.time()
-    matrix=[]
-    row_header=[]
-    first_row=True
-
-    if '/' in filename:
-        dataset_name = string.split(filename,'/')[-1][:-4]
-    else:
-        dataset_name = string.split(filename,'\\')[-1][:-4]
-        
-    for line in open(filename,'rU').xreadlines():         
-        t = string.split(line[:-1],'\t') ### remove end-of-line character - file is tab-delimited
-        if first_row:
-            column_header = t[1:]
-            first_row=False
-        else:
-            if ' ' not in t and '' not in t: ### Occurs for rows with missing data
-                s = map(float,t[1:])
-                if (abs(max(s)-min(s)))>0:
-                    matrix.append(s)
-                    row_header.append(t[0])
-            
-    time_diff = str(round(time.time()-start_time,1))
-    try:
-        print '\n%d rows and %d columns imported for %s in %s seconds...' % (len(matrix),len(column_header),dataset_name,time_diff)
-    except Exception:
-        print 'No data in input file.'; force_error
-    return numpy.array(matrix), column_header, row_header
   
 if __name__ == '__main__':
     
@@ -420,11 +395,13 @@ if __name__ == '__main__':
     parser.add_argument("--row_method", help= 'method to use for the row dendrogram', default = 'average')
     parser.add_argument("--column_method", help= 'method to use for the column dendrogram', default = 'single')
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
-    parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'euclidean')
+    parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
     parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
     args = parser.parse_args()
-    matrix, column_header, row_header = importData(args.data_f)
-
+    m = ps.read_csv(args.data_f, sep = "\t", index_col = 0)
+    matrix = m.values
+    column_header = m.columns 
+    row_header = m.index
     try:
         heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f)
     except Exception:
