@@ -104,8 +104,9 @@ class Phenolyzer:
         devnull = open('/dev/null', 'w')
         if self.cpu > 1:
             #run with parallel
-            ps.DataFrame(commands).to_csv('/tmp/commands.txt', index = False, header = False) 
-            subprocess.call("cat /tmp/commands.txt | parallel -j %s" % self.cpu, stdout = devnull, shell = True, executable = "/bin/bash", env = env)
+            command_string = "\n".join(commands) 
+            #ps.DataFrame(commands).to_csv('/tmp/commands.txt', index = False, header = False) 
+            subprocess.call("echo \n%s | parallel -j %s" % (command_string, self.cpu),  stdout = devnull, shell = True, executable = "/bin/bash", env = env)
         else:
             #run in sequential order
             for i in commands:
@@ -185,31 +186,35 @@ class Phenolyzer:
     
         hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(out_dir)s/gene_prediction/%(sample)s.gff  %(out_gff_dir)s %(sample)s prodigal %(model_tar)s --predicted_pts %(predicted_pts)s"
         h2gff_commands = []
-        #create output dirs
-        os.mkdir(os.path.join(phypat_dir, "feat_gffs"))
-        os.mkdir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+        #create output dirs for feature tracks
+        if not os.path.exists(os.path.join(phypat_dir, "feat_gffs")):
+            os.mkdir(os.path.join(phypat_dir, "feat_gffs"))
+        if not os.path.exists(os.path.join(phypat_ggl_dir, "feat_gffs")):
+            os.mkdir(os.path.join(phypat_ggl_dir, "feat_gffs"))
         #read in phypat predictions
         phypat_preds = ps.read_csv(os.path.join(phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
         phypat_ggl_preds = ps.read_csv(os.path.join(phypat_ggl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
+        #read pfam phenotype id mapping file from model tar
         pt2desc_phypat_f = tarfile.open("%s/data/models/phypat.tar.gz"%self.phenolyzer_dir, mode = "r:gz").extractfile("pfam_pts_names_nl_desc.txt")
         pt2desc_phypat_ggl_f = tarfile.open("%s/data/models/phypat+GGL.tar.gz"%self.phenolyzer_dir, mode = "r:gz").extractfile("pfam_pts_names_nl_desc.txt")
         pt2desc_phypat = ps.read_csv(pt2desc_phypat_f, sep = "\t", index_col = 1)
         pt2desc_phypat_ggl = ps.read_csv(pt2desc_phypat_ggl_f, sep = "\t", index_col = 1)
+        #hmm2gff command for the full pfam annotation
+        #collect predictions and compose hmm2gff command for each samples
         for i in range(len(phypat_preds.index)):
             predicted_pts_phypat = []
             predicted_pts_phypat_ggl = []
             for j in phypat_preds.columns:
                 if phypat_preds.loc[phypat_preds.index[i], j] == 1:
-                    predicted_pts_phypat.append(str(pt2desc_phypat.loc[j,][0] + 1))
+                    predicted_pts_phypat.append(str(pt2desc_phypat.loc[j,][0]- 1))
                 if phypat_ggl_preds.loc[phypat_preds.index[i], j] == 1:
                     predicted_pts_phypat_ggl.append(str(pt2desc_phypat.loc[j,][0] + 205))
             h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
             h2gff_commands.append(hmm2gff % {"archive": "phypat_ggl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_ggl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+GGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_ggl)})
-                  #h2gff_commands.append(hmm2gff % {"archive": "phypat+GGL.tar.gz", "out_dir" : self.output_dir, "out_gff" : "%(phypat_ggl_dir)s/feat_gffs/%(sample)s_%(pt)s.gff" % {"phypat_ggl_dir" : phypat_ggl_dir, "pt" : j.replace(" ", "_"), "sample" : in_samples[i] }, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "pt" : pt2desc_phypat_ggl.loc[j, ].iloc[0] - 1})
-        #if is_recompute:
-        #    self.execute_commands(h2gff_commands)
-        for i in h2gff_commands:
-            print i
+        print "running feature track generation"
+        is_recompute = self.check_dir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+        if is_recompute:
+            self.execute_commands(h2gff_commands)
 
     def run_feature_track_generation(self):
         #create output directory for the pfam annotation 
@@ -221,13 +226,6 @@ class Phenolyzer:
 if __name__ == "__main__":
     #add phenolyzer dir to the path
     env = os.environ.copy()
-    #env["PATH"] = "/net/metagenomics/projects/phenotypes_20130523/code/phenolyzer/code/:" + env["PATH"]
-    #env["PATH"] = "/net/programs/Debian-7-x86_64/Prodigal-2.6.1/:" + env["PATH"]
-    #env["PATH"] = "/net/programs/Debian-7-all/parallel-20150122/bin/:" + env["PATH"]
-    #import package Prodigal 
-    #subprocess.call("importpackage parallel 20150122",executable = "/bin/bash", shell = True)
-    #import package parallel 
-    #subprocess.call("importpackage Prodigal", executable = "/bin/bash", shell = True)
     import argparse
     parser = argparse.ArgumentParser("run traitar (try: traitar {config, phenotype} -h for help on the sub programs)")
     subparsers = parser.add_subparsers()
