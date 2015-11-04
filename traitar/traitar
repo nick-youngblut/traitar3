@@ -97,16 +97,17 @@ class Phenolyzer:
             print "running Pfam annotation with"
             self.run_hmmer_annotation(self.s2f.iloc[:,0], self.s2f.iloc[:,1])
         print "running phenotype prediction"
-        self.run_phenotype_prediction(self.s2f.iloc[:,1])
+        self.run_phenotype_prediction(self.s2f.iloc[:,1], mode)
          
     
     def execute_commands(self, commands):
         devnull = open('/dev/null', 'w')
+        from subprocess import Popen, PIPE
         if self.cpu > 1:
             #run with parallel
-            command_string = "\n".join(commands) 
-            #ps.DataFrame(commands).to_csv('/tmp/commands.txt', index = False, header = False) 
-            subprocess.call("echo \n%s | parallel -j %s" % (command_string, self.cpu),  stdout = devnull, shell = True, executable = "/bin/bash", env = env)
+            #ps.DataFrame(commands).to_csv(tf, index = False, header = False) 
+            p = Popen("parallel -j %s" %  self.cpu,  stdout = devnull, shell = True,  executable = "/bin/bash", stdin = PIPE, env = env)
+            p.communicate(input = "\n".join(commands))
         else:
             #run in sequential order
             for i in commands:
@@ -150,14 +151,13 @@ class Phenolyzer:
         #TODO modify this piece of code so that there is no temp file required anymore
         #best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
         #best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
-        domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(phenolyzer)s/data/sorted_accessions.txt"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
         if is_recompute:
             self.execute_commands(hmmer_commands)
             self.execute_commands(fae_commands)
             subprocess.call(domtblout2gene_generic,executable = "/bin/bash", shell = True, env = env)
 
 
-    def run_phenotype_prediction(self, in_samples):
+    def run_phenotype_prediction(self, in_samples, mode):
         #create output directory for the phenotype prediction 
         pred_dir = os.path.join(self.output_dir, "phenotype_prediction")
         is_recompute = self.check_dir(pred_dir)
@@ -180,9 +180,7 @@ class Phenolyzer:
         hm_cmd = "heatmap.py %(pred_dir)s/predictions_majority-vote_combined.txt %(pred_dir)s/heatmap_comb.png --mode combined" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
         hm_cmd_phypat = "heatmap.py %(phypat_dir)s/predictions_majority-vote.txt %(pred_dir)s/heatmap_phypat.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
         hm_cmd_phypat_ggl = "heatmap.py %(phypat_ggl_dir)s/predictions_majority-vote.txt %(pred_dir)s/heatmap_phypat_ggl.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
-        subprocess.call(hm_cmd, executable = "/bin/bash",shell = True, env = env)
-        subprocess.call(hm_cmd_phypat, executable = "/bin/bash",shell = True, env = env)
-        subprocess.call(hm_cmd_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
+        self.execute_commands([hm_cmd, hm_cmd_phypat, hm_cmd_phypat_ggl])
     
         hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(out_dir)s/gene_prediction/%(sample)s.gff  %(out_gff_dir)s %(sample)s prodigal %(model_tar)s --predicted_pts %(predicted_pts)s"
         h2gff_commands = []
@@ -211,10 +209,13 @@ class Phenolyzer:
                     predicted_pts_phypat_ggl.append(str(pt2desc_phypat.loc[j,][0] + 205))
             h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
             h2gff_commands.append(hmm2gff % {"archive": "phypat_ggl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_ggl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+GGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_ggl)})
-        print "running feature track generation"
-        is_recompute = self.check_dir(os.path.join(phypat_ggl_dir, "feat_gffs"))
-        if is_recompute:
-            self.execute_commands(h2gff_commands)
+        if mode == "from_nucleotides":
+            print "running feature track generation"
+            is_recompute = self.check_dir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+            if is_recompute:
+                self.execute_commands(h2gff_commands)
+        #else:
+        #    print "\n".join(h2gff_commands)
 
     def run_feature_track_generation(self):
         #create output directory for the pfam annotation 
