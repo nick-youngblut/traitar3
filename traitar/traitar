@@ -90,13 +90,17 @@ class Phenolyzer:
     def run(self, mode):
         if mode == "from_nucleotides":
             print "running gene prediction with Prodigal"
+            sys.stdout.flush()
             self.run_gene_prediction(self.s2f.iloc[:,0], self.s2f.iloc[:,1])
-            print "running Pfam annotation with hmmer"
+            print "running Pfam annotation with hmmer. This step can take a while. A rough estimates for genome sampes of ~3 mbs is 10 min per genome if not run in parallel"
+            sys.stdout.flush()
             self.run_hmmer_annotation(self.s2f.iloc[:, 1], self.s2f.iloc[:,1])
         if mode == "from_genes": 
             print "running Pfam annotation with"
+            sys.stdout.flush()
             self.run_hmmer_annotation(self.s2f.iloc[:,0], self.s2f.iloc[:,1])
         print "running phenotype prediction"
+        sys.stdout.flush()
         self.run_phenotype_prediction(self.s2f.iloc[:,1], mode)
          
     
@@ -228,7 +232,12 @@ if __name__ == "__main__":
     #add phenolyzer dir to the path
     env = os.environ.copy()
     import argparse
-    parser = argparse.ArgumentParser("run traitar (try: traitar {config, phenotype} -h for help on the sub programs)")
+    class MyParser(argparse.ArgumentParser):
+        def error(self, message):
+            sys.stderr.write('error: %s\n' % message)
+            self.print_help()
+            sys.exit(2)
+    parser = MyParser("run traitar (try: traitar {config, phenotype} -h for help on the sub programs)")
     subparsers = parser.add_subparsers()
     main_p = subparsers.add_parser("phenotype", help = "run annotation and prediction") 
     main_p.add_argument("input_dir", help='directory with the input data')
