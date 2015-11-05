@@ -3,7 +3,6 @@ import json
 import sys
 import os
 import gzip 
-import requests
 import traitar
 
 def download(args):
