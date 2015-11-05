@@ -88,15 +88,16 @@ class Phenolyzer:
             return True
 
     def run(self, mode):
+        pfam_msg = "running Pfam annotation with hmmer. This step can take a while. A rough estimate for sequential Pfam annotation of genome samples of ~3 Mbs is 10 min per genome."
         if mode == "from_nucleotides":
             print "running gene prediction with Prodigal"
             sys.stdout.flush()
             self.run_gene_prediction(self.s2f.iloc[:,0], self.s2f.iloc[:,1])
-            print "running Pfam annotation with hmmer. This step can take a while. A rough estimates for genome sampes of ~3 mbs is 10 min per genome if not run in parallel"
+            print pfam_msg
             sys.stdout.flush()
             self.run_hmmer_annotation(self.s2f.iloc[:, 1], self.s2f.iloc[:,1])
         if mode == "from_genes": 
-            print "running Pfam annotation with"
+            print pfam_msg
             sys.stdout.flush()
             self.run_hmmer_annotation(self.s2f.iloc[:,0], self.s2f.iloc[:,1])
         print "running phenotype prediction"
@@ -155,6 +156,7 @@ class Phenolyzer:
         #TODO modify this piece of code so that there is no temp file required anymore
         #best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
         #best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
+        domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(phenolyzer)s/data/sorted_accessions.txt"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
         if is_recompute:
             self.execute_commands(hmmer_commands)
             self.execute_commands(fae_commands)
@@ -188,11 +190,6 @@ class Phenolyzer:
     
         hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(out_dir)s/gene_prediction/%(sample)s.gff  %(out_gff_dir)s %(sample)s prodigal %(model_tar)s --predicted_pts %(predicted_pts)s"
         h2gff_commands = []
-        #create output dirs for feature tracks
-        if not os.path.exists(os.path.join(phypat_dir, "feat_gffs")):
-            os.mkdir(os.path.join(phypat_dir, "feat_gffs"))
-        if not os.path.exists(os.path.join(phypat_ggl_dir, "feat_gffs")):
-            os.mkdir(os.path.join(phypat_ggl_dir, "feat_gffs"))
         #read in phypat predictions
         phypat_preds = ps.read_csv(os.path.join(phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
         phypat_ggl_preds = ps.read_csv(os.path.join(phypat_ggl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
@@ -214,8 +211,13 @@ class Phenolyzer:
             h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
             h2gff_commands.append(hmm2gff % {"archive": "phypat_ggl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_ggl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+GGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_ggl)})
         if mode == "from_nucleotides":
-            print "running feature track generation"
-            is_recompute = self.check_dir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+            #create output dirs for feature tracks
+            if not os.path.exists(os.path.join(phypat_dir, "feat_gffs")):
+                os.mkdir(os.path.join(phypat_dir, "feat_gffs"))
+            if not os.path.exists(os.path.join(phypat_ggl_dir, "feat_gffs")):
+                os.mkdir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+                print "running feature track generation"
+                is_recompute = self.check_dir(os.path.join(phypat_ggl_dir, "feat_gffs"))
             if is_recompute:
                 self.execute_commands(h2gff_commands)
         #else:
