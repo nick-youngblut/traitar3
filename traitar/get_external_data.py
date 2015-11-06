@@ -3,7 +3,6 @@ import json
 import sys
 import os
 import gzip 
-import requests
 import traitar
 
 def download(args):
@@ -12,6 +11,9 @@ def download(args):
     if not args.local: 
         while attempts < 3:
             try:
+                if not os.path.exists(args.download_dest):
+                    sys.stderr.write("directory %s doesn't exists; please create first\n" % args.download_dest)
+                    sys.exit(0)
                 response = urllib2.urlopen("ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz", timeout = 5)
                 with open(os.path.join(args.download_dest, "Pfam-A.hmm.gz"), 'w' ) as f:
                     CHUNK = 1000000
