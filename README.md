@@ -38,7 +38,12 @@ to let traitAR know where.
 
 ``traitar phenotype <in dir>  <sample file> from_nucleotides <out_dir> `` 
 
-will trigger the standard workflow of traitAR, which is to predict open reading frames with Prodigal, annotate the coding sequences with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. 
+will trigger the standard workflow of traitAR, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the <in_dir> for all samples in <sample_file> with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. 
+
+The sample file has one column for the sample file names and one for the names as specified by the user:
+
+sample1_file_name{tab}sample1_name
+sample2_file_name{tab}sample2_name
 
 ``traitar phenotype <in dir>  <sample file> from_genes <out_dir> `` 
  
@@ -58,7 +63,12 @@ This requires installing GNU parallel as noted above.
 
 ``>>> traitar.__path__``
 ## Output
-traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``. The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png```. These heatmaps are based on tab separated text files e.g. ``predictions_majority-votes_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+GGL``.
+traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``. The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png```. 
+
+
+These heatmaps are based on tab separated text files e.g. ``predictions_majority-votes_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. 
+
+The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+GGL``.
 
 # Web service
 traitAR is also offered as a web service at
