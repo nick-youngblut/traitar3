@@ -1,9 +1,18 @@
+import os
 from setuptools import setup
-
+import re
+VERSIONFILE=os.path.join('traitar', '_version.py')
+verstrline = open(VERSIONFILE, "rt").read()
+VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
+mo = re.search(VSRE, verstrline, re.M)
+if mo:
+    verstr = mo.group(1)
+else: 
+    raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
 setup(name='traitar',
-        version='0.1.6',
-        description='traitAR - The microbial trait analyzer',
-        url = 'http://github.com/aweimann/traitAR',
+        version = verstr,
+        description='traitar - The microbial trait analyzer',
+        url = 'http://github.com/aweimann/traitar',
         author='Aaron Weimann',
         author_email='weimann@hhu.de',
         license='GNU General Public License, version 3 (GPL-3.0)',
