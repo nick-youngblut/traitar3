@@ -14,7 +14,7 @@ import tarfile
 from traitar._version import __version__
 
 def phenolyze(args):
-    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus)
+    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap)
     p.run(args.mode)
 
 
@@ -49,6 +49,10 @@ class Phenolyzer:
             sys.stderr.write("Pfam HMM file does not exist (%s), make sure you have run traitar config --local <Pfam hmm>" % self.config["pfam_hmms"])
         #create output dir
         self.check_dir(output_dir)
+        #pred dir
+        self.pred_dir = os.path.join(self.output_dir, "phenotype_prediction")
+        self.phypat_dir = os.path.join(self.pred_dir, "phypat")
+        self.phypat_pgl_dir = os.path.join(self.pred_dir, "phypat+PGL")
     
     def is_exe(self, program):
         def is_exe(fpath):
@@ -104,6 +108,13 @@ class Phenolyzer:
         print "running phenotype prediction"
         sys.stdout.flush()
         self.run_phenotype_prediction(self.s2f.iloc[:,1], mode)
+        print "running feature track generation"
+        self.run_feature_tracks(self.s2f.iloc[:,1], mode)
+        sys.stdout.flush()
+        print "running heatmap generation"
+        self.run_heatmap_generation(self)
+        sys.stdout.flush()
+        
          
     
     def execute_commands(self, commands):
@@ -161,73 +172,72 @@ class Phenolyzer:
         if is_recompute:
             self.execute_commands(hmmer_commands)
             self.execute_commands(fae_commands)
-            subprocess.call(domtblout2gene_generic,executable = "/bin/bash", shell = True, env = env)
+            self.execute_commands([domtblout2gene_generic])
 
 
     def run_phenotype_prediction(self, in_samples, mode):
         #create output directory for the phenotype prediction 
-        pred_dir = os.path.join(self.output_dir, "phenotype_prediction")
-        is_recompute = self.check_dir(pred_dir)
-        phypat_dir = os.path.join(pred_dir, "phypat")
-        phypat_ggl_dir = os.path.join(pred_dir, "phypat+GGL")
-        if not os.path.exists(phypat_dir):
-            os.mkdir(phypat_dir)
-        if not os.path.exists(phypat_ggl_dir):
-            os.mkdir(phypat_ggl_dir)
-        #run phenotype prediction for phypat and phypat+GGL
-        predict_phypat = "predict.py %(phenolyzer)s/data/models/phypat.tar.gz %(pred_dir)s 8476-8568 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : phypat_dir, "phenolyzer" : self.phenolyzer_dir} 
-        predict_phypat_ggl = "predict.py %(phenolyzer)s/data/models/phypat+GGL.tar.gz %(pred_dir)s 8682-8774 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir} 
+        is_recompute = self.check_dir(self.pred_dir)
+        if not os.path.exists(self.phypat_dir):
+            os.mkdir(self.phypat_dir)
+        if not os.path.exists(self.phypat_pgl_dir):
+            os.mkdir(self.phypat_pgl_dir)
+        #run phenotype prediction for phypat and phypat+PGL
+        predict_phypat = "predict.py %(phenolyzer)s/data/models/phypat.tar.gz %(pred_dir)s 8476-8568 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : self.phypat_dir, "phenolyzer" : self.phenolyzer_dir} 
+        predict_phypat_pgl = "predict.py %(phenolyzer)s/data/models/phypat+PGL.tar.gz %(pred_dir)s 8682-8774 %(out_dir)s/pfam_annotation/summary.dat -k 5  pfam_pts_names_nl_desc.txt" % {"out_dir" : self.output_dir, "pred_dir" : self.phypat_pgl_dir, "phenolyzer" : self.phenolyzer_dir} 
         if is_recompute:
-            subprocess.call(predict_phypat,executable = "/bin/bash", shell = True, env = env)
-            subprocess.call(predict_phypat_ggl, executable = "/bin/bash",shell = True, env = env)
-        #combine phypat and phypat+GGL predictions
-        merge_preds = "merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_ggl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : phypat_dir, "phypat_ggl_dir" : phypat_ggl_dir, "phenolyzer" : self.phenolyzer_dir } 
-        subprocess.call(merge_preds, executable = "/bin/bash",shell = True, env = env)
-        #generate a heatmap from the results
-        hm_cmd = "heatmap.py %(pred_dir)s/predictions_majority-vote_combined.txt %(pred_dir)s/heatmap_comb.png --mode combined" %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : pred_dir}
-        hm_cmd_phypat = "heatmap.py %(phypat_dir)s/predictions_majority-vote.txt %(pred_dir)s/heatmap_phypat.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_dir" : phypat_dir, "pred_dir" : pred_dir}
-        hm_cmd_phypat_ggl = "heatmap.py %(phypat_ggl_dir)s/predictions_majority-vote.txt %(pred_dir)s/heatmap_phypat_ggl.png --mode single" %{"phenolyzer" : self.phenolyzer_dir,"phypat_ggl_dir" : phypat_ggl_dir, "pred_dir" : pred_dir}
-        self.execute_commands([hm_cmd, hm_cmd_phypat, hm_cmd_phypat_ggl])
+            self.execute_commands([predict_phypat, predict_phypat_pgl])
+        #combine phypat and phypat+PGL predictions
+        merge_preds = "merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_pgl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : self.phypat_dir, "phypat_pgl_dir" : self.phypat_pgl_dir, "phenolyzer" : self.phenolyzer_dir } 
+        self.execute_commands([merge_preds])
     
+    def run_feature_track_generation(self, in_samples):
+        #create output directory for the pfam annotation 
         hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(out_dir)s/gene_prediction/%(sample)s.gff  %(out_gff_dir)s %(sample)s prodigal %(model_tar)s --predicted_pts %(predicted_pts)s"
         h2gff_commands = []
         #read in phypat predictions
-        phypat_preds = ps.read_csv(os.path.join(phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
-        phypat_ggl_preds = ps.read_csv(os.path.join(phypat_ggl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
+        phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
+        phypat_pgl_preds = ps.read_csv(os.path.join(self.phypat_pgl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
         #read pfam phenotype id mapping file from model tar
         pt2desc_phypat_f = tarfile.open("%s/data/models/phypat.tar.gz"%self.phenolyzer_dir, mode = "r:gz").extractfile("pfam_pts_names_nl_desc.txt")
-        pt2desc_phypat_ggl_f = tarfile.open("%s/data/models/phypat+GGL.tar.gz"%self.phenolyzer_dir, mode = "r:gz").extractfile("pfam_pts_names_nl_desc.txt")
+        pt2desc_phypat_pgl_f = tarfile.open("%s/data/models/phypat+PGL.tar.gz"%self.phenolyzer_dir, mode = "r:gz").extractfile("pfam_pts_names_nl_desc.txt")
         pt2desc_phypat = ps.read_csv(pt2desc_phypat_f, sep = "\t", index_col = 1)
-        pt2desc_phypat_ggl = ps.read_csv(pt2desc_phypat_ggl_f, sep = "\t", index_col = 1)
+        pt2desc_phypat_pgl = ps.read_csv(pt2desc_phypat_pgl_f, sep = "\t", index_col = 1)
         #hmm2gff command for the full pfam annotation
         #collect predictions and compose hmm2gff command for each samples
         for i in range(len(phypat_preds.index)):
             predicted_pts_phypat = []
-            predicted_pts_phypat_ggl = []
+            predicted_pts_phypat_pgl = []
             for j in phypat_preds.columns:
                 if phypat_preds.loc[phypat_preds.index[i], j] == 1:
                     predicted_pts_phypat.append(str(pt2desc_phypat.loc[j,][0]- 1))
-                if phypat_ggl_preds.loc[phypat_preds.index[i], j] == 1:
-                    predicted_pts_phypat_ggl.append(str(pt2desc_phypat.loc[j,][0] + 205))
-            h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
-            h2gff_commands.append(hmm2gff % {"archive": "phypat_ggl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % phypat_ggl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+GGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_ggl)})
+                if phypat_pgl_preds.loc[phypat_preds.index[i], j] == 1:
+                    predicted_pts_phypat_pgl.append(str(pt2desc_phypat.loc[j,][0] + 205))
+            h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
+            h2gff_commands.append(hmm2gff % {"archive": "phypat_pgl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+PGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_pgl)})
         if mode == "from_nucleotides":
             #create output dirs for feature tracks
-            if not os.path.exists(os.path.join(phypat_dir, "feat_gffs")):
-                os.mkdir(os.path.join(phypat_dir, "feat_gffs"))
-            if not os.path.exists(os.path.join(phypat_ggl_dir, "feat_gffs")):
-                os.mkdir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+            if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
+                os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
+            if not os.path.exists(os.path.join(self.phypat_pgl_dir, "feat_gffs")):
+                os.mkdir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
                 print "running feature track generation"
-                is_recompute = self.check_dir(os.path.join(phypat_ggl_dir, "feat_gffs"))
+                is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
             if is_recompute:
                 self.execute_commands(h2gff_commands)
         #else:
         #    print "\n".join(h2gff_commands)
 
-    def run_feature_track_generation(self):
-        #create output directory for the pfam annotation 
-        os.mkdir(os.path.join(output_dir, "feature_tracks"))
-        pass
+    def run_heatmap_generation(self, out):
+        """generate a heatmap from the results"""
+        if out is None:
+            out = self.pred_dir
+        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.png --mode %s"
+        hm_cmd_comb = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.pred_dir, "pred_f" : "predictions_majority-vote_combined.txt", "predictor": "combined", "mode" : "comb", "out": out}
+        hm_cmd_phypat = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single", "out": out}
+        hm_cmd_phypat_pgl = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single", "out": out}
+        self.execute_commands([hm_cmd_cmb, hm_cmd_phypat, hm_cmd_phypat_pgl])
+
 
 
 if __name__ == "__main__":
@@ -248,6 +258,7 @@ if __name__ == "__main__":
     main_p.add_argument("mode", help='either from_genes if gene prediction amino acid fasta is available in input_dir otherwise from_nucleotides in this case Prodigal is used to determine the ORFs from the nucleotide fasta files in input_dir', choices = ["from_genes", "from_nucleotides"])
     main_p.add_argument("output_dir", help='directory for the output; will be created if it doesn\'t exist yet', default='phenolyzer_output')
     main_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
+    main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
     main_p.set_defaults(func = phenolyze)
     data_p = subparsers.add_parser("config", help = "download neccessary data to run traitAR, mainly Pfam HMMs") 
     data_p.add_argument("download_dest",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
