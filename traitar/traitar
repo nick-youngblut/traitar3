@@ -23,6 +23,7 @@ class Phenolyzer:
     def __init__(self, input_dir, output_dir, sample2file, cpu = 1, heatmap_out = None):
         self.user_message = "output dir %s already exists; press 1 to continue with data from a previous run; press 2 to remove this directory; press 3 to abort"
         self.error_message =  "directory %s already exists; delete directory or run in interactive mode if the annotation is done and you want to continue from there"
+        self.sample2file = sample2file
         self.s2f = ps.read_csv(sample2file, dtype = 'string', sep = "\t", header = None)
         self.cpu = cpu
         self.input_dir = input_dir
@@ -113,7 +114,7 @@ class Phenolyzer:
         self.run_feature_track_generation(self.s2f.iloc[:,1], mode)
         sys.stdout.flush()
         print "running heatmap generation"
-        self.run_heatmap_generation()
+        self.run_heatmap_generation(self.s2f.iloc[:,1])
         sys.stdout.flush()
         
          
@@ -206,13 +207,13 @@ class Phenolyzer:
         pt2desc_phypat_pgl = ps.read_csv(pt2desc_phypat_pgl_f, sep = "\t", index_col = 1)
         #hmm2gff command for the full pfam annotation
         #collect predictions and compose hmm2gff command for each samples
-        for i in range(len(phypat_preds.index)):
+        for i in range(len(in_samples)):
             predicted_pts_phypat = []
             predicted_pts_phypat_pgl = []
             for j in phypat_preds.columns:
-                if phypat_preds.loc[phypat_preds.index[i], j] == 1:
+                if phypat_preds.loc[in_samples[i], j] == 1:
                     predicted_pts_phypat.append(str(pt2desc_phypat.loc[j,][0]- 1))
-                if phypat_pgl_preds.loc[phypat_preds.index[i], j] == 1:
+                if phypat_pgl_preds.loc[in_samples[i], j] == 1:
                     predicted_pts_phypat_pgl.append(str(pt2desc_phypat.loc[j,][0] + 205))
             h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
             h2gff_commands.append(hmm2gff % {"archive": "phypat_pgl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+PGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_pgl)})
@@ -229,14 +230,15 @@ class Phenolyzer:
         #else:
         #    print "\n".join(h2gff_commands)
 
-    def run_heatmap_generation(self):
+    def run_heatmap_generation(self, in_samples):
         """generate a heatmap from the results"""
         if self.heatmap_out is None:
             out = self.pred_dir
-        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.png --mode %(mode)s"
-        hm_cmd_comb = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.pred_dir, "pred_f" : "predictions_majority-vote_combined.txt", "predictor": "combined", "mode" : "combined", "out": self.heatmap_out}
-        hm_cmd_phypat = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single", "out": self.heatmap_out}
-        hm_cmd_phypat_pgl = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single", "out": self.heatmap_out}
+        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.png --mode %(mode)s --sample_file %(sample_file)s"
+        hm_cmd_comb = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.pred_dir, "pred_f" : "predictions_majority-vote_combined.txt", "predictor": "combined", "mode" : "combined", "out": self.heatmap_out, "sample_file" : self.sample2file }
+        hm_cmd_phypat = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single", "out": self.heatmap_out, "sample_file" : self.sample2file}
+        hm_cmd_phypat_pgl = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single", "out": self.heatmap_out, "sample_file" : self.sample2file}
+        print self.sample2file
         self.execute_commands([hm_cmd_comb, hm_cmd_phypat, hm_cmd_phypat_pgl])
 
 

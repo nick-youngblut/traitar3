@@ -142,7 +142,7 @@ def heatmap(x, row_header, column_header, row_method,
         ind2 = ['NA']*len(column_header) ### Used for exporting the flat cluster data
         
     # Compute and plot left dendrogram.
-    if row_method != None:
+    if row_method != None and x.shape[0] > 1:
         start_time = time.time()
         x_bin = x.copy()
         x_bin[x_bin > 0] = 1
@@ -167,7 +167,7 @@ def heatmap(x, row_header, column_header, row_method,
         xt = xt[:,idx2]
         ind2 = ind2[idx2] ### reorder the flat cluster to match the order of the leaves the dendrogram
         pass
-    if row_method != None:
+    if row_method != None and x.shape[0] > 1:
         idx1 = Z1['leaves'] ### apply the clustering for the gene-dendrograms to the actual matrix data
         xt = xt[idx1,:]   # xt is transformed x
         ind1 = ind1[idx1] ### reorder the flat cluster to match the order of the leaves the dendrogram
@@ -187,8 +187,13 @@ def heatmap(x, row_header, column_header, row_method,
         if row_method != None:
             #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
             axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
-            axm.text(x.shape[1]-0.5, i, '  '+row_header[idx1[i]])
-            new_row_header.append(row_header[idx1[i]])
+            if x.shape[0] > 1:
+                label = row_header[idx1[i]]
+            else: 
+                label = row_header[i]
+            axm.text(x.shape[1]-0.5, i, '  ' + label)
+            new_row_header.append(label)
+            
         else:
             if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
                 axm.text(x.shape[1]-0.5, i, '  '+row_header[i], fontdict = fontdict) ### When not clustering rows
@@ -397,8 +402,13 @@ if __name__ == '__main__':
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
     parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
+    parser.add_argument("--sample_file", help= 'restrict phenotyp predictions to the sample found in <sample_file>', default = None)
     args = parser.parse_args()
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0)
+    if not args.sample_file is None:
+        print args.sample_file
+        s2f = ps.read_csv(args.sample_file, dtype = 'string', sep = "\t", header = None)
+        m = m.loc[s2f.iloc[:, 1], :]
     matrix = m.values
     column_header = m.columns 
     row_header = m.index
