@@ -234,11 +234,11 @@ class Phenolyzer:
         """generate a heatmap from the results"""
         if self.heatmap_out is None:
             out = self.pred_dir
-        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.png --mode %(mode)s --sample_file %(sample_file)s"
+        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.pdf --mode %(mode)s --sample_f %(sample_file)s --pt2cat2col_f %(phenolyzer)s/data/pt2cat2col.txt"
         hm_cmd_comb = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.pred_dir, "pred_f" : "predictions_majority-vote_combined.txt", "predictor": "combined", "mode" : "combined", "out": self.heatmap_out, "sample_file" : self.sample2file }
         hm_cmd_phypat = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single", "out": self.heatmap_out, "sample_file" : self.sample2file}
         hm_cmd_phypat_pgl = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single", "out": self.heatmap_out, "sample_file" : self.sample2file}
-        print self.sample2file
+        print hm_cmd_phypat
         self.execute_commands([hm_cmd_comb, hm_cmd_phypat, hm_cmd_phypat_pgl])
 
 

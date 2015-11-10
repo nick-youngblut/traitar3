@@ -35,11 +35,23 @@ import getopt
 import numpy as np
 import pandas as ps
 
+#colors = [0   125 52
+#[0,   83,  138]
+#[129 112, 102]
+#[147 170 0]
+#[166 189 215]
+#[193 0   32]
+#[206 162 98]
+#[244 200 0]
+#[246 118 142]
+#[255 104 0]
+#[255 142 0]
+#[83,  55,  122]]
 ################# Perform the hierarchical clustering #################
 
 def heatmap(x, row_header, column_header, row_method,
             column_method, row_metric, column_metric,
-            mode, filename):
+            mode, filename, pt2cat2col_f, sample_f):
     
     print "\nrunning hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
         
@@ -52,14 +64,6 @@ def heatmap(x, row_header, column_header, row_method,
     """
     
     ### Define the color gradient to use based on the provided name
-    n = len(x[0]); m = len(x)
-    if mode == "single":
-        cmaplist = np.array([[247,247,247],[31,120,180]])/256.0
-    if mode == "combined":
-        cmaplist = np.array([[247,247,247],[166,206,227],[178,223,138],[31,120,180]])/256.0
-    cmap = mpl.colors.ListedColormap(cmaplist)
-    bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
-    norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
     #if color_gradient == 'red_white_blue':
     #    cmap=pylab.cm.bwr
     #if color_gradient == 'red_black_sky':
@@ -89,7 +93,7 @@ def heatmap(x, row_header, column_header, row_method,
     default_window_width = 12
     fig = pylab.figure(figsize=(default_window_width,default_window_hight)) ### could use m,n to scale here
     color_bar_w = 0.015 ### Sufficient size to show
-    color_bar_w = 0 ### Sufficient size to show
+    color_bar_w = 0.015 ### Sufficient size to show
         
     ## calculate positions for all elements
     # ax1, placement of dendrogram 1, on the left of the heatmap
@@ -122,8 +126,16 @@ def heatmap(x, row_header, column_header, row_method,
     ax2_y = ax1_y + ax1_h + height_between_ax1_axc + axc_h + height_between_axc_ax2
     ax2_w = axc_w
 
+    # placement of the phenotype legend
+    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.07,0.07,0.11,0.09]
+    # placement of the sample legend
+
+    # axcb - placement of the sample legend
+    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.8,0.88,0.11,0.09]
+
     # axcb - placement of the color legend
     [axcb_x, axcb_y, axcb_w, axcb_h] = [0.07,0.88,0.11,0.09]
+
 
     # Compute and plot top dendrogram
     if column_method != None:
@@ -159,6 +171,26 @@ def heatmap(x, row_header, column_header, row_method,
     else:
         ind1 = ['NA']*len(row_header) ### Used for exporting the flat cluster data
         
+    # Plot heatmap color legend
+    n = len(x[0]); m = len(x)
+    if mode == "single":
+        cmaplist = np.array([[247,247,247],[31,120,180]])/256.0
+    if mode == "combined":
+        cmaplist = np.array([[247,247,247],[166,206,227],[178,223,138],[31,120,180]])/256.0
+    cmap = mpl.colors.ListedColormap(cmaplist)
+    axcb = fig.add_axes([axcb_x, axcb_y, axcb_w, axcb_h], frame_on=False)  # axes for colorbar
+    #cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, orientation='horizontal')
+    bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
+    norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
+    cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
+    if mode == "single":
+        axcb.set_yticklabels(["negative", "positive"])
+        axcb.yaxis.set_ticks([0.25, 0.75])
+    if mode == "combined":
+        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"])
+        axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
+    axcb.set_title("Heatmap colorkey")
+    
     # Plot distance matrix.
     axm = fig.add_axes([axm_x, axm_y, axm_w, axm_h])  # axes for the data matrix
     xt = x
@@ -173,6 +205,7 @@ def heatmap(x, row_header, column_header, row_method,
         ind1 = ind1[idx1] ### reorder the flat cluster to match the order of the leaves the dendrogram
     ### taken from http://stackoverflow.com/questions/2982929/plotting-results-of-hierarchical-clustering-ontop-of-a-matrix-of-data-in-python/3011894#3011894
     im = axm.matshow(xt, aspect='auto', origin='lower', cmap=cmap, norm=norm) ### norm=norm added to scale coloring of expression with zero = white or black
+    print im.get_extent()
     axm.set_xticks([]) ### Hides x-ticks
     axm.set_yticks([])
 
@@ -191,7 +224,7 @@ def heatmap(x, row_header, column_header, row_method,
                 label = row_header[idx1[i]]
             else: 
                 label = row_header[i]
-            axm.text(x.shape[1]-0.5, i, '  ' + label)
+            axm.text(x.shape[1]-0.3, i - 0.5, '  ' + label)
             new_row_header.append(label)
             
         else:
@@ -201,45 +234,75 @@ def heatmap(x, row_header, column_header, row_method,
     for i in range(x.shape[1]):
         if column_method != None:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i-0.5, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 7}, rotation=270, verticalalignment="top") # rotation could also be degrees
+            axm.text(i-0.5, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 6}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])
         else: ### When not clustering columns
             axm.text(i, -0.5, ' '+column_header[i], rotation=270, verticalalignment="top")
             new_column_header.append(column_header[i])
+    
 
-    # Plot colside colors
-    # axc --> axes for column side colorbar
-    #if column_method != None:
-    #    axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
-    #    cmap_c = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
-    #    dc = numpy.array(ind2, dtype=int)
-    #    dc.shape = (1,len(ind2)) 
-    #    im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_c)
-    #    axc.set_xticks([]) ### Hides ticks
-    #    axc.set_yticks([])
+    if pt2cat2col_f is not  None:
+        #parse phenotype sample file if available
+        pt2cat2col = ps.read_csv(pt2cat2col_f, sep = "\t", index_col = 0)
+        # Plot phenotype legend
+        axpl = fig.add_axes([axpl_x, axpl_y, axpl_w, axpl_h], frame_on=False)  # axes for colorbar
+        #cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap, orientation='horizontal')
+        cat2col = {} 
+        col2id = {}
+        j = 1
+        for i in pt2cat2col.index:
+            if pt2cat2col.loc[i,"Category"] not in cat2col: 
+                cat2col[pt2cat2col.loc[i,"Category"]] = pt2cat2col.loc[i, ["r", "g", "b"]]
+                col2id[pt2cat2col.loc[i,"Category"]] = j 
+                j += 1
+        a = list(cat2col.keys()) 
+        cmaplist = ps.DataFrame(cat2col)
+        for i in col2id:
+            a[col2id[i] - 1] = i 
+        cmaplist = cmaplist.loc[:, a]
+        cmaplist = cmaplist.T / 256.0
+        cmap_p = mpl.colors.ListedColormap(cmaplist.values)
+        bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
+        norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
+        cb = mpl.colorbar.ColorbarBase(axpl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
+        axpl.set_yticklabels([i for i in cmaplist.index])
+        axpl.yaxis.set_ticks(np.arange(1.0 / len(cmaplist) / 2, 1,  1.0 / len(cmaplist)))
+        axpl.set_title("Phenotype colorkey")
+        # Plot colside colors
+        # axc --> axes for column side colorbar
+        axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
+        dc = numpy.array([col2id[pt2cat2col.loc[i, "Category"]]  for i in column_header]).T
+        dc = dc[idx2]
+        dc.shape = (1, pt2cat2col.shape[0])
+        im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_p)
+        axc.set_xticks([]) ### Hides ticks
+        axc.set_yticks([])
     
     # Plot rowside colors
-    # axr --> axes for row side colorbar
-    #if row_method != None:
-    #    axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for column side colorbar
-    #    dr = numpy.array(ind1, dtype=int)
-    #    dr.shape = (len(ind1),1)
-    #    cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
-    #    im_r = axr.matshow(dr, aspect='auto', origin='lower', cmap=cmap_r)
-    #    axr.set_xticks([]) ### Hides ticks
-    #    axr.set_yticks([])
-
-    # Plot color legend
-    axcb = fig.add_axes([axcb_x, axcb_y, axcb_w, axcb_h], frame_on=False)  # axes for colorbar
-    #cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, orientation='horizontal')
-    cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
-    if mode == "single":
-        axcb.set_yticklabels(["negative", "positive"])
-        axcb.yaxis.set_ticks([0.25, 0.75])
-    if mode == "combined":
-        axcb.set_yticklabels(["negative", "phypat positive", "phypat+GGL positive", "double positive"])
-        axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
-    axcb.set_title("colorkey")
+    if sample_f is not None :
+        samples = ps.read_csv(sample_f, sep = "\t", index_col = 1, header = None)
+        if samples.shape[1] > 1:
+            sample_cats = list(set(samples.iloc[:, 1]))
+            cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
+            cmap_p = mpl.colors.ListedColormap(cmaplist.values[:len(sample_cats),])
+            print sample_cats
+            axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for row side colorbar
+            dr = numpy.array([cat2col[samples.loc[i, :].iloc[1]]  for i in row_header]).T
+            dr = dr[idx1]
+            dr.shape = (samples.shape[0], 1)
+            #cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
+            im_r = axr.matshow(dr, aspect='auto', origin='lower', cmap=cmap_p)
+            axr.set_xticks([]) ### Hides ticks
+            axr.set_yticks([])
+            # Plot sample legend
+            axsl = fig.add_axes([axsl_x, axsl_y, axsl_w, axsl_h], frame_on=False)  # axes for colorbar
+            bounds = numpy.linspace(0, len(sample_cats), len(sample_cats) + 1) 
+            norm = mpl.colors.BoundaryNorm(bounds, len(sample_cats))
+            cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
+            axsl.yaxis.set_ticks(np.arange(1.0 / len(sample_cats) / 2, 1,  1.0 / len(sample_cats)))
+            axsl.set_yticklabels([i for i in sample_cats])
+            axsl.set_title("Sample colorkey")
+    
     
     #exportFlatClusterData(filename, new_row_header,new_column_header,xt,ind1,ind2)
 
@@ -402,22 +465,23 @@ if __name__ == '__main__':
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
     parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
-    parser.add_argument("--sample_file", help= 'restrict phenotyp predictions to the sample found in <sample_file>', default = None)
+    parser.add_argument("--sample_f", help= 'restrict phenotyp predictions to the sample found in <sample_file>', default = None)
+    parser.add_argument("--pt2cat2col_f", help= 'mapping of phenotypes to categories and colors', default = None)
     args = parser.parse_args()
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0)
-    if not args.sample_file is None:
-        print args.sample_file
-        s2f = ps.read_csv(args.sample_file, dtype = 'string', sep = "\t", header = None)
+    if not args.sample_f is None:
+        print args.sample_f
+        s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t", header = None)
         m = m.loc[s2f.iloc[:, 1], :]
     matrix = m.values
     column_header = m.columns 
     row_header = m.index
     try:
-        heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f)
+        heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.pt2cat2col_f, args.sample_f)
     except Exception:
         print 'Error using %s ... trying euclidean instead' % row_metric
         args.row_metric = 'euclidean'
         try:
-            heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode,  args.out_f)
+            heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode,  args.out_f, args.pt2cat2col_f, args.sample_f)
         except IOError:
             print 'Error with clustering encountered'
