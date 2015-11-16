@@ -138,7 +138,7 @@ def heatmap(x, row_header, column_header, row_method,
 
 
     # Compute and plot top dendrogram
-    if column_method != None:
+    if not column_method is None:
         start_time = time.time()
         d2 = dist.pdist(x.T)
         D2 = dist.squareform(d2)
@@ -154,7 +154,7 @@ def heatmap(x, row_header, column_header, row_method,
         ind2 = ['NA']*len(column_header) ### Used for exporting the flat cluster data
         
     # Compute and plot left dendrogram.
-    if row_method != None and x.shape[0] > 1:
+    if not row_method is None and x.shape[0] > 1:
         start_time = time.time()
         x_bin = x.copy()
         x_bin[x_bin > 0] = 1
@@ -194,12 +194,12 @@ def heatmap(x, row_header, column_header, row_method,
     # Plot distance matrix.
     axm = fig.add_axes([axm_x, axm_y, axm_w, axm_h])  # axes for the data matrix
     xt = x
-    if column_method != None:
+    if not column_method is None:
         idx2 = Z2['leaves'] ### apply the clustering for the array-dendrograms to the actual matrix data
         xt = xt[:,idx2]
         ind2 = ind2[idx2] ### reorder the flat cluster to match the order of the leaves the dendrogram
         pass
-    if row_method != None and x.shape[0] > 1:
+    if not row_method is None and x.shape[0] > 1:
         idx1 = Z1['leaves'] ### apply the clustering for the gene-dendrograms to the actual matrix data
         xt = xt[idx1,:]   # xt is transformed x
         ind1 = ind1[idx1] ### reorder the flat cluster to match the order of the leaves the dendrogram
@@ -217,7 +217,7 @@ def heatmap(x, row_header, column_header, row_method,
             fontdict = {'fontsize': 5},
         if len(row_header) > 200:
             fontdict = {'fontsize': 2},
-        if row_method != None:
+        if not row_method is None:
             #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
             axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
             if x.shape[0] > 1:
@@ -232,7 +232,7 @@ def heatmap(x, row_header, column_header, row_method,
                 axm.text(x.shape[1]-0.5, i, '  '+row_header[i], fontdict = fontdict) ### When not clustering rows
             new_row_header.append(row_header[i])
     for i in range(x.shape[1]):
-        if column_method != None:
+        if not column_method is None:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
             axm.text(i-0.5, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 6}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])

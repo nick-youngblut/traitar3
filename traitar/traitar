@@ -14,15 +14,16 @@ import tarfile
 from traitar._version import __version__
 
 def phenolyze(args):
-    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap)
+    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format)
     p.run(args.mode)
 
 
 class Phenolyzer:
 
-    def __init__(self, input_dir, output_dir, sample2file, cpu = 1, heatmap_out = None):
+    def __init__(self, input_dir, output_dir, sample2file, cpu = 1, heatmap_out = None, heatmap_format = "pdf"):
         self.user_message = "output dir %s already exists; press 1 to continue with data from a previous run; press 2 to remove this directory; press 3 to abort"
         self.error_message =  "directory %s already exists; delete directory or run in interactive mode if the annotation is done and you want to continue from there"
+        self.heatmap_format = heatmap_format 
         self.sample2file = sample2file
         self.s2f = ps.read_csv(sample2file, dtype = 'string', sep = "\t", header = None)
         self.cpu = cpu
@@ -110,8 +111,9 @@ class Phenolyzer:
         print "running phenotype prediction"
         sys.stdout.flush()
         self.run_phenotype_prediction()
-        print "running feature track generation"
-        self.run_feature_track_generation(self.s2f.iloc[:,1], mode)
+        if mode == "from_nucleotides":
+            print "running feature track generation"
+            self.run_feature_track_generation(self.s2f.iloc[:,1], mode)
         sys.stdout.flush()
         print "running heatmap generation"
         self.run_heatmap_generation(self.s2f.iloc[:,1])
@@ -217,7 +219,6 @@ class Phenolyzer:
                     predicted_pts_phypat_pgl.append(str(pt2desc_phypat.loc[j,][0] + 205))
             h2gff_commands.append(hmm2gff % {"archive": "phypat.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat)})
             h2gff_commands.append(hmm2gff % {"archive": "phypat_pgl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" : "%s/data/models/phypat+PGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": ",".join(predicted_pts_phypat_pgl)})
-        if mode == "from_nucleotides":
             #create output dirs for feature tracks
             if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
                 os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
@@ -227,19 +228,22 @@ class Phenolyzer:
                 is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
             if is_recompute:
                 self.execute_commands(h2gff_commands)
-        #else:
-        #    print "\n".join(h2gff_commands)
 
     def run_heatmap_generation(self, in_samples):
         """generate a heatmap from the results"""
         if self.heatmap_out is None:
-            out = self.pred_dir
-        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.pdf --mode %(mode)s --sample_f %(sample_file)s --pt2cat2col_f %(phenolyzer)s/data/pt2cat2col.txt"
-        hm_cmd_comb = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.pred_dir, "pred_f" : "predictions_majority-vote_combined.txt", "predictor": "combined", "mode" : "combined", "out": self.heatmap_out, "sample_file" : self.sample2file }
-        hm_cmd_phypat = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single", "out": self.heatmap_out, "sample_file" : self.sample2file}
-        hm_cmd_phypat_pgl = hm_cmd %{"phenolyzer" : self.phenolyzer_dir, "pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single", "out": self.heatmap_out, "sample_file" : self.sample2file}
-        print hm_cmd_phypat
-        self.execute_commands([hm_cmd_comb, hm_cmd_phypat, hm_cmd_phypat_pgl])
+            self.heatmap_out = self.pred_dir
+        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s --mode %(mode)s --sample_f %(sample_file)s --pt2cat2col_f %(phenolyzer)s/data/pt2cat2col.txt"
+        hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format}
+        hm_dict_phypat = {"pred_dir" : self.pred_dir ,"mode" : "combined","pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined"}
+        hm_dict_phypat_ggl = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single"}
+        #hm_cmd_phypat = hm_cmd %{"pred_dir" : self.pred_dir, "pred_f" : "predictions_single-votes_combined.txt","predictor": "phypat", "mode" : "single"}
+        hm_dict_comb = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single"}
+        cmds = []
+        for i in [hm_dict_phypat, hm_dict_phypat_ggl, hm_dict_comb]:
+            i.update(hm_dict)
+            cmds.append(hm_cmd % i)
+        self.execute_commands(cmds)
 
 
 
@@ -262,6 +266,7 @@ if __name__ == "__main__":
     main_p.add_argument("output_dir", help='directory for the output; will be created if it doesn\'t exist yet', default='phenolyzer_output')
     main_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
+    main_p.add_argument("-f", "--heatmap_format", choices = ["png", "pdf"], default='pdf', help = "choose file format for the heatmap") 
     main_p.set_defaults(func = phenolyze)
     data_p = subparsers.add_parser("config", help = "download neccessary data to run traitAR, mainly Pfam HMMs") 
     data_p.add_argument("download_dest",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
