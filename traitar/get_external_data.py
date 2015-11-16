@@ -11,7 +11,7 @@ def download(args):
     if not args.local: 
         while attempts < 3:
             try:
-                if not os.path.exists(args.download_dest):
+                if not os.path.exists(args.download):
                     sys.stderr.write("directory %s doesn't exists; please create first\n" % args.download_dest)
                     sys.exit(0)
                 response = urllib2.urlopen("ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz", timeout = 5)
@@ -31,4 +31,6 @@ def download(args):
                 attempts += 1
                 print e
     with open(os.path.abspath(os.path.dirname(traitar.__file__)) + "/" + "config.json", 'w') as config:
-        config.write(json.dumps({"pfam_hmms": os.path.join(args.download_dest, "Pfam-A.hmm")}))
+        if not os.path.exists(os.path.join(args.download, "Pfam-A.hmm")):
+            sys.exit("something went wrong; make sure %s contains Pfam-A.hmm" % args.download)
+        config.write(json.dumps({"pfam_hmms": os.path.abspath(os.path.join(args.download, "Pfam-A.hmm"))}))
