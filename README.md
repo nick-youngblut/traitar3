@@ -2,10 +2,10 @@
 traitar is a software for characterizing microbial samples from nucleotide or protein sequences. It can accurately phenotype 67 diverse traits related to growth, shape, carbon source utilized etc.
 
 # Installation
-traitar is available for Linux via the python packaging index. We tested the software under Ubuntu 14.02 LTS (trusty). We didn't test older versions but these might work as well. 
+traitar is available for Linux via the python packaging index. We tested the software under Ubuntu 14.04 LTS (trusty). We didn't test older versions but these might work as well. 
 Prior to installation with pip make sure the following packages are installed by running
 
-``sudo apt-get install python-scipy, python-matplotlib, python-pip python-pandas``
+``sudo apt-get install python-scipy python-matplotlib, python-pip python-pandas``
 and optionally
 ``sudo apt-get install python-virtualenv``
 
