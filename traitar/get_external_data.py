@@ -31,4 +31,6 @@ def download(args):
                 attempts += 1
                 print e
     with open(os.path.abspath(os.path.dirname(traitar.__file__)) + "/" + "config.json", 'w') as config:
-        config.write(json.dumps({"pfam_hmms": os.path.join(args.download_dest, "Pfam-A.hmm")}))
+        if not os.path.exists(os.path.join(args.download, "Pfam-A.hmm")):
+            sys.exit("something went wrong; make sure %s contains Pfam-A.hmm" % args.download)
+        config.write(json.dumps({"pfam_hmms": os.path.abspath(os.path.join(args.download, "Pfam-A.hmm"))}))

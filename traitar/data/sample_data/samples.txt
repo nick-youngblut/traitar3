@@ -1,2 +1,2 @@
-1457190.3.RefSeq.faa	Listeria_ivanovii_WSLC3009
-525367.9.RefSeq.faa	Listeria_grayi_DSM_20601
+1457190.3.RefSeq.faa	Listeria_ivanovii_WSLC3009	environment_1
+525367.9.RefSeq.faa	Listeria_grayi_DSM_20601	environment_2

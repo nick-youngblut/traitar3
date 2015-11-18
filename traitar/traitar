@@ -12,6 +12,7 @@ import os
 import sys
 import tarfile
 from traitar._version import __version__
+import re
 
 def phenolyze(args):
     p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format)
@@ -25,9 +26,9 @@ class Phenolyzer:
         self.error_message =  "directory %s already exists; delete directory or run in interactive mode if the annotation is done and you want to continue from there"
         self.heatmap_format = heatmap_format 
         self.sample2file = sample2file
-        self.s2f = ps.read_csv(sample2file, dtype = 'string', sep = "\t", header = None)
-        self.cpu = cpu
         self.input_dir = input_dir
+        self.s2f = self.parse_sample_f()
+        self.cpu = cpu
         self.output_dir = output_dir
         self.phenolyzer_dir = os.path.abspath(os.path.dirname(traitar.__file__)) 
         self.is_gnu_parallel_available = self.is_exe("parallel")
@@ -56,6 +57,38 @@ class Phenolyzer:
         self.pred_dir = os.path.join(self.output_dir, "phenotype_prediction")
         self.phypat_dir = os.path.join(self.pred_dir, "phypat")
         self.phypat_pgl_dir = os.path.join(self.pred_dir, "phypat+PGL")
+
+    def _special_match(self, strg, search = re.compile(r'[^A-Za-z0-9.-_]').search):
+        return not bool(search(strg))
+   
+    def parse_sample_f(self):
+        """read sample file with pandas and make sure the content is appropriate"""
+        #check if sample files exist
+        if not os.path.exists(self.sample2file):
+            sys.exit("sample file %s does not exist" % self.sample2file)
+        s2f = ps.read_csv(self.sample2file, dtype = 'string', sep = "\t", header = None)
+        if s2f.shape[1] < 2 or s2f.shape[1] > 3:
+            sys.exit("sample file has too many columns; run traitar phenotype -h for help on the format")
+        for i in s2f.iloc[:, 0]:
+            if not os.path.exists(os.path.join(self.input_dir,i)):
+                sys.exit("sample file %s does not exist in the output directory %s" % (self.input_dir, i))
+        for i in s2f.iloc[:, 1]:
+            if not self._special_match(i):
+                sys.exit("invalid character in sample name %s; only [a-zA-Z0-9.-_] allowed" % i)
+            if len(i) > 41:
+                sys.exit("sample names may only have 40 characters %s" %i)
+        if s2f.shape[1] == 3:
+            uq = s2f.iloc[:, 2].unique()
+            if len(uq) > 12:
+                sys.exit("reduce the number of sample categories to less than 15")
+            for i in uq:
+                if len(i) > 20:
+                    sys.exit("sample categories may not be longer than 20 characters %s" %i)
+        return s2f
+            
+        #sample names may not contain spaces and are restricted to less than 20 characters
+        #if sample category column is given; categories are restricted to 10 characters
+  
     
     def is_exe(self, program):
         def is_exe(fpath):
@@ -268,8 +301,8 @@ if __name__ == "__main__":
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
     main_p.add_argument("-f", "--heatmap_format", choices = ["png", "pdf"], default='pdf', help = "choose file format for the heatmap") 
     main_p.set_defaults(func = phenolyze)
-    data_p = subparsers.add_parser("config", help = "download neccessary data to run traitAR, mainly Pfam HMMs") 
-    data_p.add_argument("download_dest",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
+    data_p = subparsers.add_parser("pfam", help = "download or set Pfam HMMs") 
+    data_p.add_argument("download",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
     data_p.add_argument("--local", "-l", action = 'store_true', help = "the Pfam HMMs are in the above directory with name 'Pfam-A.hmm'")
     data_p.set_defaults(func = get_external_data.download)
     args = parser.parse_args()
