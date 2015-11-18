@@ -19,4 +19,4 @@ setup(name='traitar',
         packages=['traitar'],
         scripts = ['traitar/traitar', 'traitar/merge_preds.py', 'traitar/heatmap.py', 'traitar/domtblout2gene_generic.py', 'traitar/predict.py', 'traitar/hmmer2filtered_best.py'],
         zip_safe=False,
-        install_requires = ["pandas >= 0.14.1", "matplotlib >= 1.0", "scipy >= 0.9.0", "numpy >= 1.10.1"])
+        install_requires = ["pandas >= 0.13.1", "matplotlib >= 1.3.1", "scipy >= 0.13.3", "numpy >= 1.6"])

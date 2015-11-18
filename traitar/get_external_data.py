@@ -11,11 +11,11 @@ def download(args):
     if not args.local: 
         while attempts < 3:
             try:
-                if not os.path.exists(args.download_dest):
-                    sys.stderr.write("directory %s doesn't exists; please create first\n" % args.download_dest)
+                if not os.path.exists(args.download):
+                    sys.stderr.write("directory %s doesn't exists; please create first\n" % args.download)
                     sys.exit(0)
                 response = urllib2.urlopen("ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz", timeout = 5)
-                with open(os.path.join(args.download_dest, "Pfam-A.hmm.gz"), 'w' ) as f:
+                with open(os.path.join(args.download, "Pfam-A.hmm.gz"), 'w' ) as f:
                     CHUNK = 1000000
                     while True:
                         chunk = response.read(CHUNK)
@@ -23,8 +23,8 @@ def download(args):
                             break
                         else:
                             f.write(chunk)
-                with gzip.open(os.path.join(args.download_dest, "Pfam-A.hmm.gz"), 'rb') as zf:
-                    with open(os.path.join(args.download_dest, "Pfam-A.hmm"), 'wb') as out_f:
+                with gzip.open(os.path.join(args.download, "Pfam-A.hmm.gz"), 'rb') as zf:
+                    with open(os.path.join(args.download, "Pfam-A.hmm"), 'wb') as out_f:
                         out_f.write(zf.read())
                 break
             except urllib2.URLError as e:
