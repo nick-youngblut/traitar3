@@ -11,6 +11,8 @@ RUN apt-get update
 MAINTAINER Aaron Weimann 
 # Update the default application repository sources list
 RUN apt-get install -y python-scipy python-matplotlib python-pip python-pandas
+RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse ">> /etc/apt/sources.list 
+RUN sudo apt-get update
 RUN apt-get install -y hmmer prodigal
 RUN apt-get install -y wget 
 COPY dist/traitar-0.1.6.tar.gz /tmp
