@@ -18,3 +18,5 @@ RUN apt-get install -y wget
 COPY dist/traitar-0.1.6.tar.gz /tmp
 COPY traitar/data/sample_data /tmp/sample_data
 RUN pip install /tmp/traitar-0.1.6.tar.gz
+COPY Pfam-A.hmm /tmp
+RUN traitar pfam --local /tmp
