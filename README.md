@@ -13,7 +13,7 @@ These package might not be available for your Linux distribution. Please let us 
 
 Once finished we strongly encourage you to install traitar with pip rather than by manually cloning the repository. Install locally by
 
-``pip install traitar-0.1.6.tar.gz --user traitar``
+``pip install traitar-0.1.6.tar.gz --user``
 
 You need to add the following line to your ~/.bashrc to adjust the PATH variable so that the bash finds the executables needed for running traitar. 
 
@@ -38,7 +38,10 @@ You may want to use virtualenv to create a clean environment for traitar i.e. ru
 ``source ~/.bashrc``
 ##Additional requirements
 traitar further needs prodigal and hmmsearch available on the command line. For parallel execution it further requires GNU parallel.
-All three are available as preconfigured package for many Linux installation e.g. for Debian / Ubuntu. Install by 
+All three are available as preconfigured package for many Linux installation e.g. for Debian / Ubuntu. For Ubuntu 14.04 it is available via the trusty-backports.  Install by 
+``"sudo deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse ">> /etc/apt/sources.list``
+
+``apt-get install update``
 
 ``sudo apt-get install parallel prodigal hmmer``
 
