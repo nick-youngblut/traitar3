@@ -5,7 +5,7 @@ traitar is a software for characterizing microbial samples from nucleotide or pr
 traitar is available for Linux via the python packaging index. We tested the software under Ubuntu 14.04 LTS (trusty). We didn't test older versions but these might work as well. 
 Prior to installation with pip make sure the following packages are installed by running
 
-``sudo apt-get install python-scipy python-matplotlib, python-pip python-pandas``
+``sudo apt-get install python-scipy python-matplotlib python-pip python-pandas``
 and optionally
 ``sudo apt-get install python-virtualenv``
 
@@ -13,7 +13,7 @@ These package might not be available for your Linux distribution. Please let us 
 
 Once finished we strongly encourage you to install traitar with pip rather than by manually cloning the repository. Install locally by
 
-``pip install traitar-0.1.6.tar.gz --user traitar``
+``pip install traitar-0.1.6.tar.gz --user``
 
 You need to add the following line to your ~/.bashrc to adjust the PATH variable so that the bash finds the executables needed for running traitar. 
 
@@ -38,7 +38,16 @@ You may want to use virtualenv to create a clean environment for traitar i.e. ru
 ``source ~/.bashrc``
 ##Additional requirements
 traitar further needs prodigal and hmmsearch available on the command line. For parallel execution it further requires GNU parallel.
-All three are available as preconfigured package for many Linux installation e.g. for Debian / Ubuntu. Install by 
+All three are available as preconfigured package for many Linux installation e.g. for Debian / Ubuntu. For Ubuntu 14.04 it is available via the trusty-backports.  
+``#include trusty backports source in the sources.list``
+
+``"sudo deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse ">> /etc/apt/sources.list``
+
+``#update sources``
+
+``apt-get install update``
+
+``#install packages``
 
 ``sudo apt-get install parallel prodigal hmmer``
 
@@ -59,10 +68,10 @@ to let traitar know where.
 
 will trigger the standard workflow of traitAR, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the <in_dir> for all samples in <sample_file> with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. 
 
-The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column. The template looks like following - Please also take a look at the sample file for the packaged example data:
+The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - Please also take a look at the sample file for the packaged example data:
 
-sample1_file_name{tab}sample1_name{tabl}sample_category1
-sample2_file_name{tab}sample2_name{tabl}sample_category2
+sample1_file_name{tab}sample1_name[{tabl}sample_category1]
+sample2_file_name{tab}sample2_name[{tabl}sample_category2]
 
 ``traitar phenotype <in dir>  <sample file> from_genes <out_dir> `` 
  
@@ -82,8 +91,9 @@ This requires installing GNU parallel as noted above.
 
 ``>>> traitar.__path__``
 # Results
+traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``.
 ##Heatmaps
-traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``. The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png```. 
+ The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png``` and provide hierarchical clustering dendrograms for phenotypes and the samples.
 
 ##Phenotype prediction - Tables and flat files
 These heatmaps are based on tab separated text files e.g. ``predictions_majority-votes_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+PGL``.
