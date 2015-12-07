@@ -58,7 +58,7 @@ class Phenolyzer:
         self.phypat_dir = os.path.join(self.pred_dir, "phypat")
         self.phypat_pgl_dir = os.path.join(self.pred_dir, "phypat+PGL")
 
-    def _special_match(self, strg, search = re.compile(r'[^A-Za-z0-9.-_]').search):
+    def _special_match(self, strg, search = re.compile(r'[^A-Za-z0-9.\-_]').search):
         return not bool(search(strg))
    
     def parse_sample_f(self):
