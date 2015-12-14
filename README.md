@@ -13,7 +13,7 @@ These package might not be available for your Linux distribution. Please let us 
 
 Once finished we strongly encourage you to install traitar with pip rather than by manually cloning the repository. Install locally by
 
-``pip install traitar-0.1.6.tar.gz --user``
+``pip install traitar-0.1.7.tar.gz --user``
 
 You need to add the following line to your ~/.bashrc to adjust the PATH variable so that the bash finds the executables needed for running traitar. 
 
