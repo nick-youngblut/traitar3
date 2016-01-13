@@ -23,7 +23,7 @@ You may need to run ``source ~/.bashrc`` once in your current session.
 
 You can also install globally with
 
-``sudo pip install traitar-0.1.6.tar.gz``
+``sudo pip install traitar-0.1.7.tar.gz``
 ##Creating a virtual environment
 You may want to use virtualenv to create a clean environment for traitar i.e. run
 
@@ -31,7 +31,7 @@ You may want to use virtualenv to create a clean environment for traitar i.e. ru
 
 ``source <environment_path>/bin/activate``
 
-``pip install -U traitar-0.1.6.tar.gz``
+``pip install -U traitar-0.1.7.tar.gz``
 
 ``PATH=$PATH:<environment_path>/bin/``
 
@@ -59,7 +59,7 @@ traitar requires the Pfam 27.0 HMM models. These are not distributed with this p
 will download and extract the Pfam models to the specified folder. The download can take a while depending on you internet connection. The Pfam models are extracted automatically to the same folder. This can slow down some machines. 
 You may also download and extract the Pfam models manually from ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz and run 
 
-``traitar config --local <path to Pfam folder>``
+``traitar pfam --local <path to Pfam folder>``
 
 to let traitar know where.
 # Basic usage
