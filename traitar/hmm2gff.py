@@ -41,6 +41,7 @@ def read_gff(gff_file, mode):
     f = open(gff_file)
     gene_dict = {}
     i = 0
+    fasta = False
     for l in f:
         i += 1
         # print i
@@ -53,6 +54,16 @@ def read_gff(gff_file, mode):
                 read_prodigal_entry(l, gene_dict)
             elif mode == "ncbi":
                 read_ncbi_entry(l, gene_dict)
+            elif mode == "genbank":
+                #in genbank gene gffs the original nucleotide sequence can be appended to the gff"
+                if l.startswith(">"):
+                    fasta = True 
+                    continue
+                if fasta and l.startswith(('a','g', 'c', 't')):
+                    continue
+                else:
+                    fasta = False
+                read_genbank_entry(l, gene_dict)
     f.close()
     return gene_dict
 
@@ -67,7 +78,7 @@ def read_genemark_entry(l, gene_dict):
             elems[4]), elems[6])
 
 def read_prodigal_entry(l, gene_dict):
-    """read and parse one line from a genemark gff"""
+    """read and parse one line from a prodigal gff"""
     elems = l.strip().split("\t")
     #print elems[8].split(";"), len(elems)
     attrs = dict(
@@ -90,6 +101,20 @@ def read_ncbi_entry(l, gene_dict):
             elems[0], int(
                 elems[3]), int(
                 elems[4]), elems[6])
+
+def read_genbank_entry(l, gene_dict):
+    """read and parse one line from a ncbi gff"""
+    elems = l.strip().split("\t")
+    if elems[2] == "CDS":
+        attrs = dict(
+            [(i.split("=")[0], i.split("=")[1])
+             for i in elems[8].split(";")])
+        gene_dict[
+            attrs["locus_tag"]] = (
+            elems[0], int(
+                elems[3]), int(
+                elems[4]), elems[6])
+
 
 
 def get_coords(gene_start, gene_end, ali_from, ali_to, strand):
@@ -180,7 +205,7 @@ if __name__ == "__main__":
     parser.add_argument("gene_gff", help= 'gene prediction gff file')
     parser.add_argument("output_gff_dir", help= 'output GFF file')
     parser.add_argument("sample", help= 'sample file')
-    parser.add_argument("gene_gff_mode", choices = ["prodigal", "ncbi", "metagenemark"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
+    parser.add_argument("gene_gff_mode", choices = ["prodigal", "ncbi", "metagenemark", "genbank"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
     parser.add_argument("model_tar", help = "tar.gz file with relevant features etc.")
     parser.add_argument("--predicted_pts", "-r", help='file with some relevant annotation features', default = None)
     args = parser.parse_args()
