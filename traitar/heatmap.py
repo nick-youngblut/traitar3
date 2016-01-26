@@ -127,11 +127,11 @@ def heatmap(x, row_header, column_header, row_method,
     ax2_w = axc_w
 
     # placement of the phenotype legend
-    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.07,0.07,0.11,0.09]
+    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.8,0.88,0.11,0.09]
     # placement of the sample legend
 
     # axcb - placement of the sample legend
-    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.8,0.88,0.11,0.09]
+    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.07,0.07,0.11,0.09]
 
     # axcb - placement of the color legend
     [axcb_x, axcb_y, axcb_w, axcb_h] = [0.07,0.88,0.11,0.09]
