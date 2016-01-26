@@ -46,7 +46,8 @@ class Phenolyzer:
         #check if config exists
         if not os.path.isfile(os.path.join(self.phenolyzer_dir, "config.json")):
             sys.stderr.write("config.json does not exists; make sure that you have run traitar pfam")
-        #check if Pfam hmm specified in config.json exists
+            sys.exit(0)
+            #check if Pfam hmm specified in config.json exists
         with open(os.path.join(self.phenolyzer_dir, "config.json" ), "r") as cf:
             self.config = json.load(cf)
         if not os.path.isfile(self.config["pfam_hmms"]):

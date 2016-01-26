@@ -25,7 +25,8 @@ def download(args):
                             f.write(chunk)
                 with gzip.open(os.path.join(args.download, "Pfam-A.hmm.gz"), 'rb') as zf:
                     with open(os.path.join(args.download, "Pfam-A.hmm"), 'wb') as out_f:
-                        out_f.write(zf.read())
+                        for l in zf:
+                            out_f.write(l)
                 break
             except urllib2.URLError as e:
                 attempts += 1
