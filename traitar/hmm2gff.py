@@ -54,6 +54,8 @@ def read_gff(gff_file, mode):
                 read_prodigal_entry(l, gene_dict)
             elif mode == "ncbi":
                 read_ncbi_entry(l, gene_dict)
+            elif mode == "img":
+                read_img_entry(l, gene_dict)
             elif mode == "genbank":
                 #in genbank gene gffs the original nucleotide sequence can be appended to the gff"
                 if l.startswith(">"):
@@ -88,6 +90,22 @@ def read_prodigal_entry(l, gene_dict):
             elems[0], int(
                 elems[3]), int(
                 elems[4]), elems[6])
+
+def read_img_entry(l, gene_dict):
+    """read and parse one line from an IMG gff"""
+    elems = l.strip().split("\t")
+    if elems[2] == "CDS":
+        try:
+            attrs = dict(
+                [(i.split("=")[0], i.split("=")[1]) for i in elems[8].strip(";").split(";")])
+        except IndexError:
+            sys.stderr.write("something went wrong in line; skipping \n%s\n" % l)
+            return 
+        gene_dict[attrs["ID"]] = (
+            elems[0], int(
+                elems[3]), int(
+                elems[4]), elems[6])
+
 
 def read_ncbi_entry(l, gene_dict):
     """read and parse one line from a ncbi gff"""
@@ -165,6 +183,9 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
                     if mode == "ncbi":
                         print >> sys.stderr, "entry might be outdated, skipping"
                         continue
+                    if mode == "img":
+                        print >> sys.stderr, "might be a semicolon ; delimiter within an attribute; sample is %s\n" % sample
+                        continue
                 else:
                     continue
             contig_name, gene_start, gene_end, strand = gene_dict[gid]
@@ -205,7 +226,7 @@ if __name__ == "__main__":
     parser.add_argument("gene_gff", help= 'gene prediction gff file')
     parser.add_argument("output_gff_dir", help= 'output GFF file')
     parser.add_argument("sample", help= 'sample file')
-    parser.add_argument("gene_gff_mode", choices = ["prodigal", "ncbi", "metagenemark", "genbank"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
+    parser.add_argument("gene_gff_mode", choices = ["img", "prodigal", "ncbi", "metagenemark", "genbank"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
     parser.add_argument("model_tar", help = "tar.gz file with relevant features etc.")
     parser.add_argument("--predicted_pts", "-r", help='file with some relevant annotation features', default = None)
     args = parser.parse_args()

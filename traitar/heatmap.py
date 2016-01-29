@@ -280,14 +280,14 @@ def heatmap(x, row_header, column_header, row_method,
     
     # Plot rowside colors
     if sample_f is not None :
-        samples = ps.read_csv(sample_f, sep = "\t", index_col = 1, header = None)
-        if samples.shape[1] > 1:
-            sample_cats = list(set(samples.iloc[:, 1]))
+        samples = ps.read_csv(sample_f, sep = "\t", index_col = "sample_name")
+        if "category" in samples.columns:
+            sample_cats = list(set(samples.loc[:, "category"]))
             cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
             cmap_p = mpl.colors.ListedColormap(cmaplist.values[:len(sample_cats),])
             print sample_cats
             axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for row side colorbar
-            dr = numpy.array([cat2col[samples.loc[i, :].iloc[1]]  for i in row_header]).T
+            dr = numpy.array([cat2col[samples.loc[i, "category"]]  for i in row_header]).T
             dr = dr[idx1]
             dr.shape = (samples.shape[0], 1)
             #cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
@@ -465,14 +465,14 @@ if __name__ == '__main__':
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
     parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
-    parser.add_argument("--sample_f", help= 'restrict phenotyp predictions to the sample found in <sample_file>', default = None)
+    parser.add_argument("--sample_f", help= 'restrict phenotype predictions to the sample found in <sample_file>', default = None)
     parser.add_argument("--pt2cat2col_f", help= 'mapping of phenotypes to categories and colors', default = None)
     args = parser.parse_args()
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0)
     if not args.sample_f is None:
         print args.sample_f
-        s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t", header = None)
-        m = m.loc[s2f.iloc[:, 1], :]
+        s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t")
+        m = m.loc[s2f.loc[:, "sample_name"], :]
     matrix = m.values
     column_header = m.columns 
     row_header = m.index
