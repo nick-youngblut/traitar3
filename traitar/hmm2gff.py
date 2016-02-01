@@ -54,6 +54,8 @@ def read_gff(gff_file, mode):
                 read_prodigal_entry(l, gene_dict)
             elif mode == "ncbi":
                 read_ncbi_entry(l, gene_dict)
+            elif mode == "refseq":
+                read_refseq_entry(l, gene_dict)
             elif mode == "img":
                 read_img_entry(l, gene_dict)
             elif mode == "genbank":
@@ -120,8 +122,21 @@ def read_ncbi_entry(l, gene_dict):
                 elems[3]), int(
                 elems[4]), elems[6])
 
+def read_refseq_entry(l, gene_dict):
+    """read and parse one line from a refseq gff"""
+    elems = l.strip().split("\t")
+    if elems[2] == "CDS":
+        attrs = dict(
+            [(i.split("=")[0], i.split("=")[1])
+             for i in elems[8].split(";")])
+        gene_dict[
+            attrs["ID"]] = (
+            elems[0], int(
+                elems[3]), int(
+                elems[4]), elems[6])
+
 def read_genbank_entry(l, gene_dict):
-    """read and parse one line from a ncbi gff"""
+    """read and parse one line from a genbank gff"""
     elems = l.strip().split("\t")
     if elems[2] == "CDS":
         attrs = dict(
@@ -175,7 +190,7 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
             elems = l.strip().split("\t")
             # change pfam accession PF00001.3 into PF00001
             gid, acc, name, ali_from, ali_to, ieval = [
-                get_protein_acc(elems[0]) if mode == "ncbi" else elems[0], elems[4].split(".")[0], elems[3], int(elems[17]), int(elems[18]), elems[11]]
+                get_protein_acc(elems[0]) if mode == "ncbi" or mode == "refseq" else elems[0], elems[4].split(".")[0], elems[3], int(elems[17]), int(elems[18]), elems[11]]
 
             if gid not in gene_dict:
                 if not skip_genes:
@@ -226,7 +241,7 @@ if __name__ == "__main__":
     parser.add_argument("gene_gff", help= 'gene prediction gff file')
     parser.add_argument("output_gff_dir", help= 'output GFF file')
     parser.add_argument("sample", help= 'sample file')
-    parser.add_argument("gene_gff_mode", choices = ["img", "prodigal", "ncbi", "metagenemark", "genbank"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
+    parser.add_argument("gene_gff_mode", choices = ["img", "prodigal", "ncbi", "refseq", "metagenemark", "genbank"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
     parser.add_argument("model_tar", help = "tar.gz file with relevant features etc.")
     parser.add_argument("--predicted_pts", "-r", help='file with some relevant annotation features', default = None)
     args = parser.parse_args()

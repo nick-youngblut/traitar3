@@ -280,7 +280,7 @@ class Phenolyzer:
             #create output dirs for feature tracks
         if mode == "from_nucleotides" or gene_gffs is not None:
             self.execute_commands(h2gff_commands) 
-        else:
+        #else:
             ftco = os.path.join(self.pred_dir, "feature_track_commands.txt")
             sys.stderr.write("tracks with Pfams relevant for the predictions cannot be ad-hoc generated because the input is amino acids and no gene prediction GFF files have been generated\n commands are saved to %s and can be modified and run manually\n" % ftco)
             with open(ftco, 'w') as f:
@@ -322,7 +322,7 @@ if __name__ == "__main__":
     main_p.add_argument("mode", help='either from_genes if gene prediction amino acid fasta is available in input_dir otherwise from_nucleotides in this case Prodigal is used to determine the ORFs from the nucleotide fasta files in input_dir', choices = ["from_genes", "from_nucleotides"])
     main_p.add_argument("output_dir", help='directory for the output; will be created if it doesn\'t exist yet', default='phenolyzer_output')
     main_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
-    main_p.add_argument("-g", "--gene_gff_type", help='if the input is amino acids the type of gene prediction GFF file can be specified for mapping the phenotype predictions to the genes', default = None, choices = ["genbank", "img", "prodigal", "metagenemark"])
+    main_p.add_argument("-g", "--gene_gff_type", help='if the input is amino acids the type of gene prediction GFF file can be specified for mapping the phenotype predictions to the genes', default = None, choices = ["genbank", "refseq", "img", "prodigal", "metagenemark"])
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
     main_p.add_argument("-f", "--heatmap_format", choices = ["png", "pdf"], default='pdf', help = "choose file format for the heatmap") 
     main_p.set_defaults(func = phenolyze)
