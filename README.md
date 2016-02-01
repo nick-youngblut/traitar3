@@ -1,5 +1,77 @@
 # traitar - the microbial trait analyzer
-traitar is a software for characterizing microbial samples from nucleotide or protein sequences. It can accurately phenotype 67 diverse traits related to growth, shape, carbon source utilized etc.
+traitar is a software for characterizing microbial samples from nucleotide or protein sequences. It can accurately phenotype 67 diverse traits.
+
+| Phenotype                               | Category           | 
+|-----------------------------------------|--------------------| 
+| Gram positive                           | Morphology         | 
+| Gram negative                           | Morphology         | 
+| Coccus                                  | Morphology         | 
+| Bacillus or coccobacillus               | Morphology         | 
+| Coccus - clusters or groups predominate | Morphology         | 
+| Coccus - pairs or chains predominate    | Morphology         | 
+| Spore formation                         | Morphology         | 
+| Yellow pigment                          | Morphology         | 
+| Motile                                  | Morphology         | 
+| Aerobe                                  | Oxygen             | 
+| Facultative                             | Oxygen             | 
+| Anaerobe                                | Oxygen             | 
+| Capnophilic                             | Oxygen             | 
+| Catalase                                | Oxygen:Enzyme      | 
+| Oxidase                                 | Oxygen:Enzyme      | 
+| Growth on ordinary blood agar           | Growth             | 
+| Growth on MacConkey agar                | Growth             | 
+| Growth in 6.5% NaCl                     | Growth             | 
+| Bile-susceptible                        | Growth             | 
+| Growth in KCN                           | Growth             | 
+| Mucate utilization                      | Growth             | 
+| Growth at 42 degrees C                  | Growth             | 
+| Colistin-Polymyxin susceptible          | Growth: Antibiotic | 
+| Acetate utilization                     | Carboxylic Acid    | 
+| Citrate                                 | Carboxylic Acid    | 
+| Malonate                                | Carboxylic Acid    | 
+| Tartrate utilization                    | Carboxylic Acid    | 
+| Arginine dihydrolase                    | Amino Acid         | 
+| Indole                                  | Amino Acid         | 
+| Ornithine decarboxylase                 | Amino Acid         | 
+| Lysine decarboxylase                    | Amino Acid         | 
+| Casein hydrolysis                       | Proteolysis        | 
+| Gelatin hydrolysis                      | Proteolysis        | 
+| Beta hemolysis                          | Enzyme             | 
+| Alkaline phosphatase                    | Enzyme             | 
+| Nitrite to gas                          | Enzyme             | 
+| Nitrate to nitrite                      | Enzyme             | 
+| Lipase                                  | Enzyme             | 
+| Urea hydrolysis                         | Enzyme             | 
+| DNase                                   | Enzyme             | 
+| Esculin hydrolysis                      | Enzyme             | 
+| Pyrrolidonyl-beta-naphthylamide         | Enzyme             | 
+| Coagulase production                    | Enzyme             | 
+| myo-Inositol                            | Enzyme             | 
+| Hydrogen sulfide                        | Product            | 
+| L-Arabinose                             | Sugar              | 
+| Cellobiose                              | Sugar              | 
+| Glucose fermenter                       | Sugar:Glucose      | 
+| Gas from glucose                        | Sugar:Glucose      | 
+| Glucose oxidizer                        | Sugar:Glucose      | 
+| Voges Proskauer                         | Sugar:Glucose      | 
+| Methyl red                              | Sugar:Glucose      | 
+| Glycerol                                | Sugar              | 
+| Lactose                                 | Sugar              | 
+| Maltose                                 | Sugar              | 
+| D-Mannitol                              | Sugar              | 
+| D-Mannose                               | Sugar              | 
+| Melibiose                               | Sugar              | 
+| ONPG (beta galactosidase)               | Sugar              | 
+| Raffinose                               | Sugar              | 
+| L-Rhamnose                              | Sugar              | 
+| Salicin                                 | Sugar              | 
+| D-Sorbitol                              | Sugar              | 
+| Starch hydrolysis                       | Sugar              | 
+| Sucrose                                 | Sugar              | 
+| Trehalose                               | Sugar              | 
+| D-Xylose                                | Sugar              | 
+
+
 
 # Installation
 traitar is available for Linux via the python packaging index. We tested the software under Ubuntu 14.04 LTS (trusty). We didn't test older versions but these might work as well. 
