@@ -213,18 +213,18 @@ def heatmap(x, row_header, column_header, row_method,
     new_row_header=[]
     new_column_header=[]
     for i in range(x.shape[0]):
+        margin = 0
         if len(row_header) > 0 :
-            fontdict = {'fontsize': 20},
-        if len(row_header) > 10 :
-            fontdict = {'fontsize': 15},
+            fontdict = {'fontsize': 7}
         if len(row_header) > 30 :
-            fontdict = {'fontsize': 10},
+            fontdict = {'fontsize': 7}
+            margin = 0.5
         if len(row_header) > 50 :
-            fontdict = {'fontsize': 8},
+            fontdict = {'fontsize': 4}
         if len(row_header) > 100 :
-            fontdict = {'fontsize': 5},
+            fontdict = {'fontsize': 2}
         if len(row_header) > 200:
-            fontdict = {'fontsize': 2},
+            fontdict = {'fontsize': 1}
         if not row_method is None:
             #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
             axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
@@ -232,13 +232,10 @@ def heatmap(x, row_header, column_header, row_method,
                 label = row_header[idx1[i]]
             else: 
                 label = row_header[i]
-            axm.text(x.shape[1]-0.3, i - 0.5, '  ' + label)
+            fontdict.items
+            axm.text(x.shape[1]-0.3, i - margin , '  ' + label, fontdict = fontdict)
             new_row_header.append(label)
             
-        else:
-            if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
-                axm.text(x.shape[1]-0.5, i, '  '+row_header[i], fontdict = fontdict) ### When not clustering rows
-            new_row_header.append(row_header[i])
     for i in range(x.shape[1]):
         if not column_method is None:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
