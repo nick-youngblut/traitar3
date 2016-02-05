@@ -213,6 +213,14 @@ def heatmap(x, row_header, column_header, row_method,
     new_row_header=[]
     new_column_header=[]
     for i in range(x.shape[0]):
+        if len(row_header) > 0 :
+            fontdict = {'fontsize': 20},
+        if len(row_header) > 10 :
+            fontdict = {'fontsize': 15},
+        if len(row_header) > 30 :
+            fontdict = {'fontsize': 10},
+        if len(row_header) > 50 :
+            fontdict = {'fontsize': 8},
         if len(row_header) > 100 :
             fontdict = {'fontsize': 5},
         if len(row_header) > 200:
