@@ -127,7 +127,7 @@ def heatmap(x, row_header, column_header, row_method,
     ax2_w = axc_w
 
     # placement of the phenotype legend
-    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.78,0.85,0.05,0.13]
+    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.78,0.84,0.05,0.13]
     # placement of the sample legend
 
     # axcb - placement of the sample legend
@@ -184,10 +184,10 @@ def heatmap(x, row_header, column_header, row_method,
     norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
     cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
     if mode == "single":
-        axcb.set_yticklabels(["negative", "positive"])
+        axcb.set_yticklabels(["negative", "positive"], fontsize = 6)
         axcb.yaxis.set_ticks([0.25, 0.75])
     if mode == "combined":
-        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"], fontsize = 8)
+        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"], fontsize = 6)
         axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
     axcb.set_title("Heatmap colorkey", fontsize = 10, loc = "left")
     
@@ -305,8 +305,8 @@ def heatmap(x, row_header, column_header, row_method,
             norm = mpl.colors.BoundaryNorm(bounds, len(sample_cats))
             cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
             axsl.yaxis.set_ticks(np.arange(1.0 / len(sample_cats) / 2, 1,  1.0 / len(sample_cats)))
-            axsl.set_yticklabels([i for i in sample_cats])
-            axsl.set_title("Sample colorkey", loc = "left")
+            axsl.set_yticklabels([i for i in sample_cats], fontsize = 6)
+            axsl.set_title("Sample colorkey", loc = "left", fontsize = 10)
     
     
     #exportFlatClusterData(filename, new_row_header,new_column_header,xt,ind1,ind2)
