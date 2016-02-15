@@ -90,7 +90,7 @@ def heatmap(x, row_header, column_header, row_method,
 
     ### Scale the Matplotlib window size
     default_window_hight = 8.5
-    default_window_width = 12
+    default_window_width = 10
     fig = pylab.figure(figsize=(default_window_width,default_window_hight)) ### could use m,n to scale here
     color_bar_w = 0.015 ### Sufficient size to show
     color_bar_w = 0.015 ### Sufficient size to show
@@ -127,14 +127,14 @@ def heatmap(x, row_header, column_header, row_method,
     ax2_w = axc_w
 
     # placement of the phenotype legend
-    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.8,0.88,0.11,0.09]
+    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.78,0.85,0.05,0.13]
     # placement of the sample legend
 
     # axcb - placement of the sample legend
-    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.07,0.07,0.11,0.09]
+    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.05,0.07,0.05,0.09]
 
     # axcb - placement of the color legend
-    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.07,0.88,0.11,0.09]
+    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.05,0.88,0.05,0.09]
 
 
     # Compute and plot top dendrogram
@@ -187,9 +187,9 @@ def heatmap(x, row_header, column_header, row_method,
         axcb.set_yticklabels(["negative", "positive"])
         axcb.yaxis.set_ticks([0.25, 0.75])
     if mode == "combined":
-        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"])
+        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"], fontsize = 8)
         axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
-    axcb.set_title("Heatmap colorkey")
+    axcb.set_title("Heatmap colorkey", fontsize = 10, loc = "left")
     
     # Plot distance matrix.
     axm = fig.add_axes([axm_x, axm_y, axm_w, axm_h])  # axes for the data matrix
@@ -270,9 +270,9 @@ def heatmap(x, row_header, column_header, row_method,
         bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
         norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
         cb = mpl.colorbar.ColorbarBase(axpl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
-        axpl.set_yticklabels([i for i in cmaplist.index])
+        axpl.set_yticklabels([i for i in cmaplist.index], fontsize = 6)
         axpl.yaxis.set_ticks(np.arange(1.0 / len(cmaplist) / 2, 1,  1.0 / len(cmaplist)))
-        axpl.set_title("Phenotype colorkey")
+        axpl.set_title("Phenotype colorkey", fontsize =  10, loc = "left")
         # Plot colside colors
         # axc --> axes for column side colorbar
         axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
@@ -306,7 +306,7 @@ def heatmap(x, row_header, column_header, row_method,
             cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
             axsl.yaxis.set_ticks(np.arange(1.0 / len(sample_cats) / 2, 1,  1.0 / len(sample_cats)))
             axsl.set_yticklabels([i for i in sample_cats])
-            axsl.set_title("Sample colorkey")
+            axsl.set_title("Sample colorkey", loc = "left")
     
     
     #exportFlatClusterData(filename, new_row_header,new_column_header,xt,ind1,ind2)
