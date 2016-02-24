@@ -1,25 +1,6 @@
 #!/usr/bin/env python
-### hierarchical_clustering.py
-#Copyright 2005-2012 J. David Gladstone Institutes, San Francisco California
-#Author Nathan Salomonis - nsalomonis@gmail.com
+#adapted from Nathan Salomonis: http://code.activestate.com/recipes/578175-hierarchical-clustering-heatmap-python/
 
-#Permission is hereby granted, free of charge, to any person obtaining a copy 
-#of this software and associated documentation files (the "Software"), to deal 
-#in the Software without restriction, including without limitation the rights 
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-#copies of the Software, and to permit persons to whom the Software is furnished 
-#to do so, subject to the following conditions:
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-#INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-#PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-#HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-#OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-#SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-#################
-### Imports an tab-delimited expression matrix and produces and hierarchically clustered heatmap
-#################
 import matplotlib as mpl
 #pick non-x display
 mpl.use('Agg')
@@ -35,18 +16,6 @@ import getopt
 import numpy as np
 import pandas as ps
 
-#colors = [0   125 52
-#[0,   83,  138]
-#[129 112, 102]
-#[147 170 0]
-#[166 189 215]
-#[193 0   32]
-#[206 162 98]
-#[244 200 0]
-#[246 118 142]
-#[255 104 0]
-#[255 142 0]
-#[83,  55,  122]]
 ################# Perform the hierarchical clustering #################
 
 def heatmap(x, row_header, column_header, row_method,
