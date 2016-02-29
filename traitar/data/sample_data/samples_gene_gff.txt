@@ -1,0 +1,3 @@
+sample_file_name	sample_name	category	gene_gff
+1457190.3.RefSeq.faa	Listeria_ivanovii_WSLC3009	environment_1	1457190.3.RefSeq.gff
+525367.9.RefSeq.faa	Listeria_grayi_DSM_20601	environment_2	525367.9.RefSeq.gff
