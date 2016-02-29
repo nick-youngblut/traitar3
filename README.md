@@ -39,29 +39,29 @@ You can also install globally with
 ##Creating a virtual environment
 You may want to use virtualenv to create a clean environment for traitar i.e. run
 
-``virtualenv <environment_name> --system-site-packages``
+```
+virtualenv <environment_name> --system-site-packages
+source <environment_path>/bin/activate
 
-``source <environment_path>/bin/activate``
+pip install -U traitar-<version>.tar.gz
+PATH=$PATH:<environment_path>/bin/
+source ~/.bashrc
+```
 
-``pip install -U traitar-<version>.tar.gz``
-
-``PATH=$PATH:<environment_path>/bin/``
-
-``source ~/.bashrc``
 ##Additional requirements
 traitar further needs prodigal and hmmsearch available on the command line. For parallel execution it further requires GNU parallel.
-All three are available as preconfigured package for many Linux installation e.g. for Debian / Ubuntu. For Ubuntu 14.04 it is available via the trusty-backports.  
-``#include trusty backports source in the sources.list``
+All three are available as preconfigured package for many Linux installation e.g. for Debian / Ubuntu. For Ubuntu 14.04 it is available via the trusty-backports.
 
-``"sudo deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse ">> /etc/apt/sources.list``
+```
+#include trusty backports source in the sources.list
+"sudo deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse ">> /etc/apt/sources.list
 
-``#update sources``
+#update sources
+apt-get install update
 
-``apt-get install update``
-
-``#install packages``
-
-``sudo apt-get install parallel prodigal hmmer``
+#install packages
+sudo apt-get install parallel prodigal hmmer
+```
 
 ``traitar -h`` will provide help regarding the different options of traitar.
 traitar requires the Pfam 27.0 HMM models. These are not distributed with this package but need to be downloaded
@@ -97,11 +97,12 @@ This requires installing GNU parallel as noted above.
 ##Run traitar with packaged sample data.
 ``traitar phenotype <traitar_dir>/data/sample_data <traitar_dir>/data/sample_data/samples.txt from_genes <out_dir> -c 2`` will trigger phenotyping of *Listeria grayi DSM_20601* and *Listeria ivanovii WSLC3009*. Computation should be done within 5 minutes. You can find out ``<traitar_dir>`` by running
 
-``python``
+```
+python
+>>> import traitar
+>>> traitar.__path__
+```
 
-``>>> import traitar``
-
-``>>> traitar.__path__``
 # Results
 traitar provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``.
 ##Heatmaps
