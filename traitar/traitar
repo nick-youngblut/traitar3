@@ -160,12 +160,10 @@ class Phenolyzer:
         if is_recompute:
             self.run_phenotype_prediction()
         print "running feature track generation"
-        is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
-        if is_recompute:
-            if not "gene_gff" in self.s2f.columns:
-                self.run_feature_track_generation(self.s2f.loc[:,"sample_name"], mode)
-            else:
-                self.run_feature_track_generation(self.s2f.loc[:, "sample_name"],  mode, self.s2f.loc[: , "gene_gff"], self.gene_gff_type)
+        if not "gene_gff" in self.s2f.columns:
+            self.run_feature_track_generation(self.s2f.loc[:,"sample_name"], mode)
+        else:
+            self.run_feature_track_generation(self.s2f.loc[:, "sample_name"],  mode, self.s2f.loc[: , "gene_gff"], self.gene_gff_type)
         sys.stdout.flush()
         print "running heatmap generation"
         self.run_heatmap_generation(self.s2f.loc[:,"sample_name"])
@@ -248,8 +246,6 @@ class Phenolyzer:
     def run_feature_track_generation(self, in_samples, mode, gene_gffs = None, gene_gff_type = "prodigal"):
         #create output directory for the pfam annotation 
         hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(gene_gff)s  %(out_gff_dir)s %(sample)s " + gene_gff_type + " %(model_tar)s %(predicted_pts)s"
-        
-
         #read in phypat predictions
         phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
         phypat_pgl_preds = ps.read_csv(os.path.join(self.phypat_pgl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
@@ -261,10 +257,6 @@ class Phenolyzer:
         h2gff_commands = []
         #hmm2gff command for the full pfam annotation
         #collect predictions and compose hmm2gff command for each samples
-        if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
-            os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
-        if not os.path.exists(os.path.join(self.phypat_pgl_dir, "feat_gffs")):
-            os.mkdir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
         for i in range(len(in_samples)):
             predicted_pts_phypat = []
             predicted_pts_phypat_pgl = []
@@ -279,8 +271,12 @@ class Phenolyzer:
                 h2gff_commands.append(hmm2gff % {"archive": "phypat_pgl.tar.gz", "out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "model_tar" : "%s/data/models/phypat+PGL.tar.gz" % self.phenolyzer_dir, "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat_pgl), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i])})
             #create output dirs for feature tracks
         if mode == "from_nucleotides" or gene_gffs is not None:
+            is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
+            if is_recompute:
+                if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
+                    os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
             self.execute_commands(h2gff_commands) 
-        #else:
+        else:
             ftco = os.path.join(self.pred_dir, "feature_track_commands.txt")
             sys.stderr.write("tracks with Pfams relevant for the predictions cannot be ad-hoc generated because the input is amino acids and no gene prediction GFF files have been generated\n commands are saved to %s and can be modified and run manually\n" % ftco)
             with open(ftco, 'w') as f:
