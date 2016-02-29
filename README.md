@@ -2,7 +2,6 @@
 traitar is a software for characterizing microbial samples from nucleotide or protein sequences. It can accurately phenotype [67 diverse traits](traits.tsv).
 
 ### Table of Contents  
-[Microbial traits available for classification](#microbial-traits-available-for-classification)  
 [Installation](#installation)  
 [Basic usage](#basic-usage)  
 [Results](#results)  
