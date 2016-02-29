@@ -99,7 +99,7 @@ These package might not be available for your Linux distribution. Please let us 
 
 Once finished we strongly encourage you to install traitar with pip rather than by manually cloning the repository. Install locally by
 
-``pip install traitar-0.1.7.tar.gz --user``
+``pip install traitar-<version>.tar.gz --user``
 
 You need to add the following line to your ~/.bashrc to adjust the PATH variable so that the bash finds the executables needed for running traitar. 
 
@@ -109,7 +109,7 @@ You may need to run ``source ~/.bashrc`` once in your current session.
 
 You can also install globally with
 
-``sudo pip install traitar-0.1.7.tar.gz``
+``sudo pip install traitar-<version>.tar.gz``
 ##Creating a virtual environment
 You may want to use virtualenv to create a clean environment for traitar i.e. run
 
@@ -117,7 +117,7 @@ You may want to use virtualenv to create a clean environment for traitar i.e. ru
 
 ``source <environment_path>/bin/activate``
 
-``pip install -U traitar-0.1.7.tar.gz``
+``pip install -U traitar-<version>.tar.gz``
 
 ``PATH=$PATH:<environment_path>/bin/``
 
@@ -152,7 +152,7 @@ to let traitar know where.
 
 ``traitar phenotype <in dir>  <sample file> from_nucleotides <out_dir> `` 
 
-will trigger the standard workflow of traitAR, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the <in_dir> for all samples in <sample_file> with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. 
+will trigger the standard workflow of traitar, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the <in_dir> for all samples in <sample_file> with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. 
 
 The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - Please also take a look at the sample file for the packaged example data:
 
@@ -177,7 +177,7 @@ This requires installing GNU parallel as noted above.
 
 ``>>> traitar.__path__``
 # Results
-traitAR provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``.
+traitar provides the gene prediction results in ``<out_dir>/gene_prediction``, the Pfam annotation in ``<out_dir>/pfam_annotation`` and the phenotype prediction in``<out_dir>/phenotype prediction``.
 ##Heatmaps
  The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png``` and provide hierarchical clustering dendrograms for phenotypes and the samples.
 
@@ -186,7 +186,10 @@ These heatmaps are based on tab separated text files e.g. ``predictions_majority
 
 ##Feature tracks
 If traitar is run from_nucleotides it will generate a link between the Prodigal gene prediction and predicted phenotypes in ``phypat/feat_gffs`` and ``phypat+PGL/feat_gffs`` (no example in the sample data). The user can visualize gene prediction  phenotype-specific Pfam annotations tracks via GFF files.
+###Feature tracks with *from_genes* option (experimental feature)
+If the *from_genes* option is set, the user may specify gene GFF files via an additional column called gene_gff in the sample file. As gene ids are not consistent across gene GFFs from different sources e.g. img, RefSeq or Prodigal the user needs to specify the origin of the gene gff file via the -g / --gene_gff_type parameter. Still there is no guarantee that this works currently. Using samples_gene_gff.txt as the sample file in the above example will generate phenotype-specific Pfam tracks for the two genomes. 
 
+``traitar phenotype . samples_gene_gff.txt from_genes traitar_out -g refseq``
 
 # Web service
 We also offer traitar as a web service at
