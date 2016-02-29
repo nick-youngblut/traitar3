@@ -21,8 +21,8 @@ Please see [INSTALL.md](INSTALL.md) for installation instructions.
 
 will trigger the standard workflow of traitar, which is to predict open reading frames with Prodigal, annotate the coding sequences provided as nucleotide FASTAs in the <in_dir> for all samples in <sample_file> with Pfam families using HMMer and finally predict phenotypes from the models for the 67 traits. 
 
-The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - Please also take a look at the sample file for the packaged example data:
-
+The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - The header row is mandatory; please also take a look at the sample file for the packaged example data:
+sample_file_name{tab}sample_name{tab}category
 sample1_file_name{tab}sample1_name[{tabl}sample_category1]
 sample2_file_name{tab}sample2_name[{tabl}sample_category2]
 
