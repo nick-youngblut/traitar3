@@ -15,6 +15,13 @@ import sys, os
 import getopt
 import numpy as np
 import pandas as ps
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning) 
+#ignore these warnings
+#/usr/lib/pymodules/python2.7/matplotlib/collections.py:548: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+#  if self._edgecolors == 'face':
+#/usr/lib/pymodules/python2.7/matplotlib/backends/backend_pdf.py:2184: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+#  different = bool(ours != theirs)
 
 ################# Perform the hierarchical clustering #################
 

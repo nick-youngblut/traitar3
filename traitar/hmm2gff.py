@@ -3,8 +3,12 @@ import sys
 import pandas as ps
 import tarfile
 import StringIO
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning) 
+#ignore the following warning; this piece of code needs to be adjusted in a future version of traitar
+#/home/aaron/traitar/traitar/hmm2gff.py:226: FutureWarning: sort(columns=....) is deprecated, use sort_values(by=.....)
+#  out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s.dat" % (out_gff_dir, sample), sep = "\t")
 """ produce gff file from a hmmer hit file """
-
 
 def get_protein_acc(fasta_id):
     """extract from a fasta id like gi|17233466|ref|NP_490586.1| the protein accession NP_490586.1"""
