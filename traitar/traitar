@@ -15,15 +15,15 @@ from traitar._version import __version__
 import re
 
 def phenolyze(args):
-    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.gene_gff_type)
+    p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.gene_gff_type)
     p.run(args.mode)
 
 
-class Phenolyzer:
+class Traitar:
 
     def __init__(self, input_dir, output_dir, sample2file, cpu = 1, heatmap_out = None, heatmap_format = "pdf", gene_gff_type = None):
-        self.user_message = "output dir %s already exists; press 1 to continue with data from a previous run; press 2 to remove this directory; press 3 to abort"
-        self.error_message =  "directory %s already exists; delete directory or run in interactive mode if the annotation is done and you want to continue from there"
+        self.user_message = "output dir %s already exists; press 1 to continue with data from a previous run; press 2 to remove this directory; press 3 to abort followed by [ENTER]"
+        self.error_message =  "directory %s already exists; delete directory or run in interactive mode if this step is done and you want to continue from there"
         self.heatmap_format = heatmap_format 
         self.sample2file = sample2file
         self.input_dir = input_dir
