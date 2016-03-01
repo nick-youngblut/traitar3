@@ -158,11 +158,11 @@ class Phenolyzer:
             self.run_gene_prediction(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"])
             print pfam_msg
             sys.stdout.flush()
-            self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"])
+            self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"], mode)
         if mode == "from_genes": 
             print pfam_msg
             sys.stdout.flush()
-            self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"])
+            self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"], mode)
         print "running phenotype prediction"
         sys.stdout.flush()
         is_recompute = self.check_dir(self.pred_dir)
@@ -206,12 +206,11 @@ class Phenolyzer:
         if is_recompute:    
             self.execute_commands(prodigal_commands) 
 
-    def run_hmmer_annotation(self, in_samples, out_samples):
-        if (in_samples != out_samples).all():
-            in_dir = self.input_dir
-            file_extension = False 
-        else:
-            file_extension = True
+    def run_hmmer_annotation(self, in_samples, out_samples, mode):
+	file_extension = False
+	in_dir = self.input_dir
+        if mode == "from_nucleotides":
+            file_extension = True 
             in_dir = os.path.join(self.output_dir, "gene_prediction")
         #create output directory for the pfam annotation 
         a_dir = os.path.join(self.output_dir, "pfam_annotation")

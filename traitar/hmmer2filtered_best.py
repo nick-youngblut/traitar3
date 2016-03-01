@@ -14,7 +14,11 @@ def apply_thresholds(infile_f, eval_threshold, bit_score_thresh, out_filt_f, out
     #replace whitespace by tabs and skip lines which start with a # char
     cleaned = "".join(filter(lambda x: not x.startswith("#"), ["\t".join(i.split(None, 22)) for i in infile_f.readlines()]))
     #read  tab delimited hmmer output file with pandas via stringIO
-    m = ps.read_csv(StringIO(cleaned), sep = "\t",  header = None)
+    #account for cases where hmmer didn't return any hits
+    try:
+        m = ps.read_csv(StringIO(cleaned), sep = "\t",  header = None)
+    except ValueError:
+        m = ps.DataFrame(columns = hmmer_colnames)
     m.columns = hmmer_colnames
     #apply eval threshold
     m_eval = m.loc[(m.iloc[:,12] <= eval_threshold) & (m.iloc[:, 13] >= bit_score_thresh), :]
@@ -33,6 +37,9 @@ def aggregate_domain_hits(filtered_df, out_f):
         filtered_df.sort(columns = ["target name", "query name"], inplace = True)
         if filtered_df.shape[0] > 0:
             current_max = filtered_df.iloc[0,] 
+        else:
+            #nothing todo
+            return
         for i in range(1, filtered_df.shape[0]):
             if current_max.loc["query name"] != filtered_df.iloc[i,].loc["query name"] or current_max.loc["target name"] != filtered_df.iloc[i,].loc["target name"]:
                 ps.DataFrame(current_max).T.to_csv(out_f, sep = "\t", index = False, header = False, mode = 'a')
