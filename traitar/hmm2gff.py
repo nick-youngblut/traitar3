@@ -9,6 +9,7 @@ import StringIO
 def get_protein_acc(fasta_id):
     """extract from a fasta id like gi|17233466|ref|NP_490586.1| the protein accession NP_490586.1"""
     return fasta_id.split("|")[3]
+    #return "_".join(fasta_id.split("|")[1].split("_")[3:5])
 
 
 def read_rel_feats(model_tar, pts):
