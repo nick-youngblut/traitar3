@@ -1,25 +1,6 @@
 #!/usr/bin/env python
-### hierarchical_clustering.py
-#Copyright 2005-2012 J. David Gladstone Institutes, San Francisco California
-#Author Nathan Salomonis - nsalomonis@gmail.com
+#adapted from Nathan Salomonis: http://code.activestate.com/recipes/578175-hierarchical-clustering-heatmap-python/
 
-#Permission is hereby granted, free of charge, to any person obtaining a copy 
-#of this software and associated documentation files (the "Software"), to deal 
-#in the Software without restriction, including without limitation the rights 
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
-#copies of the Software, and to permit persons to whom the Software is furnished 
-#to do so, subject to the following conditions:
-
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
-#INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A 
-#PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT 
-#HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION 
-#OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
-#SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-#################
-### Imports an tab-delimited expression matrix and produces and hierarchically clustered heatmap
-#################
 import matplotlib as mpl
 #pick non-x display
 mpl.use('Agg')
@@ -34,19 +15,14 @@ import sys, os
 import getopt
 import numpy as np
 import pandas as ps
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning) 
+#ignore these warnings
+#/usr/lib/pymodules/python2.7/matplotlib/collections.py:548: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+#  if self._edgecolors == 'face':
+#/usr/lib/pymodules/python2.7/matplotlib/backends/backend_pdf.py:2184: FutureWarning: comparison to `None` will result in an elementwise object comparison in the future.
+#  different = bool(ours != theirs)
 
-#colors = [0   125 52
-#[0,   83,  138]
-#[129 112, 102]
-#[147 170 0]
-#[166 189 215]
-#[193 0   32]
-#[206 162 98]
-#[244 200 0]
-#[246 118 142]
-#[255 104 0]
-#[255 142 0]
-#[83,  55,  122]]
 ################# Perform the hierarchical clustering #################
 
 def heatmap(x, row_header, column_header, row_method,
@@ -90,7 +66,7 @@ def heatmap(x, row_header, column_header, row_method,
 
     ### Scale the Matplotlib window size
     default_window_hight = 8.5
-    default_window_width = 12
+    default_window_width = 10
     fig = pylab.figure(figsize=(default_window_width,default_window_hight)) ### could use m,n to scale here
     color_bar_w = 0.015 ### Sufficient size to show
     color_bar_w = 0.015 ### Sufficient size to show
@@ -127,14 +103,14 @@ def heatmap(x, row_header, column_header, row_method,
     ax2_w = axc_w
 
     # placement of the phenotype legend
-    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.07,0.07,0.11,0.09]
+    [axpl_x, axpl_y, axpl_w, axpl_h] = [0.78,0.84,0.05,0.13]
     # placement of the sample legend
 
     # axcb - placement of the sample legend
-    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.8,0.88,0.11,0.09]
+    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.05,0.07,0.05,0.09]
 
     # axcb - placement of the color legend
-    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.07,0.88,0.11,0.09]
+    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.05,0.88,0.05,0.09]
 
 
     # Compute and plot top dendrogram
@@ -184,12 +160,12 @@ def heatmap(x, row_header, column_header, row_method,
     norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
     cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
     if mode == "single":
-        axcb.set_yticklabels(["negative", "positive"])
+        axcb.set_yticklabels(["negative", "positive"], fontsize = 6)
         axcb.yaxis.set_ticks([0.25, 0.75])
     if mode == "combined":
-        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"])
+        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"], fontsize = 6)
         axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
-    axcb.set_title("Heatmap colorkey")
+    axcb.set_title("Heatmap colorkey", fontsize = 10, loc = "left")
     
     # Plot distance matrix.
     axm = fig.add_axes([axm_x, axm_y, axm_w, axm_h])  # axes for the data matrix
@@ -213,10 +189,18 @@ def heatmap(x, row_header, column_header, row_method,
     new_row_header=[]
     new_column_header=[]
     for i in range(x.shape[0]):
+        margin = 0
+        if len(row_header) > 0 :
+            fontdict = {'fontsize': 7}
+        if len(row_header) > 30 :
+            fontdict = {'fontsize': 7}
+            margin = 0.5
+        if len(row_header) > 50 :
+            fontdict = {'fontsize': 4}
         if len(row_header) > 100 :
-            fontdict = {'fontsize': 5},
+            fontdict = {'fontsize': 2}
         if len(row_header) > 200:
-            fontdict = {'fontsize': 2},
+            fontdict = {'fontsize': 1}
         if not row_method is None:
             #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
             axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
@@ -224,13 +208,10 @@ def heatmap(x, row_header, column_header, row_method,
                 label = row_header[idx1[i]]
             else: 
                 label = row_header[i]
-            axm.text(x.shape[1]-0.3, i - 0.5, '  ' + label)
+            fontdict.items
+            axm.text(x.shape[1]-0.3, i - margin , '  ' + label, fontdict = fontdict)
             new_row_header.append(label)
             
-        else:
-            if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
-                axm.text(x.shape[1]-0.5, i, '  '+row_header[i], fontdict = fontdict) ### When not clustering rows
-            new_row_header.append(row_header[i])
     for i in range(x.shape[1]):
         if not column_method is None:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
@@ -265,9 +246,9 @@ def heatmap(x, row_header, column_header, row_method,
         bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
         norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
         cb = mpl.colorbar.ColorbarBase(axpl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
-        axpl.set_yticklabels([i for i in cmaplist.index])
+        axpl.set_yticklabels([i for i in cmaplist.index], fontsize = 6)
         axpl.yaxis.set_ticks(np.arange(1.0 / len(cmaplist) / 2, 1,  1.0 / len(cmaplist)))
-        axpl.set_title("Phenotype colorkey")
+        axpl.set_title("Phenotype colorkey", fontsize =  10, loc = "left")
         # Plot colside colors
         # axc --> axes for column side colorbar
         axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
@@ -280,14 +261,14 @@ def heatmap(x, row_header, column_header, row_method,
     
     # Plot rowside colors
     if sample_f is not None :
-        samples = ps.read_csv(sample_f, sep = "\t", index_col = 1, header = None)
-        if samples.shape[1] > 1:
-            sample_cats = list(set(samples.iloc[:, 1]))
+        samples = ps.read_csv(sample_f, sep = "\t", index_col = "sample_name")
+        if "category" in samples.columns:
+            sample_cats = list(set(samples.loc[:, "category"]))
             cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
             cmap_p = mpl.colors.ListedColormap(cmaplist.values[:len(sample_cats),])
             print sample_cats
             axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for row side colorbar
-            dr = numpy.array([cat2col[samples.loc[i, :].iloc[1]]  for i in row_header]).T
+            dr = numpy.array([cat2col[samples.loc[i, "category"]]  for i in row_header]).T
             dr = dr[idx1]
             dr.shape = (samples.shape[0], 1)
             #cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
@@ -300,8 +281,8 @@ def heatmap(x, row_header, column_header, row_method,
             norm = mpl.colors.BoundaryNorm(bounds, len(sample_cats))
             cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
             axsl.yaxis.set_ticks(np.arange(1.0 / len(sample_cats) / 2, 1,  1.0 / len(sample_cats)))
-            axsl.set_yticklabels([i for i in sample_cats])
-            axsl.set_title("Sample colorkey")
+            axsl.set_yticklabels([i for i in sample_cats], fontsize = 6)
+            axsl.set_title("Sample colorkey", loc = "left", fontsize = 10)
     
     
     #exportFlatClusterData(filename, new_row_header,new_column_header,xt,ind1,ind2)
@@ -465,14 +446,14 @@ if __name__ == '__main__':
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
     parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
-    parser.add_argument("--sample_f", help= 'restrict phenotyp predictions to the sample found in <sample_file>', default = None)
+    parser.add_argument("--sample_f", help= 'restrict phenotype predictions to the sample found in <sample_file>', default = None)
     parser.add_argument("--pt2cat2col_f", help= 'mapping of phenotypes to categories and colors', default = None)
     args = parser.parse_args()
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0)
     if not args.sample_f is None:
         print args.sample_f
-        s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t", header = None)
-        m = m.loc[s2f.iloc[:, 1], :]
+        s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t")
+        m = m.loc[s2f.loc[:, "sample_name"], :]
     matrix = m.values
     column_header = m.columns 
     row_header = m.index

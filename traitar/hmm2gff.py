@@ -3,12 +3,17 @@ import sys
 import pandas as ps
 import tarfile
 import StringIO
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning) 
+#ignore the following warning; this piece of code needs to be adjusted in a future version of traitar
+#/home/aaron/traitar/traitar/hmm2gff.py:226: FutureWarning: sort(columns=....) is deprecated, use sort_values(by=.....)
+#  out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s.dat" % (out_gff_dir, sample), sep = "\t")
 """ produce gff file from a hmmer hit file """
-
 
 def get_protein_acc(fasta_id):
     """extract from a fasta id like gi|17233466|ref|NP_490586.1| the protein accession NP_490586.1"""
     return fasta_id.split("|")[3]
+    #return "_".join(fasta_id.split("|")[1].split("_")[3:5])
 
 
 def read_rel_feats(model_tar, pts):
@@ -41,6 +46,7 @@ def read_gff(gff_file, mode):
     f = open(gff_file)
     gene_dict = {}
     i = 0
+    fasta = False
     for l in f:
         i += 1
         # print i
@@ -53,6 +59,20 @@ def read_gff(gff_file, mode):
                 read_prodigal_entry(l, gene_dict)
             elif mode == "ncbi":
                 read_ncbi_entry(l, gene_dict)
+            elif mode == "refseq":
+                read_refseq_entry(l, gene_dict)
+            elif mode == "img":
+                read_img_entry(l, gene_dict)
+            elif mode == "genbank":
+                #in genbank gene gffs the original nucleotide sequence can be appended to the gff"
+                if l.startswith(">"):
+                    fasta = True 
+                    continue
+                if fasta and l.startswith(('a','g', 'c', 't')):
+                    continue
+                else:
+                    fasta = False
+                read_genbank_entry(l, gene_dict)
     f.close()
     return gene_dict
 
@@ -67,7 +87,7 @@ def read_genemark_entry(l, gene_dict):
             elems[4]), elems[6])
 
 def read_prodigal_entry(l, gene_dict):
-    """read and parse one line from a genemark gff"""
+    """read and parse one line from a prodigal gff"""
     elems = l.strip().split("\t")
     #print elems[8].split(";"), len(elems)
     attrs = dict(
@@ -77,6 +97,22 @@ def read_prodigal_entry(l, gene_dict):
             elems[0], int(
                 elems[3]), int(
                 elems[4]), elems[6])
+
+def read_img_entry(l, gene_dict):
+    """read and parse one line from an IMG gff"""
+    elems = l.strip().split("\t")
+    if elems[2] == "CDS":
+        try:
+            attrs = dict(
+                [(i.split("=")[0], i.split("=")[1]) for i in elems[8].strip(";").split(";")])
+        except IndexError:
+            sys.stderr.write("something went wrong in line; skipping \n%s\n" % l)
+            return 
+        gene_dict[attrs["ID"]] = (
+            elems[0], int(
+                elems[3]), int(
+                elems[4]), elems[6])
+
 
 def read_ncbi_entry(l, gene_dict):
     """read and parse one line from a ncbi gff"""
@@ -90,6 +126,33 @@ def read_ncbi_entry(l, gene_dict):
             elems[0], int(
                 elems[3]), int(
                 elems[4]), elems[6])
+
+def read_refseq_entry(l, gene_dict):
+    """read and parse one line from a refseq gff"""
+    elems = l.strip().split("\t")
+    if elems[2] == "CDS":
+        attrs = dict(
+            [(i.split("=")[0], i.split("=")[1])
+             for i in elems[8].split(";")])
+        gene_dict[
+            attrs["ID"]] = (
+            elems[0], int(
+                elems[3]), int(
+                elems[4]), elems[6])
+
+def read_genbank_entry(l, gene_dict):
+    """read and parse one line from a genbank gff"""
+    elems = l.strip().split("\t")
+    if elems[2] == "CDS":
+        attrs = dict(
+            [(i.split("=")[0], i.split("=")[1])
+             for i in elems[8].split(";")])
+        gene_dict[
+            attrs["locus_tag"]] = (
+            elems[0], int(
+                elems[3]), int(
+                elems[4]), elems[6])
+
 
 
 def get_coords(gene_start, gene_end, ali_from, ali_to, strand):
@@ -132,13 +195,16 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
             elems = l.strip().split("\t")
             # change pfam accession PF00001.3 into PF00001
             gid, acc, name, ali_from, ali_to, ieval = [
-                get_protein_acc(elems[0]) if mode == "ncbi" else elems[0], elems[4].split(".")[0], elems[3], int(elems[17]), int(elems[18]), elems[11]]
+                get_protein_acc(elems[0]) if mode == "ncbi" or mode == "refseq" else elems[0], elems[4].split(".")[0], elems[3], int(elems[17]), int(elems[18]), elems[11]]
 
             if gid not in gene_dict:
                 if not skip_genes:
                     print >> sys.stderr, gid, "not found in input orf gff file"
                     if mode == "ncbi":
                         print >> sys.stderr, "entry might be outdated, skipping"
+                        continue
+                    if mode == "img":
+                        print >> sys.stderr, "might be a semicolon ; delimiter within an attribute; sample is %s\n" % sample
                         continue
                 else:
                     continue
@@ -180,7 +246,7 @@ if __name__ == "__main__":
     parser.add_argument("gene_gff", help= 'gene prediction gff file')
     parser.add_argument("output_gff_dir", help= 'output GFF file')
     parser.add_argument("sample", help= 'sample file')
-    parser.add_argument("gene_gff_mode", choices = ["prodigal", "ncbi", "metagenemark"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
+    parser.add_argument("gene_gff_mode", choices = ["img", "prodigal", "ncbi", "refseq", "metagenemark", "genbank"], help= "origin of the gene prediction (Prodigal, NCBI, metagenemark)")
     parser.add_argument("model_tar", help = "tar.gz file with relevant features etc.")
     parser.add_argument("--predicted_pts", "-r", help='file with some relevant annotation features', default = None)
     args = parser.parse_args()

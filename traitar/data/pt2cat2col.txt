@@ -1,5 +1,5 @@
 Phenotype	Category	Color	r	g	b
-Gram positive	Morphology	 0x53377A	83	55	122
+Gram positive	Morphology	 0xFFB300	83	55	122
 Gram negative	Morphology	 0xFFB300	83	55	122
 Coccus	Morphology	 0xFFB300	83	55	122
 Bacillus or coccobacillus	Morphology	 0xFFB300	83	55	122
@@ -37,12 +37,12 @@ Alkaline phosphatase	Enzyme	    0x817066	129	112	102
 Nitrite to gas	Enzyme	    0x817066	129	112	102
 Nitrate to nitrite	Enzyme	    0x817066	129	112	102
 Lipase	Enzyme	    0x817066	129	112	102
-Urea hydrolysis	Enzyme	    0x817066	129	112	102
+Urea hydrolysis	Sugar	0x93AA00	147	170	0
 DNase	Enzyme	    0x817066	129	112	102
 Esculin hydrolysis	Enzyme	    0x817066	129	112	102
 Pyrrolidonyl-beta-naphthylamide	Enzyme	    0x817066	129	112	102
 Coagulase production	Enzyme	    0x817066	129	112	102
-myo-Inositol	Enzyme	    0x817066	129	112	102
+myo-Inositol	Sugar	    0x93AA00	147	170	0
 Hydrogen sulfide	Product	    0xF6768E	246	118	142
 L-Arabinose	Sugar	    0x93AA00	147	170	0
 Cellobiose	Sugar	    0x93AA00	147	170	0
