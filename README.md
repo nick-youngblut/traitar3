@@ -5,12 +5,10 @@ traitar is a software for characterizing microbial samples from nucleotide or pr
 [Installation](#installation)  
 [Basic usage](#basic-usage)  
 [Results](#results)  
-[Web service](#web-service)  
 
 <a name="installation"/>
 <a name="basic-usage"/>
 <a name="results"/>
-<a name="web-service"/>
 
 # Installation
 Please see [INSTALL.md](INSTALL.md) for installation instructions.
@@ -67,6 +65,3 @@ If the *from_genes* option is set, the user may specify gene GFF files via an ad
 ``traitar phenotype . samples_gene_gff.txt from_genes traitar_out -g refseq``
 
 
-# Web service
-We also offer traitar as a web service at
-http://algbio.cs.uni-duesseldorf.de/webapps/wa-webservice/pipe.php?pr=phenolyzer 
