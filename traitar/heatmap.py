@@ -224,7 +224,7 @@ def heatmap(x, row_header, column_header, row_method,
 
     if pt2cat2col_f is not  None:
         #parse phenotype sample file if available
-        pt2cat2col = ps.read_csv(pt2cat2col_f, sep = "\t", index_col = 0)
+        pt2cat2col = ps.read_csv(pt2cat2col_f, sep = "\t", index_col = 0, encoding='utf-8')
         # Plot phenotype legend
         axpl = fig.add_axes([axpl_x, axpl_y, axpl_w, axpl_h], frame_on=False)  # axes for colorbar
         #cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap, orientation='horizontal')
@@ -449,7 +449,7 @@ if __name__ == '__main__':
     parser.add_argument("--sample_f", help= 'restrict phenotype predictions to the sample found in <sample_file>', default = None)
     parser.add_argument("--pt2cat2col_f", help= 'mapping of phenotypes to categories and colors', default = None)
     args = parser.parse_args()
-    m = ps.read_csv(args.data_f, sep = "\t", index_col = 0)
+    m = ps.read_csv(args.data_f, sep = "\t", index_col = 0, encoding='utf-8')
     if not args.sample_f is None:
         print args.sample_f
         s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t")

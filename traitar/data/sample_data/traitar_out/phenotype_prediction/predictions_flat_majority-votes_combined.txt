@@ -4,6 +4,8 @@ Listeria_grayi_DSM_20601	Catalase	1	phypat
 Listeria_grayi_DSM_20601	Catalase	1	phypat+GGL
 Listeria_grayi_DSM_20601	Citrate	1	phypat
 Listeria_grayi_DSM_20601	Citrate	1	phypat+GGL
+Listeria_grayi_DSM_20601	Growth at 42°C	1	phypat
+Listeria_grayi_DSM_20601	Growth at 42°C	1	phypat+GGL
 Listeria_grayi_DSM_20601	Voges Proskauer	1	phypat
 Listeria_grayi_DSM_20601	Voges Proskauer	1	phypat+GGL
 Listeria_grayi_DSM_20601	D-Mannitol	1	phypat
@@ -27,8 +29,6 @@ Listeria_grayi_DSM_20601	Gram positive	1	phypat+GGL
 Listeria_grayi_DSM_20601	Growth in 6.5% NaCl	1	phypat
 Listeria_grayi_DSM_20601	Growth in 6.5% NaCl	1	phypat+GGL
 Listeria_grayi_DSM_20601	Bile-susceptible	1	phypat+GGL
-Listeria_grayi_DSM_20601	Growth at 42 degrees C	1	phypat
-Listeria_grayi_DSM_20601	Growth at 42 degrees C	1	phypat+GGL
 Listeria_grayi_DSM_20601	Glucose fermenter	1	phypat
 Listeria_grayi_DSM_20601	Glucose fermenter	1	phypat+GGL
 Listeria_grayi_DSM_20601	Salicin	1	phypat
@@ -52,6 +52,8 @@ Listeria_ivanovii_WSLC3009	Starch hydrolysis	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Catalase	1	phypat
 Listeria_ivanovii_WSLC3009	Catalase	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Citrate	1	phypat+GGL
+Listeria_ivanovii_WSLC3009	Growth at 42°C	1	phypat
+Listeria_ivanovii_WSLC3009	Growth at 42°C	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Voges Proskauer	1	phypat
 Listeria_ivanovii_WSLC3009	Voges Proskauer	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Trehalose	1	phypat
@@ -73,8 +75,6 @@ Listeria_ivanovii_WSLC3009	Gram positive	1	phypat
 Listeria_ivanovii_WSLC3009	Gram positive	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Growth in 6.5% NaCl	1	phypat
 Listeria_ivanovii_WSLC3009	Growth in 6.5% NaCl	1	phypat+GGL
-Listeria_ivanovii_WSLC3009	Growth at 42 degrees C	1	phypat
-Listeria_ivanovii_WSLC3009	Growth at 42 degrees C	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Glucose fermenter	1	phypat
 Listeria_ivanovii_WSLC3009	Glucose fermenter	1	phypat+GGL
 Listeria_ivanovii_WSLC3009	Salicin	1	phypat
