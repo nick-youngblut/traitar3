@@ -1,68 +1,68 @@
 Phenotype	Category
-Gram positive	Morphology
-Gram negative	Morphology
-Coccus	Morphology
-Bacillus or coccobacillus	Morphology
-Coccus - clusters or groups predominate	Morphology
-Coccus - pairs or chains predominate	Morphology
-Spore formation	Morphology
-Yellow pigment	Morphology
-Motile	Morphology
-Aerobe	Oxygen
-Facultative	Oxygen
-Anaerobe	Oxygen
-Capnophilic	Oxygen
-Catalase	Oxygen:Enzyme
-Oxidase	Oxygen:Enzyme
-Growth on ordinary blood agar	Growth
-Growth on MacConkey agar	Growth
-Growth in 6.5% NaCl	Growth
-Bile-susceptible	Growth
-Growth in KCN	Growth
-Mucate utilization	Growth
-Growth at 42°C	Growth
-Colistin-Polymyxin susceptible	Growth: Antibiotic
+Arginine dihydrolase	Amino Acid
+Indole	Amino Acid
+Lysine decarboxylase	Amino Acid
+Ornithine decarboxylase	Amino Acid
 Acetate utilization	Carboxylic Acid
 Citrate	Carboxylic Acid
 Malonate	Carboxylic Acid
 Tartrate utilization	Carboxylic Acid
-Arginine dihydrolase	Amino Acid
-Indole	Amino Acid
-Ornithine decarboxylase	Amino Acid
-Lysine decarboxylase	Amino Acid
-Casein hydrolysis	Proteolysis
-Gelatin hydrolysis	Proteolysis
-Beta hemolysis	Enzyme
 Alkaline phosphatase	Enzyme
-Nitrite to gas	Enzyme
-Nitrate to nitrite	Enzyme
-Lipase	Enzyme
-Urea hydrolysis	Sugar
+Beta hemolysis	Enzyme
+Coagulase production	Enzyme
 DNase	Enzyme
 Esculin hydrolysis	Enzyme
+Lipase	Enzyme
+Nitrate to nitrite	Enzyme
+Nitrite to gas	Enzyme
 Pyrrolidonyl-beta-naphthylamide	Enzyme
-Coagulase production	Enzyme
-myo-Inositol	Sugar
+Bile-susceptible	Growth
+Growth at 42°C	Growth
+Growth in 6.5% NaCl	Growth
+Growth in KCN	Growth
+Growth on MacConkey agar	Growth
+Growth on ordinary blood agar	Growth
+Mucate utilization	Growth
+Colistin-Polymyxin susceptible	Growth: Antibiotic
+Bacillus or coccobacillus	Morphology
+Coccus	Morphology
+Coccus - clusters or groups predominate	Morphology
+Coccus - pairs or chains predominate	Morphology
+Gram negative	Morphology
+Gram positive	Morphology
+Motile	Morphology
+Spore formation	Morphology
+Yellow pigment	Morphology
+Aerobe	Oxygen
+Anaerobe	Oxygen
+Capnophilic	Oxygen
+Facultative	Oxygen
+Catalase	Oxygen:Enzyme
+Oxidase	Oxygen:Enzyme
 Hydrogen sulfide	Product
-L-Arabinose	Sugar
+Casein hydrolysis	Proteolysis
+Gelatin hydrolysis	Proteolysis
 Cellobiose	Sugar
-Glucose fermenter	Sugar:Glucose
-Gas from glucose	Sugar:Glucose
-Glucose oxidizer	Sugar:Glucose
-Voges Proskauer	Sugar:Glucose
-Methyl red	Sugar:Glucose
-Glycerol	Sugar
-Lactose	Sugar
-Maltose	Sugar
 D-Mannitol	Sugar
 D-Mannose	Sugar
+D-Sorbitol	Sugar
+D-Xylose	Sugar
+Glycerol	Sugar
+L-Arabinose	Sugar
+L-Rhamnose	Sugar
+Lactose	Sugar
+Maltose	Sugar
 Melibiose	Sugar
+myo-Inositol	Sugar
 ONPG (beta galactosidase)	Sugar
 Raffinose	Sugar
-L-Rhamnose	Sugar
 Salicin	Sugar
-D-Sorbitol	Sugar
 Starch hydrolysis	Sugar
 Sucrose	Sugar
 Trehalose	Sugar
-D-Xylose	Sugar
+Urea hydrolysis	Sugar
+Gas from glucose	Sugar:Glucose
+Glucose fermenter	Sugar:Glucose
+Glucose oxidizer	Sugar:Glucose
+Methyl red	Sugar:Glucose
+Voges Proskauer	Sugar:Glucose
