@@ -20,7 +20,7 @@ Growth in 6.5% NaCl	Growth	    0x00538A	0	83	138
 Bile-susceptible	Growth	    0x00538A	0	83	138
 Growth in KCN	Growth	    0x00538A	0	83	138
 Mucate utilization	Growth	    0x00538A	0	83	138
-Growth at 42 degrees C	Growth	    0x00538A	0	83	138
+Growth at 42°C	Growth	    0x00538A	0	83	138
 Colistin-Polymyxin susceptible	Growth: Antibiotic	    0xA6BDD7	166	189	215
 Acetate utilization	Carboxylic Acid	    0xFF6800	255	104	0
 Citrate	Carboxylic Acid	    0xFF6800	255	104	0

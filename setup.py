@@ -12,9 +12,13 @@ if mo:
     verstr = mo.group(1)
 else: 
     raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
+
+long_description = open('README.rst', 'r').read()
+
 setup(name='traitar',
         version = verstr,
         description='traitar - The microbial trait analyzer',
+        long_description = long_description,
         url = 'http://github.com/aweimann/traitar',
         author='Aaron Weimann',
         author_email='weimann@hhu.de',
