@@ -5,10 +5,12 @@ Traitar is a software for characterizing microbial samples from nucleotide or pr
 [Installation](#installation)  
 [Basic usage](#basic-usage)  
 [Results](#results)  
+[Citing Traitar](#citing-traitar)  
 
 <a name="installation"/>
 <a name="basic-usage"/>
 <a name="results"/>
+<a name="citing-traitar"/>
 
 # Installation
 Please see [INSTALL.md](INSTALL.md) for installation instructions.
@@ -66,4 +68,10 @@ If the *from_genes* option is set, the user may specify gene GFF files via an ad
 
 ``traitar phenotype . samples_gene_gff.txt from_genes traitar_out -g refseq``
 
+# Citing Traitar
 
+If you use Traitar in your research, please cite our preprint:
+
+**From genomes to phenotypes: Traitar, the microbial trait analyzer**  
+Aaron Weimann, Jeremy Frank, Phillip B Pope, Andreas Bremges, Alice C McHardy  
+*bioRxiv* (2016) doi:[10.1101/043315](http://dx.doi.org/10.1101/043315)
