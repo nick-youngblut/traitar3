@@ -24,9 +24,10 @@ will trigger the standard workflow of Traitar, which is to predict open reading 
 ![Alt text](/workflow.png?raw=true "Optional Title")
 
 The sample file has one column for the sample file names and one for the names as specified by the user. You can also specify a grouping of the samples in the third column, which will be shown in the generated plots. The template looks like following - The header row is mandatory; please also take a look at the sample file for the packaged example data:
-sample_file_name{tab}sample_name{tab}category
-sample1_file_name{tab}sample1_name[{tabl}sample_category1]
-sample2_file_name{tab}sample2_name[{tabl}sample_category2]
+
+sample_file_name{tab}sample_name{tab}category  
+  sample1_file_name{tab}sample1_name[{tabl}sample_category1]
+  sample2_file_name{tab}sample2_name[{tabl}sample_category2]
 
 ``traitar phenotype <in dir>  <sample file> from_genes <out_dir> `` 
  
