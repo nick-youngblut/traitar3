@@ -149,7 +149,7 @@ class Traitar:
             self.run_gene_prediction(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"])
             print pfam_msg
             sys.stdout.flush()
-            self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"], mode)
+            self.run_hmmer_annotation(self.s2f.loc[:,"sample_name"], self.s2f.loc[:,"sample_name"], mode)
         if mode == "from_genes": 
             print pfam_msg
             sys.stdout.flush()
