@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import pandas as ps
 import os
+import modify
 import subprocess
 import sys
 import shutil
@@ -18,6 +19,11 @@ def phenolyze(args):
     p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.gene_gff_type, args.primary_models, args.secondary_models)
     p.run(args.mode)
 
+def new(args):
+    modify.new(args.models_dir, args.pf_acc2desc, args.pt_id2acc_desc, args.hmm_model_f, args.archive_name)
+
+def extend(args):
+    pass
 
 class Traitar:
 
@@ -162,7 +168,7 @@ class Traitar:
             self.run_gene_prediction(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"])
             print pfam_msg
             sys.stdout.flush()
-            self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"], mode)
+            self.run_hmmer_annotation(self.s2f.loc[:,"sample_name"], self.s2f.loc[:,"sample_name"], mode)
         if mode == "from_genes": 
             print pfam_msg
             sys.stdout.flush()
@@ -352,6 +358,19 @@ if __name__ == "__main__":
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
     main_p.add_argument("-f", "--heatmap_format", choices = ["png", "pdf", "svg", "jpg"], default='pdf', help = "choose file format for the heatmap") 
     main_p.set_defaults(func = phenolyze)
+    extend_p = subparsers.add_parser("extend", help = "extend existing phenotype models") 
+    extend_p.add_argument("new_models_dir", help='directory with phenotype models to be included')
+    extend_p.add_argument("model_archive", help='phenotype model archive')
+    extend_p.add_argument("pt2acc", help='phenotype ids to accession mapping')
+    extend_p.set_defaults(func = extend)
+    new_p = subparsers.add_parser("new", help = "create a new phenotype model archive") 
+    new_p.add_argument("models_dir", help='directory with phenotype models to be included')
+    new_p.add_argument("pf_acc2desc", help='a mapping between Pfam families and phenotype ids to accessions')
+    new_p.add_argument("pt_id2acc_desc", help='a mapping between phenotype ids and descriptions')
+    new_p.add_argument("hmm_model_f", help='hmm database compatible with the phenotype archive')
+    new_p.add_argument("archive_name", help='name of the model, which is created')
+
+    new_p.set_defaults(func = new)
     data_p = subparsers.add_parser("pfam", help = "download or set Pfam HMMs") 
     data_p.add_argument("download",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
     data_p.add_argument("--local", "-l", action = 'store_true', help = "the Pfam HMMs are in the above directory with name 'Pfam-A.hmm'")
