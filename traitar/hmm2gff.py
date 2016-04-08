@@ -30,14 +30,14 @@ def read_rel_feats(model_tar, pts):
         pfs = ps.read_csv(rel_feat_list[i], sep = "\t", index_col = 0)
         for pf in pfs.index:
             if not pf in pf2pt:
-                if not type(pfs.loc[pf, "Pfam_acc"]) == type(ps.Series()):
-                    pf2pt[pfs.loc[pf, "Pfam_acc"]] = [(pts[i], pfs.loc[pf, "cor"])]
+                if not type(pfs.index.values) == type(ps.Series()):
+                    pf2pt[pf] = [(pts[i], pfs.loc[pf, "cor"])]
                 else: 
                     print pf, pts[i]
                     print pfs.loc[pf, "Pfam_acc"]
             else:
                 if not pt in pf2pt[pf]:
-                    pf2pt[pf].append(pts[i])
+                    pf2pt[pf].append((pts[i], pfs.loc[pf, "cor"]))
     return pf2pt
 
 
@@ -167,11 +167,12 @@ def get_coords(gene_start, gene_end, ali_from, ali_to, strand):
 def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode,  model_tar, predicted_phenotypes, description = False):
     #read in pfam accession to description mapping
     if description:
-        pfam_pts_mapping_f = "pfam_pts_names_nl_desc.txt"
-        acc2desc = ps.read_csv(model_tar.extractfile(pfam_pts_mapping_f), header=None, index_col = 1, sep = "\t") 
-        acc2desc.iloc[:, 0] = acc2desc.iloc[:, 0] - 1
-        id2desc = ps.read_csv(model_tar.extractfile(pfam_pts_mapping_f), header=None, index_col = 0, sep = "\t") 
-        id2desc.index = id2desc.index.values - 1 
+        pfam_mapping_f = "pf2acc_desc.txt"
+        pt_mapping_f = "pt2acc.txt"
+        acc2desc = ps.read_csv(model_tar.extractfile(pfam_mapping_f), index_col = 0, sep = "\t") 
+        id2desc = ps.read_csv(model_tar.extractfile(pt_mapping_f), index_col = 0, sep = "\t") 
+        #change dtype of index to string
+        id2desc.index = id2desc.index.values.astype('string')
     out_table = []
     with open(hmmer_file, 'r') as hmmer_fo:
         # skip param line and header
@@ -186,7 +187,7 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
         #print rel_feats_dict
         # open global output table
         # open out gffs for reading
-        out_gffs = dict([(i, open("%s/%s_%s.gff"%(out_gff_dir, sample, id2desc.loc[int(i),].iloc[0].replace(" ", "_").replace("(", "_").replace("(", "_")), 'w')) for i in pts])
+        out_gffs = dict([(i, open("%s/%s_%s.gff"%(out_gff_dir, sample, id2desc.loc[i,].iloc[0].replace(" ", "_").replace("(", "_").replace("(", "_")), 'w')) for i in pts])
         out_gffs["Pfams"] = open("%s/%s_Pfams.gff" %(out_gff_dir, sample), 'w')
         #gff heade, r
         for i in out_gffs:
@@ -216,7 +217,7 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
             #print acc, rel_f
             description_string = ""
             if description and acc in acc2desc.index:
-                description_string = ";Description=%s" % (acc2desc.loc[acc,].iloc[1])
+                description_string = ";Description=%s" % (acc2desc.loc[acc,].iloc[0])
             gff_line = "%s\tHMMER\tPfam\t%s\t%s\t%s\t%s\t.\tParent=%s;Name=%s;Note=%s%s%s\n" %(contig_name, hmm_coords[0], hmm_coords[1], ieval, strand, gid, acc, name, description_string, colour)
             out_gffs["Pfams"].write(gff_line)
             if pf2pt is None or acc in pf2pt:
@@ -224,10 +225,11 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
                 #    colour = ";colour=3;rank=%s" % (rel_feats_dict[acc])
                 for i in pf2pt[acc]:
                     out_gffs[i[0]].write(gff_line)
-                    out_table.append("%s\t%s\t%s\t%s\t%s\n" %(id2desc.loc[int(i[0]),].iloc[0], gid, acc, acc2desc.loc[acc,].iloc[1], i[1]))
-    out_table_df = ps.read_csv(StringIO.StringIO("".join(out_table)), sep = "\t", header = None)
-    out_table_df.columns = ["Phenotype", "gene_id", "Pfam_acc", "Pfam_description", "cor"]
-    out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s.dat" % (out_gff_dir, sample), sep = "\t")
+                    out_table.append("%s\t%s\t%s\t%s\t%s\n" %(id2desc.loc[i[0],].iloc[0], gid, acc, acc2desc.loc[acc,].iloc[0], i[1]))
+    if not len(out_table) == 0:
+        out_table_df = ps.read_csv(StringIO.StringIO("".join(out_table)), sep = "\t", header = None)
+        out_table_df.columns = ["Phenotype", "gene_id", "Pfam_acc", "Pfam_description", "cor"]
+        out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s.dat" % (out_gff_dir, sample), sep = "\t")
     #close out gffs
     for i in out_gffs:
         out_gffs[i].close()

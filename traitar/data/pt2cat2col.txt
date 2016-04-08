@@ -66,3 +66,4 @@ Starch hydrolysis	Sugar	    0x93AA00	147	170	0
 Sucrose	Sugar	    0x93AA00	147	170	0
 Trehalose	Sugar	    0x93AA00	147	170	0
 D-Xylose	Sugar	    0x93AA00	147	170	0
+plant biomass degradation	Sugar	0x93AA00	147	170	0

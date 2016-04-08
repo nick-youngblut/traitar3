@@ -252,13 +252,13 @@ def heatmap(x, row_header, column_header, row_method,
         # Plot colside colors
         # axc --> axes for column side colorbar
         axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
-        axc.set_xticks([]) ### Hides ticks
-        axc.set_yticks([])
         dc = numpy.array([col2id[pt2cat2col.loc[i, "Category"]]  for i in column_header]).T
         if x.shape[1] > 1:
             dc = dc[idx2]
         dc.shape = (1, x.shape[1])
         im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_p)
+        axc.set_xticks([]) ### Hides ticks
+        axc.set_yticks([])
     
     # Plot rowside colors
     if sample_f is not None :

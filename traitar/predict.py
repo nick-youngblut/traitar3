@@ -21,7 +21,7 @@ def filter_pred(scores, is_majority, k):
 
 def aggregate(pred_df, k):
     """employ different prediction strategies"""
-    maj_pred_dfs = [ps.DataFrame(ps.np.zeros(shape = (pred_df.shape[0], pred_df.shape[1] / k))) for i in range(4)]
+    maj_pred_dfs = [ps.DataFrame(ps.np.zeros(shape = (pred_df.shape[0], pred_df.shape[1] / k)), columns = ["%s" % i for i in range(pred_df.shape[1]/k)]) for i in range(4)]
     for i in range(0, pred_df.shape[1], k):
         for j in range(4):
             maj_pred_dfs[j].columns.values[i / k] = pred_df.columns.values[i].split("_")[0] 
@@ -60,24 +60,25 @@ def majority_predict(pt, model_tar, test_data, k, bias_weight = 1):
         #preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
         #print predictors.index
         #print test_data_n.columns
-        preds[:, i] = bias.iloc[i, 0] * bias_weight +  test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
+        preds[:, i] = bias.iloc[i, 0] * bias_weight +  test_data_n.dot(predictors.iloc[:, i].loc[test_data_n.columns, ].values)
         pred_df = ps.DataFrame(preds, index = test_data.index)
     #set column names
     pred_df.columns = ["%s_%s" %(pt, predictors.columns[i].split("_")[0]) for i in range(k)]
     return pred_df
 
-def annotate_and_predict(pt_range, model_tar, summary_f, pfam_pts_mapping_f, out_dir, k):
+def annotate_and_predict(phenotype_mapping_f, model_tar, summary_f, pfam_mapping_f, out_dir, k):
     """load annotation previously generated with HMMER and predict phenotypes with phypat and phypat+GGL models"""
     pred_df = ps.DataFrame()
     #read pfam to description file
-    pfam_pts_mapping = ps.read_csv(model_tar.extractfile(pfam_pts_mapping_f), header=None, index_col = 0, sep = "\t") 
-    pfam_pts_mapping.index = pfam_pts_mapping.index.values - 1 
+    pfam_mapping = ps.read_csv(model_tar.extractfile(pfam_mapping_f), index_col = 0, sep = "\t") 
+    pt_mapping = ps.read_csv(model_tar.extractfile(phenotype_mapping_f), index_col = 0, sep = "\t") 
+    #pt_mapping.index = pt_mapping.index.values - 1
     #read annotation file
     m = ps.read_csv(summary_f, sep="\t", index_col = 0)
     #restrict to those pfams contained in the model
-    m_red = m.loc[:, pfam_pts_mapping.iloc[:-93, 0] ].astype('int')
-    m_red.columns = pfam_pts_mapping.index[:-93]
-    for pt in range(pt_range[0], pt_range[1] + 1):
+    m_red = m.loc[:, pfam_mapping.index ].astype('int')
+    m_red.columns = pfam_mapping.index
+    for pt in pt_mapping.index:
         #predict an append to prediction df
         preds = majority_predict(pt, model_tar, m_red, k)
         pred_df = ps.concat([pred_df, preds], axis = 1)
@@ -87,7 +88,8 @@ def annotate_and_predict(pt_range, model_tar, summary_f, pfam_pts_mapping_f, out
     out = ["majority-vote_mean-score", "majority-vote", "scores_conservative-vote_mean-score", "conservative-vote"]
     aggr_dfs = aggregate(pred_df, k)
     for i in range(len(out)):
-        aggr_dfs[i].columns = pfam_pts_mapping.loc[aggr_dfs[i].columns, ].iloc[:,0]
+        aggr_dfs[i].columns = pt_mapping.index
+        aggr_dfs[i].columns = pt_mapping.loc[aggr_dfs[i].columns, ].iloc[:, 0]
         aggr_dfs[i].index = m_red.index
         if i % 2 == 0:
             aggr_dfs[i].to_csv("%s/predictions_%s.txt"%(out_dir, out[i]), sep = "\t", float_format='%.3f')
@@ -101,10 +103,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser("predict phenotypes from hmmer Pfam annotation")
     parser.add_argument("model_tar", help='directory with the phenotype predictors')
     parser.add_argument("out_dir", help='directory for the phenotype predictions')
-    parser.add_argument("phenotype_range", help='specify which phenotypes shall be predicted e.g. 8476-8568')
+    #parser.add_argument("phenotype_f", help='file with ids of phenotypes that should be predicted')
     parser.add_argument("annotation_matrix", help='summary file with pfams')
-    parser.add_argument("pfam_pts_mapping_f", help='mapping from pfam and phenotype id to universal accessions')
+    parser.add_argument("pfam_mapping_f", help='mapping from pfam and phenotype id to universal accessions')
+    parser.add_argument("pt_mapping_f", help='mapping from phenotype id to universal accessions')
     parser.add_argument("-k", "--voters", default = 5, help='use this number of voters for the classification', type = int)
     args = parser.parse_args()
-    pt1, pt2 = [int(i) for i in args.phenotype_range.split("-")]
-    annotate_and_predict((pt1, pt2), tarfile.open(args.model_tar, mode = "r:gz"), args.annotation_matrix,args.pfam_pts_mapping_f,  args.out_dir, args.voters) 
+    annotate_and_predict(args.pt_mapping_f, tarfile.open(args.model_tar, mode = "r:gz"), args.annotation_matrix, args.pfam_mapping_f,  args.out_dir, args.voters) 
