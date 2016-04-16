@@ -3,8 +3,16 @@
 import sys
 import pandas as ps
 from StringIO import StringIO
-hmmer_colnames = ['target name','accession','tlen','query name','accession','qlen','E-value','score','bias','#','of','c-Evalue','i-Evalue','score','bias','from','to','from','to','from','to','acc','description of target']
-def apply_thresholds(infile_f, eval_threshold, bit_score_thresh, out_filt_f, out_excl_f):
+hmmer_colnames = ['target name','accession','tlen','query name','accession','qlen','E-value','score','bias','#','of','c-Evalue','i-Evalue','score','bias','from','to','ali_from','ali_to','from','to','acc','description of target']
+
+def filter_dbcan(m):
+    return ((m.iloc[:,12] <= 0.001) & (m.loc[:,"ali_to"] - m.loc[:, "ali_from"] <= 80) | (m.iloc[:,12] <= 0.00001) & (m.loc[:,"ali_to"] - m.loc[:, "ali_from"] > 80)) 
+
+def filter_pfam(m):
+    #TODO check thresholds
+    return (m.iloc[:,12] <= 0.01) & (m.iloc[:, 13] >= 25)
+
+def apply_thresholds(infile_f, hmm_name, out_filt_f, out_excl_f):
     """parse HMMER output file and apply thresholds for e-valu and bit score)"""
     #preparse lines by replacing white space delimitation by tabs
     #skip header
@@ -20,11 +28,16 @@ def apply_thresholds(infile_f, eval_threshold, bit_score_thresh, out_filt_f, out
     except ValueError:
         m = ps.DataFrame(columns = hmmer_colnames)
     m.columns = hmmer_colnames
+    if hmm_name == "pfam":
+        keep = filter_pfam(m)
+    if hmm_name == "dbcan":
+        keep = filter_dbcan(m)
     #apply eval threshold
-    m_eval = m.loc[(m.iloc[:,12] <= eval_threshold) & (m.iloc[:, 13] >= bit_score_thresh), :]
+    m_eval = m.loc[keep, :]
+    m_eval = m.loc[keep, :]
     if not out_filt_f is None: 
         m_eval.to_csv(out_filt_f, sep = "\t")
-    m_eval_excl = m.loc[(m.iloc[:,12] > eval_threshold) | (m.iloc[:, 13] < bit_score_thresh), :]    
+    m_eval_excl = m.loc[~keep, :]    
     if not out_excl_f is None:
         m_eval_excl.to_csv(out_excl_f, sep = "\t")
     return m_eval
@@ -55,11 +68,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser("parse hmmer output file and generated filtered best file")
     parser.add_argument("infile_f", help='a space-delimited output file from hmmer', default = sys.stdin, type = file)
     parser.add_argument("out_best_f", help='hmmer tab delimited file with hits removed according to the thresholds and only best domain hit retained')
+    parser.add_argument("hmm_name", choices = ["pfam", "dbcan"], help ='name of the HMM database; this will determine the filtering applied')
     parser.add_argument("--out_excl_f", help='domain hits filtered due to the applied thresholds')
     parser.add_argument("--out_filt_f", help='hmmer tab delimited file with hits removed according to the thresholds')
-    parser.add_argument("eval_thresh", help = 'threshold for the per domain e value', type = float)
-    parser.add_argument("bit_score_thresh", help = 'threshold for the per domain e value', type = float)
     #parser.add_argument("aln_cov_thresh", help = 'threshold for the alignment length coverage', type = int)
     args = parser.parse_args()
-    filtered_df = apply_thresholds(args.infile_f, args.eval_thresh, args.bit_score_thresh, args.out_filt_f, args.out_excl_f) 
+    filtered_df = apply_thresholds(args.infile_f, args.hmm_name, args.out_filt_f, args.out_excl_f) 
     aggregate_domain_hits(filtered_df, args.out_best_f)
