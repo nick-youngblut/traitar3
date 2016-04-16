@@ -15,6 +15,7 @@ import sys, os
 import getopt
 import numpy as np
 import pandas as ps
+from PhenotypeCollection import PhenotypeCollection
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning) 
 #ignore these warnings
@@ -25,9 +26,9 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 ################# Perform the hierarchical clustering #################
 
-def heatmap(x, row_header, column_header, row_method,
+def heatmap(x, row_header, column_header, pt_models, color_f, row_method,
             column_method, row_metric, column_metric,
-            mode, filename, pt2cat2col_f, sample_f):
+            mode, filename, sample_f):
     
     print "\nrunning hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
         
@@ -221,44 +222,45 @@ def heatmap(x, row_header, column_header, row_method,
             axm.text(i, -0.5, ' '+column_header[i], rotation=270, verticalalignment="top")
             new_column_header.append(column_header[i])
     
-
-    if pt2cat2col_f is not  None:
-        #parse phenotype sample file if available
-        pt2cat2col = ps.read_csv(pt2cat2col_f, sep = "\t", index_col = 0, encoding='utf-8')
-        # Plot phenotype legend
-        axpl = fig.add_axes([axpl_x, axpl_y, axpl_w, axpl_h], frame_on=False)  # axes for colorbar
-        #cb = mpl.colorbar.ColorbarBase(axsl, cmap=cmap, orientation='horizontal')
-        cat2col = {} 
-        col2id = {}
-        j = 1
-        for i in pt2cat2col.index:
-            if pt2cat2col.loc[i,"Category"] not in cat2col: 
-                cat2col[pt2cat2col.loc[i,"Category"]] = pt2cat2col.loc[i, ["r", "g", "b"]]
-                col2id[pt2cat2col.loc[i,"Category"]] = j 
-                j += 1
-        a = list(cat2col.keys()) 
-        cmaplist = ps.DataFrame(cat2col)
-        for i in col2id:
-            a[col2id[i] - 1] = i 
-        cmaplist = cmaplist.loc[:, a]
-        cmaplist = cmaplist.T / 256.0
-        cmap_p = mpl.colors.ListedColormap(cmaplist.values)
-        bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
-        norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
-        cb = mpl.colorbar.ColorbarBase(axpl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
-        axpl.set_yticklabels([i for i in cmaplist.index], fontsize = 6)
-        axpl.yaxis.set_ticks(np.arange(1.0 / len(cmaplist) / 2, 1,  1.0 / len(cmaplist)))
-        axpl.set_title("Phenotype colorkey", fontsize =  10, loc = "left")
-        # Plot colside colors
-        # axc --> axes for column side colorbar
-        axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
-        dc = numpy.array([col2id[pt2cat2col.loc[i, "Category"]]  for i in column_header]).T
-        if x.shape[1] > 1:
-            dc = dc[idx2]
-        dc.shape = (1, x.shape[1])
-        im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_p)
-        axc.set_xticks([]) ### Hides ticks
-        axc.set_yticks([])
+    pt2acc = pt_models.get_pt2acc()
+    pt2acc.index = pt2acc.loc[:, "accession"]
+    if "category" in pt2acc.columns:
+        #colors
+        colors = ps.read_csv(color_f, index_col = None, sep = "\t")
+        #assign categories to colors
+        import sets
+        #get unique categories in the order they appear in the pt mapping table
+        cats = sorted(set(pt2acc.loc[:, "category"].tolist()), key=lambda x: pt2acc.loc[:, "category"].tolist().index(x))
+        if not colors.shape[0] < len(cats):
+            # Plot phenotype legend
+            axpl = fig.add_axes([axpl_x, axpl_y, axpl_w, axpl_h], frame_on=False)  # axes for colorbar
+            #for i in pt2cat2col.index:
+            #    if pt2cat2col.loc[i,"Category"] not in cat2col: 
+            #        cat2col[pt2cat2col.loc[i,"Category"]] = pt2cat2col.loc[i, ["r", "g", "b"]]
+            #        col2id[pt2cat2col.loc[i,"Category"]] = j 
+            #        j += 1
+            pt2cat = dict([(pt2acc.loc[i, "accession"], pt2acc.loc[i, "category"]) for i in pt2acc.index])
+            cat2id = dict([(cats[i - 1], i) for i in range(1, len(cats) + 1)])
+            cmaplist = ps.DataFrame(colors.iloc[:len(cats),])
+            cmaplist.index = cats
+            cmaplist = cmaplist / 256.0
+            cmap_p = mpl.colors.ListedColormap(cmaplist.values)
+            bounds = numpy.linspace(0, cmaplist.shape[0], cmaplist.shape[0] + 1) 
+            norm = mpl.colors.BoundaryNorm(bounds, cmaplist.shape[0])
+            cb = mpl.colorbar.ColorbarBase(axpl, cmap=cmap_p, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
+            axpl.set_yticklabels([i for i in cats], fontsize = 6)
+            axpl.yaxis.set_ticks(np.arange(1.0 / len(cats) / 2, 1,  1.0 / len(cats)))
+            axpl.set_title("Phenotype colorkey", fontsize =  10, loc = "left")
+            # Plot colside colors
+            # axc --> axes for column side colorbar
+            axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
+            dc = numpy.array([cat2id[pt2cat[i]]  for i in column_header]).T
+            if x.shape[1] > 1:
+                dc = dc[idx2]
+            dc.shape = (1, x.shape[1])
+            im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_p)
+            axc.set_xticks([]) ### Hides ticks
+            axc.set_yticks([])
     
     # Plot rowside colors
     if sample_f is not None :
@@ -442,28 +444,29 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser("generate a heatmap with dendrograms from the phenotype predictions")
     parser.add_argument("data_f", help= 'tab delimited file with row and column names')
     parser.add_argument("out_f", help= 'output image (png) file name')
+    parser.add_argument("model_tar", help= 'phenotype model archive')
+    parser.add_argument("color_f", help= 'file with r g b colors to be used')
     parser.add_argument("--row_method", help= 'method to use for the row dendrogram', default = 'average')
     parser.add_argument("--column_method", help= 'method to use for the column dendrogram', default = 'single')
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
     parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
     parser.add_argument("--sample_f", help= 'restrict phenotype predictions to the sample found in <sample_file>', default = None)
-    parser.add_argument("--pt2cat2col_f", help= 'mapping of phenotypes to categories and colors', default = None)
     args = parser.parse_args()
+    pt_models = PhenotypeCollection(args.model_tar)
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0, encoding='utf-8')
     if not args.sample_f is None:
-        print args.sample_f
         s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t")
         m = m.loc[s2f.loc[:, "sample_name"], :]
     matrix = m.values
     column_header = m.columns 
     row_header = m.index
     try:
-        heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.pt2cat2col_f, args.sample_f)
+        heatmap(matrix, row_header, column_header, pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.sample_f)
     except Exception:
         print 'Error using %s ... trying euclidean instead' % row_metric
         args.row_metric = 'euclidean'
         try:
-            heatmap(matrix, row_header, column_header, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode,  args.out_f, args.pt2cat2col_f, args.sample_f)
+            heatmap(matrix, row_header, column_header, pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode,  args.out_f, args.sample_f)
         except IOError:
             print 'Error with clustering encountered'
