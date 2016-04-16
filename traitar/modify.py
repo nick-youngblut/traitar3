@@ -1,6 +1,7 @@
 import pandas as ps
 import tarfile
 import os
+import StringIO
 
 mfs = ["%s_bias.txt", "%s_feats.txt","%s_majority_features+weights.txt"]
 
@@ -21,7 +22,7 @@ def extend(archive_f, model_dir, pf2acc_desc_f, pts, pfam_v):
     pt2desc = ps.read_csv(pt2acc, sep = "\t", index_col = 0, header = None)
     #add phenotype models to the archive
 
-def new(models_dir, pf2acc_f, pt2desc_f, hmm_model_f,  archive_name):
+def new(models_dir, pf2acc_f, pt2desc_f, hmm_name, hmm_model_f,  archive_name):
     """create new archive with phenotype models"""
     #read in pf and pt accessions 
     pts = ps.read_csv(pt2desc_f, sep = "\t", index_col = 0)
@@ -30,7 +31,12 @@ def new(models_dir, pf2acc_f, pt2desc_f, hmm_model_f,  archive_name):
     t = tarfile.open("%s.tar.gz" % archive_name, "w:gz")
     t.add(pf2acc_f, arcname = "pf2acc_desc.txt")
     t.add(pt2desc_f, arcname = "pt2acc.txt")
-    #TODO include HMMER info
+    config = [archive_name, hmm_name, hmm_model_f]
+    config_df = ps.DataFrame(config, index = ["archive_name", "hmm_name", "hmm_f"], columns = ["value"])
+    config_s = StringIO.StringIO(config_df.to_csv(sep = "\t"))
+    config_tarinfo = tarfile.TarInfo("config.txt")
+    config_tarinfo.size = len(config_s.buf)
+    t.addfile(config_tarinfo, config_s)
     for i in pts.index:
         for j in mfs:
             #t.add(os.path.join(models_dir, j % str(int(i)-1)), arcname = os.path.basename(os.path.join(models_dir, j % str(int(i)-1))))
