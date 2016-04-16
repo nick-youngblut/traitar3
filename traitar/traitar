@@ -12,6 +12,7 @@ import json
 import os
 import sys
 import tarfile
+from PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
 
@@ -20,7 +21,8 @@ def phenolyze(args):
     p.run(args.mode)
 
 def new(args):
-    modify.new(args.models_dir, args.pf_acc2desc, args.pt_id2acc_desc, args.hmm_model_f, args.archive_name)
+    """create new phenotype model archive"""
+    modify.new(args.models_dir, args.pf_acc2desc, args.pt_id2acc_desc, args.hmm_name, args.hmm_model_f, args.archive_name)
 
 def extend(args):
     pass
@@ -40,17 +42,17 @@ class Traitar:
         self.phenolyzer_dir = os.path.abspath(os.path.dirname(traitar.__file__)) 
         #determines whether the primary and secondary phenotype models specify the same set of phenotypes and can be combined in one heatmap
         #initially set to false
-        self.are_models_compatible = False
+        #self.are_models_compatible = False
         if primary_models is not None:
-            self.primary_models = primary_models
+            self.primary_models = PhenotypeCollection(primary_models)
         else:
-            self.primary_models = "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir}
+            self.primary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
         if secondary_models is not None and primary_models is not None:
-            self.secondary_models = secondary_models
-        elif self.primary_models != "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir}:
+            self.secondary_models = PhenotypeCollection(secondary_models)
+        elif self.primary_models.get_name() != "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir}:
             self.secondary_models = None
         else:
-            self.secondary_models = "%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : self.phenolyzer_dir}
+            self.secondary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
         self.is_gnu_parallel_available = self.is_exe("parallel")
         self.heatmap_out = heatmap_out
         if cpu != 1 and not self.is_gnu_parallel_available:
@@ -70,8 +72,8 @@ class Traitar:
             #check if Pfam hmm specified in config.json exists
         with open(os.path.join(self.phenolyzer_dir, "config.json" ), "r") as cf:
             self.config = json.load(cf)
-        if not os.path.isfile(self.config["pfam_hmms"]):
-            sys.stderr.write("Pfam HMM file does not exist (%s), make sure you have run traitar config --local <Pfam hmm>" % self.config["pfam_hmms"])
+        #if not os.path.isfile(self.config["pfam_hmms"]):
+        #    sys.stderr.write("Pfam HMM file does not exist (%s), make sure you have run traitar config --local <Pfam hmm>" % self.config["pfam_hmms"])
         #create output dir
         self.check_dir(output_dir)
         #pred dir
@@ -221,30 +223,33 @@ class Traitar:
             file_extension = True 
             in_dir = os.path.join(self.output_dir, "gene_prediction")
         #create output directory for the pfam annotation 
-        a_dir = os.path.join(self.output_dir, "pfam_annotation")
+        a_dir_base = os.path.join(self.output_dir, "pfam_annotation")
         #check if output directory already exists and trigger user input if in interactive mode
-        is_recompute = self.check_dir(a_dir)
+        is_recompute = self.check_dir(a_dir_base)
         #run hmmer annotation
-        hmmer =  "hmmsearch --cpu 1 --cut_ga  --domtblout %(a_dir)s/%(out_sample)s_domtblout.dat  %(pfam_hmms)s > /dev/null %(in_dir)s/%(in_sample)s%(file_extension)s"      
-        hmmer_commands = []
-        for i in range(len(in_samples)):
-            hmmer_commands.append(hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample":in_samples[i], "out_sample":out_samples[i], "a_dir":a_dir, "phenolyzer":self.phenolyzer_dir, "in_dir" : in_dir, "pfam_hmms" : self.config["pfam_hmms"]})
-        #run gff extraction
-        #run filtering and best domain hit aggregation
-        filter_and_aggregate = "hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat 10e-02 25 "
-        fae_commands = []
-        for i in range(len(in_samples)):
-            fae_commands.append(filter_and_aggregate % {"a_dir":a_dir, "in_sample":in_samples[i], "out_sample":out_samples[i], "phenolyzer":self.phenolyzer_dir})
-        #run summary matrix computation
-        #write temp sample file to disk
-        #TODO modify this piece of code so that there is no temp file required anymore
-        #best_fs = ps.DataFrame(["%(a_dir)s/%(sample)s_filtered_best.dat"%{"a_dir" : a_dir, "sample":sample} for sample in out_samples])
-        #best_fs.to_csv("/tmp/samples_best.txt", index = None, header = None)
-        domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(phenolyzer)s/data/sorted_accessions.txt"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir}
         if is_recompute:
-            self.execute_commands(hmmer_commands)
-            self.execute_commands(fae_commands)
-            self.execute_commands([domtblout2gene_generic])
+            hmmer =  "hmmsearch --cpu 1 --cut_ga  --domtblout %(a_dir)s/%(out_sample)s_domtblout.dat  %(hmms)s > /dev/null %(in_dir)s/%(in_sample)s%(file_extension)s"      
+            hmmer_commands = []
+            if self.secondary_models is not None and self.primary_models.get_hmm_name() != self.secondary_models.get_hmm_name():
+                models = [self.primary_models, self.secondary_models]
+            else:
+                models = [self.primary_models] 
+            for pt_models in models: 
+                a_dir = os.path.join(a_dir_base, pt_models.get_hmm_name())
+                os.mkdir(a_dir)
+                for i in range(len(in_samples)):
+                    hmmer_commands.append(hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample":in_samples[i], "out_sample":out_samples[i], "a_dir":a_dir, "phenolyzer":self.phenolyzer_dir, "in_dir" : in_dir, "hmms" : os.path.join(self.config['hmms'], pt_models.get_hmm_f())})
+                #run filtering and best domain hit aggregation
+                filter_and_aggregate = "hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat %(hmm_name)s"
+                fae_commands = []
+                for i in range(len(in_samples)):
+                    fae_commands.append(filter_and_aggregate % {"a_dir":a_dir, "in_sample":in_samples[i], "out_sample":out_samples[i], "phenolyzer":self.phenolyzer_dir, "hmm_name" : pt_models.get_hmm_name()})
+                #run summary matrix computation
+                domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(archive_f)s"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir, "archive_f" : pt_models.get_archive_f()}
+                if is_recompute:
+                    self.execute_commands(hmmer_commands)
+                    self.execute_commands(fae_commands)
+                    self.execute_commands([domtblout2gene_generic])
 
 
     def run_phenotype_prediction(self):
@@ -254,9 +259,9 @@ class Traitar:
         if not os.path.exists(self.phypat_pgl_dir):
             os.mkdir(self.phypat_pgl_dir)
         #run phenotype prediction for primary and secondary models 
-        predict_phypat = "predict.py %(primary_models)s %(pred_dir)s  %(out_dir)s/pfam_annotation/summary.dat pf2acc_desc.txt pt2acc.txt -k 5  " % {"out_dir" : self.output_dir, "pred_dir" : self.phypat_dir, "primary_models" : self.primary_models} 
+        predict_phypat = "predict.py %(primary_models)s %(pred_dir)s  %(out_dir)s/pfam_annotation/%(hmm_f)s/summary.dat -k 5  " % {"out_dir" : self.output_dir, "pred_dir" : self.phypat_dir, "primary_models" : self.primary_models.get_archive_f(), "hmm_f" : self.primary_models.get_hmm_name()} 
         if not self.secondary_models is None:
-            predict_phypat_pgl = "predict.py %(secondary_models)s %(pred_dir)s %(out_dir)s/pfam_annotation/summary.dat  pf2acc_desc.txt pt2acc.txt  -k 5  " % {"out_dir" : self.output_dir, "pred_dir" : self.phypat_pgl_dir, "secondary_models" : self.secondary_models} 
+            predict_phypat_pgl = "predict.py %(secondary_models)s %(pred_dir)s %(out_dir)s/pfam_annotation/%(hmm_f)s/summary.dat -k 5  " % {"out_dir" : self.output_dir, "pred_dir" : self.phypat_pgl_dir, "secondary_models" : self.secondary_models.get_archive_f(), "hmm_f" : self.secondary_models.get_hmm_name()} 
         #combine phypat and phypat+PGL predictions
             merge_preds = "merge_preds.py %(out_dir)s %(phypat_dir)s %(phypat_pgl_dir)s -k 5" %{"out_dir" : os.path.join(self.output_dir, "phenotype_prediction"), "phypat_dir" : self.phypat_dir, "phypat_pgl_dir" : self.phypat_pgl_dir, "phenolyzer" : self.phenolyzer_dir } 
             self.execute_commands([predict_phypat, predict_phypat_pgl])
@@ -267,18 +272,14 @@ class Traitar:
     def run_feature_track_generation(self, in_samples, mode, gene_gffs = None, gene_gff_type = "prodigal"):
         #create output directory for the pfam annotation 
         #hmm2gff command for the full pfam annotation
-        hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(gene_gff)s  %(out_gff_dir)s %(sample)s " + gene_gff_type + " %(model_tar)s %(predicted_pts)s"
+        hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(hmm_name)s/%(sample)s_filtered_best.dat %(gene_gff)s  %(out_gff_dir)s %(sample)s " + gene_gff_type + " %(model_tar)s %(predicted_pts)s"
         #read in phypat predictions
         phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
         #read pfam phenotype id mapping file from model tar
-        pt2desc_phypat_f = tarfile.open(self.primary_models, mode = "r:gz").extractfile("pt2acc.txt")
-        pt2desc_phypat = ps.read_csv(pt2desc_phypat_f, sep = "\t", index_col = 1)
+        pt2desc_phypat = self.primary_models.get_acc2pt()
         if not self.secondary_models is None:
             phypat_pgl_preds = ps.read_csv(os.path.join(self.phypat_pgl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
-            pt2desc_phypat_pgl_f = tarfile.open(self.secondary_models, mode = "r:gz").extractfile("pt2acc.txt")
-            pt2desc_phypat_pgl = ps.read_csv(pt2desc_phypat_pgl_f, sep = "\t", index_col = 1)
-            if pt2desc_phypat_pgl.columns == pt2desc_phypat.columns:
-                self.are_models_compatible = True
+            pt2desc_phypat_pgl = self.secondary_models.get_acc2pt() 
         h2gff_commands = []
         #collect predictions and compose hmm2gff command for each samples
         for i in range(len(in_samples)):
@@ -292,10 +293,10 @@ class Traitar:
                     if not self.secondary_models is None and phypat_pgl_preds.loc[in_samples[i], j] == 1:
                         predicted_pts_phypat_pgl.append(str(pt2desc_phypat_pgl.loc[j,][0]))
             if not len(predicted_pts_phypat) == 0:
-                h2gff_commands.append(hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_dir, "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" :  self.primary_models, "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i])})
+                h2gff_commands.append(hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_dir, "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" :  self.primary_models.get_archive_f(), "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i]), "hmm_name" : self.primary_models.get_hmm_name()})
             if not len(predicted_pts_phypat_pgl) == 0:
                 if not self.secondary_models is None:
-                    h2gff_commands.append(hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "model_tar" : self.secondary_models, "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat_pgl), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i])})
+                    h2gff_commands.append(hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "model_tar" : self.secondary_models.get_archive_f(), "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat_pgl), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i]), "hmm_name" : self.primary_models.get_hmm_name()})
             #create output dirs for feature tracks
         if mode == "from_nucleotides" or gene_gffs is not None:
             is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
@@ -314,20 +315,21 @@ class Traitar:
         #TODO introduce nans via the merge prediction routine; mark the nans in the heatmap with a different color
         if self.heatmap_out is None:
             self.heatmap_out = self.pred_dir
-        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s --mode %(mode)s --sample_f %(sample_file)s --pt2cat2col_f %(phenolyzer)s/data/pt2cat2col.txt"
+        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s --mode %(mode)s --sample_f %(sample_file)s %(model_archive)s %(phenolyzer)s/data/colors.txt"
         hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format}
-        hm_dict_phypat = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single"}
+        hm_dict_phypat = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": "phypat", "mode" : "single", "model_archive" : self.primary_models.get_archive_f()}
         hm_dict_phypat_pgl = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": "phypat_pgl", "mode" : "single"}
-        hm_dict_comb = {"pred_dir" : self.pred_dir ,"mode" : "combined","pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined"}
+        hm_dict_comb = {"pred_dir" : self.pred_dir ,"mode" : "combined","pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined", "model_archive" : self.primary_models.get_archive_f()}
         cmds = []
         if self.secondary_models is None:
             hm_dict_phypat.update(hm_dict)
             cmds.append(hm_cmd % hm_dict_phypat)
         else:
+            hm_dict_phypat_pgl["model_archive"] = self.secondary_models.get_archive_f()
             for i in [hm_dict_phypat, hm_dict_phypat_pgl]:
                 i.update(hm_dict)
                 cmds.append(hm_cmd % i)
-            if self.are_models_compatible:
+            #if self.are_models_compatible:
                 hm_dict_comb.update(hm_dict) 
                 cmds.append(hm_cmd % hm_dict_comb)
         self.execute_commands(cmds)
@@ -367,6 +369,7 @@ if __name__ == "__main__":
     new_p.add_argument("models_dir", help='directory with phenotype models to be included')
     new_p.add_argument("pf_acc2desc", help='a mapping between Pfam families and phenotype ids to accessions')
     new_p.add_argument("pt_id2acc_desc", help='a mapping between phenotype ids and descriptions')
+    new_p.add_argument("hmm_name", help='hmm database used', choices = ["dbcan", "pfam"])
     new_p.add_argument("hmm_model_f", help='hmm database compatible with the phenotype archive')
     new_p.add_argument("archive_name", help='name of the model, which is created')
 
