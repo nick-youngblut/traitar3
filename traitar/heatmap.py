@@ -26,9 +26,9 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 
 ################# Perform the hierarchical clustering #################
 
-def heatmap(x, row_header, column_header, pt_models, color_f, row_method,
+def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method,
             column_method, row_metric, column_metric,
-            mode, filename, sample_f):
+            filename, sample_f, secondary_pt_models):
     
     print "\nrunning hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
         
@@ -150,22 +150,22 @@ def heatmap(x, row_header, column_header, pt_models, color_f, row_method,
         
     # Plot heatmap color legend
     n = len(x[0]); m = len(x)
-    if mode == "single":
-        cmaplist = np.array([[247,247,247],[31,120,180]])/256.0
-    if mode == "combined":
+    if secondary_pt_models is not None:
         cmaplist = np.array([[247,247,247],[166,206,227],[178,223,138],[31,120,180]])/256.0
+    else:
+        cmaplist = np.array([[247,247,247],[31,120,180]])/256.0
     cmap = mpl.colors.ListedColormap(cmaplist)
     axcb = fig.add_axes([axcb_x, axcb_y, axcb_w, axcb_h], frame_on=False)  # axes for colorbar
     #cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, orientation='horizontal')
     bounds = numpy.linspace(0, len(cmaplist), len(cmaplist) + 1) 
     norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
     cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
-    if mode == "single":
-        axcb.set_yticklabels(["negative", "positive"], fontsize = 6)
-        axcb.yaxis.set_ticks([0.25, 0.75])
-    if mode == "combined":
-        axcb.set_yticklabels(["negative", "phypat positive", "phypat+PGL positive", "double positive"], fontsize = 6)
+    if secondary_pt_models is not None:
+        axcb.set_yticklabels(["negative", "%s positive" % primary_pt_models.get_name(), "%s positive" % secondary_pt_models.get_name(), "both predictors positive"], fontsize = 6)
         axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
+    else:
+        axcb.set_yticklabels(["%s negative" % primary_pt_models.get_name(), "%s positive" % primary_pt_models.get_name()], fontsize = 6)
+        axcb.yaxis.set_ticks([0.25, 0.75])
     axcb.set_title("Heatmap colorkey", fontsize = 10, loc = "left")
     
     # Plot distance matrix.
@@ -222,11 +222,11 @@ def heatmap(x, row_header, column_header, pt_models, color_f, row_method,
             axm.text(i, -0.5, ' '+column_header[i], rotation=270, verticalalignment="top")
             new_column_header.append(column_header[i])
     
-    pt2acc = pt_models.get_pt2acc()
+    pt2acc = primary_pt_models.get_pt2acc()
     pt2acc.index = pt2acc.loc[:, "accession"]
+    #colors
+    colors = ps.read_csv(color_f, index_col = None, sep = "\t")
     if "category" in pt2acc.columns:
-        #colors
-        colors = ps.read_csv(color_f, index_col = None, sep = "\t")
         #assign categories to colors
         import sets
         #get unique categories in the order they appear in the pt mapping table
@@ -268,7 +268,8 @@ def heatmap(x, row_header, column_header, pt_models, color_f, row_method,
         if "category" in samples.columns:
             sample_cats = list(set(samples.loc[:, "category"]))
             cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
-            cmap_p = mpl.colors.ListedColormap(cmaplist.values[:len(sample_cats),])
+            cmaplist = ps.DataFrame(colors.iloc[:len(sample_cats),]) / 256.0
+            cmap_p = mpl.colors.ListedColormap(cmaplist.values)
             print sample_cats
             axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for row side colorbar
             dr = numpy.array([cat2col[samples.loc[i, "category"]]  for i in row_header]).T
@@ -446,14 +447,18 @@ if __name__ == '__main__':
     parser.add_argument("out_f", help= 'output image (png) file name')
     parser.add_argument("model_tar", help= 'phenotype model archive')
     parser.add_argument("color_f", help= 'file with r g b colors to be used')
+    parser.add_argument("--secondary_model_tar", help= 'secondary model tar if combining the prediction of two different phenotype collections into one heatmap')
     parser.add_argument("--row_method", help= 'method to use for the row dendrogram', default = 'average')
     parser.add_argument("--column_method", help= 'method to use for the column dendrogram', default = 'single')
     parser.add_argument("--row_metric", help= 'metric to use for the row dendrogram', default = 'cityblock')
     parser.add_argument("--column_metric", help= 'metric to use for the column dendrogram', default = 'cityblock')
-    parser.add_argument("--mode", choices = ["single", "combined"], help= 'either visualize phenotype predictions of one prediction algorithm or visualize predictions from both algorithms')
     parser.add_argument("--sample_f", help= 'restrict phenotype predictions to the sample found in <sample_file>', default = None)
     args = parser.parse_args()
-    pt_models = PhenotypeCollection(args.model_tar)
+    primary_pt_models = PhenotypeCollection(args.model_tar)
+    if not args.secondary_model_tar is None:
+        secondary_pt_models = PhenotypeCollection(args.secondary_model_tar)
+    else:
+        secondary_pt_models = None
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0, encoding='utf-8')
     if not args.sample_f is None:
         s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t")
@@ -462,11 +467,11 @@ if __name__ == '__main__':
     column_header = m.columns 
     row_header = m.index
     try:
-        heatmap(matrix, row_header, column_header, pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.sample_f)
+        heatmap(matrix, row_header, column_header, primary_pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.sample_f, secondary_pt_models)
     except Exception:
         print 'Error using %s ... trying euclidean instead' % row_metric
         args.row_metric = 'euclidean'
         try:
-            heatmap(matrix, row_header, column_header, pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode,  args.out_f, args.sample_f)
+            heatmap(matrix, row_header, column_header, primary_pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric,   args.out_f, args.sample_f, secondary_pt_models)
         except IOError:
             print 'Error with clustering encountered'
