@@ -15,6 +15,13 @@ import tarfile
 from PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
+import domtblout2gene_generic
+import hmmer2filtered_best
+
+def annotate(args):
+    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, gene_gff_type=args.gene_gff_type)
+    in_samples, out_samples = p.s2f.loc[:,"sample_file_name"], p.s2f.loc[:,"sample_name"]
+    p.run_hmmer_annotation(in_samples, out_samples)
 
 def phenolyze(args):
     p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.gene_gff_type, args.primary_models, args.secondary_models)
@@ -90,8 +97,10 @@ class Traitar:
         #check if sample files exist
         if not os.path.exists(self.sample2file):
             sys.exit("sample file %s does not exist" % self.sample2file)
+        print self.sample2file
         s2f = ps.read_csv(self.sample2file, dtype = 'string', sep = "\t")
         col_check = dict((i, False) for i in ["sample_file_name", "sample_name", "category", "gene_gff"])
+
         for i in s2f.columns:
             if i not in ["sample_file_name", "sample_name", "category", "gene_gff"]:
                 sys.exit("%s is not a valid column identifier" % i)
@@ -331,8 +340,6 @@ class Traitar:
                 cmds.append(hm_cmd % i)
         self.execute_commands(cmds)
 
-
-
 if __name__ == "__main__":
     #add phenolyzer dir to the path
     env = os.environ.copy()
@@ -344,16 +351,19 @@ if __name__ == "__main__":
             sys.exit(2)
     parser = MyParser("run traitar (try: traitar {config, phenotype} -h for help on the sub programs)")
     parser.add_argument("-v", "--version", action = 'version', version = __version__)
+    #define parent parser to avoid defining options twice
+    parent_p = argparse.ArgumentParser(add_help=False)
+    parent_p.add_argument("input_dir", help='directory with the input data')
+    parent_p.add_argument("sample2file", help='mapping from samples to fasta files (also see gitHub help):\n sample1_file_name{tab}sample1_name\nsample2_file_name{tab}sample2_name')
+    parent_p.add_argument("output_dir", help='directory for the output; will be created if it doesn\'t exist yet', default='phenolyzer_output')
+    parent_p.add_argument("-g", "--gene_gff_type", help='if the input is amino acids the type of gene prediction GFF file can be specified for mapping the phenotype predictions to the genes', default = None, choices = ["genbank", "refseq", "img", "prodigal", "metagenemark"])
+    parent_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
+    #define subparser for phenotype, pfam and annotate
     subparsers = parser.add_subparsers()
-    main_p = subparsers.add_parser("phenotype", help = "run annotation and prediction") 
-    main_p.add_argument("input_dir", help='directory with the input data')
-    main_p.add_argument("sample2file", help='mapping from samples to fasta files (also see gitHub help):\n sample1_file_name{tab}sample1_name\nsample2_file_name{tab}sample2_name')
+    main_p = subparsers.add_parser("phenotype", parents=[parent_p], help = "run annotation and prediction")
     main_p.add_argument("mode", help='either from_genes if gene prediction amino acid fasta is available in input_dir otherwise from_nucleotides in this case Prodigal is used to determine the ORFs from the nucleotide fasta files in input_dir', choices = ["from_genes", "from_nucleotides"])
-    main_p.add_argument("output_dir", help='directory for the output; will be created if it doesn\'t exist yet', default='phenolyzer_output')
-    main_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
     main_p.add_argument("-p", "--primary_models", help='primary phenotype models archive')
     main_p.add_argument("-s", "--secondary_models", help='secondary phenotype models archive')
-    main_p.add_argument("-g", "--gene_gff_type", help='if the input is amino acids the type of gene prediction GFF file can be specified for mapping the phenotype predictions to the genes', default = None, choices = ["genbank", "refseq", "img", "prodigal", "metagenemark"])
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
     main_p.add_argument("-f", "--heatmap_format", choices = ["png", "pdf", "svg", "jpg"], default='pdf', help = "choose file format for the heatmap") 
     main_p.set_defaults(func = phenolyze)
@@ -375,7 +385,8 @@ if __name__ == "__main__":
     data_p.add_argument("download",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
     data_p.add_argument("--local", "-l", action = 'store_true', help = "the Pfam HMMs are in the above directory with name 'Pfam-A.hmm'")
     data_p.set_defaults(func = get_external_data.download)
+    ann_p = subparsers.add_parser("annotate", parents=[parent_p], help = "run annotation")
+    ann_p.set_defaults(func = annotate)
     args = parser.parse_args()
     args.func(args)
-
 
