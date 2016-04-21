@@ -182,11 +182,10 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
         pts = predicted_phenotypes.split(",") 
         if pts is not None:
             pf2pt = read_rel_feats(pt_models, pts)
-        #print rel_feats_dict
         # open global output table
         # open out gffs for reading
-        out_gffs = dict([(i, open("%s/%s_%s.gff"%(out_gff_dir, sample, id2desc.loc[i,].iloc[0].replace(" ", "_").replace("(", "_").replace("(", "_")), 'w')) for i in pts])
-        out_gffs["Pfams"] = open("%s/%s_Pfams.gff" %(out_gff_dir, sample), 'w')
+        out_gffs = dict([(i, open("%s/%s_%s_important_features.gff"%(out_gff_dir, sample, id2desc.loc[i,].iloc[0].replace(" ", "_").replace("(", "_").replace("(", "_")), 'w')) for i in pts])
+        out_gffs["Pfams"] = open("%s/%s_complete_annotation.gff" %(out_gff_dir, sample), 'w')
         #gff heade, r
         for i in out_gffs:
             out_gffs[i].write("""##gff-version 3\n""")
@@ -197,7 +196,6 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
                 get_protein_acc(elems[0]) if mode == "ncbi" or mode == "refseq" else elems[0], 
                     elems[4].split(".")[0] if pt_models.get_hmm_name() == "pfam" else elems[3].split(".")[0],
                     elems[3], int(elems[17]), int(elems[18]), elems[11]]
-
             if gid not in gene_dict:
                 if not skip_genes:
                     print >> sys.stderr, gid, "not found in input orf gff file"
@@ -218,18 +216,18 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes, mode, 
             description_string = ""
             if description and acc in acc2desc.index:
                 description_string = ";Description=%s" % (acc2desc.loc[acc,].iloc[0])
-            gff_line = "%s\tHMMER\tPfam\t%s\t%s\t%s\t%s\t.\tParent=%s;Name=%s;Note=%s%s%s\n" %(contig_name, hmm_coords[0], hmm_coords[1], ieval, strand, gid, acc, name, description_string, colour)
+            gff_line = "%s\tHMMER\t%s\t%s\t%s\t%s\t%s\t.\tParent=%s;Name=%s;Note=%s%s%s\n" %(contig_name, pt_models.get_name(), hmm_coords[0], hmm_coords[1], ieval, strand, gid, acc, name, description_string, colour)
             out_gffs["Pfams"].write(gff_line)
             if pf2pt is None or acc in pf2pt:
                 #if not rel_feats_dict is None:
                 #    colour = ";colour=3;rank=%s" % (rel_feats_dict[acc])
                 for i in pf2pt[acc]:
                     out_gffs[i[0]].write(gff_line)
-                    out_table.append("%s\t%s\t%s\t%s\t%s\n" %(id2desc.loc[i[0],].iloc[0], gid, acc, acc2desc.loc[acc,].iloc[0], i[1]))
+                    out_table.append("%s\t%s\t%s\t%s\t%s\n" %(id2desc.loc[i[0],"accession"], gid, acc, acc2desc.loc[acc, "description"], i[1]))
     if not len(out_table) == 0:
         out_table_df = ps.read_csv(StringIO.StringIO("".join(out_table)), sep = "\t", header = None)
-        out_table_df.columns = ["Phenotype", "gene_id", "Pfam_acc", "Pfam_description", "cor"]
-        out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s.dat" % (out_gff_dir, sample), sep = "\t")
+        out_table_df.columns = ["Phenotype", "gene_id", "acc", "description", "cor"]
+        out_table_df.sort(columns = ["Phenotype", "cor"], ascending = [True, False]).to_csv("%s/%s_important_features.dat" % (out_gff_dir, sample), sep = "\t", index = None)
     #close out gffs
     for i in out_gffs:
         out_gffs[i].close()
@@ -243,7 +241,7 @@ def run(in_file, out_gff_f, gene_gff_f, sample, gene_gff_mode, pt_models, predic
 
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser("predict phenotypes from hmmer Pfam annotation")
+    parser = argparse.ArgumentParser("map features contributing to the classfication back to the functional annotation and gene prediction")
     parser.add_argument("input_hmm", help= 'input HMMer file')
     parser.add_argument("gene_gff", help= 'gene prediction gff file')
     parser.add_argument("output_gff_dir", help= 'output GFF file')
