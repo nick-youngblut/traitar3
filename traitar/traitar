@@ -15,17 +15,17 @@ import tarfile
 from PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
-import domtblout2gene_generic
-import hmmer2filtered_best
 
 def annotate(args):
-    p = Phenolyzer(args.input_dir, args.output_dir, args.sample2file, args.cpus, gene_gff_type=args.gene_gff_type)
-    in_samples, out_samples = p.s2f.loc[:,"sample_file_name"], p.s2f.loc[:,"sample_name"]
-    p.run_hmmer_annotation(in_samples, out_samples)
+    """annotate input"""
+    p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, gene_gff_type=args.gene_gff_type)
+    p.annotate()
 
 def phenolyze(args):
+    """annotate and then run phenotyping"""
     p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.gene_gff_type, args.primary_models, args.secondary_models)
-    p.run(args.mode)
+    p.annotate(args.mode)
+    p.phenolyze(args.mode)
 
 def new(args):
     """create new phenotype model archive"""
@@ -56,7 +56,7 @@ class Traitar:
             self.primary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
         if secondary_models is not None and primary_models is not None:
             self.secondary_models = PhenotypeCollection(secondary_models)
-        elif self.primary_models.get_name() != "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir}:
+        elif self.primary_models.get_name() != "phypat":
             self.secondary_models = None
         else:
             self.secondary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
@@ -64,13 +64,6 @@ class Traitar:
         self.heatmap_out = heatmap_out
         if cpu != 1 and not self.is_gnu_parallel_available:
             sys.stderr.write("GNU parallel is not available on the command line; make sure you installed it properly or decrease number of cpus to 1\n")
-            sys.exit(0)
-        #check if executables are available 
-        if not self.is_exe("hmmsearch"):
-            sys.stderr.write("hmmsearch not available on command line; please make sure you have properly installed it\n")
-            sys.exit(0)
-        if not self.is_exe("prodigal"):
-            sys.stderr.write("prodigal not available on command line; please make sure you have properly installed it\n")
             sys.exit(0)
         #check if config exists
         if not os.path.isfile(os.path.join(self.phenolyzer_dir, "config.json")):
@@ -172,8 +165,12 @@ class Traitar:
             os.mkdir(out_dir)
             return True
 
-    def run(self, mode):
+    def annotate(self, mode):
         pfam_msg = "running Pfam annotation with hmmer. This step can take a while. A rough estimate for sequential Pfam annotation of genome samples of ~3 Mbs is 10 min per genome."
+        #check if executables are available 
+        if not self.is_exe("hmmsearch"):
+            sys.stderr.write("hmmsearch not available on command line; please make sure you have properly installed it\n")
+            sys.exit(0)
         if mode == "from_nucleotides":
             print "running gene prediction with Prodigal"
             sys.stdout.flush()
@@ -182,9 +179,14 @@ class Traitar:
             sys.stdout.flush()
             self.run_hmmer_annotation(self.s2f.loc[:,"sample_name"], self.s2f.loc[:,"sample_name"], mode)
         if mode == "from_genes": 
+            if not self.is_exe("prodigal"):
+                sys.stderr.write("prodigal not available on command line; please make sure you have properly installed it\n")
+                sys.exit(0)
             print pfam_msg
             sys.stdout.flush()
             self.run_hmmer_annotation(self.s2f.loc[:,"sample_file_name"], self.s2f.loc[:,"sample_name"], mode)
+
+    def phenolyze(self, mode):
         print "running phenotype prediction"
         sys.stdout.flush()
         is_recompute = self.check_dir(self.pred_dir)
