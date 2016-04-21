@@ -6,7 +6,7 @@ from StringIO import StringIO
 hmmer_colnames = ['target name','accession','tlen','query name','accession','qlen','E-value','score','bias','#','of','c-Evalue','i-Evalue','score','bias','from','to','ali_from','ali_to','from','to','acc','description of target']
 
 def filter_dbcan(m):
-    return ((m.iloc[:,12] <= 0.001) & (m.loc[:,"ali_to"] - m.loc[:, "ali_from"] <= 80) | (m.iloc[:,12] <= 0.00001) & (m.loc[:,"ali_to"] - m.loc[:, "ali_from"] > 80)) 
+    return ((m.iloc[:,13] >= 25) & ((m.iloc[:,12] <= 0.001) & (m.loc[:,"ali_to"] - m.loc[:, "ali_from"] <= 80) | (m.iloc[:,12] <= 0.00001) & (m.loc[:,"ali_to"] - m.loc[:, "ali_from"] > 80))) 
 
 def filter_pfam(m):
     #TODO check thresholds
