@@ -3,7 +3,7 @@
 import sys
 import pandas as ps
 from StringIO import StringIO
-hmmer_colnames = ['target name','accession','tlen','query name','accession','qlen','E-value','score','bias','#','of','c-Evalue','i-Evalue','score','bias','from','to','from','to','from','to','acc','description of target']
+hmmer_colnames = ['target name','target accession','tlen','query name','accession','qlen','E-value','score_overall','bias_overall','#','of','c-Evalue','i-Evalue','score_domain','bias_domain','from_hmm','to_hmm','ali_from','ali_to','env_from','env_to','acc','description of target']
 def apply_thresholds(infile_f, eval_threshold, bit_score_thresh, out_filt_f, out_excl_f):
     """parse HMMER output file and apply thresholds for e-valu and bit score)"""
     #preparse lines by replacing white space delimitation by tabs

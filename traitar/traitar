@@ -244,7 +244,7 @@ class Traitar:
     
     def run_feature_track_generation(self, in_samples, mode, gene_gffs = None, gene_gff_type = "prodigal"):
         #create output directory for the pfam annotation 
-        hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(gene_gff)s  %(out_gff_dir)s %(sample)s " + gene_gff_type + " %(model_tar)s %(predicted_pts)s"
+        hmm2gff = "hmm2gff.py %(out_dir)s/pfam_annotation/%(sample)s_filtered_best.dat %(gene_gff)s  %(out_gff_dir)s %(sample)s " + gene_gff_type + " %(model_tar)s %(predicted_pts)s"
         #read in phypat predictions
         phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
         phypat_pgl_preds = ps.read_csv(os.path.join(self.phypat_pgl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
