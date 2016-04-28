@@ -13,8 +13,13 @@ RUN echo "deb http://archive.ubuntu.com/ubuntu trusty-backports main restricted 
 RUN apt-get update
 RUN apt-get install -y hmmer prodigal
 RUN apt-get install -y wget 
-RUN pip install traitar
+RUN apt-get install -y git
 RUN mkdir /home/traitar
+WORKDIR  /home/traitar
+RUN git clone https://github.com/aweimann/traitar
+WORKDIR  /home/traitar/traitar
+RUN python setup.py sdist
+RUN pip install traitar  --find-links file:///home/traitar/traitar/dist
 RUN wget -O /home/traitar/Pfam-A.hmm.gz ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz
 RUN gunzip /home/traitar/Pfam-A.hmm.gz 
 RUN traitar pfam --local /home/traitar
