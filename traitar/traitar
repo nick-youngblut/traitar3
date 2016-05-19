@@ -19,7 +19,7 @@ import re
 def annotate(args):
     """annotate input"""
     p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, gene_gff_type=args.gene_gff_type)
-    p.annotate()
+    p.annotate(args.mode)
 
 def phenolyze(args):
     """annotate and then run phenotyping"""
@@ -124,9 +124,7 @@ class Traitar:
             if self.gene_gff_type is None:
                 sys.exit("gene gff type needs to be specified with -g / --gene_gff_type <gene_gff_type> if sample file contains gene_gff column")
         return s2f
-            
-  
-    
+
     def is_exe(self, program):
         def is_exe(fpath):
             return os.path.isfile(fpath) and os.access(fpath, os.X_OK)
@@ -201,8 +199,6 @@ class Traitar:
         print "running heatmap generation"
         self.run_heatmap_generation(self.s2f.loc[:,"sample_name"])
         sys.stdout.flush()
-        
-         
     
     def execute_commands(self, commands):
         devnull = open('/dev/null', 'w')
@@ -239,20 +235,23 @@ class Traitar:
         #check if output directory already exists and trigger user input if in interactive mode
         is_recompute = self.check_dir(a_dir_base)
         #run hmmer annotation
+
+        hmmer = "hmmsearch --cpu 1 --cut_ga  --domtblout %(a_dir)s/%(out_sample)s_domtblout.dat  %(hmms)s > /dev/null %(in_dir)s/%(in_sample)s%(file_extension)s"
+        filter_and_aggregate = "hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat %(hmm_name)s"
+
+        if self.secondary_models is not None and self.primary_models.get_hmm_name() != self.secondary_models.get_hmm_name():
+            models = [self.primary_models, self.secondary_models]
+        else:
+            models = [self.primary_models]
+
         if is_recompute:
-            hmmer =  "hmmsearch --cpu 1 --cut_ga  --domtblout %(a_dir)s/%(out_sample)s_domtblout.dat  %(hmms)s > /dev/null %(in_dir)s/%(in_sample)s%(file_extension)s"      
-            hmmer_commands = []
-            if self.secondary_models is not None and self.primary_models.get_hmm_name() != self.secondary_models.get_hmm_name():
-                models = [self.primary_models, self.secondary_models]
-            else:
-                models = [self.primary_models] 
             for pt_models in models: 
                 a_dir = os.path.join(a_dir_base, pt_models.get_hmm_name())
                 os.mkdir(a_dir)
+                hmmer_commands = []
                 for i in range(len(in_samples)):
                     hmmer_commands.append(hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample":in_samples[i], "out_sample":out_samples[i], "a_dir":a_dir, "phenolyzer":self.phenolyzer_dir, "in_dir" : in_dir, "hmms" : os.path.join(self.config['hmms'], pt_models.get_hmm_f())})
                 #run filtering and best domain hit aggregation
-                filter_and_aggregate = "hmmer2filtered_best.py %(a_dir)s/%(out_sample)s_domtblout.dat   %(a_dir)s/%(out_sample)s_filtered_best.dat %(hmm_name)s"
                 fae_commands = []
                 for i in range(len(in_samples)):
                     fae_commands.append(filter_and_aggregate % {"a_dir":a_dir, "in_sample":in_samples[i], "out_sample":out_samples[i], "phenolyzer":self.phenolyzer_dir, "hmm_name" : pt_models.get_hmm_name()})
@@ -261,6 +260,38 @@ class Traitar:
                 if is_recompute:
                     self.execute_commands(hmmer_commands)
                     self.execute_commands(fae_commands)
+                    self.execute_commands([domtblout2gene_generic])
+        else:
+            print "Check if annotation is complete"
+            for pt_models in models:
+                a_dir = os.path.join(a_dir_base, pt_models.get_hmm_name())
+                hmmer_commands = []
+                fae_commands = []
+                for i in range(len(out_samples)):
+                    # TODO: automatically get pfam
+                    fname_hmm = a_dir_base + "/pfam/" + out_samples[i] + "_domtblout.dat"
+                    fname_filtered = a_dir_base + "/pfam/" + out_samples[i] + "_filtered_best.dat"
+                    # check which annotation files are missing
+                    if not os.path.isfile(fname_hmm):
+                        # add the command to the list of commands to execute
+                        hmmer_commands.append(
+                            hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample": in_samples[i],
+                                     "out_sample": out_samples[i], "a_dir": a_dir, "phenolyzer": self.phenolyzer_dir,
+                                     "in_dir": in_dir, "hmms": os.path.join(self.config['hmms'], pt_models.get_hmm_f())})
+                    # check which filtered file is missing
+                    if not os.path.isfile(fname_filtered):
+                        fae_commands.append(filter_and_aggregate % {"a_dir": a_dir, "in_sample": in_samples[i],
+                                                                    "out_sample": out_samples[i],
+                                                                    "phenolyzer": self.phenolyzer_dir,
+                                                                    "hmm_name": pt_models.get_hmm_name()})
+                # recompute the missing files
+                self.execute_commands(hmmer_commands)
+                self.execute_commands(fae_commands)
+
+                # check if the summary.dat file was generated, if not recompute
+                if not os.path.isfile(a_dir_base + "/pfam/" + "summary.dat"):
+                    domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(archive_f)s" % {
+                        "a_dir": a_dir, "phenolyzer": self.phenolyzer_dir, "archive_f": pt_models.get_archive_f()}
                     self.execute_commands([domtblout2gene_generic])
 
 
@@ -358,12 +389,14 @@ if __name__ == "__main__":
     parent_p.add_argument("input_dir", help='directory with the input data')
     parent_p.add_argument("sample2file", help='mapping from samples to fasta files (also see gitHub help):\n sample1_file_name{tab}sample1_name\nsample2_file_name{tab}sample2_name')
     parent_p.add_argument("output_dir", help='directory for the output; will be created if it doesn\'t exist yet', default='phenolyzer_output')
+    parent_p.add_argument("mode", help='either from_genes if gene prediction amino acid fasta is available in input_dir otherwise from_nucleotides in this case Prodigal is used to determine the ORFs from the nucleotide fasta files in input_dir',
+                        choices=["from_genes", "from_nucleotides"])
+
     parent_p.add_argument("-g", "--gene_gff_type", help='if the input is amino acids the type of gene prediction GFF file can be specified for mapping the phenotype predictions to the genes', default = None, choices = ["genbank", "refseq", "img", "prodigal", "metagenemark"])
     parent_p.add_argument("-c", "--cpus", help='number of cpus used for the individual steps; maximum is number of samples; needs parallel', default = 1)
     #define subparser for phenotype, pfam and annotate
     subparsers = parser.add_subparsers()
     main_p = subparsers.add_parser("phenotype", parents=[parent_p], help = "run annotation and prediction")
-    main_p.add_argument("mode", help='either from_genes if gene prediction amino acid fasta is available in input_dir otherwise from_nucleotides in this case Prodigal is used to determine the ORFs from the nucleotide fasta files in input_dir', choices = ["from_genes", "from_nucleotides"])
     main_p.add_argument("-p", "--primary_models", help='primary phenotype models archive')
     main_p.add_argument("-s", "--secondary_models", help='secondary phenotype models archive')
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
