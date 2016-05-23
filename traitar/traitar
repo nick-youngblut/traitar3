@@ -286,11 +286,11 @@ class Traitar:
         #hmm2gff command for the full pfam annotation
         hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/pfam_annotation/%(hmm_name)s/%(sample)s_filtered_best.dat %(gene_gff)s  %(out_gff_dir)s %(sample)s " + gene_gff_type + " %(model_tar)s %(predicted_pts)s"
         #read in phypat predictions
-        phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t")
+        phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t", encoding = "utf-8")
         #read pfam phenotype id mapping file from model tar
         pt2desc_phypat = self.primary_models.get_acc2pt()
         if not self.secondary_models is None:
-            phypat_pgl_preds = ps.read_csv(os.path.join(self.phypat_pgl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t") 
+            phypat_pgl_preds = ps.read_csv(os.path.join(self.phypat_pgl_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t", encoding = "utf-8") 
             pt2desc_phypat_pgl = self.secondary_models.get_acc2pt() 
         h2gff_commands = []
         #collect predictions and compose hmm2gff command for each samples
