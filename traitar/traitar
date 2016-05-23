@@ -15,11 +15,15 @@ import tarfile
 from PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
+import evaluation
 
 def annotate(args):
     """annotate input"""
     p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, gene_gff_type=args.gene_gff_type)
     p.annotate()
+
+def evaluate(args):
+    evaluation.evaluate.evaluate(args.out, args.gold_standard_f, args.traitar_pred_f, args.min_samples)
 
 def phenolyze(args):
     """annotate and then run phenotyping"""
@@ -383,6 +387,12 @@ if __name__ == "__main__":
     new_p.add_argument("archive_name", help='name of the model, which is created')
 
     new_p.set_defaults(func = new)
+    eval_p = subparsers.add_parser("evaluate", help = "compare Traitar predictions against a given standard of truth") 
+    eval_p.add_argument("traitar_pred_f",  help = "phenotype prediction matrix as return by Traitar")
+    eval_p.add_argument("gold_standard_f",  help = "phenotype matrix with standard of truth")
+    eval_p.add_argument("--min_samples", "-m", help='minimum number of positive and negative samples to consider phenotypes for calculation of the macro accuracy', default = 5)
+    eval_p.add_argument("out",  help = "output directory")
+    eval_p.set_defaults(func = evaluate)
     data_p = subparsers.add_parser("pfam", help = "download or set Pfam HMMs") 
     data_p.add_argument("download",  help = "download Pfam HMMs into the given download directory and untar and unzip it")
     data_p.add_argument("--local", "-l", action = 'store_true', help = "the Pfam HMMs are in the above directory with name 'Pfam-A.hmm'")
