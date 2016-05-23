@@ -156,15 +156,14 @@ class Traitar:
                     return True 
                 if user_input == "3":
                     sys.exit(1)
-
             else:
-                sys.stderr.write( self.error_message % out_dir)
+                sys.stderr.write(self.error_message % out_dir)
         else: 
             os.mkdir(out_dir)
             return True
 
     def annotate(self, mode):
-        pfam_msg = "running Pfam annotation with hmmer. This step can take a while. A rough estimate for sequential Pfam annotation of genome samples of ~3 Mbs is 10 min per genome."
+        pfam_msg = "running annotation with hmmer. This step can take a while. A rough estimate for sequential Pfam annotation of genome samples of ~3 Mbs is 10 min per genome."
         #check if executables are available 
         if not self.is_exe("hmmsearch"):
             sys.stderr.write("hmmsearch not available on command line; please make sure you have properly installed it\n")
@@ -200,13 +199,13 @@ class Traitar:
         self.run_heatmap_generation(self.s2f.loc[:,"sample_name"])
         sys.stdout.flush()
     
-    def execute_commands(self, commands):
+    def execute_commands(self, commands, joblog = None):
         devnull = open('/dev/null', 'w')
         from subprocess import Popen, PIPE
         if self.cpu > 1:
             #run with parallel
             #ps.DataFrame(commands).to_csv(tf, index = False, header = False) 
-            p = Popen("parallel --will-cite -j %s" %  self.cpu,  stdout = devnull, shell = True,  executable = "/bin/bash", stdin = PIPE, env = env)
+            p = Popen("parallel --will-cite --joblog %s -j %s" %  (joblog, self.cpu),  stdout = devnull, shell = True,  executable = "/bin/bash", stdin = PIPE, env = env)
             p.communicate(input = "\n".join(commands))
         else:
             #run in sequential order
@@ -222,7 +221,7 @@ class Traitar:
         for i in range(len(in_samples)):
             prodigal_commands.append(prodigal % {"in_dir": self.input_dir, "in_sample": in_samples[i], "out_sample":out_samples[i], "gp_dir":gp_dir})
         if is_recompute:    
-            self.execute_commands(prodigal_commands) 
+            self.execute_commands(prodigal_commands, os.path.join(gp_dir, "joblog.txt"))
 
     def run_hmmer_annotation(self, in_samples, out_samples, mode):
         file_extension = False
@@ -231,7 +230,7 @@ class Traitar:
             file_extension = True 
             in_dir = os.path.join(self.output_dir, "gene_prediction")
         #create output directory for the pfam annotation 
-        a_dir_base = os.path.join(self.output_dir, "pfam_annotation")
+        a_dir_base = os.path.join(self.output_dir, "annotation")
         #check if output directory already exists and trigger user input if in interactive mode
         is_recompute = self.check_dir(a_dir_base)
         #run hmmer annotation
@@ -258,38 +257,42 @@ class Traitar:
                 #run summary matrix computation
                 domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(archive_f)s"%{"a_dir": a_dir, "phenolyzer":self.phenolyzer_dir, "archive_f" : pt_models.get_archive_f()}
                 if is_recompute:
-                    self.execute_commands(hmmer_commands)
-                    self.execute_commands(fae_commands)
-                    self.execute_commands([domtblout2gene_generic])
+                    self.execute_commands(hmmer_commands, joblog = os.path.join(a_dir, "joblog_hmmer.txt"))
+                    self.execute_commands(fae_commands, joblog = os.path.join(a_dir, "joblog_filter_and_aggregate.txt"))
+                    self.execute_commands([domtblout2gene_generic], joblog = os.path.join(a_dir, "joblog_generate_annotation_matrix.txt"))
         else:
-            print "Check if annotation is complete"
+            print "Checking if the annotation is complete"
             for pt_models in models:
                 a_dir = os.path.join(a_dir_base, pt_models.get_hmm_name())
                 hmmer_commands = []
                 fae_commands = []
                 for i in range(len(out_samples)):
                     # TODO: automatically get pfam
-                    fname_hmm = a_dir_base + "/pfam/" + out_samples[i] + "_domtblout.dat"
-                    fname_filtered = a_dir_base + "/pfam/" + out_samples[i] + "_filtered_best.dat"
+                    fname_hmm = os.path.join(a_dir, out_samples[i] + "_domtblout.dat")
+                    fname_filtered = os.path.join(a_dir, out_samples[i] + "_filtered_best.dat")
                     # check which annotation files are missing
                     if not os.path.isfile(fname_hmm):
+                        print "hmmer output %s is missing; recomputing ..." %fname_hmm  
                         # add the command to the list of commands to execute
+                        print self.config
                         hmmer_commands.append(
                             hmmer % {"file_extension": ".faa" if file_extension else "", "in_sample": in_samples[i],
                                      "out_sample": out_samples[i], "a_dir": a_dir, "phenolyzer": self.phenolyzer_dir,
                                      "in_dir": in_dir, "hmms": os.path.join(self.config['hmms'], pt_models.get_hmm_f())})
                     # check which filtered file is missing
                     if not os.path.isfile(fname_filtered):
+                        print "filtered hmmer output %s is missing; recomputing ..." %fname_filtered
                         fae_commands.append(filter_and_aggregate % {"a_dir": a_dir, "in_sample": in_samples[i],
                                                                     "out_sample": out_samples[i],
                                                                     "phenolyzer": self.phenolyzer_dir,
                                                                     "hmm_name": pt_models.get_hmm_name()})
                 # recompute the missing files
-                self.execute_commands(hmmer_commands)
-                self.execute_commands(fae_commands)
+                self.execute_commands(hmmer_commands, joblog = os.path.join(a_dir, "joblog_hmmer_recompute.txt"))
+                self.execute_commands(fae_commands, joblog = os.path.join(a_dir, "joblog_filter_and_aggregate_recompute.txt"))
 
                 # check if the summary.dat file was generated, if not recompute
-                if not os.path.isfile(a_dir_base + "/pfam/" + "summary.dat"):
+                if not os.path.exists(os.path.join(a_dir, "summary.dat")):
+                    print "annotation summary matrix is missing; recomputing ..." 
                     domtblout2gene_generic = "domtblout2gene_generic.py %(a_dir)s/summary.dat  <(ls %(a_dir)s/*_filtered_best.dat) %(archive_f)s" % {
                         "a_dir": a_dir, "phenolyzer": self.phenolyzer_dir, "archive_f": pt_models.get_archive_f()}
                     self.execute_commands([domtblout2gene_generic])
