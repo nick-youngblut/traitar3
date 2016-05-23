@@ -2,7 +2,7 @@
 """script to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
 from PhenotypeCollection import PhenotypeCollection 
 import pandas as ps
-def gene2hmm(domtblout_fs, pt_models, gene2hmm_out):
+def gene2hmm(domtblout_fs, pt_models, gene2hmm_out, is_gene2hmm = False):
     """function to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
     #read accession file 
     accs = pt_models.get_pf2desc()
@@ -22,14 +22,15 @@ def gene2hmm(domtblout_fs, pt_models, gene2hmm_out):
         for i in gene_df.index:
             #append genes to gene2hmm dict
             gene = gene_df.loc[i, 'target name']
+            if is_gene2hmm:
+                if gene not in gene2hmm[f]:
+                    gene2hmm[f][gene] = [query] 
+                else:
+                    gene2hmm[f][gene].append(query)
             if pt_models.get_hmm_name() == "pfam":
                 query = gene_df.iloc[i, 4].split('.')[0]
             if pt_models.get_hmm_name() == "dbcan":
                 query = gene_df.iloc[i, 3].split('.')[0]
-            if gene not in gene2hmm[f]:
-                gene2hmm[f][gene] = [query] 
-            else:
-                gene2hmm[f][gene].append(query)
             #add annotations to summary file
             sum_df.loc[f.split("/")[-1].replace("_filtered_best.dat", ""), query] += 1
     #write annotation summary to disk
