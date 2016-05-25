@@ -40,10 +40,12 @@ def extend(args):
 
 class Traitar:
 
-    def __init__(self, input_dir, output_dir, sample2file, cpu = 1, heatmap_out = None, heatmap_format = "pdf", gene_gff_type = None, primary_models = None, secondary_models = None):
+    def __init__(self, input_dir, output_dir, sample2file, cpu = 1, heatmap_out = None, heatmap_format = "pdf", no_heatmap_phenotype_clustering = False, no_heatmap_sample_clustering = False ,gene_gff_type = None, primary_models = None, secondary_models = None):
         self.user_message = "output dir %s already exists; press 1 to continue with data from a previous run; press 2 to remove this directory; press 3 to abort followed by [ENTER]"
         self.error_message =  "directory %s already exists; delete directory or run in interactive mode if this step is done and you want to continue from there"
         self.heatmap_format = heatmap_format 
+        self.no_heatmap_phenotype_clustering = no_heatmap_phenotype_clustering
+        self.no_heatmap_sample_clustering = no_heatmap_sample_clustering
         self.sample2file = sample2file
         self.input_dir = input_dir
         self.gene_gff_type = gene_gff_type
@@ -365,8 +367,8 @@ class Traitar:
         #TODO introduce nans via the merge prediction routine; mark the nans in the heatmap with a different color
         if self.heatmap_out is None:
             self.heatmap_out = self.pred_dir
-        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s %(secondary_models)s --sample_f %(sample_file)s %(model_archive)s %(phenolyzer)s/data/colors.txt"
-        hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format}
+        hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s %(secondary_models)s --sample_f %(sample_file)s %(model_archive)s %(phenolyzer)s/data/colors.txt %(phenotype_clustering)s %(sample_clustering)s"
+        hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format, "phenotype_clustering" : "--row_method None" if self.no_heatmap_phenotype_clustering else "", "sample_clustering" : "--column_method None" if self.no_heatmap_sample_clustering else "" }
         hm_dict_phypat = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": self.primary_models.get_name(),  "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : ""}
         hm_dict_phypat_pgl = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": self.secondary_models.get_name(),"model_archive" : self.secondary_models.get_archive_f(), "secondary_models" : ""}
         hm_dict_comb = {"pred_dir" : self.pred_dir ,"pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined", "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : "--secondary_model_tar %s" % self.secondary_models.get_archive_f()}
@@ -407,6 +409,8 @@ if __name__ == "__main__":
     main_p.add_argument("-p", "--primary_models", help='primary phenotype models archive')
     main_p.add_argument("-s", "--secondary_models", help='secondary phenotype models archive')
     main_p.add_argument("-r", "--rearrange_heatmap", help='recompute the phenotype heatmaps based on a subset of previously annotated and phenotyped samples', default = None)
+    main_p.add_argument("--no_heatmap_sample_clustering", action = 'store_true', help = "if option is set, don't cluster the phenotype heatmaps by samples and keep input ordering" )
+    main_p.add_argument("--no_heatmap_phenotype_clustering", action = 'store_true', help = "if option is set, don't cluster the heatmaps by phenotype and keep input ordering")
     main_p.add_argument("-f", "--heatmap_format", choices = ["png", "pdf", "svg", "jpg"], default='pdf', help = "choose file format for the heatmap") 
     main_p.set_defaults(func = phenolyze)
     extend_p = subparsers.add_parser("extend", help = "extend existing phenotype models") 
