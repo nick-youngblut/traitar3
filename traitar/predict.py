@@ -49,13 +49,9 @@ def majority_predict(pt, pt_models, test_data, k, bias_weight = 1):
     except KeyError:
         return ps.DataFrame()
     #build prediction matrix with the k best models
+    #sys.stderr.write(str(test_data_n))
     preds = ps.np.zeros((test_data.shape[0], k))
     for i in range(k):
-        #preds[:, i] = test_data_n.dot(predictors.iloc[:, i].iloc[test_data_n.columns, ].values)
-        #print predictors.index
-        #print test_data_n.columns
-        #sys.stderr.write(str(test_data_n))
-        #sys.stderr.write(str(predictors.iloc[:, i]))
         preds[:, i] = bias.iloc[i, 0] * bias_weight +  predictors.iloc[:, i].dot(test_data_n.loc[:, predictors.iloc[:, i].index].T)
         pred_df = ps.DataFrame(preds, index = test_data.index)
     #set column names
