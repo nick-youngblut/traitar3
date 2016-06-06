@@ -8,12 +8,19 @@ class evaluate:
     def evaluate(out, gold_standard_f, traitar_pred_f, min_samples):
         """compare traitar predictions with a given gold standard"""
         #read in gold standard
-        gs = pd.read_csv(gold_standard_f, index_col = 0, sep = "\t")
+        gs = pd.read_csv(gold_standard_f, index_col = 0, sep = "\t", na_values = "ND")
+        gs.replace(["-", "+"], [0, 1], inplace = True)
         #read in traitar preds
         tp = pd.read_csv(traitar_pred_f, index_col = 0, sep = "\t")
         #get pts that are in gold standard and in the pt models 
         pts = list(set(gs.columns.tolist()).intersection(set(tp.columns.tolist())))
+        #get list of samples that are in gold standard and in the pt models
+        samples = list(set(gs.index.tolist()).intersection(set(tp.index.tolist())))
+        gs = gs.loc[samples, :]
+        tp = tp.loc[samples, :]
         pt_gold_too_few_samples = gs.apply(lambda x: pd.Series(((x[~pd.isnull(x) & (x == 0)].sum() >= min_samples) & (x[~pd.isnull(x) & (x == 1)].sum() >= min_samples))))
+        #print pd.concat([(gs > 0).sum(), (gs == 0).sum()], axis = 1)
+        #print pt_gold_too_few_samples
         if len(pts) == 0:
             sys.exit("No phenotypes shared between traitar predictions and gold standard")
         #confusion matrix per phenotype
@@ -24,10 +31,10 @@ class evaluate:
         perf_per_pt.index = pts
         perf_per_pt.columns = ["recall pos", "recall neg", "macro accuracy", "precision"]
         for pt in pts:
-            conf_per_pt.loc[pt, ] = evaluate.confusion_m(gs.loc[:, pt], tp.loc[:, pt])
+            not_null = gs.loc[~pd.isnull(gs.loc[:, pt]),].index
+            conf_per_pt.loc[pt, ] = evaluate.confusion_m(gs.loc[not_null, pt], tp.loc[not_null, pt])
             perf_per_pt.loc[pt, ] = evaluate.get_performance(conf_per_pt.loc[pt, ]) 
             miscl = evaluate.get_miscl(gs.loc[:, pt], tp.loc[:, pt])
-            print miscl
             if not len(miscl) == 0:
                 miscl_m = pd.concat([gs.loc[miscl, pt], tp.loc[miscl, pt]], axis = 1)
                 miscl_m.columns = ["gold standard", "traitar predictions"]
@@ -40,7 +47,8 @@ class evaluate:
         #macro averaged performance
         macro_perf = perf_per_pt.mean(axis = 0)
         #write to disk perf2pt and overall accuracy measures
-        perf_per_pt.to_csv(os.path.join(out, "perf_per_pt.txt"), sep = "\t")
+        freq_per_pt = pd.concat([(gs > 0).sum(), (gs == 0).sum()], axis = 1)
+        pd.concat([freq_per_pt, perf_per_pt], axis = 1).to_csv(os.path.join(out, "perf_per_pt.txt"), sep = "\t")
         res = pd.concat([micro_perf, macro_perf], axis = 1)
         res.columns = ["micro",  "macro"]
         res.to_csv(os.path.join(out, "perf_overall.txt"), sep = "\t")
