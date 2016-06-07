@@ -462,6 +462,7 @@ if __name__ == '__main__':
     else:
         secondary_pt_models = None
     m = ps.read_csv(args.data_f, sep = "\t", index_col = 0, encoding='utf-8')
+    m.index = m.index.values.astype('string')
     if not args.sample_f is None:
         s2f = ps.read_csv(args.sample_f, dtype = 'string', sep = "\t")
         m = m.loc[s2f.loc[:, "sample_name"], :]
