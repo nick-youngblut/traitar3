@@ -117,7 +117,6 @@ class Traitar:
         #check if sample files exist
         if not os.path.exists(self.sample2file):
             sys.exit("sample file %s does not exist" % self.sample2file)
-        print self.sample2file
         s2f = ps.read_csv(self.sample2file, dtype = 'string', sep = "\t")
         col_check = dict((i, False) for i in ["sample_file_name", "sample_name", "category", "gene_gff"])
         for i in s2f.columns:

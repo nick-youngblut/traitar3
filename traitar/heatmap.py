@@ -124,11 +124,11 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         Z2 = sch.dendrogram(Y2)
         ind2 = sch.fcluster(Y2,0.7*max(Y2[:,2]),'distance') ### This is the default behavior of dendrogram
         time_diff = str(round(time.time()-start_time,1))
+        ax2.set_xticks([]) ### Hides ticks
+        ax2.set_yticks([])
         #print 'Column clustering completed in %s seconds' % time_diff
     else:
         ind2 = ['NA']*len(column_header) ### Used for exporting the flat cluster data
-    ax2.set_xticks([]) ### Hides ticks
-    ax2.set_yticks([])
         
     # Compute and plot left dendrogram.
     if not row_method is None and x.shape[0] > 1:
@@ -182,7 +182,6 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         ind1 = ind1[idx1] ### reorder the flat cluster to match the order of the leaves the dendrogram
     ### taken from http://stackoverflow.com/questions/2982929/plotting-results-of-hierarchical-clustering-ontop-of-a-matrix-of-data-in-python/3011894#3011894
     im = axm.matshow(xt, aspect='auto', origin='lower', cmap=cmap, norm=norm) ### norm=norm added to scale coloring of expression with zero = white or black
-    print im.get_extent()
     axm.set_xticks([]) ### Hides x-ticks
     axm.set_yticks([])
 
@@ -268,6 +267,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         if "category" in samples.columns:
             #get unique sample categories and sort according to the order they appear in the sampling file
             sample_cats = sorted(set(samples.loc[:, "category"].tolist()), key = lambda x: samples.loc[:, "category"].tolist().index(x))
+    sys.stderr.write(args.row_method)
             sys.stderr.write(str(sample_cats))
             cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
             cmaplist = ps.DataFrame(colors.iloc[:len(sample_cats),]) / 256.0
@@ -469,8 +469,6 @@ if __name__ == '__main__':
     matrix = m.values
     column_header = m.columns 
     row_header = m.index
-    sys.stderr.write(args.column_method)
-    sys.stderr.write(args.row_method)
     if args.column_method == "None":
         args.column_method = None
     if args.row_method == "None":
