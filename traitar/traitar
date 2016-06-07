@@ -16,6 +16,8 @@ from PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
 import evaluation
+primary_default_models = "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : os.path.abspath(os.path.dirname(traitar.__file__))}
+secondary_default_models = "%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : os.path.abspath(os.path.dirname(traitar.__file__))}
 
 def annotate(args):
     """annotate input"""
@@ -34,6 +36,19 @@ def phenolyze(args):
 def new(args):
     """create new phenotype model archive"""
     modify.new(args.models_dir, args.pf_acc2desc, args.pt_id2acc_desc, args.hmm_name, args.hmm_model_f, args.archive_name)
+
+def show(args):
+    """show features for the given phenotype"""
+    if args.models_f is None:
+        pc = [PhenotypeCollection(primary_default_models), PhenotypeCollection(secondary_default_models)]
+    else:
+        pc = [PhenotypeCollection(args.models_f)]
+    if args.strategy == "majority" and not args.include_negative:
+        for i in pc:
+            i.get_majority_features(args.phenotype).to_csv(sys.stdout, sep = "\t")
+    else:
+        for i in pc:
+            i.get_selected_features(args.phenotype, args.strategy, args.include_negative).to_csv(sys.stdout, sep = "\t")
 
 def extend(args):
     pass
@@ -59,13 +74,13 @@ class Traitar:
         if primary_models is not None:
             self.primary_models = PhenotypeCollection(primary_models)
         else:
-            self.primary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
+            self.primary_models = PhenotypeCollection(primary_default_models)
         if secondary_models is not None and primary_models is not None:
             self.secondary_models = PhenotypeCollection(secondary_models)
         elif self.primary_models.get_name() != "phypat":
             self.secondary_models = None
         else:
-            self.secondary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
+            self.secondary_models = PhenotypeCollection(secondary_default_models)
         self.is_gnu_parallel_available = self.is_exe("parallel")
         self.heatmap_out = heatmap_out
         if cpu != 1 and not self.is_gnu_parallel_available:
@@ -425,6 +440,13 @@ if __name__ == "__main__":
     new_p.add_argument("hmm_name", help='hmm database used', choices = ["dbcan", "pfam"])
     new_p.add_argument("hmm_model_f", help='hmm database compatible with the phenotype archive')
     new_p.add_argument("archive_name", help='name of the model, which is created')
+    
+    show_p = subparsers.add_parser("show", help = "show features important for classification") 
+    show_p.add_argument("phenotype", help = "phenotype under investigation")
+    show_p.add_argument("strategy", choices = ["non-zero", "majority"])
+    show_p.add_argument("-i", "--include_negative", action = 'store_true')
+    show_p.add_argument("-p", "--models_f", help='phenotype models archive; if set ,look for the target in the phenotype in the given phenotype collection')
+    show_p.set_defaults(func = show)
 
     new_p.set_defaults(func = new)
     eval_p = subparsers.add_parser("evaluate", help = "compare Traitar predictions against a given standard of truth") 
