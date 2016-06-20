@@ -123,9 +123,9 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         Y2 = sch.linkage(D2, method=column_method, metric=column_metric) ### array-clustering metric - 'average', 'single', 'centroid', 'complete'
         Z2 = sch.dendrogram(Y2)
         ind2 = sch.fcluster(Y2,0.7*max(Y2[:,2]),'distance') ### This is the default behavior of dendrogram
+        time_diff = str(round(time.time()-start_time,1))
         ax2.set_xticks([]) ### Hides ticks
         ax2.set_yticks([])
-        time_diff = str(round(time.time()-start_time,1))
         #print 'Column clustering completed in %s seconds' % time_diff
     else:
         ind2 = ['NA']*len(column_header) ### Used for exporting the flat cluster data
@@ -138,11 +138,11 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         d1 = dist.pdist(x_bin)
         D1 = dist.squareform(d1)  # full matrix
         ax1 = fig.add_axes([ax1_x, ax1_y, ax1_w, ax1_h], frame_on=True) # frame_on may be False
+        ax1.set_xticks([]) ### Hides ticks
+        ax1.set_yticks([])
         Y1 = sch.linkage(D1, method=row_method, metric=row_metric) ### gene-clustering metric - 'average', 'single', 'centroid', 'complete'
         Z1 = sch.dendrogram(Y1, orientation='right')
         ind1 = sch.fcluster(Y1,0.7*max(Y1[:,2]),'distance') ### This is the default behavior of dendrogram
-        ax1.set_xticks([]) ### Hides ticks
-        ax1.set_yticks([])
         time_diff = str(round(time.time()-start_time,1))
         #print 'Row clustering completed in %s seconds' % time_diff
     else:
@@ -182,7 +182,6 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         ind1 = ind1[idx1] ### reorder the flat cluster to match the order of the leaves the dendrogram
     ### taken from http://stackoverflow.com/questions/2982929/plotting-results-of-hierarchical-clustering-ontop-of-a-matrix-of-data-in-python/3011894#3011894
     im = axm.matshow(xt, aspect='auto', origin='lower', cmap=cmap, norm=norm) ### norm=norm added to scale coloring of expression with zero = white or black
-    print im.get_extent()
     axm.set_xticks([]) ### Hides x-ticks
     axm.set_yticks([])
 
@@ -202,16 +201,15 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
             fontdict = {'fontsize': 2}
         if len(row_header) > 200:
             fontdict = {'fontsize': 1}
-        if not row_method is None:
-            #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
-            axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
-            if x.shape[0] > 1:
-                label = row_header[idx1[i]]
-            else: 
-                label = row_header[i]
-            fontdict.items
-            axm.text(x.shape[1]-0.3, i - margin , '  ' + label, fontdict = fontdict)
-            new_row_header.append(label)
+        #if len(row_header)<100: ### Don't visualize gene associations when more than 100 rows
+        axm.plot([-0.5, len(column_header)], [i - 0.5, i - 0.5], color = 'black', ls = '-')
+        if x.shape[0] > 1 and row_method is not None:
+            label = row_header[idx1[i]]
+        else: 
+            label = row_header[i]
+        fontdict.items
+        axm.text(x.shape[1]-0.3, i - margin , '  ' + label, fontdict = fontdict)
+        new_row_header.append(label)
             
     for i in range(x.shape[1]):
         if not column_method is None and x.shape[1] > 1:
@@ -219,6 +217,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
             axm.text(i-0.5, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 6}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])
         else: ### When not clustering columns
+            axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
             axm.text(i, -0.5, ' '+column_header[i], rotation=270, verticalalignment="top")
             new_column_header.append(column_header[i])
     
@@ -255,7 +254,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
             # axc --> axes for column side colorbar
             axc = fig.add_axes([axc_x, axc_y, axc_w, axc_h])  # axes for column side colorbar
             dc = numpy.array([cat2id[pt2cat[i]]  for i in column_header]).T
-            if x.shape[1] > 1:
+            if x.shape[1] > 1 and column_method is not None:
                 dc = dc[idx2]
             dc.shape = (1, x.shape[1])
             im_c = axc.matshow(dc, aspect='auto', origin='lower', cmap=cmap_p)
@@ -268,13 +267,13 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         if "category" in samples.columns:
             #get unique sample categories and sort according to the order they appear in the sampling file
             sample_cats = sorted(set(samples.loc[:, "category"].tolist()), key = lambda x: samples.loc[:, "category"].tolist().index(x))
-            sys.stderr.write(str(sample_cats))
             cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
             cmaplist = ps.DataFrame(colors.iloc[:len(sample_cats),]) / 256.0
             cmap_p = mpl.colors.ListedColormap(cmaplist.values)
             axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for row side colorbar
             dr = numpy.array([cat2col[samples.loc[i, "category"]]  for i in row_header]).T
-            dr = dr[idx1]
+            if x.shape[1] > 1 and row_method is not None:
+                dr = dr[idx1]
             dr.shape = (samples.shape[0], 1)
             #cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
             im_r = axr.matshow(dr, aspect='auto', origin='lower', cmap=cmap_p)
@@ -294,7 +293,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
 
     ### Render the graphic
     if len(row_header)>50 or len(column_header)>50:
-        pylab.rcParams['font.size'] = 5
+        pylab.rcParams['font.size'] = 6
     else:
         pylab.rcParams['font.size'] = 8
 
@@ -468,6 +467,10 @@ if __name__ == '__main__':
     matrix = m.values
     column_header = m.columns 
     row_header = m.index
+    if args.column_method == "None":
+        args.column_method = None
+    if args.row_method == "None":
+        args.row_method = None
     try:
         heatmap(matrix, row_header, column_header, primary_pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.sample_f, secondary_pt_models)
     except Exception:

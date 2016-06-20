@@ -16,6 +16,8 @@ from PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
 import evaluation
+primary_default_models = "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : os.path.abspath(os.path.dirname(traitar.__file__))}
+secondary_default_models = "%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : os.path.abspath(os.path.dirname(traitar.__file__))}
 
 def annotate(args):
     """annotate input"""
@@ -27,7 +29,8 @@ def evaluate(args):
 
 def phenolyze(args):
     """annotate and then run phenotyping"""
-    p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.no_heatmap_phenotype_clustering , args.no_heatmap_sample_clustering, args.gene_gff_type, args.primary_models, args.secondary_models)
+    p = Traitar(args.input_dir, args.output_dir, args.sample2file, args.cpus, args.rearrange_heatmap, args.heatmap_format, args.no_heatmap_phenotype_clustering, args.no_heatmap_sample_clustering, args.gene_gff_type, args.primary_models, args.secondary_models)
+    p.annotate(args.mode)
     #check if user wants to supply pre-computed annotation summary
     if not args.mode == "from_annotation_summary":
         p.annotate(args.mode)
@@ -37,6 +40,18 @@ def new(args):
     """create new phenotype model archive"""
     modify.new(args.models_dir, args.pf_acc2desc, args.pt_id2acc_desc, args.hmm_name, args.hmm_model_f, args.archive_name)
 
+def show(args):
+    """show features for the given phenotype"""
+    if args.models_f is None:
+        pc = [PhenotypeCollection(primary_default_models), PhenotypeCollection(secondary_default_models)]
+    else:
+        pc = [PhenotypeCollection(args.models_f)]
+    if args.strategy == "majority" and not args.include_negative:
+        for i in pc:
+            i.get_majority_features(args.phenotype).to_csv(sys.stdout, sep = "\t")
+    else:
+        for i in pc:
+            i.get_selected_features(args.phenotype, args.strategy, args.include_negative).to_csv(sys.stdout, sep = "\t")
 def remove(args):
     """remove phenotypes from phenotype tar archive"""
     modify.remove(args.archive_f, args.phenotypes, args.out_f, args.keep)
@@ -65,13 +80,13 @@ class Traitar:
         if primary_models is not None:
             self.primary_models = PhenotypeCollection(primary_models)
         else:
-            self.primary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
+            self.primary_models = PhenotypeCollection(primary_default_models)
         if secondary_models is not None and primary_models is not None:
             self.secondary_models = PhenotypeCollection(secondary_models)
         elif self.primary_models.get_name() != "phypat":
             self.secondary_models = None
         else:
-            self.secondary_models = PhenotypeCollection("%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : self.phenolyzer_dir})
+            self.secondary_models = PhenotypeCollection(secondary_default_models)
         self.is_gnu_parallel_available = self.is_exe("parallel")
         self.heatmap_out = heatmap_out
         if cpu != 1 and not self.is_gnu_parallel_available:
@@ -359,7 +374,7 @@ class Traitar:
                     h2gff_commands.append(hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "model_tar" : self.secondary_models.get_archive_f(), "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat_pgl), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i]), "hmm_name" : self.secondary_models.get_hmm_name()})
             #create output dirs for feature tracks
         if mode == "from_nucleotides" or gene_gffs is not None:
-            is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
+            is_recompute = self.check_dir(os.path.join(self.phypat_dir, "feat_gffs"))
             if is_recompute:
                 if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
                     os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
@@ -376,7 +391,7 @@ class Traitar:
         if self.heatmap_out is None:
             self.heatmap_out = self.pred_dir
         hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s %(secondary_models)s --sample_f %(sample_file)s %(model_archive)s %(phenolyzer)s/data/colors.txt %(phenotype_clustering)s %(sample_clustering)s"
-        hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format, "phenotype_clustering" : "--row_method None" if self.no_heatmap_phenotype_clustering else "", "sample_clustering" : "--column_method None" if self.no_heatmap_sample_clustering else "" }
+        hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format, "phenotype_clustering" : "--column_method None" if self.no_heatmap_phenotype_clustering else "", "sample_clustering" : "--row_method None" if self.no_heatmap_sample_clustering else "" }
         hm_dict_phypat = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": self.primary_models.get_name(),  "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : ""}
         cmds = []
         if self.secondary_models is None:
@@ -433,13 +448,18 @@ if __name__ == "__main__":
     new_p.add_argument("hmm_name", help='hmm database used', choices = ["dbcan", "pfam"])
     new_p.add_argument("hmm_model_f", help='hmm database compatible with the phenotype archive')
     new_p.add_argument("archive_name", help='name of the model, which is created')
+    show_p = subparsers.add_parser("show", help = "show features important for classification") 
+    show_p.add_argument("phenotype", help = "phenotype under investigation")
+    show_p.add_argument("strategy", choices = ["non-zero", "majority"])
+    show_p.add_argument("-i", "--include_negative", action = 'store_true')
+    show_p.add_argument("-p", "--models_f", help='phenotype models archive; if set ,look for the target in the phenotype in the given phenotype collection')
+    show_p.set_defaults(func = show)
     remove_p = subparsers.add_parser("remove", help = "remove phenotypes from a given phenotype archive") 
     remove_p.add_argument("archive_f", help = 'phenotype model archive file, which shall be modified')
     remove_p.add_argument("phenotypes", help = 'phenotypes to be removed')
     remove_p.add_argument("out_f", help = 'out file for the modified phenotype tar archive')
     remove_p.add_argument("--keep", action = 'store_true', help = 'instead of remove the given phenotypes, keep them and forget the rest')
     remove_p.set_defaults(func = remove)
-
     new_p.set_defaults(func = new)
     eval_p = subparsers.add_parser("evaluate", help = "compare Traitar predictions against a given standard of truth") 
     eval_p.add_argument("traitar_pred_f",  help = "phenotype prediction matrix as return by Traitar")
