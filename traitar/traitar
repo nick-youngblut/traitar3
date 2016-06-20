@@ -23,7 +23,7 @@ def annotate(args):
     p.annotate(args.mode)
 
 def evaluate(args):
-    evaluation.evaluate.evaluate(args.out, args.gold_standard_f, args.traitar_pred_f, args.min_samples)
+    evaluation.evaluate.evaluate(args.out, args.gold_standard_f, args.traitar_pred_f, args.min_samples, args.are_pt_ids, args.phenotype_archive)
 
 def phenolyze(args):
     """annotate and then run phenotyping"""
@@ -102,7 +102,6 @@ class Traitar:
         #check if sample files exist
         if not os.path.exists(self.sample2file):
             sys.exit("sample file %s does not exist" % self.sample2file)
-        print self.sample2file
         s2f = ps.read_csv(self.sample2file, dtype = 'string', sep = "\t")
         col_check = dict((i, False) for i in ["sample_file_name", "sample_name", "category", "gene_gff"])
         for i in s2f.columns:
@@ -379,13 +378,13 @@ class Traitar:
         hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s %(secondary_models)s --sample_f %(sample_file)s %(model_archive)s %(phenolyzer)s/data/colors.txt %(phenotype_clustering)s %(sample_clustering)s"
         hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format, "phenotype_clustering" : "--row_method None" if self.no_heatmap_phenotype_clustering else "", "sample_clustering" : "--column_method None" if self.no_heatmap_sample_clustering else "" }
         hm_dict_phypat = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": self.primary_models.get_name(),  "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : ""}
-        hm_dict_phypat_pgl = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": self.secondary_models.get_name(),"model_archive" : self.secondary_models.get_archive_f(), "secondary_models" : ""}
-        hm_dict_comb = {"pred_dir" : self.pred_dir ,"pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined", "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : "--secondary_model_tar %s" % self.secondary_models.get_archive_f()}
         cmds = []
         if self.secondary_models is None:
             hm_dict_phypat.update(hm_dict)
             cmds.append(hm_cmd % hm_dict_phypat)
         else:
+            hm_dict_phypat_pgl = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": self.secondary_models.get_name(),"model_archive" : self.secondary_models.get_archive_f(), "secondary_models" : ""}
+            hm_dict_comb = {"pred_dir" : self.pred_dir ,"pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined", "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : "--secondary_model_tar %s" % self.secondary_models.get_archive_f()}
             for i in [hm_dict_phypat, hm_dict_phypat_pgl, hm_dict_comb]:
                 i.update(hm_dict)
                 cmds.append(hm_cmd % i)
@@ -445,6 +444,8 @@ if __name__ == "__main__":
     eval_p = subparsers.add_parser("evaluate", help = "compare Traitar predictions against a given standard of truth") 
     eval_p.add_argument("traitar_pred_f",  help = "phenotype prediction matrix as return by Traitar")
     eval_p.add_argument("gold_standard_f",  help = "phenotype matrix with standard of truth")
+    eval_p.add_argument("--are_pt_ids",  help = "set if the gold standard phenotype are index via phenotype ids rather than accessions", action = 'store_true')
+    eval_p.add_argument("--phenotype_archive",  help = "need if gold standard uses an accession index for mapping")
     eval_p.add_argument("--min_samples", "-m", help='minimum number of positive and negative samples to consider phenotypes for calculation of the macro accuracy', default = 5)
     eval_p.add_argument("out",  help = "output directory")
     eval_p.set_defaults(func = evaluate)
