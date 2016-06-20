@@ -360,7 +360,7 @@ class Traitar:
                     h2gff_commands.append(hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "sample" : in_samples[i] , "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "model_tar" : self.secondary_models.get_archive_f(), "predicted_pts": "--predicted_pts " + ",".join(predicted_pts_phypat_pgl), "gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i]), "hmm_name" : self.secondary_models.get_hmm_name()})
             #create output dirs for feature tracks
         if mode == "from_nucleotides" or gene_gffs is not None:
-            is_recompute = self.check_dir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
+            is_recompute = self.check_dir(os.path.join(self.phypat_dir, "feat_gffs"))
             if is_recompute:
                 if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
                     os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
@@ -379,13 +379,13 @@ class Traitar:
         hm_cmd = "heatmap.py %(pred_dir)s/%(pred_f)s %(out)s/heatmap_%(predictor)s.%(heatmap_format)s %(secondary_models)s --sample_f %(sample_file)s %(model_archive)s %(phenolyzer)s/data/colors.txt %(phenotype_clustering)s %(sample_clustering)s"
         hm_dict = {"phenolyzer" : self.phenolyzer_dir,  "out": self.heatmap_out, "sample_file" : self.sample2file  , "heatmap_format" : self.heatmap_format, "phenotype_clustering" : "--row_method None" if self.no_heatmap_phenotype_clustering else "", "sample_clustering" : "--column_method None" if self.no_heatmap_sample_clustering else "" }
         hm_dict_phypat = {"pred_dir" : self.phypat_dir, "pred_f" : "predictions_majority-vote.txt","predictor": self.primary_models.get_name(),  "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : ""}
-        hm_dict_phypat_pgl = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": self.secondary_models.get_name(),"model_archive" : self.secondary_models.get_archive_f(), "secondary_models" : ""}
-        hm_dict_comb = {"pred_dir" : self.pred_dir ,"pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined", "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : "--secondary_model_tar %s" % self.secondary_models.get_archive_f()}
         cmds = []
         if self.secondary_models is None:
             hm_dict_phypat.update(hm_dict)
             cmds.append(hm_cmd % hm_dict_phypat)
         else:
+            hm_dict_phypat_pgl = {"pred_dir" : self.phypat_pgl_dir, "pred_f" : "predictions_majority-vote.txt", "predictor": self.secondary_models.get_name(),"model_archive" : self.secondary_models.get_archive_f(), "secondary_models" : ""}
+            hm_dict_comb = {"pred_dir" : self.pred_dir ,"pred_f" : "predictions_majority-vote_combined.txt","predictor": "combined", "model_archive" : self.primary_models.get_archive_f(), "secondary_models" : "--secondary_model_tar %s" % self.secondary_models.get_archive_f()}
             for i in [hm_dict_phypat, hm_dict_phypat_pgl, hm_dict_comb]:
                 i.update(hm_dict)
                 cmds.append(hm_cmd % i)
