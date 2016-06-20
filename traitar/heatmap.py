@@ -267,8 +267,6 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         if "category" in samples.columns:
             #get unique sample categories and sort according to the order they appear in the sampling file
             sample_cats = sorted(set(samples.loc[:, "category"].tolist()), key = lambda x: samples.loc[:, "category"].tolist().index(x))
-    sys.stderr.write(args.row_method)
-            sys.stderr.write(str(sample_cats))
             cat2col = dict([(sample_cats[i - 1], i) for i in range(1, len(sample_cats) + 1)])
             cmaplist = ps.DataFrame(colors.iloc[:len(sample_cats),]) / 256.0
             cmap_p = mpl.colors.ListedColormap(cmaplist.values)
@@ -295,7 +293,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
 
     ### Render the graphic
     if len(row_header)>50 or len(column_header)>50:
-        pylab.rcParams['font.size'] = 5
+        pylab.rcParams['font.size'] = 6
     else:
         pylab.rcParams['font.size'] = 8
 
