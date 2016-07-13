@@ -66,7 +66,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     #norm = mpl.colors.Normalize(vmin/2, vmax/2) ### adjust the max and min to scale these colors
 
     ### Scale the Matplotlib window size
-    default_window_hight = 8.5
+    default_window_hight = 10.5
     default_window_width = 10
     fig = pylab.figure(figsize=(default_window_width,default_window_hight)) ### could use m,n to scale here
     color_bar_w = 0.015 ### Sufficient size to show
@@ -75,7 +75,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     ## calculate positions for all elements
     # ax1, placement of dendrogram 1, on the left of the heatmap
     #if row_method != None: w1 = 
-    [ax1_x, ax1_y, ax1_w, ax1_h] = [0.05,0.22,0.2,0.6]   ### The second value controls the position of the matrix relative to the bottom of the view
+    [ax1_x, ax1_y, ax1_w, ax1_h] = [0.05,0.42,0.2,0.4]   ### The second value controls the position of the matrix relative to the bottom of the view
     width_between_ax1_axr = 0.004
     height_between_ax1_axc = 0.004 ### distance between the top color bar axis and the matrix
     
@@ -111,7 +111,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     [axsl_x, axsl_y, axsl_w, axsl_h] = [0.05,0.07,0.05,0.09]
 
     # axcb - placement of the color legend
-    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.05,0.88,0.05,0.09]
+    [axcb_x, axcb_y, axcb_w, axcb_h] = [axm_x, 0.88,0.05,0.09]
 
 
     # Compute and plot top dendrogram
@@ -161,16 +161,17 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     norm = mpl.colors.BoundaryNorm(bounds, len(cmaplist))
     cb = mpl.colorbar.ColorbarBase(axcb, cmap=cmap, norm=norm, spacing='proportional', ticks=bounds, boundaries=bounds)
     if secondary_pt_models is not None:
-        axcb.set_yticklabels(["negative", "%s positive" % primary_pt_models.get_name(), "%s positive" % secondary_pt_models.get_name(), "both predictors positive"], fontsize = 6)
+        axcb.set_yticklabels(["negative", "%s positive" % primary_pt_models.get_name(), "%s positive" % secondary_pt_models.get_name(), "both predictors positive"], fontsize = 8)
         axcb.yaxis.set_ticks([0.125, 0.375, 0.625, 0.875])
     else:
-        axcb.set_yticklabels(["%s negative" % primary_pt_models.get_name(), "%s positive" % primary_pt_models.get_name()], fontsize = 6)
+        axcb.set_yticklabels(["%s negative" % primary_pt_models.get_name(), "%s positive" % primary_pt_models.get_name()], fontsize = 8)
         axcb.yaxis.set_ticks([0.25, 0.75])
     axcb.set_title("Heatmap colorkey", fontsize = 10, loc = "left")
     
     # Plot distance matrix.
     axm = fig.add_axes([axm_x, axm_y, axm_w, axm_h])  # axes for the data matrix
     xt = x
+ 
     if not column_method is None and x.shape[1] > 1:
         idx2 = Z2['leaves'] ### apply the clustering for the array-dendrograms to the actual matrix data
         xt = xt[:,idx2]
@@ -182,6 +183,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         ind1 = ind1[idx1] ### reorder the flat cluster to match the order of the leaves the dendrogram
     ### taken from http://stackoverflow.com/questions/2982929/plotting-results-of-hierarchical-clustering-ontop-of-a-matrix-of-data-in-python/3011894#3011894
     im = axm.matshow(xt, aspect='auto', origin='lower', cmap=cmap, norm=norm) ### norm=norm added to scale coloring of expression with zero = white or black
+
     axm.set_xticks([]) ### Hides x-ticks
     axm.set_yticks([])
 
@@ -208,17 +210,17 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
         else: 
             label = row_header[i]
         fontdict.items
-        axm.text(x.shape[1]-0.3, i - margin , '  ' + label, fontdict = fontdict)
+        axm.text(x.shape[1] + 0.2, i - margin , '  ' + label, fontdict = fontdict)
         new_row_header.append(label)
             
     for i in range(x.shape[1]):
         if not column_method is None and x.shape[1] > 1:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i-0.5, -0.5, ' '+column_header[idx2[i]], fontdict = {'fontsize': 6}, rotation=270, verticalalignment="top") # rotation could also be degrees
+            axm.text(i-0.5, -0.5, ' '+ column_header_mod, fontdict = {'fontsize': 8}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])
         else: ### When not clustering columns
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i, -0.5, ' '+column_header[i], rotation=270, verticalalignment="top")
+            axm.text(i-0.5, -0.8, ' '+column_header[i], fontdict = {'fontsize': 8}, rotation=270, verticalalignment="top")
             new_column_header.append(column_header[i])
     
     pt2acc = primary_pt_models.get_pt2acc()

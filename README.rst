@@ -33,9 +33,10 @@ names as specified by the user. You can also specify a grouping of the
 samples in the third column, which will be shown in the generated plots.
 The template looks like following - The header row is mandatory; please
 also take a look at the sample file for the packaged example data:
-sample\_file\_name{tab}sample\_name{tab}category
-sample1\_file\_name{tab}sample1\_name[{tabl}sample\_category1]
-sample2\_file\_name{tab}sample2\_name[{tabl}sample\_category2]
+
+| sample\_file\_name{tab}sample\_name{tab}category
+| sample1\_file\_name{tab}sample1\_name[{tabl}sample\_category1]
+| sample2\_file\_name{tab}sample2\_name[{tabl}sample\_category2]
 
 ``traitar phenotype <in dir>  <sample file> from_genes <out_dir>``
 
