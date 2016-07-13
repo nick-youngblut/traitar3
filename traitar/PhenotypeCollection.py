@@ -45,7 +45,7 @@ class PhenotypeCollection:
         predictors = pd.read_csv(extracted_f, sep = "\t",  index_col = 0 )
         return predictors
     def get_majority_features(self,pt):
-        extracted_f = self.tar.extractfile("%s_majority_features+weights.txt" % pt)
+        extracted_f = self.tar.extractfile("%s_non-zero+weights.txt" % pt)
         feats = pd.read_csv(extracted_f, sep = "\t", index_col = 0)
         return feats
 

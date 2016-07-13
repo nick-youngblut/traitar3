@@ -25,7 +25,7 @@ def annotate(args):
     p.annotate(args.mode)
 
 def evaluate(args):
-    evaluation.evaluate.evaluate(args.out, args.gold_standard_f, args.traitar_pred_f, args.min_samples)
+    evaluation.evaluate.evaluate(args.out, args.gold_standard_f, args.traitar_pred_f, args.min_samples, args.are_pt_ids, args.phenotype_archive)
 
 def phenolyze(args):
     """annotate and then run phenotyping"""
@@ -464,6 +464,8 @@ if __name__ == "__main__":
     eval_p = subparsers.add_parser("evaluate", help = "compare Traitar predictions against a given standard of truth") 
     eval_p.add_argument("traitar_pred_f",  help = "phenotype prediction matrix as return by Traitar")
     eval_p.add_argument("gold_standard_f",  help = "phenotype matrix with standard of truth")
+    eval_p.add_argument("--are_pt_ids",  help = "set if the gold standard phenotype are index via phenotype ids rather than accessions", action = 'store_true')
+    eval_p.add_argument("--phenotype_archive",  help = "need if gold standard uses an accession index for mapping")
     eval_p.add_argument("--min_samples", "-m", help='minimum number of positive and negative samples to consider phenotypes for calculation of the macro accuracy', default = 5)
     eval_p.add_argument("out",  help = "output directory")
     eval_p.set_defaults(func = evaluate)

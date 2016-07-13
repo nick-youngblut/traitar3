@@ -1,23 +1,42 @@
 import pandas as pd
 import os
 import sys
+import PhenotypeCollection
 
 class evaluate:
     
     @staticmethod
-    def evaluate(out, gold_standard_f, traitar_pred_f, min_samples):
+    def evaluate(out, gold_standard_f, traitar_pred_f, min_samples, are_pt_ids = True, phenotype_archive = None):
         """compare traitar predictions with a given gold standard"""
         #read in gold standard
-        gs = pd.read_csv(gold_standard_f, index_col = 0, sep = "\t", na_values = "ND")
-        gs.replace(["-", "+"], [0, 1], inplace = True)
+        gs = pd.read_csv(gold_standard_f, index_col = 0, sep = "\t", na_values = "?", encoding = "utf-8" )
+        #gs.replace(["-", "+"], [0, 1], inplace = True)
+        #check if gold_standard uses phenotype ids and replace with accessions in that case
+        if are_pt_ids: 
+            #read in phenotype mapping
+            pc = PhenotypeCollection.PhenotypeCollection(phenotype_archive)
+            pt_id2acc = pc.get_pt2acc()
+            gs.columns = pt_id2acc.loc[gs.columns, :].iloc[:, 0]
         #read in traitar preds
-        tp = pd.read_csv(traitar_pred_f, index_col = 0, sep = "\t")
+        tp = pd.read_csv(traitar_pred_f, index_col = 0, sep = "\t", encoding = "utf-8")
         #get pts that are in gold standard and in the pt models 
         pts = list(set(gs.columns.tolist()).intersection(set(tp.columns.tolist())))
         #get list of samples that are in gold standard and in the pt models
         samples = list(set(gs.index.tolist()).intersection(set(tp.index.tolist())))
         gs = gs.loc[samples, :]
         tp = tp.loc[samples, :]
+        #combine positive predictions
+        #tp[(tp == 2.0) | (tp == 1.0) | (tp == 3.0)] = 1
+        #conservative classification
+        #tp[(tp == 2.0) | (tp == 1.0) ] = 0
+        #either both or primary 
+        #tp[(tp == 3.0)] = 1
+        #tp[(tp == 2.0) ] = 0
+        #either both or secondary 
+        #tp[(tp == 1.0) ] = 0
+        #tp[(tp == 3.0) ] = 1
+        #tp[(tp == 2.0) ] = 1
+
         pt_gold_too_few_samples = gs.apply(lambda x: pd.Series(((x[~pd.isnull(x) & (x == 0)].sum() >= min_samples) & (x[~pd.isnull(x) & (x == 1)].sum() >= min_samples))))
         #print pd.concat([(gs > 0).sum(), (gs == 0).sum()], axis = 1)
         #print pt_gold_too_few_samples
@@ -32,6 +51,7 @@ class evaluate:
         perf_per_pt.columns = ["recall pos", "recall neg", "macro accuracy", "precision"]
         for pt in pts:
             not_null = gs.loc[~pd.isnull(gs.loc[:, pt]),].index
+            print not_null
             conf_per_pt.loc[pt, ] = evaluate.confusion_m(gs.loc[not_null, pt], tp.loc[not_null, pt])
             perf_per_pt.loc[pt, ] = evaluate.get_performance(conf_per_pt.loc[pt, ]) 
             miscl = evaluate.get_miscl(gs.loc[:, pt], tp.loc[:, pt])
@@ -48,13 +68,13 @@ class evaluate:
         macro_perf = perf_per_pt.mean(axis = 0)
         #write to disk perf2pt and overall accuracy measures
         freq_per_pt = pd.concat([(gs > 0).sum(), (gs == 0).sum()], axis = 1)
-        pd.concat([freq_per_pt, perf_per_pt], axis = 1).to_csv(os.path.join(out, "perf_per_pt.txt"), sep = "\t")
+        pd.concat([freq_per_pt, perf_per_pt], axis = 1).to_csv(os.path.join(out, "perf_per_pt.txt"), sep = "\t", encoding = "utf-8")
         res = pd.concat([micro_perf, macro_perf], axis = 1)
         res.columns = ["micro",  "macro"]
         res.to_csv(os.path.join(out, "perf_overall.txt"), sep = "\t")
         #write to disk confusion matrix
         conf_per_pt.columns = ["True negatives", "False positives", "False negatives", "True positives"] 
-        conf_per_pt.to_csv(os.path.join(out, "confusion_matrix_per_pt.txt"), sep = "\t")
+        conf_per_pt.to_csv(os.path.join(out, "confusion_matrix_per_pt.txt"), sep = "\t", encoding = "utf-8")
         
   
     @staticmethod

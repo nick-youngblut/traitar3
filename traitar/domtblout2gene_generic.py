@@ -2,7 +2,7 @@
 """script to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
 from PhenotypeCollection import PhenotypeCollection 
 import pandas as ps
-def gene2hmm(domtblout_fs, pt_models, gene2hmm_out, is_gene2hmm = False):
+def gene2hmm(domtblout_fs, pt_models, gene2hmm_out = None, is_gene2hmm = False):
     """function to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
     #read accession file 
     accs = pt_models.get_pf2desc()
@@ -18,23 +18,28 @@ def gene2hmm(domtblout_fs, pt_models, gene2hmm_out, is_gene2hmm = False):
     for f in domtblout_list:
         gene_df = ps.read_csv(f, sep = "\t")
         if not f in gene2hmm:
-            gene2hmm[f] = {}
+            f_mod = f.split("/")[-1].replace("_filtered_best.dat", "")
+            gene2hmm[f_mod] = {}
         for i in gene_df.index:
             #append genes to gene2hmm dict
             gene = gene_df.loc[i, 'target name']
-            if is_gene2hmm:
-                if gene not in gene2hmm[f]:
-                    gene2hmm[f][gene] = [query] 
-                else:
-                    gene2hmm[f][gene].append(query)
             if pt_models.get_hmm_name() == "pfam":
                 query = gene_df.iloc[i, 4].split('.')[0]
             if pt_models.get_hmm_name() == "dbcan":
                 query = gene_df.iloc[i, 3].split('.')[0]
+            if is_gene2hmm:
+                if gene not in gene2hmm[f_mod]:
+                    gene2hmm[f_mod][gene] = [query] 
+                else:
+                    gene2hmm[f_mod][gene].append(query)
             #add annotations to summary file
-            sum_df.loc[f.split("/")[-1].replace("_filtered_best.dat", ""), query] += 1
+            try:
+                sum_df.loc[f_mod, query] += 1
+            except KeyError:
+                print query
     #write annotation summary to disk
-    sum_df.to_csv(gene2hmm_out, sep = "\t")
+    if not is_gene2hmm:
+        sum_df.to_csv(gene2hmm_out, sep = "\t")
     #write gene2hmm to disk 
     #for i in gene2hmm:
     #    with open(gene2hmm_out, 'w') as out: 
