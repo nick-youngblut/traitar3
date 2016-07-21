@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """script to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
-from PhenotypeCollection import PhenotypeCollection 
+from traitar.PhenotypeCollection import PhenotypeCollection 
 import pandas as ps
 def gene2hmm(domtblout_fs, pt_models, gene2hmm_out = None, is_gene2hmm = False):
     """function to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
