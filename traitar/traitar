@@ -392,7 +392,7 @@ class Traitar:
             if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
                 os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
             self.execute_commands(h2gff_commands) 
-        if mode != "from_nucleotides":
+        if mode != "from_nucleotides" and gene_gffs is None:
             ftco = os.path.join(self.pred_dir, "feature_track_commands.txt")
             sys.stderr.write("tracks with Pfams relevant for the predictions cannot be ad-hoc generated because the input is amino acids and no gene prediction GFF files have been generated\n commands are saved to %s and can be modified and run manually\n" % ftco)
             with open(ftco, 'w') as f:
