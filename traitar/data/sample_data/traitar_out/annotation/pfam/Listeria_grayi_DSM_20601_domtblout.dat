@@ -4711,9 +4711,9 @@ gi|229555652|HMPREF0556_0817|HMPREF0556_0817| -            799 Zot              
 # Program:         hmmsearch
 # Version:         3.1b1 (May 2013)
 # Pipeline mode:   SEARCH
-# Query file:      /home/aaron/pfam_27.0/Pfam-A.hmm
+# Query file:      /home/aaron/hmms/Pfam-A.hmm
 # Target file:     ./525367.9.RefSeq.faa
-# Option settings: hmmsearch --domtblout traitar_out/pfam_annotation/Listeria_grayi_DSM_20601_domtblout.dat --cut_ga --cpu 1 /home/aaron/pfam_27.0/Pfam-A.hmm ./525367.9.RefSeq.faa 
-# Current dir:     /home/aaron/traitAR/traitar/data/sample_data
-# Date:            Wed Nov  4 16:31:21 2015
+# Option settings: hmmsearch --domtblout traitar_out/annotation/pfam/Listeria_grayi_DSM_20601_domtblout.dat --cut_ga --cpu 1 /home/aaron/hmms/Pfam-A.hmm ./525367.9.RefSeq.faa 
+# Current dir:     /home/aaron/traitar/traitar/data/sample_data
+# Date:            Sun Jul 17 13:32:48 2016
 # [ok]

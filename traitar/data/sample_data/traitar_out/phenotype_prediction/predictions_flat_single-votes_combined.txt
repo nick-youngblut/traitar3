@@ -1,112 +1,113 @@
+sample	phenotype	phenotype model
 Listeria_grayi_DSM_20601	Starch hydrolysis	5	phypat
-Listeria_grayi_DSM_20601	Starch hydrolysis	5	phypat+GGL
+Listeria_grayi_DSM_20601	Starch hydrolysis	5	phypat+PGL
 Listeria_grayi_DSM_20601	Catalase	5	phypat
-Listeria_grayi_DSM_20601	Catalase	5	phypat+GGL
-Listeria_grayi_DSM_20601	Citrate	4	phypat
-Listeria_grayi_DSM_20601	Citrate	5	phypat+GGL
+Listeria_grayi_DSM_20601	Catalase	5	phypat+PGL
 Listeria_grayi_DSM_20601	Growth at 42°C	5	phypat
-Listeria_grayi_DSM_20601	Growth at 42°C	3	phypat+GGL
+Listeria_grayi_DSM_20601	Growth at 42°C	3	phypat+PGL
 Listeria_grayi_DSM_20601	Voges Proskauer	5	phypat
-Listeria_grayi_DSM_20601	Voges Proskauer	5	phypat+GGL
+Listeria_grayi_DSM_20601	Voges Proskauer	5	phypat+PGL
 Listeria_grayi_DSM_20601	Coccus	1	phypat
 Listeria_grayi_DSM_20601	D-Mannitol	4	phypat
-Listeria_grayi_DSM_20601	D-Mannitol	1	phypat+GGL
+Listeria_grayi_DSM_20601	D-Mannitol	1	phypat+PGL
 Listeria_grayi_DSM_20601	Trehalose	5	phypat
-Listeria_grayi_DSM_20601	Trehalose	5	phypat+GGL
+Listeria_grayi_DSM_20601	Trehalose	5	phypat+PGL
 Listeria_grayi_DSM_20601	Motile	5	phypat
-Listeria_grayi_DSM_20601	Motile	5	phypat+GGL
-Listeria_grayi_DSM_20601	Arginine dihydrolase	2	phypat
-Listeria_grayi_DSM_20601	Arginine dihydrolase	4	phypat+GGL
+Listeria_grayi_DSM_20601	Motile	5	phypat+PGL
 Listeria_grayi_DSM_20601	Maltose	5	phypat
-Listeria_grayi_DSM_20601	Maltose	5	phypat+GGL
+Listeria_grayi_DSM_20601	Maltose	5	phypat+PGL
 Listeria_grayi_DSM_20601	Growth on ordinary blood agar	5	phypat
-Listeria_grayi_DSM_20601	Growth on ordinary blood agar	5	phypat+GGL
+Listeria_grayi_DSM_20601	Growth on ordinary blood agar	5	phypat+PGL
+Listeria_grayi_DSM_20601	Gas from glucose	2	phypat+PGL
 Listeria_grayi_DSM_20601	Acetate utilization	5	phypat
 Listeria_grayi_DSM_20601	Malonate	5	phypat
-Listeria_grayi_DSM_20601	Malonate	5	phypat+GGL
-Listeria_grayi_DSM_20601	Yellow pigment	1	phypat+GGL
+Listeria_grayi_DSM_20601	Malonate	5	phypat+PGL
+Listeria_grayi_DSM_20601	Yellow pigment	1	phypat+PGL
 Listeria_grayi_DSM_20601	DNase	3	phypat
-Listeria_grayi_DSM_20601	myo-Inositol	1	phypat+GGL
+Listeria_grayi_DSM_20601	myo-Inositol	1	phypat+PGL
 Listeria_grayi_DSM_20601	D-Mannose	3	phypat
-Listeria_grayi_DSM_20601	D-Mannose	4	phypat+GGL
+Listeria_grayi_DSM_20601	D-Mannose	4	phypat+PGL
 Listeria_grayi_DSM_20601	Gram positive	5	phypat
-Listeria_grayi_DSM_20601	Gram positive	5	phypat+GGL
+Listeria_grayi_DSM_20601	Gram positive	5	phypat+PGL
 Listeria_grayi_DSM_20601	Growth in 6.5% NaCl	5	phypat
-Listeria_grayi_DSM_20601	Growth in 6.5% NaCl	5	phypat+GGL
-Listeria_grayi_DSM_20601	Bile-susceptible	4	phypat+GGL
+Listeria_grayi_DSM_20601	Growth in 6.5% NaCl	5	phypat+PGL
+Listeria_grayi_DSM_20601	Bile-susceptible	4	phypat+PGL
 Listeria_grayi_DSM_20601	Glucose fermenter	5	phypat
-Listeria_grayi_DSM_20601	Glucose fermenter	5	phypat+GGL
+Listeria_grayi_DSM_20601	Glucose fermenter	5	phypat+PGL
 Listeria_grayi_DSM_20601	Salicin	5	phypat
-Listeria_grayi_DSM_20601	Salicin	5	phypat+GGL
-Listeria_grayi_DSM_20601	Gas from glucose	2	phypat+GGL
+Listeria_grayi_DSM_20601	Salicin	5	phypat+PGL
+Listeria_grayi_DSM_20601	Mucate utilization	1	phypat+PGL
 Listeria_grayi_DSM_20601	Alkaline phosphatase	4	phypat
-Listeria_grayi_DSM_20601	Alkaline phosphatase	5	phypat+GGL
+Listeria_grayi_DSM_20601	Alkaline phosphatase	5	phypat+PGL
 Listeria_grayi_DSM_20601	Lactose	5	phypat
-Listeria_grayi_DSM_20601	Lactose	5	phypat+GGL
+Listeria_grayi_DSM_20601	Lactose	5	phypat+PGL
 Listeria_grayi_DSM_20601	Growth in KCN	5	phypat
-Listeria_grayi_DSM_20601	Growth in KCN	2	phypat+GGL
+Listeria_grayi_DSM_20601	Growth in KCN	2	phypat+PGL
+Listeria_grayi_DSM_20601	Citrate	4	phypat
+Listeria_grayi_DSM_20601	Citrate	5	phypat+PGL
 Listeria_grayi_DSM_20601	Facultative	5	phypat
-Listeria_grayi_DSM_20601	Facultative	5	phypat+GGL
+Listeria_grayi_DSM_20601	Facultative	5	phypat+PGL
 Listeria_grayi_DSM_20601	Esculin hydrolysis	5	phypat
-Listeria_grayi_DSM_20601	Esculin hydrolysis	5	phypat+GGL
-Listeria_grayi_DSM_20601	Bacillus or coccobacillus	1	phypat
-Listeria_grayi_DSM_20601	Bacillus or coccobacillus	5	phypat+GGL
-Listeria_grayi_DSM_20601	Sucrose	3	phypat+GGL
+Listeria_grayi_DSM_20601	Esculin hydrolysis	5	phypat+PGL
+Listeria_grayi_DSM_20601	Bacillus or coccobacillus	2	phypat
+Listeria_grayi_DSM_20601	Bacillus or coccobacillus	5	phypat+PGL
+Listeria_grayi_DSM_20601	Sucrose	3	phypat+PGL
 Listeria_grayi_DSM_20601	Coagulase production	5	phypat
-Listeria_grayi_DSM_20601	Coagulase production	5	phypat+GGL
-Listeria_grayi_DSM_20601	Mucate utilization	1	phypat+GGL
-Listeria_ivanovii_WSLC3009	D-Xylose	4	phypat+GGL
+Listeria_grayi_DSM_20601	Coagulase production	5	phypat+PGL
+Listeria_grayi_DSM_20601	Arginine dihydrolase	2	phypat
+Listeria_grayi_DSM_20601	Arginine dihydrolase	4	phypat+PGL
+Listeria_ivanovii_WSLC3009	D-Xylose	4	phypat+PGL
 Listeria_ivanovii_WSLC3009	Starch hydrolysis	5	phypat
-Listeria_ivanovii_WSLC3009	Starch hydrolysis	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Starch hydrolysis	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Catalase	5	phypat
-Listeria_ivanovii_WSLC3009	Catalase	5	phypat+GGL
-Listeria_ivanovii_WSLC3009	Citrate	4	phypat+GGL
+Listeria_ivanovii_WSLC3009	Catalase	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Growth at 42°C	5	phypat
-Listeria_ivanovii_WSLC3009	Growth at 42°C	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Growth at 42°C	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Voges Proskauer	5	phypat
-Listeria_ivanovii_WSLC3009	Voges Proskauer	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Voges Proskauer	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Trehalose	5	phypat
-Listeria_ivanovii_WSLC3009	Trehalose	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Trehalose	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Motile	5	phypat
-Listeria_ivanovii_WSLC3009	Motile	5	phypat+GGL
-Listeria_ivanovii_WSLC3009	Arginine dihydrolase	3	phypat
-Listeria_ivanovii_WSLC3009	Arginine dihydrolase	2	phypat+GGL
+Listeria_ivanovii_WSLC3009	Motile	5	phypat+PGL
+Listeria_ivanovii_WSLC3009	Coccus - pairs or chains predominate	1	phypat+PGL
 Listeria_ivanovii_WSLC3009	Maltose	5	phypat
-Listeria_ivanovii_WSLC3009	Maltose	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Maltose	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Growth on ordinary blood agar	5	phypat
-Listeria_ivanovii_WSLC3009	Growth on ordinary blood agar	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Growth on ordinary blood agar	5	phypat+PGL
+Listeria_ivanovii_WSLC3009	Gas from glucose	2	phypat+PGL
 Listeria_ivanovii_WSLC3009	Acetate utilization	5	phypat
 Listeria_ivanovii_WSLC3009	Malonate	5	phypat
-Listeria_ivanovii_WSLC3009	Malonate	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Malonate	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	DNase	2	phypat
 Listeria_ivanovii_WSLC3009	Methyl red	5	phypat
-Listeria_ivanovii_WSLC3009	Methyl red	5	phypat+GGL
-Listeria_ivanovii_WSLC3009	D-Mannose	3	phypat+GGL
+Listeria_ivanovii_WSLC3009	Methyl red	5	phypat+PGL
+Listeria_ivanovii_WSLC3009	D-Mannose	3	phypat+PGL
 Listeria_ivanovii_WSLC3009	Gram positive	5	phypat
-Listeria_ivanovii_WSLC3009	Gram positive	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Gram positive	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Growth in 6.5% NaCl	5	phypat
-Listeria_ivanovii_WSLC3009	Growth in 6.5% NaCl	5	phypat+GGL
-Listeria_ivanovii_WSLC3009	Bile-susceptible	1	phypat+GGL
+Listeria_ivanovii_WSLC3009	Growth in 6.5% NaCl	5	phypat+PGL
+Listeria_ivanovii_WSLC3009	Bile-susceptible	1	phypat+PGL
 Listeria_ivanovii_WSLC3009	Glucose fermenter	5	phypat
-Listeria_ivanovii_WSLC3009	Glucose fermenter	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Glucose fermenter	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Salicin	5	phypat
-Listeria_ivanovii_WSLC3009	Salicin	5	phypat+GGL
-Listeria_ivanovii_WSLC3009	Gas from glucose	2	phypat+GGL
+Listeria_ivanovii_WSLC3009	Salicin	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Alkaline phosphatase	3	phypat
-Listeria_ivanovii_WSLC3009	Alkaline phosphatase	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Alkaline phosphatase	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Lactose	5	phypat
-Listeria_ivanovii_WSLC3009	Lactose	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Lactose	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Growth in KCN	5	phypat
-Listeria_ivanovii_WSLC3009	Growth in KCN	2	phypat+GGL
-Listeria_ivanovii_WSLC3009	Tartrate utilization	2	phypat+GGL
+Listeria_ivanovii_WSLC3009	Growth in KCN	2	phypat+PGL
+Listeria_ivanovii_WSLC3009	Tartrate utilization	2	phypat+PGL
+Listeria_ivanovii_WSLC3009	Citrate	4	phypat+PGL
 Listeria_ivanovii_WSLC3009	Facultative	5	phypat
-Listeria_ivanovii_WSLC3009	Facultative	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Facultative	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Esculin hydrolysis	5	phypat
-Listeria_ivanovii_WSLC3009	Esculin hydrolysis	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Esculin hydrolysis	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	Bacillus or coccobacillus	4	phypat
-Listeria_ivanovii_WSLC3009	Bacillus or coccobacillus	5	phypat+GGL
+Listeria_ivanovii_WSLC3009	Bacillus or coccobacillus	5	phypat+PGL
 Listeria_ivanovii_WSLC3009	D-Sorbitol	4	phypat
-Listeria_ivanovii_WSLC3009	D-Sorbitol	3	phypat+GGL
+Listeria_ivanovii_WSLC3009	D-Sorbitol	3	phypat+PGL
 Listeria_ivanovii_WSLC3009	Coagulase production	5	phypat
-Listeria_ivanovii_WSLC3009	Coagulase production	5	phypat+GGL
-Listeria_ivanovii_WSLC3009	Coccus - pairs or chains predominate	1	phypat+GGL
+Listeria_ivanovii_WSLC3009	Coagulase production	5	phypat+PGL
+Listeria_ivanovii_WSLC3009	Arginine dihydrolase	3	phypat
+Listeria_ivanovii_WSLC3009	Arginine dihydrolase	2	phypat+PGL

@@ -1,0 +1,41 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	75739	77149	1.6999999999999993e-140	+	.	Parent=AX25_00345;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	159549	160992	2.3999999999999993e-120	+	.	Parent=AX25_00740;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	182238	183312	2.799999999999999e-90	+	.	Parent=AX25_00855;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|CP007172	HMMER	phypat+PGL	184710	184857	8.6999999999999997e-11	+	.	Parent=AX25_00865;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|CP007172	HMMER	phypat+PGL	186805	187963	3.4999999999999991e-69	-	.	Parent=AX25_00875;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|CP007172	HMMER	phypat+PGL	198271	199432	3.8999999999999995e-79	+	.	Parent=AX25_00925;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|CP007172	HMMER	phypat+PGL	255186	255447	1.3000000000000002e-28	+	.	Parent=AX25_01175;Name=PF14693;Note=Ribosomal_TL5_C;Description=Ribosomal protein TL5, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	333151	334585	5.5999999999999992e-135	+	.	Parent=AX25_01545;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	340767	342171	5.4999999999999981e-174	-	.	Parent=AX25_01580;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	366227	367613	9.1999999999999985e-146	+	.	Parent=AX25_01700;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	393179	394544	1.9999999999999999e-126	+	.	Parent=AX25_01870;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	588561	589941	3.1999999999999992e-136	+	.	Parent=AX25_02850;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	620910	621339	3.9e-45	-	.	Parent=AX25_02985;Name=PF02632;Note=BioY;Description=BioY family
+accn|CP007172	HMMER	phypat+PGL	963377	964796	1.0999999999999997e-121	+	.	Parent=AX25_04690;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	1203906	1204104	1.3000000000000001e-12	+	.	Parent=AX25_05965;Name=PF07536;Note=HWE_HK;Description=HWE histidine kinase
+accn|CP007172	HMMER	phypat+PGL	1203906	1204119	2.3999999999999998e-24	+	.	Parent=AX25_05965;Name=PF07568;Note=HisKA_2;Description=Histidine kinase
+accn|CP007172	HMMER	phypat+PGL	1271836	1272223	5.0000000000000002e-27	+	.	Parent=AX25_06330;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|CP007172	HMMER	phypat+PGL	1272280	1272478	3.6999999999999999e-13	+	.	Parent=AX25_06330;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|CP007172	HMMER	phypat+PGL	1334984	1335512	1.7999999999999998e-84	+	.	Parent=AX25_06645;Name=PF06018;Note=CodY;Description=CodY GAF-like domain
+accn|CP007172	HMMER	phypat+PGL	1387407	1387488	4.3999999999999998e-12	+	.	Parent=AX25_06890;Name=PF13014;Note=KH_3;Description=KH domain
+accn|CP007172	HMMER	phypat+PGL	1386426	1386672	3.7e-16	+	.	Parent=AX25_06890;Name=PF03726;Note=PNPase;Description=Polyribonucleotide nucleotidyltransferase, RNA binding domain
+accn|CP007172	HMMER	phypat+PGL	1385748	1386135	5.4000000000000001e-24	+	.	Parent=AX25_06890;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|CP007172	HMMER	phypat+PGL	1386144	1386333	1.1000000000000002e-19	+	.	Parent=AX25_06890;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|CP007172	HMMER	phypat+PGL	1435297	1435369	7.3000000000000002e-13	-	.	Parent=AX25_07160;Name=PF12368;Note=DUF3650;Description=Protein of unknown function (DUF3650)
+accn|CP007172	HMMER	phypat+PGL	1681874	1682165	1.3000000000000002e-18	-	.	Parent=AX25_08310;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|CP007172	HMMER	phypat+PGL	1736652	1737795	6.5999999999999988e-103	-	.	Parent=AX25_08575;Name=PF08455;Note=SNF2_assoc;Description=Bacterial SNF2 helicase associated
+accn|CP007172	HMMER	phypat+PGL	2188303	2189263	1.6e-47	+	.	Parent=AX25_10800;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|CP007172	HMMER	phypat+PGL	2281527	2281647	4.2999999999999996e-10	-	.	Parent=AX25_11285;Name=PF05154;Note=TM2;Description=TM2 domain
+accn|CP007172	HMMER	phypat+PGL	2357988	2358165	1.2999999999999998e-19	-	.	Parent=AX25_11650;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|CP007172	HMMER	phypat+PGL	2360428	2361574	1.1999999999999998e-80	-	.	Parent=AX25_11660;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|CP007172	HMMER	phypat+PGL	2381324	2381615	8.9000000000000007e-16	+	.	Parent=AX25_11765;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|CP007172	HMMER	phypat+PGL	2423494	2423710	1.0000000000000001e-20	-	.	Parent=AX25_11975;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
+accn|CP007172	HMMER	phypat+PGL	2440584	2441883	9.3999999999999964e-206	+	.	Parent=AX25_12045;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|CP007172	HMMER	phypat+PGL	2481592	2481790	3.4999999999999999e-23	+	.	Parent=AX25_12280;Name=PF13244;Note=DUF4040;Description=Domain of unknown function (DUF4040)
+accn|CP007172	HMMER	phypat+PGL	2482100	2482484	5.4999999999999998e-30	+	.	Parent=AX25_12285;Name=PF04039;Note=MnhB;Description=Domain related to MnhB subunit of Na+/H+ antiporter
+accn|CP007172	HMMER	phypat+PGL	2498184	2498484	3.5999999999999996e-31	-	.	Parent=AX25_12390;Name=PF13344;Note=Hydrolase_6;Description=Haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2583984	2584302	8.8000000000000012e-34	-	.	Parent=AX25_12825;Name=PF04020;Note=DUF360;Description=Membrane protein of unknown function
+accn|CP007172	HMMER	phypat+PGL	2672079	2673243	2.0999999999999998e-66	-	.	Parent=AX25_13275;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|CP007172	HMMER	phypat+PGL	2833859	2835221	4.5999999999999982e-126	-	.	Parent=AX25_14175;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	2900176	2901580	1.2999999999999996e-171	+	.	Parent=AX25_14510;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1

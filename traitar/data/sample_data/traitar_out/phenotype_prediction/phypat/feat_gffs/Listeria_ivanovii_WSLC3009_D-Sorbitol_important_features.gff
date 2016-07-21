@@ -1,0 +1,15 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	137693	138428	2.6000000000000001e-74	+	.	Parent=AX25_00645;Name=PF04794;Note=YdjC;Description=YdjC-like protein
+accn|CP007172	HMMER	phypat+PGL	139932	140457	7.5999999999999981e-58	+	.	Parent=AX25_00655;Name=PF02056;Note=Glyco_hydro_4;Description=Family 4 glycosyl hydrolase
+accn|CP007172	HMMER	phypat+PGL	199702	200485	4.4999999999999991e-104	+	.	Parent=AX25_00930;Name=PF04951;Note=Peptidase_M55;Description=D-aminopeptidase
+accn|CP007172	HMMER	phypat+PGL	232187	232886	1.4999999999999997e-64	+	.	Parent=AX25_01075;Name=PF04794;Note=YdjC;Description=YdjC-like protein
+accn|CP007172	HMMER	phypat+PGL	531196	531739	5.099999999999999e-78	-	.	Parent=AX25_02575;Name=PF02056;Note=Glyco_hydro_4;Description=Family 4 glycosyl hydrolase
+accn|CP007172	HMMER	phypat+PGL	547759	548299	1.4999999999999997e-71	+	.	Parent=AX25_02645;Name=PF02056;Note=Glyco_hydro_4;Description=Family 4 glycosyl hydrolase
+accn|CP007172	HMMER	phypat+PGL	556760	557291	1.1999999999999998e-72	-	.	Parent=AX25_02685;Name=PF03612;Note=EIIBC-GUT_N;Description=Sorbitol phosphotransferase enzyme II N-terminus
+accn|CP007172	HMMER	phypat+PGL	558315	558636	3.5000000000000004e-24	-	.	Parent=AX25_02695;Name=PF06923;Note=GutM;Description=Glucitol operon activator protein (GutM)
+accn|CP007172	HMMER	phypat+PGL	608922	609384	9.9999999999999993e-41	+	.	Parent=AX25_02930;Name=PF00875;Note=DNA_photolyase;Description=DNA photolyase
+accn|CP007172	HMMER	phypat+PGL	779761	780109	3.3999999999999999e-11	+	.	Parent=AX25_03790;Name=PF13577;Note=SnoaL_4;Description=SnoaL-like domain
+accn|CP007172	HMMER	phypat+PGL	1162876	1163413	1.0999999999999998e-68	+	.	Parent=AX25_05720;Name=PF02056;Note=Glyco_hydro_4;Description=Family 4 glycosyl hydrolase
+accn|CP007172	HMMER	phypat+PGL	1229095	1229719	1.1e-56	+	.	Parent=AX25_06115;Name=PF01891;Note=CbiM;Description=Cobalt uptake substrate-specific transmembrane region
+accn|CP007172	HMMER	phypat+PGL	1618067	1618310	2.0000000000000002e-20	-	.	Parent=AX25_08040;Name=PF06750;Note=DiS_P_DiS;Description=Bacterial Peptidase A24 N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2104126	2105491	3.1999999999999995e-115	-	.	Parent=AX25_10435;Name=PF05935;Note=Arylsulfotrans;Description=Arylsulfotransferase (ASST)

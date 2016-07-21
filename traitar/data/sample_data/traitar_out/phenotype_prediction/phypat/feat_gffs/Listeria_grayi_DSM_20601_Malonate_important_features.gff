@@ -1,0 +1,13 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	92888	93122	7.1999999999999993e-33	-	.	Parent=HMPREF0556_0090;Name=PF10397;Note=ADSL_C;Description=Adenylosuccinate lyase C-terminus
+accn|NZ_GG692933	HMMER	phypat+PGL	143586	144711	1.8999999999999993e-178	-	.	Parent=HMPREF0556_0230;Name=PF09364;Note=XFP_N;Description=XFP N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	383196	383697	1.6999999999999997e-52	+	.	Parent=HMPREF0556_0469;Name=PF13350;Note=Y_phosphatase3;Description=Tyrosine phosphatase family
+accn|NZ_GG692933	HMMER	phypat+PGL	557713	558745	5.2000000000000003e-50	+	.	Parent=HMPREF0556_0654;Name=PF06772;Note=LtrA;Description=Bacterial low temperature requirement A protein (LtrA)
+accn|NZ_GG692933	HMMER	phypat+PGL	599160	599421	1.4999999999999998e-20	+	.	Parent=HMPREF0556_0696;Name=PF14493;Note=HTH_40;Description=Helix-turn-helix domain
+accn|NZ_GG692932	HMMER	phypat+PGL	22359	22695	6.7999999999999993e-43	-	.	Parent=HMPREF0556_0901;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|NZ_GG692932	HMMER	phypat+PGL	55503	55746	6.3000000000000004e-18	+	.	Parent=HMPREF0556_0929;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692932	HMMER	phypat+PGL	535749	535989	3.4999999999999997e-13	-	.	Parent=HMPREF0556_1437;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692932	HMMER	phypat+PGL	691105	691612	8.2999999999999998e-11	+	.	Parent=HMPREF0556_1583;Name=PF06833;Note=MdcE;Description=Malonate decarboxylase gamma subunit (MdcE)
+accn|NZ_GG692932	HMMER	phypat+PGL	695196	695613	1.9000000000000001e-54	+	.	Parent=HMPREF0556_1586;Name=PF04284;Note=DUF441;Description=Protein of unknown function (DUF441)
+accn|NZ_GG692932	HMMER	phypat+PGL	910609	910852	8.9000000000000008e-19	-	.	Parent=HMPREF0556_1790;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692935	HMMER	phypat+PGL	75325	75565	1.6999999999999999e-19	+	.	Parent=HMPREF0556_2069;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284

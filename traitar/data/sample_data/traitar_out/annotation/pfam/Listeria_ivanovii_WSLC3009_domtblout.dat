@@ -5291,9 +5291,9 @@ gi|583838473|AX25_09675|AX25_09675| -            797 Zot                  PF0570
 # Program:         hmmsearch
 # Version:         3.1b1 (May 2013)
 # Pipeline mode:   SEARCH
-# Query file:      /home/aaron/pfam_27.0/Pfam-A.hmm
+# Query file:      /home/aaron/hmms/Pfam-A.hmm
 # Target file:     ./1457190.3.RefSeq.faa
-# Option settings: hmmsearch --domtblout traitar_out/pfam_annotation/Listeria_ivanovii_WSLC3009_domtblout.dat --cut_ga --cpu 1 /home/aaron/pfam_27.0/Pfam-A.hmm ./1457190.3.RefSeq.faa 
-# Current dir:     /home/aaron/traitAR/traitar/data/sample_data
-# Date:            Wed Nov  4 16:24:24 2015
+# Option settings: hmmsearch --domtblout traitar_out/annotation/pfam/Listeria_ivanovii_WSLC3009_domtblout.dat --cut_ga --cpu 1 /home/aaron/hmms/Pfam-A.hmm ./1457190.3.RefSeq.faa 
+# Current dir:     /home/aaron/traitar/traitar/data/sample_data
+# Date:            Sun Jul 17 13:32:55 2016
 # [ok]

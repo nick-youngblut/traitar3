@@ -1,0 +1,17 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	404216	405272	2.1999999999999995e-93	-	.	Parent=AX25_01930;Name=PF06772;Note=LtrA;Description=Bacterial low temperature requirement A protein (LtrA)
+accn|CP007172	HMMER	phypat+PGL	406651	407680	1.2999999999999996e-107	-	.	Parent=AX25_01945;Name=PF06772;Note=LtrA;Description=Bacterial low temperature requirement A protein (LtrA)
+accn|CP007172	HMMER	phypat+PGL	528103	528436	2.1000000000000001e-42	-	.	Parent=AX25_02560;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|CP007172	HMMER	phypat+PGL	1306349	1306589	2.7000000000000001e-15	-	.	Parent=AX25_06490;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|CP007172	HMMER	phypat+PGL	1435737	1435980	2.0000000000000001e-17	+	.	Parent=AX25_07165;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|CP007172	HMMER	phypat+PGL	1641173	1641590	8.1000000000000002e-54	-	.	Parent=AX25_08130;Name=PF04284;Note=DUF441;Description=Protein of unknown function (DUF441)
+accn|CP007172	HMMER	phypat+PGL	1645836	1646325	2.1000000000000002e-10	-	.	Parent=AX25_08150;Name=PF06833;Note=MdcE;Description=Malonate decarboxylase gamma subunit (MdcE)
+accn|CP007172	HMMER	phypat+PGL	1902174	1902408	1.9e-33	-	.	Parent=AX25_09405;Name=PF10397;Note=ADSL_C;Description=Adenylosuccinate lyase C-terminus
+accn|CP007172	HMMER	phypat+PGL	1926815	1927322	2.7999999999999996e-52	-	.	Parent=AX25_09555;Name=PF13350;Note=Y_phosphatase3;Description=Tyrosine phosphatase family
+accn|CP007172	HMMER	phypat+PGL	2041243	2041483	5.9999999999999997e-18	+	.	Parent=AX25_10125;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|CP007172	HMMER	phypat+PGL	2068679	2069168	2.2000000000000003e-51	-	.	Parent=AX25_10255;Name=PF13350;Note=Y_phosphatase3;Description=Tyrosine phosphatase family
+accn|CP007172	HMMER	phypat+PGL	2078413	2078662	2.3999999999999997e-19	-	.	Parent=AX25_10295;Name=PF14493;Note=HTH_40;Description=Helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	2240757	2242200	2.3999999999999988e-198	+	.	Parent=AX25_11090;Name=PF02028;Note=BCCT;Description=BCCT family transporter
+accn|CP007172	HMMER	phypat+PGL	2315372	2315534	4.4999999999999999e-26	-	.	Parent=AX25_11485;Name=PF07582;Note=AP_endonuc_2_N;Description=AP endonuclease family 2 C terminus
+accn|CP007172	HMMER	phypat+PGL	2425978	2426221	2.3999999999999999e-18	-	.	Parent=AX25_11990;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|CP007172	HMMER	phypat+PGL	2610379	2610619	7.7000000000000006e-18	-	.	Parent=AX25_12950;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284

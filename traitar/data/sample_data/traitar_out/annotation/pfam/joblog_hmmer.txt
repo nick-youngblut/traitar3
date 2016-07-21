@@ -1,0 +1,3 @@
+Seq	Host	Starttime	Runtime	Send	Receive	Exitval	Signal	Command
+2	:	1468754761.237	407.424	0	0	0	0	hmmsearch --cpu 1 --cut_ga  --domtblout traitar_out/annotation/pfam/Listeria_grayi_DSM_20601_domtblout.dat  /home/aaron/hmms/Pfam-A.hmm > /dev/null ./525367.9.RefSeq.faa
+1	:	1468754761.234	414.615	0	0	0	0	hmmsearch --cpu 1 --cut_ga  --domtblout traitar_out/annotation/pfam/Listeria_ivanovii_WSLC3009_domtblout.dat  /home/aaron/hmms/Pfam-A.hmm > /dev/null ./1457190.3.RefSeq.faa

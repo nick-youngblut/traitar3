@@ -1,0 +1,34 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	9648	10242	2.3999999999999996e-72	-	.	Parent=AX25_00065;Name=PF04131;Note=NanE;Description=Putative N-acetylmannosamine-6-phosphate epimerase
+accn|CP007172	HMMER	phypat+PGL	75955	76276	4.0000000000000001e-10	+	.	Parent=AX25_00345;Name=PF00150;Note=Cellulase;Description=Cellulase (glycosyl hydrolase family 5)
+accn|CP007172	HMMER	phypat+PGL	101569	102724	5.5999999999999991e-95	+	.	Parent=AX25_00465;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|CP007172	HMMER	phypat+PGL	148161	148572	9.1000000000000008e-43	+	.	Parent=AX25_00680;Name=PF05025;Note=RbsD_FucU;Description=RbsD / FucU transport protein family
+accn|CP007172	HMMER	phypat+PGL	299998	300583	4.2000000000000005e-52	+	.	Parent=AX25_01390;Name=PF04131;Note=NanE;Description=Putative N-acetylmannosamine-6-phosphate epimerase
+accn|CP007172	HMMER	phypat+PGL	416789	417077	8.3999999999999983e-25	-	.	Parent=AX25_02010;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	427202	428126	1.1999999999999999e-95	-	.	Parent=AX25_02090;Name=PF01326;Note=PPDK_N;Description=Pyruvate phosphate dikinase, PEP/pyruvate binding domain
+accn|CP007172	HMMER	phypat+PGL	771475	771673	4.0999999999999993e-26	+	.	Parent=AX25_03740;Name=PF07523;Note=Big_3;Description=Bacterial Ig-like domain (group 3)
+accn|CP007172	HMMER	phypat+PGL	790757	791195	8.9000000000000008e-19	+	.	Parent=AX25_03855;Name=PF01613;Note=Flavin_Reduct;Description=Flavin reductase like domain
+accn|CP007172	HMMER	phypat+PGL	1051237	1051450	2.7e-11	+	.	Parent=AX25_05155;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	1132737	1133799	6.6999999999999999e-87	+	.	Parent=AX25_05545;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|CP007172	HMMER	phypat+PGL	1137167	1138277	2.9999999999999991e-121	+	.	Parent=AX25_05565;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|CP007172	HMMER	phypat+PGL	1138364	1139429	1.2999999999999998e-78	+	.	Parent=AX25_05570;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|CP007172	HMMER	phypat+PGL	1244446	1245334	8.899999999999999e-23	+	.	Parent=AX25_06225;Name=PF01609;Note=DDE_Tnp_1;Description=Transposase DDE domain
+accn|CP007172	HMMER	phypat+PGL	1364370	1364937	1.7000000000000002e-18	-	.	Parent=AX25_06790;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1427430	1427709	2.2999999999999999e-09	+	.	Parent=AX25_07120;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	1439040	1439331	9.0000000000000008e-14	-	.	Parent=AX25_07175;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	1705151	1706234	1.3e-106	+	.	Parent=AX25_08435;Name=PF00872;Note=Transposase_mut;Description=Transposase, Mutator family
+accn|CP007172	HMMER	phypat+PGL	1737825	1738632	2.8999999999999997e-59	-	.	Parent=AX25_08575;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1774105	1774342	3.1e-09	-	.	Parent=AX25_08745;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	1808349	1809237	6.7000000000000009e-24	+	.	Parent=AX25_08985;Name=PF01609;Note=DDE_Tnp_1;Description=Transposase DDE domain
+accn|CP007172	HMMER	phypat+PGL	1839718	1840135	3.3e-10	-	.	Parent=AX25_09145;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1902174	1902408	1.9e-33	-	.	Parent=AX25_09405;Name=PF10397;Note=ADSL_C;Description=Adenylosuccinate lyase C-terminus
+accn|CP007172	HMMER	phypat+PGL	1994120	1995146	4.0999999999999992e-63	+	.	Parent=AX25_09890;Name=PF01326;Note=PPDK_N;Description=Pyruvate phosphate dikinase, PEP/pyruvate binding domain
+accn|CP007172	HMMER	phypat+PGL	2069521	2069827	1.1e-12	-	.	Parent=AX25_10260;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	2123273	2123492	5.3000000000000003e-10	+	.	Parent=AX25_10515;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	2218230	2218479	1.3000000000000001e-08	-	.	Parent=AX25_10970;Name=PF03807;Note=F420_oxidored;Description=NADP oxidoreductase coenzyme F420-dependent
+accn|CP007172	HMMER	phypat+PGL	2480074	2480929	3.0999999999999993e-72	+	.	Parent=AX25_12280;Name=PF00361;Note=Oxidored_q1;Description=NADH-Ubiquinone/plastoquinone (complex I), various chains
+accn|CP007172	HMMER	phypat+PGL	2483231	2484044	2.9999999999999997e-47	+	.	Parent=AX25_12295;Name=PF00361;Note=Oxidored_q1;Description=NADH-Ubiquinone/plastoquinone (complex I), various chains
+accn|CP007172	HMMER	phypat+PGL	2528241	2528733	9.4999999999999987e-65	-	.	Parent=AX25_12560;Name=PF08020;Note=DUF1706;Description=Protein of unknown function (DUF1706)
+accn|CP007172	HMMER	phypat+PGL	2759483	2759843	8.1e-31	+	.	Parent=AX25_13795;Name=PF13306;Note=LRR_5;Description=Leucine rich repeats (6 copies)
+accn|CP007172	HMMER	phypat+PGL	2804068	2804962	2.3999999999999996e-112	+	.	Parent=AX25_14025;Name=PF02733;Note=Dak1;Description=Dak1 domain
+accn|CP007172	HMMER	phypat+PGL	2813912	2814122	1.1000000000000001e-11	-	.	Parent=AX25_14080;Name=PF07523;Note=Big_3;Description=Bacterial Ig-like domain (group 3)

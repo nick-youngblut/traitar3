@@ -1,0 +1,109 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	13574	14024	3.4e-16	-	.	Parent=HMPREF0556_0014;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|NZ_GG692936	HMMER	phypat+PGL	39008	39500	4.3999999999999998e-29	+	.	Parent=HMPREF0556_0042;Name=PF01154;Note=HMG_CoA_synt_N;Description=Hydroxymethylglutaryl-coenzyme A synthase N terminal
+accn|NZ_GG692936	HMMER	phypat+PGL	40519	41224	8.6e-11	-	.	Parent=HMPREF0556_0043;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692936	HMMER	phypat+PGL	40852	41272	1.1e-24	-	.	Parent=HMPREF0556_0043;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692936	HMMER	phypat+PGL	45700	46390	5.599999999999999e-56	-	.	Parent=HMPREF0556_0045;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|NZ_GG692936	HMMER	phypat+PGL	69894	70362	1.9e-12	-	.	Parent=HMPREF0556_0070;Name=PF02475;Note=Met_10;Description=Met-10+ like-protein
+accn|NZ_GG692933	HMMER	phypat+PGL	26740	26959	1.2999999999999999e-16	+	.	Parent=HMPREF0556_0126;Name=PF04854;Note=DUF624;Description=Protein of unknown function, DUF624
+accn|NZ_GG692933	HMMER	phypat+PGL	34607	35456	7.5999999999999991e-97	+	.	Parent=HMPREF0556_0133;Name=PF01116;Note=F_bP_aldolase;Description=Fructose-bisphosphate aldolase class-II
+accn|NZ_GG692933	HMMER	phypat+PGL	37500	38394	6.1999999999999994e-46	+	.	Parent=HMPREF0556_0137;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|NZ_GG692933	HMMER	phypat+PGL	42588	43203	6.9000000000000004e-21	-	.	Parent=HMPREF0556_0140;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692933	HMMER	phypat+PGL	42765	43209	1.3e-33	-	.	Parent=HMPREF0556_0140;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	43450	44635	1.0999999999999997e-160	+	.	Parent=HMPREF0556_0141;Name=PF06824;Note=DUF1237;Description=Protein of unknown function (DUF1237)
+accn|NZ_GG692933	HMMER	phypat+PGL	94387	94927	6.4999999999999992e-71	+	.	Parent=HMPREF0556_0186;Name=PF03390;Note=2HCT;Description=2-hydroxycarboxylate transporter family
+accn|NZ_GG692933	HMMER	phypat+PGL	112270	112813	3.8999999999999993e-66	-	.	Parent=HMPREF0556_0199;Name=PF02677;Note=DUF208;Description=Uncharacterized BCR, COG1636
+accn|NZ_GG692933	HMMER	phypat+PGL	147978	148650	6.1999999999999993e-11	+	.	Parent=HMPREF0556_0234;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692933	HMMER	phypat+PGL	148233	148704	2.9000000000000001e-28	+	.	Parent=HMPREF0556_0234;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	150500	150869	1.6999999999999998e-43	+	.	Parent=HMPREF0556_0236;Name=PF02903;Note=Alpha-amylase_N;Description=Alpha amylase, N-terminal ig-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	167528	168155	7.9000000000000007e-30	-	.	Parent=HMPREF0556_0248;Name=PF07859;Note=Abhydrolase_3;Description=alpha/beta hydrolase fold
+accn|NZ_GG692933	HMMER	phypat+PGL	167486	167636	3.7000000000000007e-10	-	.	Parent=HMPREF0556_0248;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	189060	189687	6.7999999999999991e-69	+	.	Parent=HMPREF0556_0278;Name=PF07859;Note=Abhydrolase_3;Description=alpha/beta hydrolase fold
+accn|NZ_GG692933	HMMER	phypat+PGL	189027	189177	8.400000000000001e-10	+	.	Parent=HMPREF0556_0278;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	315045	315801	1.8000000000000002e-54	+	.	Parent=HMPREF0556_0399;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	354824	354974	2.9999999999999998e-18	+	.	Parent=HMPREF0556_0438;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692933	HMMER	phypat+PGL	373632	374301	3.8999999999999996e-75	+	.	Parent=HMPREF0556_0458;Name=PF01487;Note=DHquinase_I;Description=Type I 3-dehydroquinase
+accn|NZ_GG692933	HMMER	phypat+PGL	381984	382368	3e-09	+	.	Parent=HMPREF0556_0467;Name=PF07859;Note=Abhydrolase_3;Description=alpha/beta hydrolase fold
+accn|NZ_GG692933	HMMER	phypat+PGL	383196	383697	1.6999999999999997e-52	+	.	Parent=HMPREF0556_0469;Name=PF13350;Note=Y_phosphatase3;Description=Tyrosine phosphatase family
+accn|NZ_GG692933	HMMER	phypat+PGL	400600	401218	5.4000000000000001e-24	+	.	Parent=HMPREF0556_0492;Name=PF07859;Note=Abhydrolase_3;Description=alpha/beta hydrolase fold
+accn|NZ_GG692933	HMMER	phypat+PGL	400555	400714	1.6000000000000001e-09	+	.	Parent=HMPREF0556_0492;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	408673	408796	1.3999999999999999e-18	-	.	Parent=HMPREF0556_0500;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692933	HMMER	phypat+PGL	436269	436719	2.9999999999999997e-20	-	.	Parent=HMPREF0556_0527;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|NZ_GG692933	HMMER	phypat+PGL	445325	445514	1.3e-14	+	.	Parent=HMPREF0556_0530;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	448816	448990	3.8000000000000001e-09	-	.	Parent=HMPREF0556_0535;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	478017	478653	5.7999999999999991e-76	+	.	Parent=HMPREF0556_0566;Name=PF07859;Note=Abhydrolase_3;Description=alpha/beta hydrolase fold
+accn|NZ_GG692933	HMMER	phypat+PGL	477969	478329	3.4000000000000002e-13	+	.	Parent=HMPREF0556_0566;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	495176	495338	1.2e-15	-	.	Parent=HMPREF0556_0584;Name=PF14659;Note=Phage_int_SAM_3;Description=Phage integrase, N-terminal SAM-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	499288	499414	4.5999999999999996e-19	+	.	Parent=HMPREF0556_0590;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692933	HMMER	phypat+PGL	504329	504479	5.5000000000000008e-20	-	.	Parent=HMPREF0556_0598;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692933	HMMER	phypat+PGL	545096	545495	2.4000000000000001e-25	+	.	Parent=HMPREF0556_0641;Name=PF00205;Note=TPP_enzyme_M;Description=Thiamine pyrophosphate enzyme, central domain
+accn|NZ_GG692933	HMMER	phypat+PGL	546500	547259	2.4999999999999999e-39	+	.	Parent=HMPREF0556_0642;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692933	HMMER	phypat+PGL	546830	547304	2.8999999999999996e-42	+	.	Parent=HMPREF0556_0642;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	551133	551577	1.4000000000000001e-15	+	.	Parent=HMPREF0556_0646;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692933	HMMER	phypat+PGL	551445	551913	1.5999999999999999e-31	+	.	Parent=HMPREF0556_0646;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	570251	570656	1.3999999999999997e-46	-	.	Parent=HMPREF0556_0665;Name=PF00205;Note=TPP_enzyme_M;Description=Thiamine pyrophosphate enzyme, central domain
+accn|NZ_GG692933	HMMER	phypat+PGL	598097	598295	5.0000000000000003e-10	-	.	Parent=HMPREF0556_0695;Name=PF06902;Note=Fer4_19;Description=Divergent 4Fe-4S mono-cluster
+accn|NZ_GG692933	HMMER	phypat+PGL	601654	601798	8.3999999999999995e-13	+	.	Parent=HMPREF0556_0698;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692933	HMMER	phypat+PGL	618857	619091	2.0999999999999999e-13	+	.	Parent=HMPREF0556_0716;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|NZ_GG692933	HMMER	phypat+PGL	660000	660189	8.1000000000000001e-23	+	.	Parent=HMPREF0556_0761;Name=PF02742;Note=Fe_dep_repr_C;Description=Iron dependent repressor, metal binding and dimerisation domain
+accn|NZ_GG692933	HMMER	phypat+PGL	666286	666757	9.8999999999999993e-63	+	.	Parent=HMPREF0556_0766;Name=PF00186;Note=DHFR_1;Description=Dihydrofolate reductase
+accn|NZ_GG692933	HMMER	phypat+PGL	708774	708972	8.8000000000000004e-14	+	.	Parent=HMPREF0556_0810;Name=PF07730;Note=HisKA_3;Description=Histidine kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	720481	721222	1.3999999999999997e-64	+	.	Parent=HMPREF0556_0821;Name=PF00069;Note=Pkinase;Description=Protein kinase domain
+accn|NZ_GG692933	HMMER	phypat+PGL	726250	727171	1.5999999999999999e-74	-	.	Parent=HMPREF0556_0827;Name=PF03812;Note=KdgT;Description=2-keto-3-deoxygluconate permease
+accn|NZ_GG692932	HMMER	phypat+PGL	20082	20760	7.0999999999999992e-18	-	.	Parent=HMPREF0556_0899;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692932	HMMER	phypat+PGL	20340	20814	1.5000000000000001e-27	-	.	Parent=HMPREF0556_0899;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	33791	35081	6.4999999999999975e-193	-	.	Parent=HMPREF0556_0912;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|NZ_GG692932	HMMER	phypat+PGL	44766	45567	1e-27	+	.	Parent=HMPREF0556_0923;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692932	HMMER	phypat+PGL	45138	45624	4.2999999999999997e-37	+	.	Parent=HMPREF0556_0923;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	96827	97424	1.7000000000000001e-42	+	.	Parent=HMPREF0556_0974;Name=PF01027;Note=Bax1-I;Description=Inhibitor of apoptosis-promoting Bax1
+accn|NZ_GG692932	HMMER	phypat+PGL	171895	172045	5.2999999999999997e-19	+	.	Parent=HMPREF0556_1045;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692932	HMMER	phypat+PGL	239849	240227	5.3e-37	+	.	Parent=HMPREF0556_1121;Name=PF00205;Note=TPP_enzyme_M;Description=Thiamine pyrophosphate enzyme, central domain
+accn|NZ_GG692932	HMMER	phypat+PGL	247513	247633	1.1999999999999999e-13	-	.	Parent=HMPREF0556_1130;Name=PF12669;Note=P12;Description=Virus attachment protein p12 family
+accn|NZ_GG692932	HMMER	phypat+PGL	257290	259207	0.0	-	.	Parent=HMPREF0556_1142;Name=PF06874;Note=FBPase_2;Description=Firmicute fructose-1,6-bisphosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	296628	296898	8.2999999999999998e-11	+	.	Parent=HMPREF0556_1185;Name=PF14635;Note=HHH_7;Description=Helix-hairpin-helix motif
+accn|NZ_GG692932	HMMER	phypat+PGL	341742	342297	5.4999999999999998e-36	-	.	Parent=HMPREF0556_1241;Name=PF01928;Note=CYTH;Description=CYTH domain
+accn|NZ_GG692932	HMMER	phypat+PGL	379956	380100	2.6e-14	+	.	Parent=HMPREF0556_1277;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692932	HMMER	phypat+PGL	395032	395821	2.8999999999999998e-36	+	.	Parent=HMPREF0556_1295;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692932	HMMER	phypat+PGL	395371	395848	9.3e-38	+	.	Parent=HMPREF0556_1295;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	407582	407786	3.3000000000000002e-23	+	.	Parent=HMPREF0556_1308;Name=PF07730;Note=HisKA_3;Description=Histidine kinase
+accn|NZ_GG692932	HMMER	phypat+PGL	452147	452462	3.2000000000000001e-12	+	.	Parent=HMPREF0556_1350;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	466046	466691	2.8999999999999996e-21	+	.	Parent=HMPREF0556_1365;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692932	HMMER	phypat+PGL	558073	558826	7.3999999999999989e-33	+	.	Parent=HMPREF0556_1462;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|NZ_GG692932	HMMER	phypat+PGL	598399	599545	1.7999999999999998e-86	+	.	Parent=HMPREF0556_1496;Name=PF08455;Note=SNF2_assoc;Description=Bacterial SNF2 helicase associated
+accn|NZ_GG692932	HMMER	phypat+PGL	648992	649691	4.6000000000000002e-26	+	.	Parent=HMPREF0556_1544;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692932	HMMER	phypat+PGL	649316	649784	8.3000000000000003e-31	+	.	Parent=HMPREF0556_1544;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	761273	761504	1e-10	+	.	Parent=HMPREF0556_1647;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|NZ_GG692932	HMMER	phypat+PGL	801572	801953	5.7000000000000002e-20	+	.	Parent=HMPREF0556_1690;Name=PF13567;Note=DUF4131;Description=Domain of unknown function (DUF4131)
+accn|NZ_GG692932	HMMER	phypat+PGL	813862	814132	6.2000000000000001e-14	+	.	Parent=HMPREF0556_1699;Name=PF02475;Note=Met_10;Description=Met-10+ like-protein
+accn|NZ_GG692932	HMMER	phypat+PGL	848415	848637	1.5e-10	+	.	Parent=HMPREF0556_1735;Name=PF11611;Note=DUF4352;Description=Domain of unknown function (DUF4352)
+accn|NZ_GG692932	HMMER	phypat+PGL	881739	883500	1.6999999999999992e-212	-	.	Parent=HMPREF0556_1769;Name=PF02901;Note=PFL;Description=Pyruvate formate lyase
+accn|NZ_GG692932	HMMER	phypat+PGL	1000738	1001152	1.8999999999999999e-59	+	.	Parent=HMPREF0556_1886;Name=PF06962;Note=rRNA_methylase;Description=Putative rRNA methylase
+accn|NZ_GG692937	HMMER	phypat+PGL	17084	17417	3e-10	-	.	Parent=HMPREF0556_1936;Name=PF03050;Note=DDE_Tnp_IS66;Description=Transposase IS66 family
+accn|NZ_GG692937	HMMER	phypat+PGL	20425	20758	6.900000000000001e-10	-	.	Parent=HMPREF0556_1938;Name=PF03050;Note=DDE_Tnp_IS66;Description=Transposase IS66 family
+accn|NZ_GG692937	HMMER	phypat+PGL	22006	22234	5.4999999999999998e-13	-	.	Parent=HMPREF0556_1940;Name=PF13154;Note=DUF3991;Description=Protein of unknown function (DUF3991)
+accn|NZ_GG692935	HMMER	phypat+PGL	6004	6178	6.8999999999999994e-11	+	.	Parent=HMPREF0556_1999;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692935	HMMER	phypat+PGL	7072	7324	3.1999999999999999e-11	+	.	Parent=HMPREF0556_2000;Name=PF00186;Note=DHFR_1;Description=Dihydrofolate reductase
+accn|NZ_GG692935	HMMER	phypat+PGL	24340	25183	5.5999999999999977e-110	+	.	Parent=HMPREF0556_2017;Name=PF01116;Note=F_bP_aldolase;Description=Fructose-bisphosphate aldolase class-II
+accn|NZ_GG692935	HMMER	phypat+PGL	49224	49854	4.6999999999999994e-67	+	.	Parent=HMPREF0556_2042;Name=PF00119;Note=ATP-synt_A;Description=ATP synthase A chain
+accn|NZ_GG692935	HMMER	phypat+PGL	52912	53704	2.3999999999999994e-98	+	.	Parent=HMPREF0556_2047;Name=PF00231;Note=ATP-synt;Description=ATP synthase
+accn|NZ_GG692935	HMMER	phypat+PGL	55457	55598	3.9999999999999999e-16	+	.	Parent=HMPREF0556_2049;Name=PF00401;Note=ATP-synt_DE;Description=ATP synthase, Delta/Epsilon chain, long alpha-helix domain
+accn|NZ_GG692935	HMMER	phypat+PGL	59821	59941	3.1999999999999996e-14	+	.	Parent=HMPREF0556_2054;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692935	HMMER	phypat+PGL	114918	115866	6.7999999999999985e-71	-	.	Parent=HMPREF0556_2108;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|NZ_GG692935	HMMER	phypat+PGL	130810	131461	1.3e-15	+	.	Parent=HMPREF0556_2122;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692935	HMMER	phypat+PGL	130969	131470	1.8e-39	+	.	Parent=HMPREF0556_2122;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692935	HMMER	phypat+PGL	148407	148701	3.8999999999999998e-16	-	.	Parent=HMPREF0556_2138;Name=PF00205;Note=TPP_enzyme_M;Description=Thiamine pyrophosphate enzyme, central domain
+accn|NZ_GG692935	HMMER	phypat+PGL	235743	236853	7.0999999999999971e-138	-	.	Parent=HMPREF0556_2211;Name=PF02595;Note=Gly_kinase;Description=Glycerate kinase family
+accn|NZ_GG692934	HMMER	phypat+PGL	655	970	9.7e-37	-	.	Parent=HMPREF0556_2243;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	1679	1994	8.8e-39	-	.	Parent=HMPREF0556_2244;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	16707	16869	1.3000000000000001e-09	+	.	Parent=HMPREF0556_2261;Name=PF14659;Note=Phage_int_SAM_3;Description=Phage integrase, N-terminal SAM-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	50963	51224	8.6999999999999995e-14	-	.	Parent=HMPREF0556_2309;Name=PF04205;Note=FMN_bind;Description=FMN-binding domain
+accn|NZ_GG692934	HMMER	phypat+PGL	61460	62072	8.0999999999999985e-40	-	.	Parent=HMPREF0556_2318;Name=PF00722;Note=Glyco_hydro_16;Description=Glycosyl hydrolases family 16
+accn|NZ_GG692934	HMMER	phypat+PGL	75886	76009	5.9000000000000009e-20	+	.	Parent=HMPREF0556_2333;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692934	HMMER	phypat+PGL	102965	103724	3.4999999999999993e-39	-	.	Parent=HMPREF0556_2363;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|NZ_GG692934	HMMER	phypat+PGL	103286	103736	1.6e-18	-	.	Parent=HMPREF0556_2363;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	107615	108068	3.6000000000000003e-16	-	.	Parent=HMPREF0556_2367;Name=PF13506;Note=Glyco_transf_21;Description=Glycosyl transferase family 21
+accn|NZ_GG692934	HMMER	phypat+PGL	147922	149140	2.6999999999999993e-149	-	.	Parent=HMPREF0556_2402;Name=PF06245;Note=DUF1015;Description=Protein of unknown function (DUF1015)
+accn|NZ_GG692934	HMMER	phypat+PGL	221889	222066	1.4e-11	+	.	Parent=HMPREF0556_2478;Name=PF00413;Note=Peptidase_M10;Description=Matrixin
+accn|NZ_GG692934	HMMER	phypat+PGL	232233	232869	7.2999999999999995e-54	+	.	Parent=HMPREF0556_2488;Name=PF04172;Note=LrgB;Description=LrgB-like family
+accn|NZ_GG692934	HMMER	phypat+PGL	279914	280295	4.7999999999999997e-30	-	.	Parent=HMPREF0556_2543;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	320528	320723	2.0000000000000001e-13	-	.	Parent=HMPREF0556_2586;Name=PF07730;Note=HisKA_3;Description=Histidine kinase

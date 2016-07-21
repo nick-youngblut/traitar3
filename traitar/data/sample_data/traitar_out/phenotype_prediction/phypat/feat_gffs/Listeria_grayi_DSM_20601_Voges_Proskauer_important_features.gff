@@ -1,0 +1,21 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	10844	11633	1.8000000000000002e-16	-	.	Parent=HMPREF0556_0013;Name=PF03706;Note=UPF0104;Description=Uncharacterised protein family (UPF0104)
+accn|NZ_GG692933	HMMER	phypat+PGL	124260	124983	9.4999999999999993e-37	+	.	Parent=HMPREF0556_0209;Name=PF03636;Note=Glyco_hydro_65N;Description=Glycosyl hydrolase family 65, N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	125160	126405	1.4999999999999996e-108	+	.	Parent=HMPREF0556_0209;Name=PF03632;Note=Glyco_hydro_65m;Description=Glycosyl hydrolase family 65 central catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	156698	157460	8.7999999999999976e-73	+	.	Parent=HMPREF0556_0241;Name=PF03636;Note=Glyco_hydro_65N;Description=Glycosyl hydrolase family 65, N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	157625	158744	1.5999999999999995e-143	+	.	Parent=HMPREF0556_0241;Name=PF03632;Note=Glyco_hydro_65m;Description=Glycosyl hydrolase family 65 central catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	520770	521103	2.3999999999999997e-27	+	.	Parent=HMPREF0556_0616;Name=PF08546;Note=ApbA_C;Description=Ketopantoate reductase PanE/ApbA C terminal
+accn|NZ_GG692933	HMMER	phypat+PGL	558881	559535	1.5999999999999999e-93	-	.	Parent=HMPREF0556_0655;Name=PF03306;Note=AAL_decarboxy;Description=Alpha-acetolactate decarboxylase
+accn|NZ_GG692933	HMMER	phypat+PGL	660000	660189	8.1000000000000001e-23	+	.	Parent=HMPREF0556_0761;Name=PF02742;Note=Fe_dep_repr_C;Description=Iron dependent repressor, metal binding and dimerisation domain
+accn|NZ_GG692933	HMMER	phypat+PGL	758517	759528	1.5999999999999995e-78	+	.	Parent=HMPREF0556_0856;Name=PF02350;Note=Epimerase_2;Description=UDP-N-acetylglucosamine 2-epimerase
+accn|NZ_GG692932	HMMER	phypat+PGL	22359	22695	6.7999999999999993e-43	-	.	Parent=HMPREF0556_0901;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|NZ_GG692932	HMMER	phypat+PGL	30657	31722	1.4e-57	+	.	Parent=HMPREF0556_0909;Name=PF00854;Note=PTR2;Description=POT family
+accn|NZ_GG692932	HMMER	phypat+PGL	129359	129866	5.7999999999999992e-49	-	.	Parent=HMPREF0556_1007;Name=PF07099;Note=DUF1361;Description=Protein of unknown function (DUF1361)
+accn|NZ_GG692932	HMMER	phypat+PGL	130093	131065	2.6999999999999992e-91	+	.	Parent=HMPREF0556_1008;Name=PF13303;Note=PTS_EIIC_2;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692932	HMMER	phypat+PGL	183937	184093	3.1e-20	+	.	Parent=HMPREF0556_1058;Name=PF12464;Note=Mac;Description=Maltose acetyltransferase
+accn|NZ_GG692932	HMMER	phypat+PGL	517454	518459	1.1999999999999997e-97	+	.	Parent=HMPREF0556_1416;Name=PF02350;Note=Epimerase_2;Description=UDP-N-acetylglucosamine 2-epimerase
+accn|NZ_GG692932	HMMER	phypat+PGL	565627	566065	1.0999999999999998e-63	+	.	Parent=HMPREF0556_1467;Name=PF02664;Note=LuxS;Description=S-Ribosylhomocysteinase (LuxS)
+accn|NZ_GG692932	HMMER	phypat+PGL	788805	789108	1e-14	+	.	Parent=HMPREF0556_1672;Name=PF13578;Note=Methyltransf_24;Description=Methyltransferase domain
+accn|NZ_GG692935	HMMER	phypat+PGL	27827	28745	5.6999999999999997e-48	+	.	Parent=HMPREF0556_2020;Name=PF03706;Note=UPF0104;Description=Uncharacterised protein family (UPF0104)
+accn|NZ_GG692935	HMMER	phypat+PGL	47074	48085	1.0999999999999999e-116	+	.	Parent=HMPREF0556_2040;Name=PF02350;Note=Epimerase_2;Description=UDP-N-acetylglucosamine 2-epimerase
+accn|NZ_GG692934	HMMER	phypat+PGL	220651	220774	3.1999999999999996e-14	-	.	Parent=HMPREF0556_2477;Name=PF12799;Note=LRR_4;Description=Leucine Rich repeats (2 copies)

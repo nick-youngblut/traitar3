@@ -1,0 +1,37 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	10543	10681	1.2e-20	+	.	Parent=HMPREF0556_0012;Name=PF08338;Note=DUF1731;Description=Domain of unknown function (DUF1731)
+accn|NZ_GG692936	HMMER	phypat+PGL	90768	91002	1.3e-34	-	.	Parent=HMPREF0556_0088;Name=PF02700;Note=PurS;Description=Phosphoribosylformylglycinamidine (FGAM) synthase
+accn|NZ_GG692933	HMMER	phypat+PGL	124260	124983	9.4999999999999993e-37	+	.	Parent=HMPREF0556_0209;Name=PF03636;Note=Glyco_hydro_65N;Description=Glycosyl hydrolase family 65, N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	125160	126405	1.4999999999999996e-108	+	.	Parent=HMPREF0556_0209;Name=PF03632;Note=Glyco_hydro_65m;Description=Glycosyl hydrolase family 65 central catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	156698	157460	8.7999999999999976e-73	+	.	Parent=HMPREF0556_0241;Name=PF03636;Note=Glyco_hydro_65N;Description=Glycosyl hydrolase family 65, N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	157625	158744	1.5999999999999995e-143	+	.	Parent=HMPREF0556_0241;Name=PF03632;Note=Glyco_hydro_65m;Description=Glycosyl hydrolase family 65 central catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	166272	167082	1.1999999999999999e-11	+	.	Parent=HMPREF0556_0247;Name=PF01443;Note=Viral_helicase1;Description=Viral (Superfamily 1) RNA helicase
+accn|NZ_GG692933	HMMER	phypat+PGL	271478	272273	3.1999999999999993e-89	+	.	Parent=HMPREF0556_0359;Name=PF03881;Note=Fructosamin_kin;Description=Fructosamine kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	334758	334977	1.9999999999999998e-32	+	.	Parent=HMPREF0556_0416;Name=PF07831;Note=PYNP_C;Description=Pyrimidine nucleoside phosphorylase C-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	464878	465154	6.7000000000000005e-21	+	.	Parent=HMPREF0556_0552;Name=PF13806;Note=Rieske_2;Description=Rieske-like [2Fe-2S] domain
+accn|NZ_GG692933	HMMER	phypat+PGL	478912	479986	9.4999999999999985e-79	+	.	Parent=HMPREF0556_0567;Name=PF10011;Note=DUF2254;Description=Predicted membrane protein (DUF2254)
+accn|NZ_GG692933	HMMER	phypat+PGL	658916	659174	5.5000000000000006e-17	-	.	Parent=HMPREF0556_0759;Name=PF13456;Note=RVT_3;Description=Reverse transcriptase-like
+accn|NZ_GG692933	HMMER	phypat+PGL	757486	758209	8.5999999999999963e-102	+	.	Parent=HMPREF0556_0855;Name=PF03102;Note=NeuB;Description=NeuB family
+accn|NZ_GG692932	HMMER	phypat+PGL	118178	118472	6.9e-17	-	.	Parent=HMPREF0556_0993;Name=PF13669;Note=Glyoxalase_4;Description=Glyoxalase/Bleomycin resistance protein/Dioxygenase superfamily
+accn|NZ_GG692932	HMMER	phypat+PGL	183937	184093	3.1e-20	+	.	Parent=HMPREF0556_1058;Name=PF12464;Note=Mac;Description=Maltose acetyltransferase
+accn|NZ_GG692932	HMMER	phypat+PGL	257290	259207	0.0	-	.	Parent=HMPREF0556_1142;Name=PF06874;Note=FBPase_2;Description=Firmicute fructose-1,6-bisphosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	333558	333882	8.6000000000000007e-13	+	.	Parent=HMPREF0556_1231;Name=PF13669;Note=Glyoxalase_4;Description=Glyoxalase/Bleomycin resistance protein/Dioxygenase superfamily
+accn|NZ_GG692932	HMMER	phypat+PGL	340799	341327	1.8999999999999999e-69	-	.	Parent=HMPREF0556_1240;Name=PF13743;Note=Thioredoxin_5;Description=Thioredoxin
+accn|NZ_GG692932	HMMER	phypat+PGL	341742	342297	5.4999999999999998e-36	-	.	Parent=HMPREF0556_1241;Name=PF01928;Note=CYTH;Description=CYTH domain
+accn|NZ_GG692932	HMMER	phypat+PGL	396980	398321	7.8999999999999992e-66	+	.	Parent=HMPREF0556_1297;Name=PF03606;Note=DcuC;Description=C4-dicarboxylate anaerobic carrier
+accn|NZ_GG692932	HMMER	phypat+PGL	406791	407130	2.1999999999999997e-41	+	.	Parent=HMPREF0556_1307;Name=PF09922;Note=DUF2154;Description=Cell wall-active antibiotics response protein (DUF2154)
+accn|NZ_GG692932	HMMER	phypat+PGL	434865	435468	9.3999999999999994e-78	+	.	Parent=HMPREF0556_1334;Name=PF02436;Note=PYC_OADA;Description=Conserved carboxylase domain
+accn|NZ_GG692932	HMMER	phypat+PGL	486046	486262	9.9999999999999998e-13	+	.	Parent=HMPREF0556_1385;Name=PF13601;Note=HTH_34;Description=Winged helix DNA-binding domain
+accn|NZ_GG692932	HMMER	phypat+PGL	568714	568801	3.7e-12	+	.	Parent=HMPREF0556_1469;Name=PF13653;Note=GDPD_2;Description=Glycerophosphoryl diester phosphodiesterase family
+accn|NZ_GG692932	HMMER	phypat+PGL	1014886	1015084	2.2000000000000002e-10	-	.	Parent=HMPREF0556_1902;Name=PF12146;Note=Hydrolase_4;Description=Putative lysophospholipase
+accn|NZ_GG692935	HMMER	phypat+PGL	145820	146540	9.9999999999999978e-68	-	.	Parent=HMPREF0556_2136;Name=PF07907;Note=YibE_F;Description=YibE/F-like protein
+accn|NZ_GG692935	HMMER	phypat+PGL	146908	147622	5.0999999999999998e-60	-	.	Parent=HMPREF0556_2137;Name=PF07907;Note=YibE_F;Description=YibE/F-like protein
+accn|NZ_GG692935	HMMER	phypat+PGL	174366	174654	1.6e-11	+	.	Parent=HMPREF0556_2159;Name=PF01738;Note=DLH;Description=Dienelactone hydrolase family
+accn|NZ_GG692935	HMMER	phypat+PGL	174363	174495	4.3000000000000004e-13	+	.	Parent=HMPREF0556_2159;Name=PF12146;Note=Hydrolase_4;Description=Putative lysophospholipase
+accn|NZ_GG692935	HMMER	phypat+PGL	186483	187467	4.9999999999999992e-73	+	.	Parent=HMPREF0556_2173;Name=PF00282;Note=Pyridoxal_deC;Description=Pyridoxal-dependent decarboxylase conserved domain
+accn|NZ_GG692935	HMMER	phypat+PGL	239695	240079	1.3000000000000002e-10	-	.	Parent=HMPREF0556_2217;Name=PF13434;Note=K_oxygenase;Description=L-lysine 6-monooxygenase (NADPH-requiring)
+accn|NZ_GG692935	HMMER	phypat+PGL	243033	243276	7.5000000000000003e-27	-	.	Parent=HMPREF0556_2221;Name=PF03334;Note=PhaG_MnhG_YufB;Description=Na+/H+ antiporter subunit
+accn|NZ_GG692935	HMMER	phypat+PGL	243888	244335	5.9e-50	-	.	Parent=HMPREF0556_2223;Name=PF01899;Note=MNHE;Description=Na+/H+ ion antiporter subunit
+accn|NZ_GG692935	HMMER	phypat+PGL	246184	246568	4.6999999999999999e-31	-	.	Parent=HMPREF0556_2226;Name=PF04039;Note=MnhB;Description=Domain related to MnhB subunit of Na+/H+ antiporter
+accn|NZ_GG692935	HMMER	phypat+PGL	248495	248693	9.9999999999999993e-23	-	.	Parent=HMPREF0556_2227;Name=PF13244;Note=DUF4040;Description=Domain of unknown function (DUF4040)
+accn|NZ_GG692934	HMMER	phypat+PGL	231413	231620	3.8e-19	+	.	Parent=HMPREF0556_2486;Name=PF14542;Note=Acetyltransf_CG;Description=GCN5-related N-acetyl-transferase
