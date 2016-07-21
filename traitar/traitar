@@ -351,7 +351,7 @@ class Traitar:
         """map the phenotype relevant protein families and write mapping to disk"""
         #create output directory for the pfam annotation 
         #hmm2gff command for the full pfam annotation
-        hmm2gff = "%(phenolyzer)s/hmm2gff.py %(out_dir)s/annotation/%(hmm_name)s/%(sample)s_filtered_best.dat  %(out_gff_dir)s %(sample)s  %(model_tar)s %(predicted_pts)s " 
+        hmm2gff = "hmm2gff.py %(out_dir)s/annotation/%(hmm_name)s/%(sample)s_filtered_best.dat  %(out_gff_dir)s %(sample)s  %(model_tar)s %(predicted_pts)s " 
         gene_gff_extd = "--gene_gff %(gene_gff)s --gene_gff_type " + gene_gff_type 
         #read in phypat predictions
         phypat_preds = ps.read_csv(os.path.join(self.phypat_dir, "predictions_majority-vote.txt"), index_col = 0, sep = "\t", encoding = "utf-8")
@@ -392,7 +392,7 @@ class Traitar:
             if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
                 os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
             self.execute_commands(h2gff_commands) 
-        if mode != "from_genes":
+        if mode != "from_nucleotides":
             ftco = os.path.join(self.pred_dir, "feature_track_commands.txt")
             sys.stderr.write("tracks with Pfams relevant for the predictions cannot be ad-hoc generated because the input is amino acids and no gene prediction GFF files have been generated\n commands are saved to %s and can be modified and run manually\n" % ftco)
             with open(ftco, 'w') as f:
