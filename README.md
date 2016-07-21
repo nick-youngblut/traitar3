@@ -5,11 +5,13 @@ Traitar is a software for characterizing microbial samples from nucleotide or pr
 [Installation](#installation)  
 [Basic usage](#basic-usage)  
 [Results](#results)  
+[Docker](#docker)  
 [Citing Traitar](#citing-traitar)  
 
 <a name="installation"/>
 <a name="basic-usage"/>
 <a name="results"/>
+<a name="docker"/>
 <a name="citing-traitar"/>
 
 # Installation
@@ -76,6 +78,18 @@ Traitar will link the protein families and predicted phenotypes. The results can
 If the *from_genes* option is set, the user may specify gene GFF files via an additional column called gene_gff in the sample file. As gene ids are not consistent across gene GFFs from different sources e.g. img, RefSeq or Prodigal the user needs to specify the origin of the gene gff file via the -g / --gene_gff_type parameter. Still there is no guarantee that this works currently. Using samples_gene_gff.txt as the sample file in the above example will generate phenotype-specific Pfam tracks for the two genomes. 
 
 ``traitar phenotype . samples_gene_gff.txt from_genes traitar_out -g refseq``
+
+# Docker
+
+There is a Docker container available for Traitar. Pull by
+
+``docker pull aweimann/traitar``
+
+To run traitar for the sample data execute 
+
+``docker run -v <traitar_dir>/data/sample_data:/mnt  1445e6c01992 bash -c 'traitar phenotype /mnt/ /mnt/samples.txt from_nucleotides /mnt/traitar_out'``,
+
+which will take ~30 minutes. Note there is a problem with parallel usage so -c option is not guaranteed to work.
 
 # Citing Traitar
 
