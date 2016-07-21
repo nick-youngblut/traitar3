@@ -2,7 +2,7 @@
 import os.path
 import pandas as ps
 import sys
-from PhenotypeCollection import PhenotypeCollection
+from traitar.PhenotypeCollection import PhenotypeCollection
 
 """predict new samples"""
 

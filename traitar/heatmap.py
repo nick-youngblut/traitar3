@@ -15,7 +15,7 @@ import sys, os
 import getopt
 import numpy as np
 import pandas as ps
-from PhenotypeCollection import PhenotypeCollection
+from traitar.PhenotypeCollection import PhenotypeCollection
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning) 
 #ignore these warnings

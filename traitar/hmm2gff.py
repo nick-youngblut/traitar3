@@ -4,7 +4,7 @@ import pandas as ps
 import tarfile
 import StringIO
 import warnings
-from PhenotypeCollection import PhenotypeCollection
+from traitar.PhenotypeCollection import PhenotypeCollection
 warnings.filterwarnings("ignore", category=FutureWarning) 
 #ignore the following warning; this piece of code needs to be adjusted in a future version of traitar
 #/home/aaron/traitar/traitar/hmm2gff.py:226: FutureWarning: sort(columns=....) is deprecated, use sort_values(by=.....)
