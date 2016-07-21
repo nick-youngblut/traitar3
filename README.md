@@ -89,7 +89,7 @@ To run traitar for the sample data execute
 
 ``docker run -v <traitar_dir>/data/sample_data:/mnt  1445e6c01992 bash -c 'traitar phenotype /mnt/ /mnt/samples.txt from_nucleotides /mnt/traitar_out'``,
 
-which will take ~30 minutes. Note there is a problem with parallel usage so -c option is not guaranteed to work.
+which will take ~30 minutes. Note there is a problem with parallel usage so -c option is not guaranteed to work. The output will be owned by root. So currently you still need root access to your machine to inspect the traitar_out folder.
 
 # Citing Traitar
 
