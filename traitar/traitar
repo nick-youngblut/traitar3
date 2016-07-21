@@ -15,7 +15,7 @@ import tarfile
 from traitar.PhenotypeCollection import PhenotypeCollection
 from traitar._version import __version__
 import re
-import evaluation
+import traitar.evaluation
 primary_default_models = "%(phenolyzer)s/data/models/phypat.tar.gz" %{"phenolyzer" : os.path.abspath(os.path.dirname(traitar.__file__))}
 secondary_default_models = "%(phenolyzer)s/data/models/phypat+PGL.tar.gz" %{"phenolyzer" : os.path.abspath(os.path.dirname(traitar.__file__))}
 
