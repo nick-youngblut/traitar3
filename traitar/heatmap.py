@@ -108,10 +108,10 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     # placement of the sample legend
 
     # axcb - placement of the sample legend
-    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.05,0.07,0.05,0.09]
+    [axsl_x, axsl_y, axsl_w, axsl_h] = [0.05,0.29,0.05,0.09]
 
     # axcb - placement of the color legend
-    [axcb_x, axcb_y, axcb_w, axcb_h] = [axm_x, 0.88,0.05,0.09]
+    [axcb_x, axcb_y, axcb_w, axcb_h] = [0.05, 0.88,0.05,0.09]
 
 
     # Compute and plot top dendrogram
@@ -216,7 +216,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     for i in range(x.shape[1]):
         if not column_method is None and x.shape[1] > 1:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i-0.5, -0.5, ' '+ column_header_mod, fontdict = {'fontsize': 8}, rotation=270, verticalalignment="top") # rotation could also be degrees
+            axm.text(i-0.5, -0.5, ' '+ column_header[idx2[i]], fontdict = {'fontsize': 8}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])
         else: ### When not clustering columns
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
