@@ -15,11 +15,13 @@ RUN apt-get install -y hmmer prodigal
 RUN apt-get install -y wget 
 RUN apt-get install -y git
 RUN mkdir /home/traitar
-WORKDIR  /home/traitar
-RUN git clone https://github.com/aweimann/traitar
-WORKDIR  /home/traitar/traitar
-RUN python setup.py sdist
-RUN pip install traitar  --find-links file:///home/traitar/traitar/dist
 RUN wget -O /home/traitar/Pfam-A.hmm.gz ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz
 RUN gunzip /home/traitar/Pfam-A.hmm.gz 
+WORKDIR  /home/traitar
+ADD https://www.random.org/strings/?num=16&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new uuid
+RUN git clone https://github.com/aweimann/traitar
+WORKDIR  /home/traitar/traitar
+RUN git checkout flexible_pt_models
+RUN python setup.py sdist
+RUN pip install traitar  --find-links file:///home/traitar/traitar/dist
 RUN traitar pfam --local /home/traitar
