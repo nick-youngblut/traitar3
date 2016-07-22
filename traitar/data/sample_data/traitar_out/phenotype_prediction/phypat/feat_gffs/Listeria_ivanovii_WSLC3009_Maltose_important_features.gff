@@ -1,0 +1,137 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	7345	8125	2.5000000000000001e-27	-	.	Parent=AX25_00050;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	7672	8140	2.6000000000000001e-38	-	.	Parent=AX25_00050;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	33936	34089	1.8e-09	-	.	Parent=AX25_00175;Name=PF03633;Note=Glyco_hydro_65C;Description=Glycosyl hydrolase family 65, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	32802	33921	2.6999999999999995e-120	-	.	Parent=AX25_00175;Name=PF03632;Note=Glyco_hydro_65m;Description=Glycosyl hydrolase family 65 central catalytic domain
+accn|CP007172	HMMER	phypat+PGL	42341	43106	2.7000000000000003e-28	+	.	Parent=AX25_00215;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	42638	43115	1.1e-35	+	.	Parent=AX25_00215;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	86466	86775	7.2000000000000009e-14	-	.	Parent=AX25_00400;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	87007	87814	1e-26	-	.	Parent=AX25_00405;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	87379	87865	9.9999999999999993e-35	-	.	Parent=AX25_00405;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	99920	100097	2.6e-15	+	.	Parent=AX25_00455;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	128643	129369	9.9999999999999977e-77	+	.	Parent=AX25_00590;Name=PF13714;Note=PEP_mutase;Description=Phosphoenolpyruvate phosphomutase
+accn|CP007172	HMMER	phypat+PGL	137112	137520	1.5999999999999999e-38	-	.	Parent=AX25_00640;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	150785	151004	1.3999999999999999e-18	-	.	Parent=AX25_00690;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	153233	153578	5.7999999999999991e-39	+	.	Parent=AX25_00705;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	194682	194967	5.9000000000000003e-12	+	.	Parent=AX25_00905;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	201558	201723	2e-14	+	.	Parent=AX25_00940;Name=PF13333;Note=rve_2;Description=Integrase core domain
+accn|CP007172	HMMER	phypat+PGL	252933	253506	2.7999999999999999e-30	-	.	Parent=AX25_01165;Name=PF08713;Note=DNA_alkylation;Description=DNA alkylation repair enzyme
+accn|CP007172	HMMER	phypat+PGL	260574	261474	2.3999999999999999e-40	+	.	Parent=AX25_01195;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	264898	265066	9.3000000000000014e-18	+	.	Parent=AX25_01215;Name=PF11734;Note=TilS_C;Description=TilS substrate C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	305073	305376	7.1999999999999999e-32	+	.	Parent=AX25_01415;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	317037	317769	1.3999999999999999e-32	+	.	Parent=AX25_01500;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	317361	317838	2.1999999999999999e-35	+	.	Parent=AX25_01500;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	343258	343504	1.4000000000000001e-13	-	.	Parent=AX25_01590;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	351046	351361	7.5000000000000003e-27	+	.	Parent=AX25_01625;Name=PF01228;Note=Gly_radical;Description=Glycine radical
+accn|CP007172	HMMER	phypat+PGL	392576	392975	6.6000000000000001e-35	-	.	Parent=AX25_01865;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	413814	414327	4.7000000000000006e-12	-	.	Parent=AX25_01990;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	431680	432151	1.4000000000000002e-21	+	.	Parent=AX25_02110;Name=PF02535;Note=Zip;Description=ZIP Zinc transporter
+accn|CP007172	HMMER	phypat+PGL	525270	525462	3.1999999999999999e-18	+	.	Parent=AX25_02550;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	528103	528436	2.1000000000000001e-42	-	.	Parent=AX25_02560;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|CP007172	HMMER	phypat+PGL	532724	532910	4.0999999999999999e-21	+	.	Parent=AX25_02580;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	536207	536552	4.4999999999999995e-32	-	.	Parent=AX25_02595;Name=PF07739;Note=TipAS;Description=TipAS antibiotic-recognition domain
+accn|CP007172	HMMER	phypat+PGL	539937	540570	3.5000000000000001e-15	+	.	Parent=AX25_02610;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	546786	547497	8.9000000000000006e-20	-	.	Parent=AX25_02640;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	547095	547566	7.1e-27	-	.	Parent=AX25_02640;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	569449	570502	4.9999999999999993e-69	+	.	Parent=AX25_02745;Name=PF00854;Note=PTR2;Description=POT family
+accn|CP007172	HMMER	phypat+PGL	590281	590689	2.7000000000000001e-40	+	.	Parent=AX25_02855;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	704568	704871	1.4999999999999999e-15	-	.	Parent=AX25_03380;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	708600	708969	1.5999999999999999e-35	+	.	Parent=AX25_03410;Name=PF05656;Note=DUF805;Description=Protein of unknown function (DUF805)
+accn|CP007172	HMMER	phypat+PGL	721846	722110	1.2e-09	+	.	Parent=AX25_03490;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	764921	765563	4.0999999999999999e-22	-	.	Parent=AX25_03715;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	765245	765728	1.1999999999999999e-28	-	.	Parent=AX25_03715;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	801402	801804	3e-23	+	.	Parent=AX25_03920;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|CP007172	HMMER	phypat+PGL	805886	806225	2.3999999999999999e-37	-	.	Parent=AX25_03950;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	808379	808688	5.9000000000000001e-13	-	.	Parent=AX25_03955;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	839255	839918	3.1000000000000004e-26	+	.	Parent=AX25_04090;Name=PF00194;Note=Carb_anhydrase;Description=Eukaryotic-type carbonic anhydrase
+accn|CP007172	HMMER	phypat+PGL	900568	901279	1.5999999999999998e-14	-	.	Parent=AX25_04355;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	900862	901339	3.0999999999999998e-34	-	.	Parent=AX25_04355;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	950429	950825	1.6999999999999999e-40	+	.	Parent=AX25_04605;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	981079	981397	1.9000000000000001e-09	-	.	Parent=AX25_04770;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	984998	985184	1.6000000000000001e-16	+	.	Parent=AX25_04785;Name=PF13484;Note=Fer4_16;Description=4Fe-4S double cluster binding domain
+accn|CP007172	HMMER	phypat+PGL	1007768	1008182	9.7999999999999998e-43	+	.	Parent=AX25_04925;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	1012428	1012818	3.1000000000000002e-10	+	.	Parent=AX25_04950;Name=PF05569;Note=Peptidase_M56;Description=BlaR1 peptidase M56
+accn|CP007172	HMMER	phypat+PGL	1062710	1063298	3.9999999999999999e-48	+	.	Parent=AX25_05220;Name=PF03932;Note=CutC;Description=CutC family
+accn|CP007172	HMMER	phypat+PGL	1073504	1073744	1.7999999999999999e-11	+	.	Parent=AX25_05275;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	1074040	1074811	6.4000000000000005e-16	-	.	Parent=AX25_05280;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	1074337	1074826	8.5000000000000001e-34	-	.	Parent=AX25_05280;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	1076842	1077160	1.6e-15	+	.	Parent=AX25_05290;Name=PF00676;Note=E1_dh;Description=Dehydrogenase E1 component
+accn|CP007172	HMMER	phypat+PGL	1094029	1094896	1.1999999999999996e-102	+	.	Parent=AX25_05390;Name=PF00676;Note=E1_dh;Description=Dehydrogenase E1 component
+accn|CP007172	HMMER	phypat+PGL	1131501	1131798	9.8000000000000012e-14	+	.	Parent=AX25_05545;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	1135754	1136138	2.1000000000000002e-14	+	.	Parent=AX25_05560;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	1196549	1197227	1.1e-54	+	.	Parent=AX25_05935;Name=PF00230;Note=MIP;Description=Major intrinsic protein
+accn|CP007172	HMMER	phypat+PGL	1220555	1221329	1.8999999999999995e-95	+	.	Parent=AX25_06065;Name=PF01888;Note=CbiD;Description=CbiD
+accn|CP007172	HMMER	phypat+PGL	1266418	1266622	4.6000000000000001e-10	+	.	Parent=AX25_06305;Name=PF14595;Note=Thioredoxin_9;Description=Thioredoxin
+accn|CP007172	HMMER	phypat+PGL	1307774	1308185	2.2000000000000001e-33	+	.	Parent=AX25_06510;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	1332102	1332342	4.9000000000000001e-24	+	.	Parent=AX25_06630;Name=PF02899;Note=Phage_int_SAM_1;Description=Phage integrase, N-terminal SAM-like domain
+accn|CP007172	HMMER	phypat+PGL	1336616	1337375	1.7999999999999998e-33	+	.	Parent=AX25_06660;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|CP007172	HMMER	phypat+PGL	1422581	1423481	3.6999999999999996e-98	+	.	Parent=AX25_07095;Name=PF00676;Note=E1_dh;Description=Dehydrogenase E1 component
+accn|CP007172	HMMER	phypat+PGL	1427946	1428813	7.4999999999999971e-147	+	.	Parent=AX25_07120;Name=PF00393;Note=6PGD;Description=6-phosphogluconate dehydrogenase, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1448829	1449003	4.4999999999999999e-26	+	.	Parent=AX25_07220;Name=PF13413;Note=HTH_25;Description=Helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	1464082	1464400	3.1999999999999995e-46	+	.	Parent=AX25_07275;Name=PF01228;Note=Gly_radical;Description=Glycine radical
+accn|CP007172	HMMER	phypat+PGL	1483599	1483935	2e-12	-	.	Parent=AX25_07370;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|CP007172	HMMER	phypat+PGL	1531703	1531940	8.7000000000000003e-13	-	.	Parent=AX25_07595;Name=PF08211;Note=dCMP_cyt_deam_2;Description=Cytidine and deoxycytidylate deaminase zinc-binding region
+accn|CP007172	HMMER	phypat+PGL	1548395	1548923	8.7999999999999998e-55	-	.	Parent=AX25_07690;Name=PF06144;Note=DNA_pol3_delta;Description=DNA polymerase III, delta subunit
+accn|CP007172	HMMER	phypat+PGL	1609045	1609735	4.3999999999999998e-49	-	.	Parent=AX25_07980;Name=PF00230;Note=MIP;Description=Major intrinsic protein
+accn|CP007172	HMMER	phypat+PGL	1674732	1675059	2.0999999999999999e-13	+	.	Parent=AX25_08270;Name=PF13185;Note=GAF_2;Description=GAF domain
+accn|CP007172	HMMER	phypat+PGL	1679475	1680174	8.6e-27	-	.	Parent=AX25_08300;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	1679799	1680282	4.1999999999999998e-33	-	.	Parent=AX25_08300;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	1690723	1690930	1.2e-10	-	.	Parent=AX25_08350;Name=PF14595;Note=Thioredoxin_9;Description=Thioredoxin
+accn|CP007172	HMMER	phypat+PGL	1694455	1695190	5.0000000000000002e-63	-	.	Parent=AX25_08375;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1713434	1714364	6.9000000000000002e-36	-	.	Parent=AX25_08475;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	1715158	1716094	1.1999999999999998e-35	-	.	Parent=AX25_08480;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	1759826	1760045	1.3000000000000001e-21	+	.	Parent=AX25_08685;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	1814753	1815212	8.8000000000000009e-18	-	.	Parent=AX25_09015;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|CP007172	HMMER	phypat+PGL	1824859	1825243	1.2999999999999999e-27	+	.	Parent=AX25_09085;Name=PF00258;Note=Flavodoxin_1;Description=Flavodoxin
+accn|CP007172	HMMER	phypat+PGL	1824856	1825057	1.0000000000000001e-11	+	.	Parent=AX25_09085;Name=PF12724;Note=Flavodoxin_5;Description=Flavodoxin domain
+accn|CP007172	HMMER	phypat+PGL	1838406	1838706	3.9e-13	-	.	Parent=AX25_09140;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	1844148	1844826	1.8000000000000002e-10	-	.	Parent=AX25_09170;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	1844451	1844853	1.2e-21	-	.	Parent=AX25_09170;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	1849330	1850020	1.4999999999999999e-53	-	.	Parent=AX25_09180;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1915497	1915707	5.9e-36	-	.	Parent=AX25_09480;Name=PF05198;Note=IF3_N;Description=Translation initiation factor IF-3, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2003690	2004164	1.1999999999999997e-65	-	.	Parent=AX25_09930;Name=PF00186;Note=DHFR_1;Description=Dihydrofolate reductase
+accn|CP007172	HMMER	phypat+PGL	2038777	2039203	3.0999999999999998e-44	-	.	Parent=AX25_10105;Name=PF13735;Note=tRNA_NucTran2_2;Description=tRNA nucleotidyltransferase domain 2 putative
+accn|CP007172	HMMER	phypat+PGL	2052110	2052410	5.2e-22	+	.	Parent=AX25_10165;Name=PF01228;Note=Gly_radical;Description=Glycine radical
+accn|CP007172	HMMER	phypat+PGL	2073525	2074047	2.8999999999999997e-11	-	.	Parent=AX25_10275;Name=PF13189;Note=Cytidylate_kin2;Description=Cytidylate kinase-like family
+accn|CP007172	HMMER	phypat+PGL	2074202	2075129	7.3999999999999978e-81	-	.	Parent=AX25_10280;Name=PF00710;Note=Asparaginase;Description=Asparaginase
+accn|CP007172	HMMER	phypat+PGL	2087935	2089081	1.6000000000000001e-55	-	.	Parent=AX25_10350;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2089145	2089394	1.3e-24	-	.	Parent=AX25_10355;Name=PF02899;Note=Phage_int_SAM_1;Description=Phage integrase, N-terminal SAM-like domain
+accn|CP007172	HMMER	phypat+PGL	2132196	2132415	5.9999999999999998e-30	-	.	Parent=AX25_10550;Name=PF07831;Note=PYNP_C;Description=Pyrimidine nucleoside phosphorylase C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2132780	2133557	6.5999999999999997e-39	-	.	Parent=AX25_10555;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	2133110	2133584	1.8999999999999999e-41	-	.	Parent=AX25_10555;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	2135493	2135829	3.7000000000000002e-28	-	.	Parent=AX25_10570;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	2140440	2140803	9.9999999999999998e-13	-	.	Parent=AX25_10600;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2141129	2141528	2.7999999999999995e-34	-	.	Parent=AX25_10605;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2176498	2176846	4.7999999999999995e-19	-	.	Parent=AX25_10745;Name=PF03799;Note=FtsQ;Description=Cell division protein FtsQ
+accn|CP007172	HMMER	phypat+PGL	2202181	2202400	4.4000000000000001e-22	+	.	Parent=AX25_10875;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	2233557	2234205	9.7000000000000006e-15	-	.	Parent=AX25_11055;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	2257248	2257467	2.3000000000000001e-18	+	.	Parent=AX25_11170;Name=PF04023;Note=FeoA;Description=FeoA domain
+accn|CP007172	HMMER	phypat+PGL	2264889	2265813	3.1999999999999999e-59	-	.	Parent=AX25_11210;Name=PF01238;Note=PMI_typeI;Description=Phosphomannose isomerase type I
+accn|CP007172	HMMER	phypat+PGL	2275459	2275819	1.0999999999999999e-49	-	.	Parent=AX25_11260;Name=PF02457;Note=DisA_N;Description=DisA bacterial checkpoint controller nucleotide-binding
+accn|CP007172	HMMER	phypat+PGL	2279595	2279742	6.4999999999999999e-15	-	.	Parent=AX25_11270;Name=PF03633;Note=Glyco_hydro_65C;Description=Glycosyl hydrolase family 65, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2278473	2279583	2.4999999999999992e-143	-	.	Parent=AX25_11270;Name=PF03632;Note=Glyco_hydro_65m;Description=Glycosyl hydrolase family 65 central catalytic domain
+accn|CP007172	HMMER	phypat+PGL	2287276	2287972	2.5000000000000001e-14	-	.	Parent=AX25_11305;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	2287531	2288005	2.2e-32	-	.	Parent=AX25_11305;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	2308458	2308764	4.3999999999999998e-12	-	.	Parent=AX25_11455;Name=PF00258;Note=Flavodoxin_1;Description=Flavodoxin
+accn|CP007172	HMMER	phypat+PGL	2388980	2390075	5.0999999999999996e-83	-	.	Parent=AX25_11800;Name=PF04286;Note=DUF445;Description=Protein of unknown function (DUF445)
+accn|CP007172	HMMER	phypat+PGL	2409088	2409721	1.3999999999999999e-69	-	.	Parent=AX25_11895;Name=PF08713;Note=DNA_alkylation;Description=DNA alkylation repair enzyme
+accn|CP007172	HMMER	phypat+PGL	2549614	2551111	1.3999999999999995e-90	-	.	Parent=AX25_12655;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2574665	2575643	9.3999999999999979e-85	-	.	Parent=AX25_12765;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|CP007172	HMMER	phypat+PGL	2658986	2659370	2.6000000000000002e-12	-	.	Parent=AX25_13205;Name=PF13477;Note=Glyco_trans_4_2;Description=Glycosyl transferase 4-like
+accn|CP007172	HMMER	phypat+PGL	2658923	2659463	2.0999999999999999e-17	-	.	Parent=AX25_13205;Name=PF13439;Note=Glyco_transf_4;Description=Glycosyltransferase Family 4
+accn|CP007172	HMMER	phypat+PGL	2675035	2675287	2.7e-11	-	.	Parent=AX25_13290;Name=PF00186;Note=DHFR_1;Description=Dihydrofolate reductase
+accn|CP007172	HMMER	phypat+PGL	2678382	2678646	1.6000000000000002e-10	-	.	Parent=AX25_13310;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	2715921	2716290	1.6e-11	-	.	Parent=AX25_13520;Name=PF13671;Note=AAA_33;Description=AAA domain
+accn|CP007172	HMMER	phypat+PGL	2799492	2799933	2.1000000000000002e-10	-	.	Parent=AX25_14000;Name=PF13671;Note=AAA_33;Description=AAA domain
+accn|CP007172	HMMER	phypat+PGL	2805647	2805965	6.5999999999999998e-31	+	.	Parent=AX25_14035;Name=PF03610;Note=EIIA-man;Description=PTS system fructose IIA component
+accn|CP007172	HMMER	phypat+PGL	2808877	2809096	1.9000000000000001e-17	+	.	Parent=AX25_14060;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2835259	2835910	9.800000000000001e-26	-	.	Parent=AX25_14180;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	2840378	2840789	7.6000000000000004e-39	-	.	Parent=AX25_14200;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2871051	2871810	3.5e-36	-	.	Parent=AX25_14380;Name=PF00532;Note=Peripla_BP_1;Description=Periplasmic binding proteins and sugar binding domain of LacI family
+accn|CP007172	HMMER	phypat+PGL	2871378	2871768	7.8999999999999998e-15	-	.	Parent=AX25_14380;Name=PF13377;Note=Peripla_BP_3;Description=Periplasmic binding protein-like domain
+accn|CP007172	HMMER	phypat+PGL	2904828	2904987	7.8000000000000002e-11	+	.	Parent=AX25_14535;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2907315	2907498	2.9999999999999999e-22	-	.	Parent=AX25_14550;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	837250	837436	1.3000000000000001e-20	-	.	Parent=AX25_04080;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	1164257	1164476	2.6000000000000002e-21	+	.	Parent=AX25_05725;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2816438	2816984	6.7000000000000001e-12	-	.	Parent=AX25_14095;Name=PF13439;Note=Glyco_transf_4;Description=Glycosyltransferase Family 4
+accn|CP007172	HMMER	phypat+PGL	2820034	2820850	8.7999999999999999e-13	-	.	Parent=AX25_14110;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein

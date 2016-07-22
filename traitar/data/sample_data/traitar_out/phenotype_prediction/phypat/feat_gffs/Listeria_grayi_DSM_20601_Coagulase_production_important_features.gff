@@ -1,0 +1,42 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	59891	61319	2.5999999999999994e-135	+	.	Parent=HMPREF0556_0152;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	63696	65103	8.2999999999999975e-181	-	.	Parent=HMPREF0556_0156;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	71200	72544	2.8999999999999991e-144	+	.	Parent=HMPREF0556_0164;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	108714	110133	1.9999999999999998e-122	+	.	Parent=HMPREF0556_0197;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	153715	153859	3.7000000000000007e-10	+	.	Parent=HMPREF0556_0238;Name=PF05154;Note=TM2;Description=TM2 domain
+accn|NZ_GG692933	HMMER	phypat+PGL	171943	172378	3.6000000000000001e-39	+	.	Parent=HMPREF0556_0253;Name=PF02632;Note=BioY;Description=BioY family
+accn|NZ_GG692933	HMMER	phypat+PGL	221087	222257	2.1999999999999998e-75	+	.	Parent=HMPREF0556_0306;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692933	HMMER	phypat+PGL	273170	274535	9.9999999999999995e-127	+	.	Parent=HMPREF0556_0361;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	286368	287526	1.1999999999999998e-68	+	.	Parent=HMPREF0556_0370;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692933	HMMER	phypat+PGL	339114	340275	9.1999999999999992e-74	-	.	Parent=HMPREF0556_0423;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692933	HMMER	phypat+PGL	391112	391340	2.7999999999999998e-12	+	.	Parent=HMPREF0556_0477;Name=PF13305;Note=WHG;Description=WHG domain
+accn|NZ_GG692933	HMMER	phypat+PGL	402951	404328	1.3999999999999997e-137	+	.	Parent=HMPREF0556_0494;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	424497	424929	1.8000000000000002e-44	-	.	Parent=HMPREF0556_0515;Name=PF02632;Note=BioY;Description=BioY family
+accn|NZ_GG692932	HMMER	phypat+PGL	33791	35081	6.4999999999999975e-193	-	.	Parent=HMPREF0556_0912;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|NZ_GG692932	HMMER	phypat+PGL	57888	58110	1.4999999999999998e-20	+	.	Parent=HMPREF0556_0932;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
+accn|NZ_GG692932	HMMER	phypat+PGL	88819	89053	1.4000000000000001e-15	-	.	Parent=HMPREF0556_0964;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|NZ_GG692932	HMMER	phypat+PGL	107520	108663	2.7999999999999996e-77	+	.	Parent=HMPREF0556_0984;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692932	HMMER	phypat+PGL	110179	110341	1.7999999999999999e-21	+	.	Parent=HMPREF0556_0986;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|NZ_GG692932	HMMER	phypat+PGL	167254	168397	3.8999999999999992e-67	+	.	Parent=HMPREF0556_1043;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692932	HMMER	phypat+PGL	504864	505254	1.2999999999999999e-27	+	.	Parent=HMPREF0556_1402;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|NZ_GG692932	HMMER	phypat+PGL	505311	505509	4.0999999999999996e-14	+	.	Parent=HMPREF0556_1402;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|NZ_GG692932	HMMER	phypat+PGL	509606	509798	1.9000000000000001e-17	-	.	Parent=HMPREF0556_1408;Name=PF05154;Note=TM2;Description=TM2 domain
+accn|NZ_GG692932	HMMER	phypat+PGL	556453	556981	1.7999999999999997e-81	+	.	Parent=HMPREF0556_1459;Name=PF06018;Note=CodY;Description=CodY GAF-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	598399	599545	1.7999999999999998e-86	+	.	Parent=HMPREF0556_1496;Name=PF08455;Note=SNF2_assoc;Description=Bacterial SNF2 helicase associated
+accn|NZ_GG692932	HMMER	phypat+PGL	645391	645682	8.9999999999999995e-24	+	.	Parent=HMPREF0556_1541;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|NZ_GG692932	HMMER	phypat+PGL	863304	864681	7.0999999999999986e-126	-	.	Parent=HMPREF0556_1751;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692932	HMMER	phypat+PGL	912467	912548	3.4000000000000004e-18	+	.	Parent=HMPREF0556_1791;Name=PF12368;Note=DUF3650;Description=Protein of unknown function (DUF3650)
+accn|NZ_GG692932	HMMER	phypat+PGL	958093	958189	5.2999999999999996e-12	-	.	Parent=HMPREF0556_1843;Name=PF13014;Note=KH_3;Description=KH domain
+accn|NZ_GG692932	HMMER	phypat+PGL	957112	957358	3.5000000000000002e-16	-	.	Parent=HMPREF0556_1843;Name=PF03726;Note=PNPase;Description=Polyribonucleotide nucleotidyltransferase, RNA binding domain
+accn|NZ_GG692932	HMMER	phypat+PGL	956434	956821	5.5000000000000006e-24	-	.	Parent=HMPREF0556_1843;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|NZ_GG692932	HMMER	phypat+PGL	956830	957019	3.6000000000000001e-19	-	.	Parent=HMPREF0556_1843;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|NZ_GG692935	HMMER	phypat+PGL	9097	10261	3.9999999999999999e-69	+	.	Parent=HMPREF0556_2003;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692935	HMMER	phypat+PGL	109077	109395	3.5999999999999996e-31	+	.	Parent=HMPREF0556_2101;Name=PF04020;Note=DUF360;Description=Membrane protein of unknown function
+accn|NZ_GG692935	HMMER	phypat+PGL	234543	234843	5.6999999999999999e-31	+	.	Parent=HMPREF0556_2210;Name=PF13344;Note=Hydrolase_6;Description=Haloacid dehalogenase-like hydrolase
+accn|NZ_GG692935	HMMER	phypat+PGL	246184	246568	4.6999999999999999e-31	-	.	Parent=HMPREF0556_2226;Name=PF04039;Note=MnhB;Description=Domain related to MnhB subunit of Na+/H+ antiporter
+accn|NZ_GG692935	HMMER	phypat+PGL	248495	248693	9.9999999999999993e-23	-	.	Parent=HMPREF0556_2227;Name=PF13244;Note=DUF4040;Description=Domain of unknown function (DUF4040)
+accn|NZ_GG692934	HMMER	phypat+PGL	81762	82923	1.1999999999999998e-78	+	.	Parent=HMPREF0556_2342;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692934	HMMER	phypat+PGL	126373	127774	4.2999999999999976e-174	+	.	Parent=HMPREF0556_2382;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat+PGL	177435	178845	1.5999999999999996e-136	+	.	Parent=HMPREF0556_2430;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat+PGL	253998	255156	1.3999999999999997e-76	+	.	Parent=HMPREF0556_2511;Name=PF00496;Note=SBP_bac_5;Description=Bacterial extracellular solute-binding proteins, family 5 Middle
+accn|NZ_GG692934	HMMER	phypat+PGL	333011	333269	7.2999999999999994e-32	+	.	Parent=HMPREF0556_2600;Name=PF14693;Note=Ribosomal_TL5_C;Description=Ribosomal protein TL5, C-terminal domain

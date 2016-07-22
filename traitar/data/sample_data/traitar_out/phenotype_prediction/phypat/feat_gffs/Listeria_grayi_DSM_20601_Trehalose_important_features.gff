@@ -1,0 +1,89 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	70750	71125	4.7000000000000003e-36	-	.	Parent=HMPREF0556_0071;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	59891	61319	2.5999999999999994e-135	+	.	Parent=HMPREF0556_0152;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	63696	65103	8.2999999999999975e-181	-	.	Parent=HMPREF0556_0156;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	71200	72544	2.8999999999999991e-144	+	.	Parent=HMPREF0556_0164;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	94387	94927	6.4999999999999992e-71	+	.	Parent=HMPREF0556_0186;Name=PF03390;Note=2HCT;Description=2-hydroxycarboxylate transporter family
+accn|NZ_GG692933	HMMER	phypat+PGL	108714	110133	1.9999999999999998e-122	+	.	Parent=HMPREF0556_0197;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	123297	123699	3.3000000000000002e-37	-	.	Parent=HMPREF0556_0208;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	180592	181135	1.6000000000000001e-60	+	.	Parent=HMPREF0556_0265;Name=PF01174;Note=SNO;Description=SNO glutamine amidotransferase family
+accn|NZ_GG692933	HMMER	phypat+PGL	207350	207710	5.0999999999999995e-24	+	.	Parent=HMPREF0556_0293;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	228483	228909	1.4999999999999999e-44	-	.	Parent=HMPREF0556_0312;Name=PF04657;Note=DUF606;Description=Protein of unknown function, DUF606
+accn|NZ_GG692933	HMMER	phypat+PGL	229349	229745	9.4000000000000013e-24	+	.	Parent=HMPREF0556_0313;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	272557	272956	7.4999999999999997e-36	-	.	Parent=HMPREF0556_0360;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	273170	274535	9.9999999999999995e-127	+	.	Parent=HMPREF0556_0361;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	296044	296731	1.9000000000000003e-21	+	.	Parent=HMPREF0556_0380;Name=PF04230;Note=PS_pyruv_trans;Description=Polysaccharide pyruvyl transferase
+accn|NZ_GG692933	HMMER	phypat+PGL	298011	298191	5.2000000000000003e-21	+	.	Parent=HMPREF0556_0382;Name=PF13376;Note=OmdA;Description=Bacteriocin-protection, YdeI or OmpD-Associated
+accn|NZ_GG692933	HMMER	phypat+PGL	303809	304505	1.9e-60	+	.	Parent=HMPREF0556_0389;Name=PF04794;Note=YdjC;Description=YdjC-like protein
+accn|NZ_GG692933	HMMER	phypat+PGL	324504	325266	4.9999999999999986e-87	-	.	Parent=HMPREF0556_0406;Name=PF03949;Note=Malic_M;Description=Malic enzyme, NAD binding domain
+accn|NZ_GG692933	HMMER	phypat+PGL	323928	324474	2.4999999999999995e-65	-	.	Parent=HMPREF0556_0406;Name=PF00390;Note=malic;Description=Malic enzyme, N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	354824	354974	2.9999999999999998e-18	+	.	Parent=HMPREF0556_0438;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692933	HMMER	phypat+PGL	391476	391719	1.8000000000000002e-16	-	.	Parent=HMPREF0556_0478;Name=PF01503;Note=PRA-PH;Description=Phosphoribosyl-ATP pyrophosphohydrolase
+accn|NZ_GG692933	HMMER	phypat+PGL	392106	392790	1.6999999999999998e-90	-	.	Parent=HMPREF0556_0480;Name=PF00977;Note=His_biosynth;Description=Histidine biosynthesis protein
+accn|NZ_GG692933	HMMER	phypat+PGL	392842	393520	3.3999999999999993e-84	-	.	Parent=HMPREF0556_0481;Name=PF00977;Note=His_biosynth;Description=Histidine biosynthesis protein
+accn|NZ_GG692933	HMMER	phypat+PGL	402951	404328	1.3999999999999997e-137	+	.	Parent=HMPREF0556_0494;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	404678	405077	5.8999999999999996e-37	+	.	Parent=HMPREF0556_0495;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	425169	425373	1.3e-24	+	.	Parent=HMPREF0556_0516;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|NZ_GG692933	HMMER	phypat+PGL	449903	450275	4.8999999999999993e-37	+	.	Parent=HMPREF0556_0537;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	468189	468396	6.8000000000000001e-14	+	.	Parent=HMPREF0556_0556;Name=PF08402;Note=TOBE_2;Description=TOBE domain
+accn|NZ_GG692933	HMMER	phypat+PGL	470172	470409	2.6e-13	+	.	Parent=HMPREF0556_0559;Name=PF02030;Note=Lipoprotein_8;Description=Hypothetical lipoprotein (MG045 family)
+accn|NZ_GG692933	HMMER	phypat+PGL	504329	504479	5.5000000000000008e-20	-	.	Parent=HMPREF0556_0598;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692933	HMMER	phypat+PGL	566402	567116	1.0999999999999997e-89	-	.	Parent=HMPREF0556_0662;Name=PF00682;Note=HMGL-like;Description=HMGL-like
+accn|NZ_GG692933	HMMER	phypat+PGL	569149	569338	8.8000000000000008e-20	-	.	Parent=HMPREF0556_0664;Name=PF13710;Note=ACT_5;Description=ACT domain
+accn|NZ_GG692933	HMMER	phypat+PGL	611401	611803	9.400000000000001e-60	+	.	Parent=HMPREF0556_0709;Name=PF00334;Note=NDK;Description=Nucleoside diphosphate kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	679389	679632	3.7999999999999999e-33	+	.	Parent=HMPREF0556_0783;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|NZ_GG692932	HMMER	phypat+PGL	14031	14763	1.0999999999999999e-70	+	.	Parent=HMPREF0556_0893;Name=PF04794;Note=YdjC;Description=YdjC-like protein
+accn|NZ_GG692932	HMMER	phypat+PGL	15813	16356	2.9999999999999994e-77	-	.	Parent=HMPREF0556_0895;Name=PF02056;Note=Glyco_hydro_4;Description=Family 4 glycosyl hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	16371	17031	1.3000000000000002e-60	-	.	Parent=HMPREF0556_0895;Name=PF11975;Note=Glyco_hydro_4C;Description=Family 4 glycosyl hydrolase C-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	20961	21501	3.6999999999999993e-72	+	.	Parent=HMPREF0556_0900;Name=PF02056;Note=Glyco_hydro_4;Description=Family 4 glycosyl hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	21522	22185	5.5999999999999989e-48	+	.	Parent=HMPREF0556_0900;Name=PF11975;Note=Glyco_hydro_4C;Description=Family 4 glycosyl hydrolase C-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	22359	22695	6.7999999999999993e-43	-	.	Parent=HMPREF0556_0901;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|NZ_GG692932	HMMER	phypat+PGL	30657	31722	1.4e-57	+	.	Parent=HMPREF0556_0909;Name=PF00854;Note=PTR2;Description=POT family
+accn|NZ_GG692932	HMMER	phypat+PGL	171895	172045	5.2999999999999997e-19	+	.	Parent=HMPREF0556_1045;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692932	HMMER	phypat+PGL	183937	184093	3.1e-20	+	.	Parent=HMPREF0556_1058;Name=PF12464;Note=Mac;Description=Maltose acetyltransferase
+accn|NZ_GG692932	HMMER	phypat+PGL	249677	249887	3.0999999999999998e-17	-	.	Parent=HMPREF0556_1132;Name=PF04023;Note=FeoA;Description=FeoA domain
+accn|NZ_GG692932	HMMER	phypat+PGL	268043	268727	4.8000000000000001e-16	+	.	Parent=HMPREF0556_1151;Name=PF04230;Note=PS_pyruv_trans;Description=Polysaccharide pyruvyl transferase
+accn|NZ_GG692932	HMMER	phypat+PGL	304644	305013	4.8999999999999999e-11	+	.	Parent=HMPREF0556_1197;Name=PF14526;Note=Cass2;Description=Integron-associated effector binding protein
+accn|NZ_GG692932	HMMER	phypat+PGL	306837	307713	1.2999999999999998e-87	+	.	Parent=HMPREF0556_1199;Name=PF03773;Note=DUF318;Description=Predicted permease
+accn|NZ_GG692932	HMMER	phypat+PGL	317577	317781	1.1e-12	+	.	Parent=HMPREF0556_1209;Name=PF13646;Note=HEAT_2;Description=HEAT repeats
+accn|NZ_GG692932	HMMER	phypat+PGL	332010	332424	2.9999999999999996e-39	+	.	Parent=HMPREF0556_1229;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692932	HMMER	phypat+PGL	351372	352236	2.899999999999999e-91	+	.	Parent=HMPREF0556_1252;Name=PF05343;Note=Peptidase_M42;Description=M42 glutamyl aminopeptidase
+accn|NZ_GG692932	HMMER	phypat+PGL	403025	403466	2.3999999999999999e-47	+	.	Parent=HMPREF0556_1303;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|NZ_GG692932	HMMER	phypat+PGL	404632	405235	1.5e-50	+	.	Parent=HMPREF0556_1305;Name=PF03932;Note=CutC;Description=CutC family
+accn|NZ_GG692932	HMMER	phypat+PGL	434004	434727	8.4000000000000007e-30	+	.	Parent=HMPREF0556_1334;Name=PF00682;Note=HMGL-like;Description=HMGL-like
+accn|NZ_GG692932	HMMER	phypat+PGL	463469	463745	3.3e-10	-	.	Parent=HMPREF0556_1362;Name=PF13646;Note=HEAT_2;Description=HEAT repeats
+accn|NZ_GG692932	HMMER	phypat+PGL	479401	480286	6.9999999999999986e-115	+	.	Parent=HMPREF0556_1379;Name=PF05343;Note=Peptidase_M42;Description=M42 glutamyl aminopeptidase
+accn|NZ_GG692932	HMMER	phypat+PGL	532041	532848	5.7999999999999996e-26	+	.	Parent=HMPREF0556_1433;Name=PF04230;Note=PS_pyruv_trans;Description=Polysaccharide pyruvyl transferase
+accn|NZ_GG692932	HMMER	phypat+PGL	622752	623682	5.4999999999999998e-36	+	.	Parent=HMPREF0556_1517;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|NZ_GG692932	HMMER	phypat+PGL	635521	635749	1.3000000000000001e-20	+	.	Parent=HMPREF0556_1530;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|NZ_GG692932	HMMER	phypat+PGL	636400	637273	1.0999999999999996e-111	+	.	Parent=HMPREF0556_1532;Name=PF05343;Note=Peptidase_M42;Description=M42 glutamyl aminopeptidase
+accn|NZ_GG692932	HMMER	phypat+PGL	692063	692888	6.1999999999999986e-130	+	.	Parent=HMPREF0556_1584;Name=PF00365;Note=PFK;Description=Phosphofructokinase
+accn|NZ_GG692932	HMMER	phypat+PGL	821145	821343	3.6000000000000001e-19	+	.	Parent=HMPREF0556_1708;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|NZ_GG692932	HMMER	phypat+PGL	850661	850955	2.6e-31	+	.	Parent=HMPREF0556_1737;Name=PF04237;Note=YjbR;Description=YjbR
+accn|NZ_GG692932	HMMER	phypat+PGL	853943	854735	7.2999999999999991e-63	+	.	Parent=HMPREF0556_1741;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|NZ_GG692932	HMMER	phypat+PGL	857465	858260	1.1999999999999998e-63	-	.	Parent=HMPREF0556_1744;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|NZ_GG692932	HMMER	phypat+PGL	863304	864681	7.0999999999999986e-126	-	.	Parent=HMPREF0556_1751;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692932	HMMER	phypat+PGL	867705	868431	4.7999999999999987e-67	+	.	Parent=HMPREF0556_1755;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|NZ_GG692932	HMMER	phypat+PGL	880345	880555	6.8000000000000008e-18	+	.	Parent=HMPREF0556_1767;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|NZ_GG692932	HMMER	phypat+PGL	881739	883500	1.6999999999999992e-212	-	.	Parent=HMPREF0556_1769;Name=PF02901;Note=PFL;Description=Pyruvate formate lyase
+accn|NZ_GG692932	HMMER	phypat+PGL	918969	919836	3.2999999999999988e-147	-	.	Parent=HMPREF0556_1800;Name=PF00393;Note=6PGD;Description=6-phosphogluconate dehydrogenase, C-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	920185	920983	4.7000000000000002e-13	-	.	Parent=HMPREF0556_1801;Name=PF04389;Note=Peptidase_M28;Description=Peptidase family M28
+accn|NZ_GG692932	HMMER	phypat+PGL	920293	920737	1.1000000000000001e-10	-	.	Parent=HMPREF0556_1801;Name=PF05343;Note=Peptidase_M42;Description=M42 glutamyl aminopeptidase
+accn|NZ_GG692932	HMMER	phypat+PGL	951273	952194	1.2999999999999999e-11	-	.	Parent=HMPREF0556_1836;Name=PF01869;Note=BcrAD_BadFG;Description=BadF/BadG/BcrA/BcrD ATPase family
+accn|NZ_GG692937	HMMER	phypat+PGL	22006	22234	5.4999999999999998e-13	-	.	Parent=HMPREF0556_1940;Name=PF13154;Note=DUF3991;Description=Protein of unknown function (DUF3991)
+accn|NZ_GG692935	HMMER	phypat+PGL	8139	8286	2.4999999999999999e-20	+	.	Parent=HMPREF0556_2002;Name=PF07853;Note=DUF1648;Description=Protein of unknown function (DUF1648)
+accn|NZ_GG692935	HMMER	phypat+PGL	30314	30437	1.5e-17	+	.	Parent=HMPREF0556_2022;Name=PF07498;Note=Rho_N;Description=Rho termination factor, N-terminal domain
+accn|NZ_GG692935	HMMER	phypat+PGL	40598	41144	2e-52	+	.	Parent=HMPREF0556_2033;Name=PF00265;Note=TK;Description=Thymidine kinase
+accn|NZ_GG692935	HMMER	phypat+PGL	141592	141955	9.9000000000000012e-19	+	.	Parent=HMPREF0556_2131;Name=PF14526;Note=Cass2;Description=Integron-associated effector binding protein
+accn|NZ_GG692935	HMMER	phypat+PGL	157607	158789	2.7999999999999991e-139	+	.	Parent=HMPREF0556_2145;Name=PF03611;Note=EIIC-GAT;Description=PTS system sugar-specific permease component
+accn|NZ_GG692935	HMMER	phypat+PGL	236970	237381	5.0000000000000005e-25	-	.	Parent=HMPREF0556_2212;Name=PF04608;Note=PgpA;Description=Phosphatidylglycerophosphatase A
+accn|NZ_GG692934	HMMER	phypat+PGL	2718	3870	2.1999999999999996e-100	-	.	Parent=HMPREF0556_2245;Name=PF03611;Note=EIIC-GAT;Description=PTS system sugar-specific permease component
+accn|NZ_GG692934	HMMER	phypat+PGL	21148	21970	5.8e-19	-	.	Parent=HMPREF0556_2266;Name=PF04230;Note=PS_pyruv_trans;Description=Polysaccharide pyruvyl transferase
+accn|NZ_GG692934	HMMER	phypat+PGL	47226	47634	1.5999999999999999e-33	+	.	Parent=HMPREF0556_2305;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692934	HMMER	phypat+PGL	61460	62072	8.0999999999999985e-40	-	.	Parent=HMPREF0556_2318;Name=PF00722;Note=Glyco_hydro_16;Description=Glycosyl hydrolases family 16
+accn|NZ_GG692934	HMMER	phypat+PGL	78791	79682	2.8999999999999992e-114	+	.	Parent=HMPREF0556_2337;Name=PF02733;Note=Dak1;Description=Dak1 domain
+accn|NZ_GG692934	HMMER	phypat+PGL	126373	127774	4.2999999999999976e-174	+	.	Parent=HMPREF0556_2382;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat+PGL	177435	178845	1.5999999999999996e-136	+	.	Parent=HMPREF0556_2430;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat+PGL	183294	184119	3.4999999999999996e-61	+	.	Parent=HMPREF0556_2434;Name=PF02016;Note=Peptidase_S66;Description=LD-carboxypeptidase
+accn|NZ_GG692934	HMMER	phypat+PGL	271265	272138	7.6999999999999997e-91	-	.	Parent=HMPREF0556_2533;Name=PF05343;Note=Peptidase_M42;Description=M42 glutamyl aminopeptidase
+accn|NZ_GG692934	HMMER	phypat+PGL	338671	339547	3.2000000000000001e-41	+	.	Parent=HMPREF0556_2604;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein

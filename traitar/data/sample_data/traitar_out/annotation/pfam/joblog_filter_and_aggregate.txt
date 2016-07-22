@@ -1,0 +1,3 @@
+Seq	Host	Starttime	Runtime	Send	Receive	Exitval	Signal	Command
+1	:	1468755176.703	10.645	0	0	0	0	hmmer2filtered_best.py traitar_out/annotation/pfam/Listeria_ivanovii_WSLC3009_domtblout.dat   traitar_out/annotation/pfam/Listeria_ivanovii_WSLC3009_filtered_best.dat pfam
+2	:	1468755176.706	10.643	0	0	0	0	hmmer2filtered_best.py traitar_out/annotation/pfam/Listeria_grayi_DSM_20601_domtblout.dat   traitar_out/annotation/pfam/Listeria_grayi_DSM_20601_filtered_best.dat pfam

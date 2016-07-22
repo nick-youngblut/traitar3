@@ -1,0 +1,110 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	10844	11633	1.8000000000000002e-16	-	.	Parent=HMPREF0556_0013;Name=PF03706;Note=UPF0104;Description=Uncharacterised protein family (UPF0104)
+accn|NZ_GG692936	HMMER	phypat+PGL	14243	15122	7.1999999999999998e-43	+	.	Parent=HMPREF0556_0015;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|NZ_GG692936	HMMER	phypat+PGL	24905	25280	6.0000000000000002e-27	+	.	Parent=HMPREF0556_0029;Name=PF00258;Note=Flavodoxin_1;Description=Flavodoxin
+accn|NZ_GG692936	HMMER	phypat+PGL	26982	27882	9.9999999999999998e-13	+	.	Parent=HMPREF0556_0031;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692936	HMMER	phypat+PGL	70750	71125	4.7000000000000003e-36	-	.	Parent=HMPREF0556_0071;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	66197	66542	1.7000000000000001e-09	+	.	Parent=HMPREF0556_0158;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	92487	92958	8.3999999999999991e-64	+	.	Parent=HMPREF0556_0182;Name=PF02590;Note=SPOUT_MTase;Description=Predicted SPOUT methyltransferase
+accn|NZ_GG692933	HMMER	phypat+PGL	164425	164980	1e-10	+	.	Parent=HMPREF0556_0246;Name=PF12704;Note=MacB_PCD;Description=MacB-like periplasmic core domain
+accn|NZ_GG692933	HMMER	phypat+PGL	168693	169254	3.3000000000000002e-18	+	.	Parent=HMPREF0556_0249;Name=PF12974;Note=Phosphonate-bd;Description=ABC transporter, phosphonate, periplasmic substrate-binding protein
+accn|NZ_GG692933	HMMER	phypat+PGL	250847	251759	6.0999999999999987e-85	+	.	Parent=HMPREF0556_0337;Name=PF03601;Note=Cons_hypoth698;Description=Conserved hypothetical protein 698
+accn|NZ_GG692933	HMMER	phypat+PGL	341722	342397	6.3000000000000002e-50	+	.	Parent=HMPREF0556_0425;Name=PF02589;Note=DUF162;Description=Uncharacterised ACR, YkgG family COG1556
+accn|NZ_GG692933	HMMER	phypat+PGL	343134	343686	2.2000000000000001e-38	+	.	Parent=HMPREF0556_0426;Name=PF02589;Note=DUF162;Description=Uncharacterised ACR, YkgG family COG1556
+accn|NZ_GG692933	HMMER	phypat+PGL	425861	426290	8.3e-13	+	.	Parent=HMPREF0556_0518;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	449903	450275	4.8999999999999993e-37	+	.	Parent=HMPREF0556_0537;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	452507	452786	1.0999999999999999e-09	-	.	Parent=HMPREF0556_0541;Name=PF01113;Note=DapB_N;Description=Dihydrodipicolinate reductase, N-terminus
+accn|NZ_GG692933	HMMER	phypat+PGL	453288	453678	1.7e-16	-	.	Parent=HMPREF0556_0542;Name=PF00892;Note=EamA;Description=EamA-like transporter family
+accn|NZ_GG692933	HMMER	phypat+PGL	487405	487759	2.0000000000000001e-10	+	.	Parent=HMPREF0556_0576;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	487462	487801	5.9000000000000003e-11	+	.	Parent=HMPREF0556_0576;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	504651	505047	1.9000000000000001e-25	-	.	Parent=HMPREF0556_0599;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	504660	505068	3.0999999999999999e-15	-	.	Parent=HMPREF0556_0599;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	519455	519794	1.8000000000000002e-20	+	.	Parent=HMPREF0556_0614;Name=PF02620;Note=DUF177;Description=Uncharacterized ACR, COG1399
+accn|NZ_GG692933	HMMER	phypat+PGL	573846	574101	2.1000000000000002e-20	+	.	Parent=HMPREF0556_0668;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	601891	602818	2.7999999999999999e-81	+	.	Parent=HMPREF0556_0699;Name=PF00710;Note=Asparaginase;Description=Asparaginase
+accn|NZ_GG692933	HMMER	phypat+PGL	626735	627137	2.3999999999999997e-41	+	.	Parent=HMPREF0556_0725;Name=PF05173;Note=DapB_C;Description=Dihydrodipicolinate reductase, C-terminus
+accn|NZ_GG692933	HMMER	phypat+PGL	626354	626726	2.3999999999999995e-39	+	.	Parent=HMPREF0556_0725;Name=PF01113;Note=DapB_N;Description=Dihydrodipicolinate reductase, N-terminus
+accn|NZ_GG692933	HMMER	phypat+PGL	673113	673932	4.9999999999999997e-89	+	.	Parent=HMPREF0556_0774;Name=PF02645;Note=DegV;Description=Uncharacterised protein, DegV family COG1307
+accn|NZ_GG692933	HMMER	phypat+PGL	683478	683643	2.1000000000000001e-16	+	.	Parent=HMPREF0556_0786;Name=PF01471;Note=PG_binding_1;Description=Putative peptidoglycan binding domain
+accn|NZ_GG692933	HMMER	phypat+PGL	699094	699451	1.6999999999999998e-48	+	.	Parent=HMPREF0556_0801;Name=PF02787;Note=CPSase_L_D3;Description=Carbamoyl-phosphate synthetase large chain, oligomerisation domain
+accn|NZ_GG692933	HMMER	phypat+PGL	710462	711482	2.2000000000000002e-27	+	.	Parent=HMPREF0556_0812;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692933	HMMER	phypat+PGL	710465	711482	8.7000000000000003e-13	+	.	Parent=HMPREF0556_0812;Name=PF12730;Note=ABC2_membrane_4;Description=ABC-2 family transporter protein
+accn|NZ_GG692933	HMMER	phypat+PGL	711581	712619	2e-41	+	.	Parent=HMPREF0556_0813;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692933	HMMER	phypat+PGL	711560	712601	9.6999999999999991e-13	+	.	Parent=HMPREF0556_0813;Name=PF12730;Note=ABC2_membrane_4;Description=ABC-2 family transporter protein
+accn|NZ_GG692933	HMMER	phypat+PGL	730755	731073	3.1999999999999998e-38	+	.	Parent=HMPREF0556_0831;Name=PF03780;Note=Asp23;Description=Asp23 family
+accn|NZ_GG692933	HMMER	phypat+PGL	731824	732763	4.0999999999999984e-126	+	.	Parent=HMPREF0556_0832;Name=PF13684;Note=Dak1_2;Description=Dihydroxyacetone kinase family
+accn|NZ_GG692933	HMMER	phypat+PGL	742709	743066	9.4000000000000004e-32	+	.	Parent=HMPREF0556_0842;Name=PF06470;Note=SMC_hinge;Description=SMC proteins Flexible Hinge Domain
+accn|NZ_GG692933	HMMER	phypat+PGL	768693	769212	1.8e-09	-	.	Parent=HMPREF0556_0867;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	68635	68884	4.8e-10	-	.	Parent=HMPREF0556_0946;Name=PF01507;Note=PAPS_reduct;Description=Phosphoadenosine phosphosulfate reductase family
+accn|NZ_GG692932	HMMER	phypat+PGL	76794	77019	6.3e-21	-	.	Parent=HMPREF0556_0954;Name=PF03471;Note=CorC_HlyC;Description=Transporter associated domain
+accn|NZ_GG692932	HMMER	phypat+PGL	77377	77755	9.1999999999999992e-11	-	.	Parent=HMPREF0556_0955;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	127296	127602	4.1999999999999999e-12	+	.	Parent=HMPREF0556_1001;Name=PF00258;Note=Flavodoxin_1;Description=Flavodoxin
+accn|NZ_GG692932	HMMER	phypat+PGL	132298	132691	6.3000000000000002e-12	-	.	Parent=HMPREF0556_1010;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	132457	132748	6.1999999999999998e-19	-	.	Parent=HMPREF0556_1010;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	132786	133866	2.2999999999999997e-53	-	.	Parent=HMPREF0556_1011;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	145947	146247	2.8000000000000003e-09	-	.	Parent=HMPREF0556_1021;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	174927	175356	1.6e-12	+	.	Parent=HMPREF0556_1049;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	251316	251745	4.0000000000000002e-25	+	.	Parent=HMPREF0556_1134;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	251319	251799	8.3000000000000007e-24	+	.	Parent=HMPREF0556_1134;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	255186	255753	7.4999999999999996e-14	+	.	Parent=HMPREF0556_1139;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	275904	276189	1.7000000000000001e-09	+	.	Parent=HMPREF0556_1159;Name=PF00892;Note=EamA;Description=EamA-like transporter family
+accn|NZ_GG692932	HMMER	phypat+PGL	315262	315619	2.8000000000000003e-09	+	.	Parent=HMPREF0556_1207;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	318673	319087	7.7999999999999996e-40	-	.	Parent=HMPREF0556_1212;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	332611	332965	4.5999999999999996e-23	+	.	Parent=HMPREF0556_1230;Name=PF00892;Note=EamA;Description=EamA-like transporter family
+accn|NZ_GG692932	HMMER	phypat+PGL	336875	337556	1.5999999999999998e-46	+	.	Parent=HMPREF0556_1235;Name=PF01136;Note=Peptidase_U32;Description=Peptidase family U32
+accn|NZ_GG692932	HMMER	phypat+PGL	337834	338512	8.8999999999999976e-87	+	.	Parent=HMPREF0556_1236;Name=PF01136;Note=Peptidase_U32;Description=Peptidase family U32
+accn|NZ_GG692932	HMMER	phypat+PGL	349894	350290	6.8000000000000003e-10	-	.	Parent=HMPREF0556_1251;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	388315	388714	9.0999999999999999e-23	+	.	Parent=HMPREF0556_1286;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	388321	388768	1.9000000000000001e-23	+	.	Parent=HMPREF0556_1286;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	399992	400565	7.0000000000000004e-42	-	.	Parent=HMPREF0556_1300;Name=PF00924;Note=MS_channel;Description=Mechanosensitive ion channel
+accn|NZ_GG692932	HMMER	phypat+PGL	457309	457852	8.1999999999999988e-24	+	.	Parent=HMPREF0556_1355;Name=PF04095;Note=NAPRTase;Description=Nicotinate phosphoribosyltransferase (NAPRTase) family
+accn|NZ_GG692932	HMMER	phypat+PGL	504040	504664	9.3999999999999996e-45	+	.	Parent=HMPREF0556_1401;Name=PF01177;Note=Asp_Glu_race;Description=Asp/Glu/Hydantoin racemase
+accn|NZ_GG692932	HMMER	phypat+PGL	523267	523537	6.0999999999999998e-31	+	.	Parent=HMPREF0556_1421;Name=PF00984;Note=UDPG_MGDP_dh;Description=UDP-glucose/GDP-mannose dehydrogenase family, central domain
+accn|NZ_GG692932	HMMER	phypat+PGL	570866	571121	1.3000000000000001e-12	+	.	Parent=HMPREF0556_1471;Name=PF01745;Note=IPT;Description=Isopentenyl transferase
+accn|NZ_GG692932	HMMER	phypat+PGL	575329	575752	2.9999999999999996e-34	-	.	Parent=HMPREF0556_1476;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	605225	606209	2.0999999999999999e-12	-	.	Parent=HMPREF0556_1501;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	605201	606194	6.1999999999999994e-39	-	.	Parent=HMPREF0556_1501;Name=PF12730;Note=ABC2_membrane_4;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	629347	630286	1.0000000000000001e-11	-	.	Parent=HMPREF0556_1524;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	652289	652892	4.1000000000000001e-20	+	.	Parent=HMPREF0556_1547;Name=PF12704;Note=MacB_PCD;Description=MacB-like periplasmic core domain
+accn|NZ_GG692932	HMMER	phypat+PGL	710640	711276	3.4000000000000001e-50	+	.	Parent=HMPREF0556_1599;Name=PF02602;Note=HEM4;Description=Uroporphyrinogen-III synthase HemD
+accn|NZ_GG692932	HMMER	phypat+PGL	748950	749343	6.3e-10	+	.	Parent=HMPREF0556_1636;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	762379	762658	3.8999999999999994e-36	+	.	Parent=HMPREF0556_1648;Name=PF14490;Note=HHH_4;Description=Helix-hairpin-helix containing domain
+accn|NZ_GG692932	HMMER	phypat+PGL	780509	781352	1.3e-23	+	.	Parent=HMPREF0556_1664;Name=PF12704;Note=MacB_PCD;Description=MacB-like periplasmic core domain
+accn|NZ_GG692932	HMMER	phypat+PGL	819716	820025	3.8999999999999999e-38	+	.	Parent=HMPREF0556_1706;Name=PF01219;Note=DAGK_prokar;Description=Prokaryotic diacylglycerol kinase
+accn|NZ_GG692932	HMMER	phypat+PGL	861625	861880	6.7999999999999993e-12	+	.	Parent=HMPREF0556_1748;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	861556	861880	3e-11	+	.	Parent=HMPREF0556_1748;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	879088	880153	3.7999999999999998e-11	-	.	Parent=HMPREF0556_1766;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	890571	890961	4.9000000000000006e-14	-	.	Parent=HMPREF0556_1775;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	890574	891015	1.1000000000000001e-18	-	.	Parent=HMPREF0556_1775;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	914170	914437	6.8000000000000006e-30	+	.	Parent=HMPREF0556_1794;Name=PF00708;Note=Acylphosphatase;Description=Acylphosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	935822	936134	7.4999999999999989e-38	-	.	Parent=HMPREF0556_1817;Name=PF03780;Note=Asp23;Description=Asp23 family
+accn|NZ_GG692932	HMMER	phypat+PGL	964351	964576	3.4999999999999997e-25	-	.	Parent=HMPREF0556_1851;Name=PF04296;Note=DUF448;Description=Protein of unknown function (DUF448)
+accn|NZ_GG692932	HMMER	phypat+PGL	965787	966204	2.1000000000000003e-54	-	.	Parent=HMPREF0556_1853;Name=PF02576;Note=DUF150;Description=Uncharacterised BCR, YhbC family COG0779
+accn|NZ_GG692932	HMMER	phypat+PGL	981085	981838	1.1999999999999997e-70	+	.	Parent=HMPREF0556_1865;Name=PF12974;Note=Phosphonate-bd;Description=ABC transporter, phosphonate, periplasmic substrate-binding protein
+accn|NZ_GG692935	HMMER	phypat+PGL	4653	5472	4.9999999999999992e-80	+	.	Parent=HMPREF0556_1997;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|NZ_GG692935	HMMER	phypat+PGL	27827	28745	5.6999999999999997e-48	+	.	Parent=HMPREF0556_2020;Name=PF03706;Note=UPF0104;Description=Uncharacterised protein family (UPF0104)
+accn|NZ_GG692935	HMMER	phypat+PGL	44479	44821	5.8999999999999996e-23	+	.	Parent=HMPREF0556_2037;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692935	HMMER	phypat+PGL	64930	65332	2.5000000000000001e-28	-	.	Parent=HMPREF0556_2059;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692935	HMMER	phypat+PGL	64987	65338	4.3999999999999997e-09	-	.	Parent=HMPREF0556_2059;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692935	HMMER	phypat+PGL	65491	65809	3.6e-46	-	.	Parent=HMPREF0556_2060;Name=PF01205;Note=UPF0029;Description=Uncharacterized protein family UPF0029
+accn|NZ_GG692935	HMMER	phypat+PGL	67175	68009	8.7999999999999992e-104	+	.	Parent=HMPREF0556_2062;Name=PF02645;Note=DegV;Description=Uncharacterised protein, DegV family COG1307
+accn|NZ_GG692935	HMMER	phypat+PGL	86861	87914	9.9999999999999986e-52	+	.	Parent=HMPREF0556_2079;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692935	HMMER	phypat+PGL	86864	87905	1.7000000000000002e-18	+	.	Parent=HMPREF0556_2079;Name=PF12730;Note=ABC2_membrane_4;Description=ABC-2 family transporter protein
+accn|NZ_GG692935	HMMER	phypat+PGL	97602	98229	5.2000000000000007e-10	-	.	Parent=HMPREF0556_2092;Name=PF12730;Note=ABC2_membrane_4;Description=ABC-2 family transporter protein
+accn|NZ_GG692935	HMMER	phypat+PGL	134696	135110	1.5000000000000001e-26	+	.	Parent=HMPREF0556_2125;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692935	HMMER	phypat+PGL	134753	135164	7.0000000000000003e-16	+	.	Parent=HMPREF0556_2125;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692935	HMMER	phypat+PGL	137619	138465	3.0999999999999997e-118	+	.	Parent=HMPREF0556_2127;Name=PF03668;Note=ATP_bind_2;Description=P-loop ATPase protein family
+accn|NZ_GG692935	HMMER	phypat+PGL	163652	164138	4.0000000000000002e-61	+	.	Parent=HMPREF0556_2151;Name=PF04552;Note=Sigma54_DBD;Description=Sigma-54, DNA binding domain
+accn|NZ_GG692935	HMMER	phypat+PGL	184689	185094	3.7999999999999996e-35	-	.	Parent=HMPREF0556_2171;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692935	HMMER	phypat+PGL	184698	185145	3.6000000000000005e-10	-	.	Parent=HMPREF0556_2171;Name=PF13420;Note=Acetyltransf_4;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692935	HMMER	phypat+PGL	200937	201771	2.2999999999999992e-77	+	.	Parent=HMPREF0556_2183;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|NZ_GG692935	HMMER	phypat+PGL	254501	255077	1.3999999999999998e-20	-	.	Parent=HMPREF0556_2235;Name=PF12704;Note=MacB_PCD;Description=MacB-like periplasmic core domain
+accn|NZ_GG692934	HMMER	phypat+PGL	96398	97712	2.1999999999999998e-187	-	.	Parent=HMPREF0556_2356;Name=PF01654;Note=Bac_Ubq_Cox;Description=Bacterial Cytochrome Ubiquinol Oxidase
+accn|NZ_GG692934	HMMER	phypat+PGL	132187	133048	5e-15	-	.	Parent=HMPREF0556_2388;Name=PF12730;Note=ABC2_membrane_4;Description=ABC-2 family transporter protein
+accn|NZ_GG692934	HMMER	phypat+PGL	134360	135356	1.5999999999999996e-89	+	.	Parent=HMPREF0556_2390;Name=PF04262;Note=Glu_cys_ligase;Description=Glutamate-cysteine ligase
+accn|NZ_GG692934	HMMER	phypat+PGL	161396	161588	1.8999999999999999e-29	+	.	Parent=HMPREF0556_2416;Name=PF13275;Note=S4_2;Description=S4 domain
+accn|NZ_GG692934	HMMER	phypat+PGL	217815	218130	3.1999999999999999e-18	-	.	Parent=HMPREF0556_2473;Name=PF06114;Note=DUF955;Description=Domain of unknown function (DUF955)
+accn|NZ_GG692934	HMMER	phypat+PGL	239650	239977	1.8999999999999998e-32	-	.	Parent=HMPREF0556_2496;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692934	HMMER	phypat+PGL	316939	317599	4.8999999999999991e-63	+	.	Parent=HMPREF0556_2581;Name=PF12704;Note=MacB_PCD;Description=MacB-like periplasmic core domain
+accn|NZ_GG692934	HMMER	phypat+PGL	332187	332547	3.5000000000000003e-10	+	.	Parent=HMPREF0556_2599;Name=PF13302;Note=Acetyltransf_3;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692934	HMMER	phypat+PGL	342869	343061	6.0999999999999993e-17	+	.	Parent=HMPREF0556_2608;Name=PF11734;Note=TilS_C;Description=TilS substrate C-terminal domain

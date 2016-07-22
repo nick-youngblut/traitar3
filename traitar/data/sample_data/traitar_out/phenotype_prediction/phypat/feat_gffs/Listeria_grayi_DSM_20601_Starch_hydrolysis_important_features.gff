@@ -1,0 +1,32 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	21307	21733	6.9999999999999984e-43	+	.	Parent=HMPREF0556_0024;Name=PF01712;Note=dNK;Description=Deoxynucleoside kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	26740	26959	1.2999999999999999e-16	+	.	Parent=HMPREF0556_0126;Name=PF04854;Note=DUF624;Description=Protein of unknown function, DUF624
+accn|NZ_GG692933	HMMER	phypat+PGL	28416	28653	1.4e-27	+	.	Parent=HMPREF0556_0127;Name=PF06580;Note=His_kinase;Description=Histidine kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	40675	42157	2.1999999999999992e-153	-	.	Parent=HMPREF0556_0139;Name=PF07971;Note=Glyco_hydro_92;Description=Glycosyl hydrolase family 92
+accn|NZ_GG692933	HMMER	phypat+PGL	104550	106107	3.4999999999999997e-146	+	.	Parent=HMPREF0556_0193;Name=PF07971;Note=Glyco_hydro_92;Description=Glycosyl hydrolase family 92
+accn|NZ_GG692933	HMMER	phypat+PGL	166269	166788	2.6e-17	+	.	Parent=HMPREF0556_0247;Name=PF09848;Note=DUF2075;Description=Uncharacterized conserved protein (DUF2075)
+accn|NZ_GG692933	HMMER	phypat+PGL	276787	277150	2.2e-37	-	.	Parent=HMPREF0556_0364;Name=PF07905;Note=PucR;Description=Purine catabolism regulatory protein-like family
+accn|NZ_GG692933	HMMER	phypat+PGL	354824	354974	2.9999999999999998e-18	+	.	Parent=HMPREF0556_0438;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692933	HMMER	phypat+PGL	406518	406671	2.6e-24	+	.	Parent=HMPREF0556_0498;Name=PF02229;Note=PC4;Description=Transcriptional Coactivator p15 (PC4)
+accn|NZ_GG692933	HMMER	phypat+PGL	504329	504479	5.5000000000000008e-20	-	.	Parent=HMPREF0556_0598;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692933	HMMER	phypat+PGL	618920	619091	7.4000000000000013e-10	+	.	Parent=HMPREF0556_0716;Name=PF13414;Note=TPR_11;Description=TPR repeat
+accn|NZ_GG692933	HMMER	phypat+PGL	679688	679868	2.2999999999999998e-19	+	.	Parent=HMPREF0556_0784;Name=PF00403;Note=HMA;Description=Heavy-metal-associated domain
+accn|NZ_GG692933	HMMER	phypat+PGL	681905	682082	1.6999999999999999e-19	+	.	Parent=HMPREF0556_0785;Name=PF00403;Note=HMA;Description=Heavy-metal-associated domain
+accn|NZ_GG692932	HMMER	phypat+PGL	70729	71260	1.0999999999999999e-25	-	.	Parent=HMPREF0556_0948;Name=PF01865;Note=PhoU_div;Description=Protein of unknown function DUF47
+accn|NZ_GG692932	HMMER	phypat+PGL	161648	161990	2.0000000000000001e-25	-	.	Parent=HMPREF0556_1036;Name=PF04266;Note=ASCH;Description=ASCH domain
+accn|NZ_GG692932	HMMER	phypat+PGL	171895	172045	5.2999999999999997e-19	+	.	Parent=HMPREF0556_1045;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|NZ_GG692932	HMMER	phypat+PGL	183937	184093	3.1e-20	+	.	Parent=HMPREF0556_1058;Name=PF12464;Note=Mac;Description=Maltose acetyltransferase
+accn|NZ_GG692932	HMMER	phypat+PGL	307746	308292	5.5999999999999992e-65	+	.	Parent=HMPREF0556_1200;Name=PF09323;Note=DUF1980;Description=Domain of unknown function (DUF1980)
+accn|NZ_GG692932	HMMER	phypat+PGL	384242	384416	4.0000000000000003e-18	+	.	Parent=HMPREF0556_1283;Name=PF00403;Note=HMA;Description=Heavy-metal-associated domain
+accn|NZ_GG692932	HMMER	phypat+PGL	494910	495387	9.199999999999999e-38	+	.	Parent=HMPREF0556_1394;Name=PF02674;Note=Colicin_V;Description=Colicin V production protein
+accn|NZ_GG692932	HMMER	phypat+PGL	755263	756448	2.0999999999999996e-138	-	.	Parent=HMPREF0556_1642;Name=PF00909;Note=Ammonium_transp;Description=Ammonium Transporter Family
+accn|NZ_GG692932	HMMER	phypat+PGL	761243	761423	4.4999999999999998e-15	+	.	Parent=HMPREF0556_1647;Name=PF13414;Note=TPR_11;Description=TPR repeat
+accn|NZ_GG692932	HMMER	phypat+PGL	769091	769586	5.9999999999999993e-60	+	.	Parent=HMPREF0556_1653;Name=PF08020;Note=DUF1706;Description=Protein of unknown function (DUF1706)
+accn|NZ_GG692932	HMMER	phypat+PGL	951273	952194	1.2999999999999999e-11	-	.	Parent=HMPREF0556_1836;Name=PF01869;Note=BcrAD_BadFG;Description=BadF/BadG/BcrA/BcrD ATPase family
+accn|NZ_GG692935	HMMER	phypat+PGL	109469	110312	3.1999999999999996e-108	-	.	Parent=HMPREF0556_2102;Name=PF02065;Note=Melibiase;Description=Melibiase
+accn|NZ_GG692935	HMMER	phypat+PGL	111425	111662	1.1e-32	-	.	Parent=HMPREF0556_2103;Name=PF02065;Note=Melibiase;Description=Melibiase
+accn|NZ_GG692935	HMMER	phypat+PGL	118189	118375	1.4e-11	-	.	Parent=HMPREF0556_2109;Name=PF13414;Note=TPR_11;Description=TPR repeat
+accn|NZ_GG692935	HMMER	phypat+PGL	123450	123597	9.8000000000000012e-14	+	.	Parent=HMPREF0556_2116;Name=PF13414;Note=TPR_11;Description=TPR repeat
+accn|NZ_GG692935	HMMER	phypat+PGL	129640	130219	8.7999999999999989e-41	+	.	Parent=HMPREF0556_2121;Name=PF02744;Note=GalP_UDP_tr_C;Description=Galactose-1-phosphate uridyl transferase, C-terminal domain
+accn|NZ_GG692935	HMMER	phypat+PGL	173861	174134	7.3999999999999995e-17	+	.	Parent=HMPREF0556_2158;Name=PF14200;Note=RicinB_lectin_2;Description=Ricin-type beta-trefoil lectin domain-like
+accn|NZ_GG692935	HMMER	phypat+PGL	227300	227513	2.2000000000000002e-11	+	.	Parent=HMPREF0556_2205;Name=PF00041;Note=fn3;Description=Fibronectin type III domain

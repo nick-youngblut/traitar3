@@ -1,0 +1,60 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	6144	7029	2.8999999999999992e-74	-	.	Parent=AX25_00045;Name=PF01156;Note=IU_nuc_hydro;Description=Inosine-uridine preferring nucleoside hydrolase
+accn|CP007172	HMMER	phypat+PGL	77456	77609	5.4e-16	-	.	Parent=AX25_00350;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	88109	88664	1.8e-38	+	.	Parent=AX25_00410;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	101569	102724	5.5999999999999991e-95	+	.	Parent=AX25_00465;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|CP007172	HMMER	phypat+PGL	150785	151004	1.3999999999999999e-18	-	.	Parent=AX25_00690;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	215500	216025	3.7999999999999997e-43	+	.	Parent=AX25_01010;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	349648	351418	9.2999999999999991e-78	+	.	Parent=AX25_01625;Name=PF13597;Note=NRDD;Description=Anaerobic ribonucleoside-triphosphate reductase
+accn|CP007172	HMMER	phypat+PGL	351515	351932	1.4999999999999999e-55	+	.	Parent=AX25_01630;Name=PF13353;Note=Fer4_12;Description=4Fe-4S single cluster domain
+accn|CP007172	HMMER	phypat+PGL	363004	363649	1.7000000000000001e-09	+	.	Parent=AX25_01685;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|CP007172	HMMER	phypat+PGL	389009	389468	1.1e-46	-	.	Parent=AX25_01840;Name=PF03575;Note=Peptidase_S51;Description=Peptidase family S51
+accn|CP007172	HMMER	phypat+PGL	390004	390502	9.9000000000000003e-22	+	.	Parent=AX25_01845;Name=PF13280;Note=WYL;Description=WYL domain
+accn|CP007172	HMMER	phypat+PGL	396980	397475	5.0000000000000004e-30	-	.	Parent=AX25_01890;Name=PF13280;Note=WYL;Description=WYL domain
+accn|CP007172	HMMER	phypat+PGL	415753	415903	3.4e-14	+	.	Parent=AX25_02000;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	477006	477468	1.2999999999999999e-30	+	.	Parent=AX25_02285;Name=PF06445;Note=GyrI-like;Description=GyrI-like small molecule binding domain
+accn|CP007172	HMMER	phypat+PGL	522885	523410	5.7999999999999995e-41	+	.	Parent=AX25_02540;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	530528	530843	5.9999999999999995e-12	+	.	Parent=AX25_02570;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	543498	543945	6.7000000000000006e-10	+	.	Parent=AX25_02620;Name=PF00990;Note=GGDEF;Description=GGDEF domain
+accn|CP007172	HMMER	phypat+PGL	591115	591601	1.4999999999999999e-31	+	.	Parent=AX25_02860;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	598901	599051	1.1999999999999999e-12	-	.	Parent=AX25_02900;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	799003	799477	5.3e-37	-	.	Parent=AX25_03900;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	840693	841239	8.4000000000000012e-54	+	.	Parent=AX25_04100;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	849834	850065	3.5000000000000005e-22	+	.	Parent=AX25_04140;Name=PF13246;Note=Hydrolase_like2;Description=Putative hydrolase of sodium-potassium ATPase alpha subunit
+accn|CP007172	HMMER	phypat+PGL	882007	882256	9.5000000000000003e-24	+	.	Parent=AX25_04255;Name=PF13246;Note=Hydrolase_like2;Description=Putative hydrolase of sodium-potassium ATPase alpha subunit
+accn|CP007172	HMMER	phypat+PGL	946608	946878	3.7000000000000001e-11	+	.	Parent=AX25_04575;Name=PF14635;Note=HHH_7;Description=Helix-hairpin-helix motif
+accn|CP007172	HMMER	phypat+PGL	1066695	1066863	6.7000000000000005e-26	+	.	Parent=AX25_05240;Name=PF00196;Note=GerE;Description=Bacterial regulatory proteins, luxR family
+accn|CP007172	HMMER	phypat+PGL	1086739	1087222	2.7000000000000003e-42	+	.	Parent=AX25_05340;Name=PF03453;Note=MoeA_N;Description=MoeA N-terminal region (domain I and II)
+accn|CP007172	HMMER	phypat+PGL	1111388	1111541	2.8999999999999998e-13	-	.	Parent=AX25_05475;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	1125231	1125390	1.5e-10	+	.	Parent=AX25_05525;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	1179084	1179507	1.2999999999999998e-63	+	.	Parent=AX25_05820;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
+accn|CP007172	HMMER	phypat+PGL	1364370	1364937	1.7000000000000002e-18	-	.	Parent=AX25_06790;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1392857	1393418	3.4e-46	+	.	Parent=AX25_06930;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	1421633	1421822	2.3000000000000001e-10	+	.	Parent=AX25_07090;Name=PF02737;Note=3HCDH_N;Description=3-hydroxyacyl-CoA dehydrogenase, NAD binding domain
+accn|CP007172	HMMER	phypat+PGL	1464589	1464994	7.0999999999999997e-24	+	.	Parent=AX25_07280;Name=PF13353;Note=Fer4_12;Description=4Fe-4S single cluster domain
+accn|CP007172	HMMER	phypat+PGL	1530819	1531284	4.8e-10	-	.	Parent=AX25_07590;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
+accn|CP007172	HMMER	phypat+PGL	1538414	1538708	1.1999999999999999e-11	-	.	Parent=AX25_07635;Name=PF02475;Note=Met_10;Description=Met-10+ like-protein
+accn|CP007172	HMMER	phypat+PGL	1576539	1576782	1.3000000000000001e-12	-	.	Parent=AX25_07835;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|CP007172	HMMER	phypat+PGL	1588793	1588943	2.3999999999999999e-17	+	.	Parent=AX25_07890;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	1653345	1653918	1.5999999999999998e-30	-	.	Parent=AX25_08175;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|CP007172	HMMER	phypat+PGL	1662349	1662715	1.3e-25	-	.	Parent=AX25_08215;Name=PF06271;Note=RDD;Description=RDD family
+accn|CP007172	HMMER	phypat+PGL	1699332	1699554	1.7999999999999999e-21	-	.	Parent=AX25_08395;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|CP007172	HMMER	phypat+PGL	1737825	1738632	2.8999999999999997e-59	-	.	Parent=AX25_08575;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1779704	1779932	2e-16	-	.	Parent=AX25_08780;Name=PF03096;Note=Ndr;Description=Ndr family
+accn|CP007172	HMMER	phypat+PGL	1839718	1840135	3.3e-10	-	.	Parent=AX25_09145;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1876842	1877304	3.3999999999999996e-12	-	.	Parent=AX25_09295;Name=PF02475;Note=Met_10;Description=Met-10+ like-protein
+accn|CP007172	HMMER	phypat+PGL	1985118	1985361	4.4999999999999999e-33	-	.	Parent=AX25_09825;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|CP007172	HMMER	phypat+PGL	2043822	2044293	2.9999999999999997e-47	+	.	Parent=AX25_10135;Name=PF00990;Note=GGDEF;Description=GGDEF domain
+accn|CP007172	HMMER	phypat+PGL	2044974	2045448	1.8e-45	+	.	Parent=AX25_10140;Name=PF00990;Note=GGDEF;Description=GGDEF domain
+accn|CP007172	HMMER	phypat+PGL	2056773	2057004	2.3999999999999999e-14	-	.	Parent=AX25_10190;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|CP007172	HMMER	phypat+PGL	2087935	2089081	1.6000000000000001e-55	-	.	Parent=AX25_10350;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2202181	2202400	4.4000000000000001e-22	+	.	Parent=AX25_10875;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	2266811	2266958	9.6999999999999991e-14	+	.	Parent=AX25_11220;Name=PF12728;Note=HTH_17;Description=Helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	2411024	2411606	2.3999999999999998e-28	+	.	Parent=AX25_11905;Name=PF01865;Note=PhoU_div;Description=Protein of unknown function DUF47
+accn|CP007172	HMMER	phypat+PGL	2423494	2423710	1.0000000000000001e-20	-	.	Parent=AX25_11975;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
+accn|CP007172	HMMER	phypat+PGL	2530085	2530556	1.5000000000000001e-27	-	.	Parent=AX25_12575;Name=PF13280;Note=WYL;Description=WYL domain
+accn|CP007172	HMMER	phypat+PGL	2549614	2551111	1.3999999999999995e-90	-	.	Parent=AX25_12655;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2619114	2619279	1.4999999999999999e-25	-	.	Parent=AX25_12985;Name=PF00196;Note=GerE;Description=Bacterial regulatory proteins, luxR family
+accn|CP007172	HMMER	phypat+PGL	2793448	2793595	1.6999999999999999e-11	-	.	Parent=AX25_13960;Name=PF13246;Note=Hydrolase_like2;Description=Putative hydrolase of sodium-potassium ATPase alpha subunit
+accn|CP007172	HMMER	phypat+PGL	2903367	2903820	1.6000000000000001e-32	+	.	Parent=AX25_14525;Name=PF00480;Note=ROK;Description=ROK family
+accn|CP007172	HMMER	phypat+PGL	646018	646303	3.7999999999999998e-11	-	.	Parent=AX25_03140;Name=PF03096;Note=Ndr;Description=Ndr family

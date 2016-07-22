@@ -1,29 +1,53 @@
-Phenotype	Category
-Arginine dihydrolase	Amino Acid
-Indole	Amino Acid
-Lysine decarboxylase	Amino Acid
-Ornithine decarboxylase	Amino Acid
-Acetate utilization	Carboxylic Acid
-Citrate	Carboxylic Acid
-Malonate	Carboxylic Acid
-Tartrate utilization	Carboxylic Acid
+accession	category
 Alkaline phosphatase	Enzyme
 Beta hemolysis	Enzyme
 Coagulase production	Enzyme
-DNase	Enzyme
-Esculin hydrolysis	Enzyme
 Lipase	Enzyme
 Nitrate to nitrite	Enzyme
 Nitrite to gas	Enzyme
 Pyrrolidonyl-beta-naphthylamide	Enzyme
 Bile-susceptible	Growth
+Colistin-Polymyxin susceptible	Growth
+DNase	Growth
 Growth at 42°C	Growth
 Growth in 6.5% NaCl	Growth
 Growth in KCN	Growth
 Growth on MacConkey agar	Growth
 Growth on ordinary blood agar	Growth
 Mucate utilization	Growth
-Colistin-Polymyxin susceptible	Growth: Antibiotic
+Arginine dihydrolase	Growth: Amino acid
+Indole	Growth: Amino acid
+Lysine decarboxylase	Growth: Amino acid
+Ornithine decarboxylase	Growth: Amino acid
+Acetate utilization	Growth: Carboxylic acid
+Citrate	Growth: Carboxylic acid
+Malonate	Growth: Carboxylic acid
+Tartrate utilization	Growth: Carboxylic acid
+Gas from glucose	Growth: Glucose
+Glucose fermenter	Growth: Glucose
+Glucose oxidizer	Growth: Glucose
+Methyl red	Growth: Glucose
+Voges Proskauer	Growth: Glucose
+Cellobiose	Growth: Sugar
+D-Mannitol	Growth: Sugar
+D-Mannose	Growth: Sugar
+D-Sorbitol	Growth: Sugar
+D-Xylose	Growth: Sugar
+Esculin hydrolysis	Growth: Sugar
+Glycerol	Growth: Sugar
+Lactose	Growth: Sugar
+L-Arabinose	Growth: Sugar
+L-Rhamnose	Growth: Sugar
+Maltose	Growth: Sugar
+Melibiose	Growth: Sugar
+myo-Inositol	Growth: Sugar
+ONPG (beta galactosidase)	Growth: Sugar
+Raffinose	Growth: Sugar
+Salicin	Growth: Sugar
+Starch hydrolysis	Growth: Sugar
+Sucrose	Growth: Sugar
+Trehalose	Growth: Sugar
+Urea hydrolysis	Growth: Sugar
 Bacillus or coccobacillus	Morphology
 Coccus	Morphology
 Coccus - clusters or groups predominate	Morphology
@@ -42,27 +66,3 @@ Oxidase	Oxygen:Enzyme
 Hydrogen sulfide	Product
 Casein hydrolysis	Proteolysis
 Gelatin hydrolysis	Proteolysis
-Cellobiose	Sugar
-D-Mannitol	Sugar
-D-Mannose	Sugar
-D-Sorbitol	Sugar
-D-Xylose	Sugar
-Glycerol	Sugar
-L-Arabinose	Sugar
-L-Rhamnose	Sugar
-Lactose	Sugar
-Maltose	Sugar
-Melibiose	Sugar
-myo-Inositol	Sugar
-ONPG (beta galactosidase)	Sugar
-Raffinose	Sugar
-Salicin	Sugar
-Starch hydrolysis	Sugar
-Sucrose	Sugar
-Trehalose	Sugar
-Urea hydrolysis	Sugar
-Gas from glucose	Sugar:Glucose
-Glucose fermenter	Sugar:Glucose
-Glucose oxidizer	Sugar:Glucose
-Methyl red	Sugar:Glucose
-Voges Proskauer	Sugar:Glucose
