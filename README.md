@@ -47,7 +47,7 @@ Traitar can be used to inspect the protein families in each phenotype model:
 
 ``traitar show 'Glucose fermenter``
 
-will show the majority features i.e. the Pfam families that contribute to the assignment of the trait Glucose fermenter with *the phypat* to some genome sequence. Via --predictor the user may specify the prediction mode (phypat, phypat+PGL). 
+will show the majority features i.e. the Pfam families that contribute to the assignment of the trait Glucose fermenter with *phypat* classifier to some genome sequence. Via --predictor the user may specify the classifier (phypat, phypat+PGL). 
 
 
 ### Run Traitar with packaged sample data
@@ -69,10 +69,10 @@ The phenotype prediction is summarized in heatmaps individually for the phyletic
 ![Alt text](/traitar/data/sample_data/traitar_out/phenotype_prediction/heatmap_combined.png?raw=true "Optional Title")
 
 ### Phenotype prediction - Tables and flat files
-These heatmaps are based on tab separated text files e.g. ``predictions_majority-votes_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+PGL``.
+These heatmaps are based on tab separated text files e.g. ``predictions_majority-vote_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+PGL``.
 
-### Feature tracks
-Traitar will link the protein families and predicted phenotypes. The results can be found in ``phypat/feat_gffs`` and ``phypat+PGL/feat_gffs`. If the user picked the 'from nucleotides' option, Traitar will also generate GFF files that linke the genes called by Prodidgal with the important protein families. The phenotype-specific Pfam annotations tracks can be visualized via GFF files in a genome browser of choice.
+### Phenotype-relevant protein families and feature tracks
+Traitar will link the protein families and predicted phenotypes. The results can be found in ``phypat/feat_gffs`` and ``phypat+PGL/feat_gffs`. If the user picked the 'from nucleotides' option, Traitar will also generate GFF files that link the genes called by Prodidgal with the important protein families. The phenotype-specific protein family annotations tracks can be visualized via GFF files in a genome browser of choice.
 
 #### Feature tracks with *from_genes* option (experimental feature)
 If the *from_genes* option is set, the user may specify gene GFF files via an additional column called gene_gff in the sample file. As gene ids are not consistent across gene GFFs from different sources e.g. img, RefSeq or Prodigal the user needs to specify the origin of the gene gff file via the -g / --gene_gff_type parameter. Still there is no guarantee that this works currently. Using samples_gene_gff.txt as the sample file in the above example will generate phenotype-specific Pfam tracks for the two genomes. 
