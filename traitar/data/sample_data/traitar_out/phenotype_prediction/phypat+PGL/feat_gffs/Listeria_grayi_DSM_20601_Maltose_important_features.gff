@@ -1,0 +1,39 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	45700	46390	5.599999999999999e-56	-	.	Parent=HMPREF0556_0045;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	37500	38394	6.1999999999999994e-46	+	.	Parent=HMPREF0556_0137;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|NZ_GG692933	HMMER	phypat+PGL	123297	123699	3.3000000000000002e-37	-	.	Parent=HMPREF0556_0208;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	207350	207710	5.0999999999999995e-24	+	.	Parent=HMPREF0556_0293;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	212918	213101	6.9e-17	+	.	Parent=HMPREF0556_0298;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692933	HMMER	phypat+PGL	229349	229745	9.4000000000000013e-24	+	.	Parent=HMPREF0556_0313;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	272557	272956	7.4999999999999997e-36	-	.	Parent=HMPREF0556_0360;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	299286	299457	5.7000000000000005e-18	-	.	Parent=HMPREF0556_0384;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692933	HMMER	phypat+PGL	315045	315801	1.8000000000000002e-54	+	.	Parent=HMPREF0556_0399;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	332536	333682	2.7000000000000002e-58	+	.	Parent=HMPREF0556_0415;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|NZ_GG692933	HMMER	phypat+PGL	335050	335260	6.8000000000000001e-14	+	.	Parent=HMPREF0556_0417;Name=PF08211;Note=dCMP_cyt_deam_2;Description=Cytidine and deoxycytidylate deaminase zinc-binding region
+accn|NZ_GG692933	HMMER	phypat+PGL	404678	405077	5.8999999999999996e-37	+	.	Parent=HMPREF0556_0495;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692933	HMMER	phypat+PGL	601891	602818	2.7999999999999999e-81	+	.	Parent=HMPREF0556_0699;Name=PF00710;Note=Asparaginase;Description=Asparaginase
+accn|NZ_GG692932	HMMER	phypat+PGL	11949	12129	9.6999999999999998e-17	-	.	Parent=HMPREF0556_0889;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692932	HMMER	phypat+PGL	17328	17523	3.9e-19	+	.	Parent=HMPREF0556_0896;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692932	HMMER	phypat+PGL	22359	22695	6.7999999999999993e-43	-	.	Parent=HMPREF0556_0901;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|NZ_GG692932	HMMER	phypat+PGL	202676	202973	3.9000000000000002e-09	+	.	Parent=HMPREF0556_1082;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|NZ_GG692932	HMMER	phypat+PGL	269391	269679	7.5999999999999992e-16	+	.	Parent=HMPREF0556_1152;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|NZ_GG692932	HMMER	phypat+PGL	270619	270973	1.8000000000000002e-16	+	.	Parent=HMPREF0556_1153;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|NZ_GG692932	HMMER	phypat+PGL	332010	332424	2.9999999999999996e-39	+	.	Parent=HMPREF0556_1229;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692932	HMMER	phypat+PGL	339558	339954	3.3999999999999999e-11	+	.	Parent=HMPREF0556_1238;Name=PF05569;Note=Peptidase_M56;Description=BlaR1 peptidase M56
+accn|NZ_GG692932	HMMER	phypat+PGL	454784	455114	2.0000000000000001e-13	+	.	Parent=HMPREF0556_1353;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|NZ_GG692932	HMMER	phypat+PGL	455740	456160	7.2999999999999997e-18	+	.	Parent=HMPREF0556_1354;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|NZ_GG692932	HMMER	phypat+PGL	558073	558826	7.3999999999999989e-33	+	.	Parent=HMPREF0556_1462;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|NZ_GG692932	HMMER	phypat+PGL	622752	623682	5.4999999999999998e-36	+	.	Parent=HMPREF0556_1517;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|NZ_GG692932	HMMER	phypat+PGL	657977	658313	8.9000000000000007e-16	-	.	Parent=HMPREF0556_1553;Name=PF13185;Note=GAF_2;Description=GAF domain
+accn|NZ_GG692932	HMMER	phypat+PGL	774776	774977	4.7999999999999997e-17	+	.	Parent=HMPREF0556_1658;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692932	HMMER	phypat+PGL	994650	994869	2.8999999999999996e-23	-	.	Parent=HMPREF0556_1881;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692935	HMMER	phypat+PGL	11312	11621	4.3999999999999999e-13	-	.	Parent=HMPREF0556_2006;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|NZ_GG692935	HMMER	phypat+PGL	25475	26015	8.6999999999999999e-18	+	.	Parent=HMPREF0556_2018;Name=PF13439;Note=Glyco_transf_4;Description=Glycosyltransferase Family 4
+accn|NZ_GG692935	HMMER	phypat+PGL	114918	115866	6.7999999999999985e-71	-	.	Parent=HMPREF0556_2108;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|NZ_GG692935	HMMER	phypat+PGL	168775	170272	1.1999999999999996e-91	+	.	Parent=HMPREF0556_2156;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|NZ_GG692934	HMMER	phypat+PGL	47226	47634	1.5999999999999999e-33	+	.	Parent=HMPREF0556_2305;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|NZ_GG692934	HMMER	phypat+PGL	130668	130857	4.5999999999999996e-23	-	.	Parent=HMPREF0556_2386;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692934	HMMER	phypat+PGL	212509	212722	1.1e-21	-	.	Parent=HMPREF0556_2467;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692934	HMMER	phypat+PGL	314329	314512	9.0000000000000008e-14	-	.	Parent=HMPREF0556_2577;Name=PF01978;Note=TrmB;Description=Sugar-specific transcriptional regulator TrmB
+accn|NZ_GG692934	HMMER	phypat+PGL	338671	339547	3.2000000000000001e-41	+	.	Parent=HMPREF0556_2604;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|NZ_GG692934	HMMER	phypat+PGL	342869	343061	6.0999999999999993e-17	+	.	Parent=HMPREF0556_2608;Name=PF11734;Note=TilS_C;Description=TilS substrate C-terminal domain

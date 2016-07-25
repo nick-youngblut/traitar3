@@ -1,0 +1,36 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	133910	134078	9.9999999999999997e-29	+	.	Parent=AX25_00625;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	135512	135677	3.0000000000000001e-27	+	.	Parent=AX25_00630;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	336138	336357	1.8e-09	+	.	Parent=AX25_01555;Name=PF12793;Note=SgrR_N;Description=Sugar transport-related sRNA regulator N-term
+accn|CP007172	HMMER	phypat+PGL	437580	437754	5.6000000000000008e-21	+	.	Parent=AX25_02140;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	440158	440323	4.4000000000000001e-21	+	.	Parent=AX25_02145;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	445599	445761	5.0999999999999999e-26	+	.	Parent=AX25_02155;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	449252	449417	3.9999999999999999e-19	+	.	Parent=AX25_02160;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	541145	542735	7.9999999999999984e-64	+	.	Parent=AX25_02615;Name=PF03170;Note=BcsB;Description=Bacterial cellulose synthase subunit
+accn|CP007172	HMMER	phypat+PGL	641115	641358	1.3e-31	+	.	Parent=AX25_03110;Name=PF11313;Note=DUF3116;Description=Protein of unknown function (DUF3116)
+accn|CP007172	HMMER	phypat+PGL	709819	710242	6.5999999999999995e-71	-	.	Parent=AX25_03420;Name=PF12181;Note=MogR_DNAbind;Description=DNA binding domain of the motility gene repressor (MogR)
+accn|CP007172	HMMER	phypat+PGL	731008	731317	5.9999999999999997e-13	+	.	Parent=AX25_03535;Name=PF07559;Note=FlaE;Description=Flagellar basal body protein FlaE
+accn|CP007172	HMMER	phypat+PGL	1277477	1277645	4.0000000000000002e-25	+	.	Parent=AX25_06360;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1279213	1279381	1.5000000000000001e-26	+	.	Parent=AX25_06365;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1280575	1280743	2.9999999999999998e-25	+	.	Parent=AX25_06370;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1284329	1284494	1.2e-26	+	.	Parent=AX25_06375;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1285974	1286142	4.5999999999999997e-31	+	.	Parent=AX25_06380;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1287004	1287172	4.0999999999999994e-24	+	.	Parent=AX25_06385;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1288510	1288675	1.5000000000000001e-27	+	.	Parent=AX25_06390;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1292155	1292323	9.1999999999999996e-29	+	.	Parent=AX25_06400;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1293497	1293665	1.0000000000000001e-30	+	.	Parent=AX25_06405;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1299819	1300071	1.1e-38	+	.	Parent=AX25_06445;Name=PF11313;Note=DUF3116;Description=Protein of unknown function (DUF3116)
+accn|CP007172	HMMER	phypat+PGL	1405241	1405610	7.4000000000000006e-30	+	.	Parent=AX25_07005;Name=PF01321;Note=Creatinase_N;Description=Creatinase/Prolidase N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1654206	1654602	2.6e-25	+	.	Parent=AX25_08180;Name=PF01321;Note=Creatinase_N;Description=Creatinase/Prolidase N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1829818	1829986	1.4999999999999998e-24	-	.	Parent=AX25_09110;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	1831759	1831927	1.6e-27	-	.	Parent=AX25_09115;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	2187832	2188057	2.0999999999999999e-12	+	.	Parent=AX25_10800;Name=PF12793;Note=SgrR_N;Description=Sugar transport-related sRNA regulator N-term
+accn|CP007172	HMMER	phypat+PGL	2212826	2212988	1.3e-17	-	.	Parent=AX25_10945;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	2350588	2350837	3.2000000000000002e-36	-	.	Parent=AX25_11615;Name=PF11313;Note=DUF3116;Description=Protein of unknown function (DUF3116)
+accn|CP007172	HMMER	phypat+PGL	2442434	2443307	1.7999999999999993e-139	-	.	Parent=AX25_12055;Name=PF04227;Note=Indigoidine_A;Description=Indigoidine synthase A like protein
+accn|CP007172	HMMER	phypat+PGL	2536285	2536414	2.3999999999999999e-12	-	.	Parent=AX25_12600;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	2562339	2562507	1.1000000000000001e-18	-	.	Parent=AX25_12710;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	2689901	2690141	3.4000000000000004e-17	-	.	Parent=AX25_13365;Name=PF11313;Note=DUF3116;Description=Protein of unknown function (DUF3116)
+accn|CP007172	HMMER	phypat+PGL	2690568	2690736	1.3999999999999999e-30	-	.	Parent=AX25_13370;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	2691889	2692057	2.5000000000000001e-28	-	.	Parent=AX25_13375;Name=PF12354;Note=Internalin_N;Description=Bacterial adhesion/invasion protein N terminal
+accn|CP007172	HMMER	phypat+PGL	2741684	2742632	1.6999999999999995e-55	-	.	Parent=AX25_13705;Name=PF02126;Note=PTE;Description=Phosphotriesterase family

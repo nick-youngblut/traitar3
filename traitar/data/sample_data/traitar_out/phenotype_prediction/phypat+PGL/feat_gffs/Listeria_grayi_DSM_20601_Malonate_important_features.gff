@@ -1,0 +1,3 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	143586	144711	1.8999999999999993e-178	-	.	Parent=HMPREF0556_0230;Name=PF09364;Note=XFP_N;Description=XFP N-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	691105	691612	8.2999999999999998e-11	+	.	Parent=HMPREF0556_1583;Name=PF06833;Note=MdcE;Description=Malonate decarboxylase gamma subunit (MdcE)

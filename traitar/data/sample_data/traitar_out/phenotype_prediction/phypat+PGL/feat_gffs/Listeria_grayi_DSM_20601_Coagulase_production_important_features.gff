@@ -1,0 +1,11 @@
+##gff-version 3
+accn|NZ_GG692932	HMMER	phypat+PGL	33791	35081	6.4999999999999975e-193	-	.	Parent=HMPREF0556_0912;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|NZ_GG692932	HMMER	phypat+PGL	88819	89053	1.4000000000000001e-15	-	.	Parent=HMPREF0556_0964;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|NZ_GG692932	HMMER	phypat+PGL	504864	505254	1.2999999999999999e-27	+	.	Parent=HMPREF0556_1402;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|NZ_GG692932	HMMER	phypat+PGL	505311	505509	4.0999999999999996e-14	+	.	Parent=HMPREF0556_1402;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|NZ_GG692932	HMMER	phypat+PGL	645391	645682	8.9999999999999995e-24	+	.	Parent=HMPREF0556_1541;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|NZ_GG692932	HMMER	phypat+PGL	958093	958189	5.2999999999999996e-12	-	.	Parent=HMPREF0556_1843;Name=PF13014;Note=KH_3;Description=KH domain
+accn|NZ_GG692932	HMMER	phypat+PGL	957112	957358	3.5000000000000002e-16	-	.	Parent=HMPREF0556_1843;Name=PF03726;Note=PNPase;Description=Polyribonucleotide nucleotidyltransferase, RNA binding domain
+accn|NZ_GG692932	HMMER	phypat+PGL	956434	956821	5.5000000000000006e-24	-	.	Parent=HMPREF0556_1843;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|NZ_GG692932	HMMER	phypat+PGL	956830	957019	3.6000000000000001e-19	-	.	Parent=HMPREF0556_1843;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|NZ_GG692935	HMMER	phypat+PGL	248495	248693	9.9999999999999993e-23	-	.	Parent=HMPREF0556_2227;Name=PF13244;Note=DUF4040;Description=Domain of unknown function (DUF4040)

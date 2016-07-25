@@ -1,0 +1,18 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	29795	29918	2.7e-11	-	.	Parent=AX25_00160;Name=PF13905;Note=Thioredoxin_8;Description=Thioredoxin-like
+accn|CP007172	HMMER	phypat+PGL	177278	177740	1.6999999999999999e-40	-	.	Parent=AX25_00830;Name=PF02872;Note=5_nucleotid_C;Description=5'-nucleotidase, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	241414	241639	2.7000000000000005e-14	-	.	Parent=AX25_01120;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	620510	620711	4.7000000000000002e-13	-	.	Parent=AX25_02980;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	779433	779604	9.5999999999999995e-14	+	.	Parent=AX25_03785;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	1217565	1218120	7.1999999999999999e-17	+	.	Parent=AX25_06050;Name=PF13500;Note=AAA_26;Description=AAA domain
+accn|CP007172	HMMER	phypat+PGL	1231524	1232199	6.0000000000000002e-27	+	.	Parent=AX25_06135;Name=PF13500;Note=AAA_26;Description=AAA domain
+accn|CP007172	HMMER	phypat+PGL	1266397	1266526	1.8000000000000002e-10	+	.	Parent=AX25_06305;Name=PF13905;Note=Thioredoxin_8;Description=Thioredoxin-like
+accn|CP007172	HMMER	phypat+PGL	1305495	1305705	1.2e-16	+	.	Parent=AX25_06480;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	1531703	1531940	8.7000000000000003e-13	-	.	Parent=AX25_07595;Name=PF08211;Note=dCMP_cyt_deam_2;Description=Cytidine and deoxycytidylate deaminase zinc-binding region
+accn|CP007172	HMMER	phypat+PGL	1553144	1553444	2.7e-11	-	.	Parent=AX25_07710;Name=PF03848;Note=TehB;Description=Tellurite resistance protein TehB
+accn|CP007172	HMMER	phypat+PGL	1655853	1656300	1.4999999999999999e-53	-	.	Parent=AX25_08185;Name=PF01262;Note=AlaDh_PNT_C;Description=Alanine dehydrogenase/PNT, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2293533	2293683	7.3000000000000002e-13	+	.	Parent=AX25_11360;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	2320519	2320732	1.3000000000000001e-09	-	.	Parent=AX25_11515;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|CP007172	HMMER	phypat+PGL	2500086	2500479	4.4000000000000002e-14	-	.	Parent=AX25_12400;Name=PF02872;Note=5_nucleotid_C;Description=5'-nucleotidase, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2812373	2812922	8.0999999999999998e-12	-	.	Parent=AX25_14080;Name=PF13519;Note=VWA_2;Description=von Willebrand factor type A domain
+accn|CP007172	HMMER	phypat+PGL	2877259	2877472	1.6000000000000002e-10	-	.	Parent=AX25_14415;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain

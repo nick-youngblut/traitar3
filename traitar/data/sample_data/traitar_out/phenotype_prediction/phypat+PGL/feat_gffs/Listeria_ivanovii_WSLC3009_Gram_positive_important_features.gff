@@ -1,0 +1,15 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	230901	231126	4.9000000000000004e-38	+	.	Parent=AX25_01065;Name=PF06257;Note=DUF1021;Description=Protein of unknown function (DUF1021)
+accn|CP007172	HMMER	phypat+PGL	456659	457088	2.2999999999999996e-54	+	.	Parent=AX25_02185;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain
+accn|CP007172	HMMER	phypat+PGL	536207	536552	4.4999999999999995e-32	-	.	Parent=AX25_02595;Name=PF07739;Note=TipAS;Description=TipAS antibiotic-recognition domain
+accn|CP007172	HMMER	phypat+PGL	978036	978396	1.3999999999999999e-30	+	.	Parent=AX25_04750;Name=PF04203;Note=Sortase;Description=Sortase family
+accn|CP007172	HMMER	phypat+PGL	1069806	1070235	1.4999999999999998e-43	-	.	Parent=AX25_05260;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain
+accn|CP007172	HMMER	phypat+PGL	1353274	1353520	1.6000000000000001e-36	+	.	Parent=AX25_06730;Name=PF03951;Note=Gln-synt_N;Description=Glutamine synthetase, beta-Grasp domain
+accn|CP007172	HMMER	phypat+PGL	1373339	1373561	6.8999999999999994e-23	+	.	Parent=AX25_06835;Name=PF14480;Note=DNA_pol3_a_NI;Description=DNA polymerase III polC-type N-terminus I
+accn|CP007172	HMMER	phypat+PGL	2172185	2172398	2.5999999999999995e-35	-	.	Parent=AX25_10725;Name=PF04472;Note=DUF552;Description=Protein of unknown function (DUF552)
+accn|CP007172	HMMER	phypat+PGL	2344837	2345332	5.5999999999999999e-22	-	.	Parent=AX25_11585;Name=PF04203;Note=Sortase;Description=Sortase family
+accn|CP007172	HMMER	phypat+PGL	2570550	2570805	1.3999999999999997e-38	-	.	Parent=AX25_12745;Name=PF02650;Note=HTH_WhiA;Description=WhiA C-terminal HTH domain
+accn|CP007172	HMMER	phypat+PGL	2570265	2570541	1e-41	-	.	Parent=AX25_12745;Name=PF14527;Note=LAGLIDADG_WhiA;Description=WhiA LAGLIDADG-like domain
+accn|CP007172	HMMER	phypat+PGL	2621343	2621799	6.5999999999999995e-51	+	.	Parent=AX25_13000;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain
+accn|CP007172	HMMER	phypat+PGL	2799040	2799364	1.3999999999999998e-54	-	.	Parent=AX25_13995;Name=PF06153;Note=DUF970;Description=Protein of unknown function (DUF970)
+accn|CP007172	HMMER	phypat+PGL	2831166	2831601	9.9999999999999985e-48	-	.	Parent=AX25_14155;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain

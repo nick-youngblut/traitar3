@@ -1,0 +1,18 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	101569	102724	5.5999999999999991e-95	+	.	Parent=AX25_00465;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|CP007172	HMMER	phypat+PGL	150785	151004	1.3999999999999999e-18	-	.	Parent=AX25_00690;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	363004	363649	1.7000000000000001e-09	+	.	Parent=AX25_01685;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|CP007172	HMMER	phypat+PGL	477006	477468	1.2999999999999999e-30	+	.	Parent=AX25_02285;Name=PF06445;Note=GyrI-like;Description=GyrI-like small molecule binding domain
+accn|CP007172	HMMER	phypat+PGL	849834	850065	3.5000000000000005e-22	+	.	Parent=AX25_04140;Name=PF13246;Note=Hydrolase_like2;Description=Putative hydrolase of sodium-potassium ATPase alpha subunit
+accn|CP007172	HMMER	phypat+PGL	882007	882256	9.5000000000000003e-24	+	.	Parent=AX25_04255;Name=PF13246;Note=Hydrolase_like2;Description=Putative hydrolase of sodium-potassium ATPase alpha subunit
+accn|CP007172	HMMER	phypat+PGL	946608	946878	3.7000000000000001e-11	+	.	Parent=AX25_04575;Name=PF14635;Note=HHH_7;Description=Helix-hairpin-helix motif
+accn|CP007172	HMMER	phypat+PGL	1364370	1364937	1.7000000000000002e-18	-	.	Parent=AX25_06790;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1421633	1421822	2.3000000000000001e-10	+	.	Parent=AX25_07090;Name=PF02737;Note=3HCDH_N;Description=3-hydroxyacyl-CoA dehydrogenase, NAD binding domain
+accn|CP007172	HMMER	phypat+PGL	1653345	1653918	1.5999999999999998e-30	-	.	Parent=AX25_08175;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|CP007172	HMMER	phypat+PGL	1699332	1699554	1.7999999999999999e-21	-	.	Parent=AX25_08395;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|CP007172	HMMER	phypat+PGL	1737825	1738632	2.8999999999999997e-59	-	.	Parent=AX25_08575;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1839718	1840135	3.3e-10	-	.	Parent=AX25_09145;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1985118	1985361	4.4999999999999999e-33	-	.	Parent=AX25_09825;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|CP007172	HMMER	phypat+PGL	2202181	2202400	4.4000000000000001e-22	+	.	Parent=AX25_10875;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	2423494	2423710	1.0000000000000001e-20	-	.	Parent=AX25_11975;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
+accn|CP007172	HMMER	phypat+PGL	2793448	2793595	1.6999999999999999e-11	-	.	Parent=AX25_13960;Name=PF13246;Note=Hydrolase_like2;Description=Putative hydrolase of sodium-potassium ATPase alpha subunit

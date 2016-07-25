@@ -1,0 +1,36 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	46498	46705	2.0999999999999996e-25	-	.	Parent=HMPREF0556_0045;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	150500	150869	1.6999999999999998e-43	+	.	Parent=HMPREF0556_0236;Name=PF02903;Note=Alpha-amylase_N;Description=Alpha amylase, N-terminal ig-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	315906	316113	6.0999999999999993e-17	+	.	Parent=HMPREF0556_0399;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	408406	408559	6.4999999999999995e-11	-	.	Parent=HMPREF0556_0500;Name=PF06347;Note=SH3_4;Description=Bacterial SH3 domain
+accn|NZ_GG692933	HMMER	phypat+PGL	420962	421757	3.7999999999999996e-26	-	.	Parent=HMPREF0556_0511;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|NZ_GG692933	HMMER	phypat+PGL	445802	446168	3.7000000000000003e-30	+	.	Parent=HMPREF0556_0530;Name=PF13602;Note=ADH_zinc_N_2;Description=Zinc-binding dehydrogenase
+accn|NZ_GG692933	HMMER	phypat+PGL	542031	542352	5.4999999999999994e-26	+	.	Parent=HMPREF0556_0638;Name=PF01678;Note=DAP_epimerase;Description=Diaminopimelate epimerase
+accn|NZ_GG692933	HMMER	phypat+PGL	558881	559535	1.5999999999999999e-93	-	.	Parent=HMPREF0556_0655;Name=PF03306;Note=AAL_decarboxy;Description=Alpha-acetolactate decarboxylase
+accn|NZ_GG692933	HMMER	phypat+PGL	568104	568293	3e-10	-	.	Parent=HMPREF0556_0663;Name=PF00670;Note=AdoHcyase_NAD;Description=S-adenosyl-L-homocysteine hydrolase, NAD binding domain
+accn|NZ_GG692933	HMMER	phypat+PGL	590600	591383	1.3999999999999998e-77	+	.	Parent=HMPREF0556_0687;Name=PF02784;Note=Orn_Arg_deC_N;Description=Pyridoxal-dependent decarboxylase, pyridoxal binding domain
+accn|NZ_GG692933	HMMER	phypat+PGL	591428	591719	7.3999999999999996e-24	+	.	Parent=HMPREF0556_0687;Name=PF00278;Note=Orn_DAP_Arg_deC;Description=Pyridoxal-dependent decarboxylase, C-terminal sheet domain
+accn|NZ_GG692932	HMMER	phypat+PGL	180528	180861	4.4999999999999998e-12	+	.	Parent=HMPREF0556_1054;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|NZ_GG692932	HMMER	phypat+PGL	202634	202862	9.4999999999999999e-13	+	.	Parent=HMPREF0556_1082;Name=PF13704;Note=Glyco_tranf_2_4;Description=Glycosyl transferase family 2
+accn|NZ_GG692932	HMMER	phypat+PGL	279346	279589	1.4e-11	+	.	Parent=HMPREF0556_1163;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|NZ_GG692932	HMMER	phypat+PGL	404632	405235	1.5e-50	+	.	Parent=HMPREF0556_1305;Name=PF03932;Note=CutC;Description=CutC family
+accn|NZ_GG692932	HMMER	phypat+PGL	437759	438071	2.9999999999999999e-16	-	.	Parent=HMPREF0556_1336;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|NZ_GG692932	HMMER	phypat+PGL	463316	463781	2e-16	-	.	Parent=HMPREF0556_1362;Name=PF08713;Note=DNA_alkylation;Description=DNA alkylation repair enzyme
+accn|NZ_GG692932	HMMER	phypat+PGL	749536	749680	2.7e-11	-	.	Parent=HMPREF0556_1637;Name=PF06347;Note=SH3_4;Description=Bacterial SH3 domain
+accn|NZ_GG692932	HMMER	phypat+PGL	772637	773684	5.0999999999999991e-145	+	.	Parent=HMPREF0556_1656;Name=PF04371;Note=PAD_porph;Description=Porphyromonas-type peptidyl-arginine deiminase
+accn|NZ_GG692932	HMMER	phypat+PGL	820111	820576	9.300000000000001e-10	+	.	Parent=HMPREF0556_1707;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
+accn|NZ_GG692932	HMMER	phypat+PGL	1014991	1015630	2.7000000000000002e-25	-	.	Parent=HMPREF0556_1902;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|NZ_GG692937	HMMER	phypat+PGL	38207	38969	1.1e-28	-	.	Parent=HMPREF0556_1955;Name=PF02534;Note=T4SS-DNA_transf;Description=Type IV secretory system Conjugative DNA transfer
+accn|NZ_GG692935	HMMER	phypat+PGL	6487	6913	9.9999999999999998e-17	+	.	Parent=HMPREF0556_1999;Name=PF13602;Note=ADH_zinc_N_2;Description=Zinc-binding dehydrogenase
+accn|NZ_GG692935	HMMER	phypat+PGL	15434	15608	5.1000000000000006e-27	-	.	Parent=HMPREF0556_2009;Name=PF01361;Note=Tautomerase;Description=Tautomerase enzyme
+accn|NZ_GG692935	HMMER	phypat+PGL	107066	107267	2.1999999999999999e-15	+	.	Parent=HMPREF0556_2098;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
+accn|NZ_GG692935	HMMER	phypat+PGL	108433	108655	1.8000000000000001e-15	+	.	Parent=HMPREF0556_2099;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
+accn|NZ_GG692935	HMMER	phypat+PGL	109469	110312	3.1999999999999996e-108	-	.	Parent=HMPREF0556_2102;Name=PF02065;Note=Melibiase;Description=Melibiase
+accn|NZ_GG692935	HMMER	phypat+PGL	111425	111662	1.1e-32	-	.	Parent=HMPREF0556_2103;Name=PF02065;Note=Melibiase;Description=Melibiase
+accn|NZ_GG692935	HMMER	phypat+PGL	161762	162677	1.1999999999999997e-97	+	.	Parent=HMPREF0556_2150;Name=PF01244;Note=Peptidase_M19;Description=Membrane dipeptidase (Peptidase family M19)
+accn|NZ_GG692935	HMMER	phypat+PGL	203380	203677	7.5e-10	+	.	Parent=HMPREF0556_2185;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|NZ_GG692934	HMMER	phypat+PGL	1198	1573	8.2000000000000001e-11	-	.	Parent=HMPREF0556_2243;Name=PF13602;Note=ADH_zinc_N_2;Description=Zinc-binding dehydrogenase
+accn|NZ_GG692934	HMMER	phypat+PGL	2213	2603	1.2e-10	-	.	Parent=HMPREF0556_2244;Name=PF13602;Note=ADH_zinc_N_2;Description=Zinc-binding dehydrogenase
+accn|NZ_GG692934	HMMER	phypat+PGL	61460	62072	8.0999999999999985e-40	-	.	Parent=HMPREF0556_2318;Name=PF00722;Note=Glyco_hydro_16;Description=Glycosyl hydrolases family 16
+accn|NZ_GG692934	HMMER	phypat+PGL	191773	192082	2.9999999999999999e-21	+	.	Parent=HMPREF0556_2445;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|NZ_GG692934	HMMER	phypat+PGL	209912	210644	5.4999999999999997e-11	-	.	Parent=HMPREF0556_2463;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold

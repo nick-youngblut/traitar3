@@ -1,89 +1,21 @@
 ##gff-version 3
-accn|NZ_GG692936	HMMER	phypat+PGL	33671	33920	2.4999999999999998e-23	-	.	Parent=HMPREF0556_0039;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692936	HMMER	phypat+PGL	50456	50537	5.7999999999999996e-10	-	.	Parent=HMPREF0556_0050;Name=PF01593;Note=Amino_oxidase;Description=Flavin containing amine oxidoreductase
-accn|NZ_GG692936	HMMER	phypat+PGL	64056	64383	1.9000000000000001e-15	-	.	Parent=HMPREF0556_0062;Name=PF05656;Note=DUF805;Description=Protein of unknown function (DUF805)
-accn|NZ_GG692933	HMMER	phypat+PGL	32668	32818	2.2999999999999999e-09	+	.	Parent=HMPREF0556_0131;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
-accn|NZ_GG692933	HMMER	phypat+PGL	33589	33829	6.9000000000000007e-16	+	.	Parent=HMPREF0556_0131;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692933	HMMER	phypat+PGL	34156	34585	6.7999999999999985e-39	+	.	Parent=HMPREF0556_0132;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692933	HMMER	phypat+PGL	46018	47296	2.6999999999999997e-31	+	.	Parent=HMPREF0556_0142;Name=PF07748;Note=Glyco_hydro_38C;Description=Glycosyl hydrolases family 38 C-terminal domain
-accn|NZ_GG692933	HMMER	phypat+PGL	59891	61319	2.5999999999999994e-135	+	.	Parent=HMPREF0556_0152;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692933	HMMER	phypat+PGL	63696	65103	8.2999999999999975e-181	-	.	Parent=HMPREF0556_0156;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692933	HMMER	phypat+PGL	71200	72544	2.8999999999999991e-144	+	.	Parent=HMPREF0556_0164;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692933	HMMER	phypat+PGL	94387	94927	6.4999999999999992e-71	+	.	Parent=HMPREF0556_0186;Name=PF03390;Note=2HCT;Description=2-hydroxycarboxylate transporter family
-accn|NZ_GG692933	HMMER	phypat+PGL	96472	96682	8.6e-11	+	.	Parent=HMPREF0556_0188;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
-accn|NZ_GG692933	HMMER	phypat+PGL	97150	97387	4.7000000000000001e-20	+	.	Parent=HMPREF0556_0188;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692933	HMMER	phypat+PGL	97744	98113	3.2000000000000001e-25	+	.	Parent=HMPREF0556_0188;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692933	HMMER	phypat+PGL	98141	98561	7.4999999999999987e-47	+	.	Parent=HMPREF0556_0189;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692933	HMMER	phypat+PGL	101144	102539	3.6999999999999999e-13	+	.	Parent=HMPREF0556_0192;Name=PF07748;Note=Glyco_hydro_38C;Description=Glycosyl hydrolases family 38 C-terminal domain
-accn|NZ_GG692933	HMMER	phypat+PGL	108714	110133	1.9999999999999998e-122	+	.	Parent=HMPREF0556_0197;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692933	HMMER	phypat+PGL	110448	110673	2.2999999999999999e-12	+	.	Parent=HMPREF0556_0198;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
-accn|NZ_GG692933	HMMER	phypat+PGL	111096	111360	1.0000000000000001e-18	+	.	Parent=HMPREF0556_0198;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692933	HMMER	phypat+PGL	111720	112104	1.3e-24	+	.	Parent=HMPREF0556_0198;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692933	HMMER	phypat+PGL	115131	115398	1.8e-17	+	.	Parent=HMPREF0556_0201;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692933	HMMER	phypat+PGL	150500	150869	1.6999999999999998e-43	+	.	Parent=HMPREF0556_0236;Name=PF02903;Note=Alpha-amylase_N;Description=Alpha amylase, N-terminal ig-like domain
-accn|NZ_GG692933	HMMER	phypat+PGL	199509	200298	3.6999999999999989e-81	-	.	Parent=HMPREF0556_0287;Name=PF06800;Note=Sugar_transport;Description=Sugar transport protein
-accn|NZ_GG692933	HMMER	phypat+PGL	200755	200926	3.8000000000000001e-09	+	.	Parent=HMPREF0556_0288;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
-accn|NZ_GG692933	HMMER	phypat+PGL	201463	201691	8.8000000000000009e-23	+	.	Parent=HMPREF0556_0288;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692933	HMMER	phypat+PGL	202027	202420	8.6999999999999995e-26	+	.	Parent=HMPREF0556_0288;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692933	HMMER	phypat+PGL	202464	202893	1.6000000000000001e-42	+	.	Parent=HMPREF0556_0289;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692933	HMMER	phypat+PGL	233839	235147	5.699999999999999e-147	+	.	Parent=HMPREF0556_0318;Name=PF02447;Note=GntP_permease;Description=GntP family permease
-accn|NZ_GG692933	HMMER	phypat+PGL	240165	240312	6.3000000000000001e-17	+	.	Parent=HMPREF0556_0325;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
-accn|NZ_GG692933	HMMER	phypat+PGL	240390	240639	1.6e-15	+	.	Parent=HMPREF0556_0325;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692933	HMMER	phypat+PGL	273170	274535	9.9999999999999995e-127	+	.	Parent=HMPREF0556_0361;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692933	HMMER	phypat+PGL	276787	277150	2.2e-37	-	.	Parent=HMPREF0556_0364;Name=PF07905;Note=PucR;Description=Purine catabolism regulatory protein-like family
-accn|NZ_GG692933	HMMER	phypat+PGL	303809	304505	1.9e-60	+	.	Parent=HMPREF0556_0389;Name=PF04794;Note=YdjC;Description=YdjC-like protein
-accn|NZ_GG692933	HMMER	phypat+PGL	358212	358554	1.1e-35	+	.	Parent=HMPREF0556_0443;Name=PF01522;Note=Polysacc_deac_1;Description=Polysaccharide deacetylase
-accn|NZ_GG692933	HMMER	phypat+PGL	402951	404328	1.3999999999999997e-137	+	.	Parent=HMPREF0556_0494;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692933	HMMER	phypat+PGL	558881	559535	1.5999999999999999e-93	-	.	Parent=HMPREF0556_0655;Name=PF03306;Note=AAL_decarboxy;Description=Alpha-acetolactate decarboxylase
-accn|NZ_GG692933	HMMER	phypat+PGL	764835	765417	1.8e-17	+	.	Parent=HMPREF0556_0862;Name=PF01522;Note=Polysacc_deac_1;Description=Polysaccharide deacetylase
-accn|NZ_GG692932	HMMER	phypat+PGL	14031	14763	1.0999999999999999e-70	+	.	Parent=HMPREF0556_0893;Name=PF04794;Note=YdjC;Description=YdjC-like protein
-accn|NZ_GG692932	HMMER	phypat+PGL	36903	37332	1.4999999999999999e-41	+	.	Parent=HMPREF0556_0915;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692932	HMMER	phypat+PGL	57888	58110	1.4999999999999998e-20	+	.	Parent=HMPREF0556_0932;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
-accn|NZ_GG692932	HMMER	phypat+PGL	116316	116523	2.7000000000000001e-24	+	.	Parent=HMPREF0556_0992;Name=PF08439;Note=Peptidase_M3_N;Description=Oligopeptidase F
-accn|NZ_GG692932	HMMER	phypat+PGL	135090	135231	4.1000000000000004e-15	+	.	Parent=HMPREF0556_1013;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
-accn|NZ_GG692932	HMMER	phypat+PGL	135312	135567	2.0000000000000002e-20	+	.	Parent=HMPREF0556_1013;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692932	HMMER	phypat+PGL	178615	178990	2.3999999999999999e-29	-	.	Parent=HMPREF0556_1051;Name=PF06161;Note=DUF975;Description=Protein of unknown function (DUF975)
-accn|NZ_GG692932	HMMER	phypat+PGL	202634	202862	9.4999999999999999e-13	+	.	Parent=HMPREF0556_1082;Name=PF13704;Note=Glyco_tranf_2_4;Description=Glycosyl transferase family 2
-accn|NZ_GG692932	HMMER	phypat+PGL	246468	247386	4.2999999999999994e-54	-	.	Parent=HMPREF0556_1129;Name=PF01238;Note=PMI_typeI;Description=Phosphomannose isomerase type I
-accn|NZ_GG692932	HMMER	phypat+PGL	286147	287470	1.7999999999999998e-40	+	.	Parent=HMPREF0556_1171;Name=PF01593;Note=Amino_oxidase;Description=Flavin containing amine oxidoreductase
-accn|NZ_GG692932	HMMER	phypat+PGL	289178	289283	4.0999999999999993e-10	+	.	Parent=HMPREF0556_1174;Name=PF01402;Note=RHH_1;Description=Ribbon-helix-helix protein, copG family
-accn|NZ_GG692932	HMMER	phypat+PGL	419502	419610	8.3000000000000005e-18	+	.	Parent=HMPREF0556_1320;Name=PF02817;Note=E3_binding;Description=e3 binding domain
-accn|NZ_GG692932	HMMER	phypat+PGL	464094	464298	1.1000000000000001e-16	+	.	Parent=HMPREF0556_1363;Name=PF08951;Note=EntA_Immun;Description=Enterocin A Immunity
-accn|NZ_GG692932	HMMER	phypat+PGL	476901	477222	6.8000000000000006e-30	+	.	Parent=HMPREF0556_1376;Name=PF06161;Note=DUF975;Description=Protein of unknown function (DUF975)
-accn|NZ_GG692932	HMMER	phypat+PGL	494910	495387	9.199999999999999e-38	+	.	Parent=HMPREF0556_1394;Name=PF02674;Note=Colicin_V;Description=Colicin V production protein
-accn|NZ_GG692932	HMMER	phypat+PGL	654056	655496	4.5000000000000001e-19	+	.	Parent=HMPREF0556_1549;Name=PF01593;Note=Amino_oxidase;Description=Flavin containing amine oxidoreductase
-accn|NZ_GG692932	HMMER	phypat+PGL	793557	793746	1.5e-16	-	.	Parent=HMPREF0556_1679;Name=PF08439;Note=Peptidase_M3_N;Description=Oligopeptidase F
-accn|NZ_GG692932	HMMER	phypat+PGL	848415	848637	1.5e-10	+	.	Parent=HMPREF0556_1735;Name=PF11611;Note=DUF4352;Description=Domain of unknown function (DUF4352)
-accn|NZ_GG692932	HMMER	phypat+PGL	863304	864681	7.0999999999999986e-126	-	.	Parent=HMPREF0556_1751;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692932	HMMER	phypat+PGL	906897	907836	3.1999999999999995e-82	-	.	Parent=HMPREF0556_1788;Name=PF02608;Note=Bmp;Description=Basic membrane protein
-accn|NZ_GG692932	HMMER	phypat+PGL	921758	921854	1.6999999999999999e-19	-	.	Parent=HMPREF0556_1802;Name=PF02817;Note=E3_binding;Description=e3 binding domain
-accn|NZ_GG692932	HMMER	phypat+PGL	985368	985827	5.0999999999999997e-30	+	.	Parent=HMPREF0556_1869;Name=PF02872;Note=5_nucleotid_C;Description=5'-nucleotidase, C-terminal domain
-accn|NZ_GG692935	HMMER	phypat+PGL	107066	107267	2.1999999999999999e-15	+	.	Parent=HMPREF0556_2098;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
-accn|NZ_GG692935	HMMER	phypat+PGL	108433	108655	1.8000000000000001e-15	+	.	Parent=HMPREF0556_2099;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
-accn|NZ_GG692935	HMMER	phypat+PGL	109469	110312	3.1999999999999996e-108	-	.	Parent=HMPREF0556_2102;Name=PF02065;Note=Melibiase;Description=Melibiase
-accn|NZ_GG692935	HMMER	phypat+PGL	111425	111662	1.1e-32	-	.	Parent=HMPREF0556_2103;Name=PF02065;Note=Melibiase;Description=Melibiase
-accn|NZ_GG692935	HMMER	phypat+PGL	145019	145232	4.8999999999999999e-11	+	.	Parent=HMPREF0556_2135;Name=PF08951;Note=EntA_Immun;Description=Enterocin A Immunity
-accn|NZ_GG692935	HMMER	phypat+PGL	156108	156375	9.8000000000000002e-17	+	.	Parent=HMPREF0556_2143;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692935	HMMER	phypat+PGL	156834	157257	3.2999999999999998e-34	+	.	Parent=HMPREF0556_2143;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692935	HMMER	phypat+PGL	185401	185569	8.1999999999999997e-27	+	.	Parent=HMPREF0556_2172;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
-accn|NZ_GG692935	HMMER	phypat+PGL	185626	185887	6.1999999999999998e-28	+	.	Parent=HMPREF0556_2172;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692935	HMMER	phypat+PGL	233709	234093	6.3999999999999992e-14	+	.	Parent=HMPREF0556_2208;Name=PF02872;Note=5_nucleotid_C;Description=5'-nucleotidase, C-terminal domain
-accn|NZ_GG692934	HMMER	phypat+PGL	4305	4737	5.5999999999999998e-32	-	.	Parent=HMPREF0556_2247;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692934	HMMER	phypat+PGL	5688	5955	9.2e-21	-	.	Parent=HMPREF0556_2248;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692934	HMMER	phypat+PGL	6417	6828	2.8999999999999996e-21	-	.	Parent=HMPREF0556_2248;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692934	HMMER	phypat+PGL	78791	79682	2.8999999999999992e-114	+	.	Parent=HMPREF0556_2337;Name=PF02733;Note=Dak1;Description=Dak1 domain
-accn|NZ_GG692934	HMMER	phypat+PGL	105945	107124	1.1e-12	-	.	Parent=HMPREF0556_2366;Name=PF01593;Note=Amino_oxidase;Description=Flavin containing amine oxidoreductase
-accn|NZ_GG692934	HMMER	phypat+PGL	126373	127774	4.2999999999999976e-174	+	.	Parent=HMPREF0556_2382;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692934	HMMER	phypat+PGL	177435	178845	1.5999999999999996e-136	+	.	Parent=HMPREF0556_2430;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
-accn|NZ_GG692934	HMMER	phypat+PGL	234676	234868	3e-10	+	.	Parent=HMPREF0556_2491;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
-accn|NZ_GG692934	HMMER	phypat+PGL	235594	235855	1.2e-22	+	.	Parent=HMPREF0556_2491;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692934	HMMER	phypat+PGL	236290	236689	1.1999999999999999e-14	+	.	Parent=HMPREF0556_2491;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692934	HMMER	phypat+PGL	236751	237153	5.4000000000000003e-37	+	.	Parent=HMPREF0556_2492;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692934	HMMER	phypat+PGL	275564	275795	5.6999999999999999e-13	-	.	Parent=HMPREF0556_2538;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
-accn|NZ_GG692934	HMMER	phypat+PGL	276194	276455	2.6e-17	-	.	Parent=HMPREF0556_2538;Name=PF00874;Note=PRD;Description=PRD domain
-accn|NZ_GG692934	HMMER	phypat+PGL	276803	277211	3.2000000000000001e-24	-	.	Parent=HMPREF0556_2538;Name=PF00359;Note=PTS_EIIA_2;Description=Phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 2
-accn|NZ_GG692934	HMMER	phypat+PGL	277828	278614	1.9999999999999994e-115	+	.	Parent=HMPREF0556_2540;Name=PF06800;Note=Sugar_transport;Description=Sugar transport protein
-accn|NZ_GG692934	HMMER	phypat+PGL	281148	281502	2.2999999999999998e-32	-	.	Parent=HMPREF0556_2544;Name=PF05656;Note=DUF805;Description=Protein of unknown function (DUF805)
-accn|NZ_GG692934	HMMER	phypat+PGL	281710	282496	2.3999999999999992e-103	+	.	Parent=HMPREF0556_2545;Name=PF06800;Note=Sugar_transport;Description=Sugar transport protein
-accn|NZ_GG692934	HMMER	phypat+PGL	289617	290688	1.7999999999999994e-133	+	.	Parent=HMPREF0556_2552;Name=PF10140;Note=YukC;Description=WXG100 protein secretion system (Wss), protein YukC
-accn|NZ_GG692934	HMMER	phypat+PGL	290747	291059	2.4999999999999999e-29	+	.	Parent=HMPREF0556_2553;Name=PF12538;Note=FtsK_SpoIIIE_N;Description=DNA transporter
+accn|NZ_GG692933	HMMER	phypat	32668	32818	2.2999999999999999e-09	+	.	Parent=HMPREF0556_0131;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
+accn|NZ_GG692933	HMMER	phypat	59891	61319	2.5999999999999994e-135	+	.	Parent=HMPREF0556_0152;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat	63696	65103	8.2999999999999975e-181	-	.	Parent=HMPREF0556_0156;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat	71200	72544	2.8999999999999991e-144	+	.	Parent=HMPREF0556_0164;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat	94387	94927	6.4999999999999992e-71	+	.	Parent=HMPREF0556_0186;Name=PF03390;Note=2HCT;Description=2-hydroxycarboxylate transporter family
+accn|NZ_GG692933	HMMER	phypat	96472	96682	8.6e-11	+	.	Parent=HMPREF0556_0188;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
+accn|NZ_GG692933	HMMER	phypat	108714	110133	1.9999999999999998e-122	+	.	Parent=HMPREF0556_0197;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat	110448	110673	2.2999999999999999e-12	+	.	Parent=HMPREF0556_0198;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
+accn|NZ_GG692933	HMMER	phypat	150500	150869	1.6999999999999998e-43	+	.	Parent=HMPREF0556_0236;Name=PF02903;Note=Alpha-amylase_N;Description=Alpha amylase, N-terminal ig-like domain
+accn|NZ_GG692933	HMMER	phypat	200755	200926	3.8000000000000001e-09	+	.	Parent=HMPREF0556_0288;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
+accn|NZ_GG692933	HMMER	phypat	240165	240312	6.3000000000000001e-17	+	.	Parent=HMPREF0556_0325;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
+accn|NZ_GG692933	HMMER	phypat	273170	274535	9.9999999999999995e-127	+	.	Parent=HMPREF0556_0361;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat	402951	404328	1.3999999999999997e-137	+	.	Parent=HMPREF0556_0494;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692932	HMMER	phypat	135090	135231	4.1000000000000004e-15	+	.	Parent=HMPREF0556_1013;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
+accn|NZ_GG692932	HMMER	phypat	863304	864681	7.0999999999999986e-126	-	.	Parent=HMPREF0556_1751;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692935	HMMER	phypat	185401	185569	8.1999999999999997e-27	+	.	Parent=HMPREF0556_2172;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
+accn|NZ_GG692934	HMMER	phypat	126373	127774	4.2999999999999976e-174	+	.	Parent=HMPREF0556_2382;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat	177435	178845	1.5999999999999996e-136	+	.	Parent=HMPREF0556_2430;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat	234676	234868	3e-10	+	.	Parent=HMPREF0556_2491;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain
+accn|NZ_GG692934	HMMER	phypat	275564	275795	5.6999999999999999e-13	-	.	Parent=HMPREF0556_2538;Name=PF05043;Note=Mga;Description=Mga helix-turn-helix domain

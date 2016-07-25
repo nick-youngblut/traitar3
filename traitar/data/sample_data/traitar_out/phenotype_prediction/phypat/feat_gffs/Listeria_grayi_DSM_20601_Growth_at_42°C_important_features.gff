@@ -1,47 +1,16 @@
 ##gff-version 3
-accn|NZ_GG692936	HMMER	phypat+PGL	69894	70362	1.9e-12	-	.	Parent=HMPREF0556_0070;Name=PF02475;Note=Met_10;Description=Met-10+ like-protein
-accn|NZ_GG692933	HMMER	phypat+PGL	14404	14641	2.0000000000000001e-10	+	.	Parent=HMPREF0556_0107;Name=PF01921;Note=tRNA-synt_1f;Description=tRNA synthetases class I (K)
-accn|NZ_GG692933	HMMER	phypat+PGL	72598	73057	9.3000000000000007e-40	+	.	Parent=HMPREF0556_0165;Name=PF00480;Note=ROK;Description=ROK family
-accn|NZ_GG692933	HMMER	phypat+PGL	76388	78158	7.0999999999999987e-79	+	.	Parent=HMPREF0556_0168;Name=PF13597;Note=NRDD;Description=Anaerobic ribonucleoside-triphosphate reductase
-accn|NZ_GG692933	HMMER	phypat+PGL	78258	78675	8.5e-54	+	.	Parent=HMPREF0556_0169;Name=PF13353;Note=Fer4_12;Description=4Fe-4S single cluster domain
-accn|NZ_GG692933	HMMER	phypat+PGL	311758	312241	4.2999999999999996e-33	+	.	Parent=HMPREF0556_0397;Name=PF00480;Note=ROK;Description=ROK family
-accn|NZ_GG692933	HMMER	phypat+PGL	332536	333682	2.7000000000000002e-58	+	.	Parent=HMPREF0556_0415;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
-accn|NZ_GG692933	HMMER	phypat+PGL	348611	348764	2.3999999999999999e-13	+	.	Parent=HMPREF0556_0433;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
-accn|NZ_GG692933	HMMER	phypat+PGL	350503	350971	7.1999999999999992e-31	+	.	Parent=HMPREF0556_0435;Name=PF00480;Note=ROK;Description=ROK family
-accn|NZ_GG692933	HMMER	phypat+PGL	408406	408559	1.4999999999999999e-13	-	.	Parent=HMPREF0556_0500;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
-accn|NZ_GG692933	HMMER	phypat+PGL	474012	474558	8.4999999999999997e-55	+	.	Parent=HMPREF0556_0563;Name=PF00480;Note=ROK;Description=ROK family
-accn|NZ_GG692933	HMMER	phypat+PGL	495176	495338	1.2e-15	-	.	Parent=HMPREF0556_0584;Name=PF14659;Note=Phage_int_SAM_3;Description=Phage integrase, N-terminal SAM-like domain
-accn|NZ_GG692933	HMMER	phypat+PGL	618857	619091	2.0999999999999999e-13	+	.	Parent=HMPREF0556_0716;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
-accn|NZ_GG692933	HMMER	phypat+PGL	679389	679632	3.7999999999999999e-33	+	.	Parent=HMPREF0556_0783;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
-accn|NZ_GG692933	HMMER	phypat+PGL	708037	708196	2.0999999999999997e-21	+	.	Parent=HMPREF0556_0809;Name=PF00196;Note=GerE;Description=Bacterial regulatory proteins, luxR family
-accn|NZ_GG692932	HMMER	phypat+PGL	57888	58110	1.4999999999999998e-20	+	.	Parent=HMPREF0556_0932;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
-accn|NZ_GG692932	HMMER	phypat+PGL	70729	71260	1.0999999999999999e-25	-	.	Parent=HMPREF0556_0948;Name=PF01865;Note=PhoU_div;Description=Protein of unknown function DUF47
-accn|NZ_GG692932	HMMER	phypat+PGL	170764	171526	7.4e-12	+	.	Parent=HMPREF0556_1045;Name=PF03845;Note=Spore_permease;Description=Spore germination protein
-accn|NZ_GG692932	HMMER	phypat+PGL	296628	296898	8.2999999999999998e-11	+	.	Parent=HMPREF0556_1185;Name=PF14635;Note=HHH_7;Description=Helix-hairpin-helix motif
-accn|NZ_GG692932	HMMER	phypat+PGL	313467	313932	6.7000000000000001e-11	+	.	Parent=HMPREF0556_1205;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
-accn|NZ_GG692932	HMMER	phypat+PGL	396032	396932	1.7e-89	+	.	Parent=HMPREF0556_1296;Name=PF01156;Note=IU_nuc_hydro;Description=Inosine-uridine preferring nucleoside hydrolase
-accn|NZ_GG692932	HMMER	phypat+PGL	397001	398330	5.0000000000000002e-14	+	.	Parent=HMPREF0556_1297;Name=PF06808;Note=DctM;Description=DctM-like transporters
-accn|NZ_GG692932	HMMER	phypat+PGL	408633	408801	6.2999999999999998e-24	+	.	Parent=HMPREF0556_1309;Name=PF00196;Note=GerE;Description=Bacterial regulatory proteins, luxR family
-accn|NZ_GG692932	HMMER	phypat+PGL	599575	600373	2.2e-56	+	.	Parent=HMPREF0556_1496;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
-accn|NZ_GG692932	HMMER	phypat+PGL	635521	635749	1.3000000000000001e-20	+	.	Parent=HMPREF0556_1530;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
-accn|NZ_GG692932	HMMER	phypat+PGL	671051	671417	8.3999999999999983e-25	+	.	Parent=HMPREF0556_1565;Name=PF06271;Note=RDD;Description=RDD family
-accn|NZ_GG692932	HMMER	phypat+PGL	683270	683840	2.0000000000000002e-29	+	.	Parent=HMPREF0556_1578;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
-accn|NZ_GG692932	HMMER	phypat+PGL	749746	749899	2.0999999999999999e-17	-	.	Parent=HMPREF0556_1637;Name=PF08239;Note=SH3_3;Description=Bacterial SH3 domain
-accn|NZ_GG692932	HMMER	phypat+PGL	761273	761504	1e-10	+	.	Parent=HMPREF0556_1647;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
-accn|NZ_GG692932	HMMER	phypat+PGL	768071	768578	5.6999999999999992e-36	-	.	Parent=HMPREF0556_1651;Name=PF13280;Note=WYL;Description=WYL domain
-accn|NZ_GG692932	HMMER	phypat+PGL	813862	814132	6.2000000000000001e-14	+	.	Parent=HMPREF0556_1699;Name=PF02475;Note=Met_10;Description=Met-10+ like-protein
-accn|NZ_GG692932	HMMER	phypat+PGL	820111	820576	9.300000000000001e-10	+	.	Parent=HMPREF0556_1707;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
-accn|NZ_GG692932	HMMER	phypat+PGL	880935	881334	4.9000000000000001e-24	-	.	Parent=HMPREF0556_1768;Name=PF13353;Note=Fer4_12;Description=4Fe-4S single cluster domain
-accn|NZ_GG692932	HMMER	phypat+PGL	925257	925446	6.8000000000000003e-10	-	.	Parent=HMPREF0556_1805;Name=PF02737;Note=3HCDH_N;Description=3-hydroxyacyl-CoA dehydrogenase, NAD binding domain
-accn|NZ_GG692932	HMMER	phypat+PGL	951276	951837	1.7e-46	-	.	Parent=HMPREF0556_1836;Name=PF00480;Note=ROK;Description=ROK family
-accn|NZ_GG692932	HMMER	phypat+PGL	1015057	1015315	4.7999999999999996e-11	-	.	Parent=HMPREF0556_1902;Name=PF03096;Note=Ndr;Description=Ndr family
-accn|NZ_GG692935	HMMER	phypat+PGL	66957	67119	1.9000000000000001e-25	+	.	Parent=HMPREF0556_2061;Name=PF00196;Note=GerE;Description=Bacterial regulatory proteins, luxR family
-accn|NZ_GG692935	HMMER	phypat+PGL	168775	170272	1.1999999999999996e-91	+	.	Parent=HMPREF0556_2156;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
-accn|NZ_GG692935	HMMER	phypat+PGL	223662	224172	6.6000000000000006e-30	+	.	Parent=HMPREF0556_2202;Name=PF01420;Note=Methylase_S;Description=Type I restriction modification DNA specificity domain
-accn|NZ_GG692935	HMMER	phypat+PGL	225382	225862	5.6999999999999995e-28	-	.	Parent=HMPREF0556_2204;Name=PF01420;Note=Methylase_S;Description=Type I restriction modification DNA specificity domain
-accn|NZ_GG692934	HMMER	phypat+PGL	16707	16869	1.3000000000000001e-09	+	.	Parent=HMPREF0556_2261;Name=PF14659;Note=Phage_int_SAM_3;Description=Phage integrase, N-terminal SAM-like domain
-accn|NZ_GG692934	HMMER	phypat+PGL	72489	72984	2.3999999999999997e-36	+	.	Parent=HMPREF0556_2330;Name=PF13280;Note=WYL;Description=WYL domain
-accn|NZ_GG692934	HMMER	phypat+PGL	129333	129786	1.4999999999999999e-30	+	.	Parent=HMPREF0556_2384;Name=PF00480;Note=ROK;Description=ROK family
-accn|NZ_GG692934	HMMER	phypat+PGL	187223	188375	5.6999999999999999e-91	+	.	Parent=HMPREF0556_2438;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
-accn|NZ_GG692934	HMMER	phypat+PGL	319891	320050	7.1999999999999996e-23	-	.	Parent=HMPREF0556_2585;Name=PF00196;Note=GerE;Description=Bacterial regulatory proteins, luxR family
-accn|NZ_GG692934	HMMER	phypat+PGL	333503	333692	9.900000000000001e-10	+	.	Parent=HMPREF0556_2601;Name=PF02737;Note=3HCDH_N;Description=3-hydroxyacyl-CoA dehydrogenase, NAD binding domain
+accn|NZ_GG692933	HMMER	phypat	198272	199364	6.7999999999999987e-107	+	.	Parent=HMPREF0556_0286;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692933	HMMER	phypat	318457	319543	4.4999999999999999e-48	-	.	Parent=HMPREF0556_0402;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692933	HMMER	phypat	753629	754709	6.8999999999999996e-56	+	.	Parent=HMPREF0556_0853;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692933	HMMER	phypat	755774	756845	8.5999999999999999e-58	-	.	Parent=HMPREF0556_0854;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692932	HMMER	phypat	70729	71260	1.0999999999999999e-25	-	.	Parent=HMPREF0556_0948;Name=PF01865;Note=PhoU_div;Description=Protein of unknown function DUF47
+accn|NZ_GG692932	HMMER	phypat	272146	272908	6.7000000000000006e-18	+	.	Parent=HMPREF0556_1153;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692932	HMMER	phypat	313467	313932	6.7000000000000001e-11	+	.	Parent=HMPREF0556_1205;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|NZ_GG692932	HMMER	phypat	447196	448285	2.9999999999999997e-87	+	.	Parent=HMPREF0556_1346;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692932	HMMER	phypat	450218	451277	4.4999999999999992e-82	+	.	Parent=HMPREF0556_1348;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692932	HMMER	phypat	453283	454291	1.8999999999999995e-75	+	.	Parent=HMPREF0556_1351;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692932	HMMER	phypat	533588	534689	9.0999999999999979e-94	+	.	Parent=HMPREF0556_1434;Name=PF04464;Note=Glyphos_transf;Description=CDP-Glycerol:Poly(glycerophosphate) glycerophosphotransferase
+accn|NZ_GG692932	HMMER	phypat	670229	670688	3.1000000000000002e-10	+	.	Parent=HMPREF0556_1564;Name=PF01972;Note=SDH_sah;Description=Serine dehydrogenase proteinase
+accn|NZ_GG692932	HMMER	phypat	683270	683840	2.0000000000000002e-29	+	.	Parent=HMPREF0556_1578;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|NZ_GG692932	HMMER	phypat	820111	820576	9.300000000000001e-10	+	.	Parent=HMPREF0556_1707;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
+accn|NZ_GG692934	HMMER	phypat	187223	188375	5.6999999999999999e-91	+	.	Parent=HMPREF0556_2438;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase

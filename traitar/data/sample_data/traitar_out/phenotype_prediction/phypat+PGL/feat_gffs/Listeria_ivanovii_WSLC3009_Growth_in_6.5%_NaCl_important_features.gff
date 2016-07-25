@@ -1,0 +1,14 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	1013674	1014205	1.6999999999999997e-67	-	.	Parent=AX25_04955;Name=PF13743;Note=Thioredoxin_5;Description=Thioredoxin
+accn|CP007172	HMMER	phypat+PGL	1118353	1118956	1.4999999999999997e-78	+	.	Parent=AX25_05500;Name=PF02436;Note=PYC_OADA;Description=Conserved carboxylase domain
+accn|CP007172	HMMER	phypat+PGL	1192979	1193468	4.099999999999999e-57	+	.	Parent=AX25_05920;Name=PF01923;Note=Cob_adeno_trans;Description=Cobalamin adenosyltransferase
+accn|CP007172	HMMER	phypat+PGL	1211714	1212182	5.0999999999999997e-30	+	.	Parent=AX25_06005;Name=PF01923;Note=Cob_adeno_trans;Description=Cobalamin adenosyltransferase
+accn|CP007172	HMMER	phypat+PGL	1233023	1233512	4.5999999999999989e-64	+	.	Parent=AX25_06140;Name=PF01923;Note=Cob_adeno_trans;Description=Cobalamin adenosyltransferase
+accn|CP007172	HMMER	phypat+PGL	1346622	1346703	1.7000000000000001e-10	+	.	Parent=AX25_06695;Name=PF13653;Note=GDPD_2;Description=Glycerophosphoryl diester phosphodiesterase family
+accn|CP007172	HMMER	phypat+PGL	1811759	1811900	1.3000000000000002e-18	+	.	Parent=AX25_09005;Name=PF08338;Note=DUF1731;Description=Domain of unknown function (DUF1731)
+accn|CP007172	HMMER	phypat+PGL	1889659	1890529	9.4999999999999993e-37	+	.	Parent=AX25_09345;Name=PF00209;Note=SNF;Description=Sodium:neurotransmitter symporter family
+accn|CP007172	HMMER	phypat+PGL	2010246	2010498	1.5e-17	+	.	Parent=AX25_09960;Name=PF13456;Note=RVT_3;Description=Reverse transcriptase-like
+accn|CP007172	HMMER	phypat+PGL	2132196	2132415	5.9999999999999998e-30	-	.	Parent=AX25_10550;Name=PF07831;Note=PYNP_C;Description=Pyrimidine nucleoside phosphorylase C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2227380	2227959	4.0999999999999999e-12	-	.	Parent=AX25_11025;Name=PF03881;Note=Fructosamin_kin;Description=Fructosamine kinase
+accn|CP007172	HMMER	phypat+PGL	2458903	2459878	2.6000000000000001e-74	+	.	Parent=AX25_12120;Name=PF00282;Note=Pyridoxal_deC;Description=Pyridoxal-dependent decarboxylase conserved domain
+accn|CP007172	HMMER	phypat+PGL	2524959	2525940	5.3999999999999996e-70	-	.	Parent=AX25_12540;Name=PF00282;Note=Pyridoxal_deC;Description=Pyridoxal-dependent decarboxylase conserved domain

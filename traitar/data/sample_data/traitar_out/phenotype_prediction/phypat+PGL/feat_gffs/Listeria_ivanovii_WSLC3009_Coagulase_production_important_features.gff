@@ -1,0 +1,12 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	1203906	1204119	2.3999999999999998e-24	+	.	Parent=AX25_05965;Name=PF07568;Note=HisKA_2;Description=Histidine kinase
+accn|CP007172	HMMER	phypat+PGL	1271836	1272223	5.0000000000000002e-27	+	.	Parent=AX25_06330;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|CP007172	HMMER	phypat+PGL	1272280	1272478	3.6999999999999999e-13	+	.	Parent=AX25_06330;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|CP007172	HMMER	phypat+PGL	1387407	1387488	4.3999999999999998e-12	+	.	Parent=AX25_06890;Name=PF13014;Note=KH_3;Description=KH domain
+accn|CP007172	HMMER	phypat+PGL	1386426	1386672	3.7e-16	+	.	Parent=AX25_06890;Name=PF03726;Note=PNPase;Description=Polyribonucleotide nucleotidyltransferase, RNA binding domain
+accn|CP007172	HMMER	phypat+PGL	1385748	1386135	5.4000000000000001e-24	+	.	Parent=AX25_06890;Name=PF01138;Note=RNase_PH;Description=3' exoribonuclease family, domain 1
+accn|CP007172	HMMER	phypat+PGL	1386144	1386333	1.1000000000000002e-19	+	.	Parent=AX25_06890;Name=PF03725;Note=RNase_PH_C;Description=3' exoribonuclease family, domain 2
+accn|CP007172	HMMER	phypat+PGL	1681874	1682165	1.3000000000000002e-18	-	.	Parent=AX25_08310;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|CP007172	HMMER	phypat+PGL	2381324	2381615	8.9000000000000007e-16	+	.	Parent=AX25_11765;Name=PF12732;Note=YtxH;Description=YtxH-like protein
+accn|CP007172	HMMER	phypat+PGL	2440584	2441883	9.3999999999999964e-206	+	.	Parent=AX25_12045;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|CP007172	HMMER	phypat+PGL	2481592	2481790	3.4999999999999999e-23	+	.	Parent=AX25_12280;Name=PF13244;Note=DUF4040;Description=Domain of unknown function (DUF4040)

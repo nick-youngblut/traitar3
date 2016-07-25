@@ -1,0 +1,48 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	99920	100097	2.6e-15	+	.	Parent=AX25_00455;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	137112	137520	1.5999999999999999e-38	-	.	Parent=AX25_00640;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	150785	151004	1.3999999999999999e-18	-	.	Parent=AX25_00690;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	201558	201723	2e-14	+	.	Parent=AX25_00940;Name=PF13333;Note=rve_2;Description=Integrase core domain
+accn|CP007172	HMMER	phypat+PGL	260574	261474	2.3999999999999999e-40	+	.	Parent=AX25_01195;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	264898	265066	9.3000000000000014e-18	+	.	Parent=AX25_01215;Name=PF11734;Note=TilS_C;Description=TilS substrate C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	392576	392975	6.6000000000000001e-35	-	.	Parent=AX25_01865;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	413814	414327	4.7000000000000006e-12	-	.	Parent=AX25_01990;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	431680	432151	1.4000000000000002e-21	+	.	Parent=AX25_02110;Name=PF02535;Note=Zip;Description=ZIP Zinc transporter
+accn|CP007172	HMMER	phypat+PGL	525270	525462	3.1999999999999999e-18	+	.	Parent=AX25_02550;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	528103	528436	2.1000000000000001e-42	-	.	Parent=AX25_02560;Name=PF06993;Note=DUF1304;Description=Protein of unknown function (DUF1304)
+accn|CP007172	HMMER	phypat+PGL	532724	532910	4.0999999999999999e-21	+	.	Parent=AX25_02580;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	539937	540570	3.5000000000000001e-15	+	.	Parent=AX25_02610;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	590281	590689	2.7000000000000001e-40	+	.	Parent=AX25_02855;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	721846	722110	1.2e-09	+	.	Parent=AX25_03490;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	950429	950825	1.6999999999999999e-40	+	.	Parent=AX25_04605;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	981079	981397	1.9000000000000001e-09	-	.	Parent=AX25_04770;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	1007768	1008182	9.7999999999999998e-43	+	.	Parent=AX25_04925;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	1012428	1012818	3.1000000000000002e-10	+	.	Parent=AX25_04950;Name=PF05569;Note=Peptidase_M56;Description=BlaR1 peptidase M56
+accn|CP007172	HMMER	phypat+PGL	1131501	1131798	9.8000000000000012e-14	+	.	Parent=AX25_05545;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	1135754	1136138	2.1000000000000002e-14	+	.	Parent=AX25_05560;Name=PF10111;Note=Glyco_tranf_2_2;Description=Glycosyltransferase like family 2
+accn|CP007172	HMMER	phypat+PGL	1307774	1308185	2.2000000000000001e-33	+	.	Parent=AX25_06510;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	1336616	1337375	1.7999999999999998e-33	+	.	Parent=AX25_06660;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|CP007172	HMMER	phypat+PGL	1531703	1531940	8.7000000000000003e-13	-	.	Parent=AX25_07595;Name=PF08211;Note=dCMP_cyt_deam_2;Description=Cytidine and deoxycytidylate deaminase zinc-binding region
+accn|CP007172	HMMER	phypat+PGL	1674732	1675059	2.0999999999999999e-13	+	.	Parent=AX25_08270;Name=PF13185;Note=GAF_2;Description=GAF domain
+accn|CP007172	HMMER	phypat+PGL	1694455	1695190	5.0000000000000002e-63	-	.	Parent=AX25_08375;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1713434	1714364	6.9000000000000002e-36	-	.	Parent=AX25_08475;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	1715158	1716094	1.1999999999999998e-35	-	.	Parent=AX25_08480;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	1759826	1760045	1.3000000000000001e-21	+	.	Parent=AX25_08685;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	1849330	1850020	1.4999999999999999e-53	-	.	Parent=AX25_09180;Name=PF01915;Note=Glyco_hydro_3_C;Description=Glycosyl hydrolase family 3 C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2074202	2075129	7.3999999999999978e-81	-	.	Parent=AX25_10280;Name=PF00710;Note=Asparaginase;Description=Asparaginase
+accn|CP007172	HMMER	phypat+PGL	2087935	2089081	1.6000000000000001e-55	-	.	Parent=AX25_10350;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2140440	2140803	9.9999999999999998e-13	-	.	Parent=AX25_10600;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2141129	2141528	2.7999999999999995e-34	-	.	Parent=AX25_10605;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2202181	2202400	4.4000000000000001e-22	+	.	Parent=AX25_10875;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	2233557	2234205	9.7000000000000006e-15	-	.	Parent=AX25_11055;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein
+accn|CP007172	HMMER	phypat+PGL	2549614	2551111	1.3999999999999995e-90	-	.	Parent=AX25_12655;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2574665	2575643	9.3999999999999979e-85	-	.	Parent=AX25_12765;Name=PF01263;Note=Aldose_epim;Description=Aldose 1-epimerase
+accn|CP007172	HMMER	phypat+PGL	2658923	2659463	2.0999999999999999e-17	-	.	Parent=AX25_13205;Name=PF13439;Note=Glyco_transf_4;Description=Glycosyltransferase Family 4
+accn|CP007172	HMMER	phypat+PGL	2808877	2809096	1.9000000000000001e-17	+	.	Parent=AX25_14060;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2840378	2840789	7.6000000000000004e-39	-	.	Parent=AX25_14200;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2904828	2904987	7.8000000000000002e-11	+	.	Parent=AX25_14535;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2907315	2907498	2.9999999999999999e-22	-	.	Parent=AX25_14550;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	837250	837436	1.3000000000000001e-20	-	.	Parent=AX25_04080;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	1164257	1164476	2.6000000000000002e-21	+	.	Parent=AX25_05725;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2816438	2816984	6.7000000000000001e-12	-	.	Parent=AX25_14095;Name=PF13439;Note=Glyco_transf_4;Description=Glycosyltransferase Family 4
+accn|CP007172	HMMER	phypat+PGL	2820034	2820850	8.7999999999999999e-13	-	.	Parent=AX25_14110;Name=PF01943;Note=Polysacc_synt;Description=Polysaccharide biosynthesis protein

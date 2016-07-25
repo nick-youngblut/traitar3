@@ -1,0 +1,9 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	10543	10681	1.2e-20	+	.	Parent=HMPREF0556_0012;Name=PF08338;Note=DUF1731;Description=Domain of unknown function (DUF1731)
+accn|NZ_GG692933	HMMER	phypat+PGL	271478	272273	3.1999999999999993e-89	+	.	Parent=HMPREF0556_0359;Name=PF03881;Note=Fructosamin_kin;Description=Fructosamine kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	334758	334977	1.9999999999999998e-32	+	.	Parent=HMPREF0556_0416;Name=PF07831;Note=PYNP_C;Description=Pyrimidine nucleoside phosphorylase C-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	658916	659174	5.5000000000000006e-17	-	.	Parent=HMPREF0556_0759;Name=PF13456;Note=RVT_3;Description=Reverse transcriptase-like
+accn|NZ_GG692932	HMMER	phypat+PGL	340799	341327	1.8999999999999999e-69	-	.	Parent=HMPREF0556_1240;Name=PF13743;Note=Thioredoxin_5;Description=Thioredoxin
+accn|NZ_GG692932	HMMER	phypat+PGL	434865	435468	9.3999999999999994e-78	+	.	Parent=HMPREF0556_1334;Name=PF02436;Note=PYC_OADA;Description=Conserved carboxylase domain
+accn|NZ_GG692932	HMMER	phypat+PGL	568714	568801	3.7e-12	+	.	Parent=HMPREF0556_1469;Name=PF13653;Note=GDPD_2;Description=Glycerophosphoryl diester phosphodiesterase family
+accn|NZ_GG692935	HMMER	phypat+PGL	186483	187467	4.9999999999999992e-73	+	.	Parent=HMPREF0556_2173;Name=PF00282;Note=Pyridoxal_deC;Description=Pyridoxal-dependent decarboxylase conserved domain

@@ -1,0 +1,53 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	40424	41192	3.5000000000000004e-24	-	.	Parent=AX25_00210;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	79915	80299	3.8000000000000002e-54	+	.	Parent=AX25_00355;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	86466	86775	7.2000000000000009e-14	-	.	Parent=AX25_00400;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	99920	100097	2.6e-15	+	.	Parent=AX25_00455;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	184710	184857	8.6999999999999997e-11	+	.	Parent=AX25_00865;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|CP007172	HMMER	phypat+PGL	194682	194967	5.9000000000000003e-12	+	.	Parent=AX25_00905;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	225264	226302	3.8999999999999995e-116	+	.	Parent=AX25_01040;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	298077	298548	1.8999999999999998e-46	+	.	Parent=AX25_01380;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|CP007172	HMMER	phypat+PGL	321505	322552	3.4999999999999992e-92	+	.	Parent=AX25_01520;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	323212	323905	3.4e-15	+	.	Parent=AX25_01525;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	343258	343504	1.4000000000000001e-13	-	.	Parent=AX25_01590;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	370037	370421	2.6e-53	+	.	Parent=AX25_01710;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	388284	388758	2.5999999999999999e-45	+	.	Parent=AX25_01835;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|CP007172	HMMER	phypat+PGL	491331	492009	3.8999999999999996e-75	+	.	Parent=AX25_02375;Name=PF01487;Note=DHquinase_I;Description=Type I 3-dehydroquinase
+accn|CP007172	HMMER	phypat+PGL	525270	525462	3.1999999999999999e-18	+	.	Parent=AX25_02550;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	532724	532910	4.0999999999999999e-21	+	.	Parent=AX25_02580;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	569449	570502	4.9999999999999993e-69	+	.	Parent=AX25_02745;Name=PF00854;Note=PTR2;Description=POT family
+accn|CP007172	HMMER	phypat+PGL	645353	645734	5.3999999999999996e-48	-	.	Parent=AX25_03135;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	648957	649434	8.8999999999999988e-37	+	.	Parent=AX25_03155;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|CP007172	HMMER	phypat+PGL	704568	704871	1.4999999999999999e-15	-	.	Parent=AX25_03380;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	769379	769760	4.7999999999999998e-49	+	.	Parent=AX25_03735;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	850791	851316	6.6999999999999998e-42	+	.	Parent=AX25_04140;Name=PF00689;Note=Cation_ATPase_C;Description=Cation transporting ATPase, C-terminus
+accn|CP007172	HMMER	phypat+PGL	882988	883495	1.8999999999999998e-42	+	.	Parent=AX25_04255;Name=PF00689;Note=Cation_ATPase_C;Description=Cation transporting ATPase, C-terminus
+accn|CP007172	HMMER	phypat+PGL	904732	905707	1.0999999999999998e-93	+	.	Parent=AX25_04375;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	1038850	1039786	6.2999999999999983e-72	+	.	Parent=AX25_05095;Name=PF02386;Note=TrkH;Description=Cation transport protein
+accn|CP007172	HMMER	phypat+PGL	1062127	1062508	1.8999999999999997e-50	+	.	Parent=AX25_05215;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	1073504	1073744	1.7999999999999999e-11	+	.	Parent=AX25_05275;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	1081163	1081547	1.7e-53	+	.	Parent=AX25_05305;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	1165066	1165435	4.1999999999999992e-41	+	.	Parent=AX25_05730;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|CP007172	HMMER	phypat+PGL	1308320	1309361	9.6999999999999963e-98	-	.	Parent=AX25_06515;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	1343386	1343821	1.8999999999999999e-61	+	.	Parent=AX25_06685;Name=PF02664;Note=LuxS;Description=S-Ribosylhomocysteinase (LuxS)
+accn|CP007172	HMMER	phypat+PGL	1407978	1408524	1.9e-12	+	.	Parent=AX25_07020;Name=PF08443;Note=RimK;Description=RimK-like ATP-grasp domain
+accn|CP007172	HMMER	phypat+PGL	1530458	1530734	1.8000000000000002e-10	+	.	Parent=AX25_07585;Name=PF11611;Note=DUF4352;Description=Domain of unknown function (DUF4352)
+accn|CP007172	HMMER	phypat+PGL	1720899	1721646	8.099999999999999e-95	-	.	Parent=AX25_08510;Name=PF00591;Note=Glycos_transf_3;Description=Glycosyl transferase family, a/b domain
+accn|CP007172	HMMER	phypat+PGL	1759826	1760045	1.3000000000000001e-21	+	.	Parent=AX25_08685;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2131392	2132079	7.5999999999999992e-52	-	.	Parent=AX25_10550;Name=PF00591;Note=Glycos_transf_3;Description=Glycosyl transferase family, a/b domain
+accn|CP007172	HMMER	phypat+PGL	2264889	2265813	3.1999999999999999e-59	-	.	Parent=AX25_11210;Name=PF01238;Note=PMI_typeI;Description=Phosphomannose isomerase type I
+accn|CP007172	HMMER	phypat+PGL	2275459	2275819	1.0999999999999999e-49	-	.	Parent=AX25_11260;Name=PF02457;Note=DisA_N;Description=DisA bacterial checkpoint controller nucleotide-binding
+accn|CP007172	HMMER	phypat+PGL	2284898	2285810	4.599999999999999e-92	-	.	Parent=AX25_11295;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|CP007172	HMMER	phypat+PGL	2357988	2358165	1.2999999999999998e-19	-	.	Parent=AX25_11650;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|CP007172	HMMER	phypat+PGL	2439825	2440290	1.1e-55	-	.	Parent=AX25_12040;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|CP007172	HMMER	phypat+PGL	2469048	2469519	4.3999999999999994e-53	-	.	Parent=AX25_12225;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|CP007172	HMMER	phypat+PGL	2678382	2678646	1.6000000000000002e-10	-	.	Parent=AX25_13310;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	2794321	2794822	2.0000000000000001e-17	-	.	Parent=AX25_13960;Name=PF00689;Note=Cation_ATPase_C;Description=Cation transporting ATPase, C-terminus
+accn|CP007172	HMMER	phypat+PGL	2808877	2809096	1.9000000000000001e-17	+	.	Parent=AX25_14060;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2835259	2835910	9.800000000000001e-26	-	.	Parent=AX25_14180;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|CP007172	HMMER	phypat+PGL	2904828	2904987	7.8000000000000002e-11	+	.	Parent=AX25_14535;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2907315	2907498	2.9999999999999999e-22	-	.	Parent=AX25_14550;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	780678	781164	2.4999999999999998e-35	+	.	Parent=AX25_03795;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|CP007172	HMMER	phypat+PGL	837250	837436	1.3000000000000001e-20	-	.	Parent=AX25_04080;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	1164257	1164476	2.6000000000000002e-21	+	.	Parent=AX25_05725;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|CP007172	HMMER	phypat+PGL	2825254	2825539	6.6e-10	-	.	Parent=AX25_14135;Name=PF11611;Note=DUF4352;Description=Domain of unknown function (DUF4352)

@@ -1,0 +1,53 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	9648	10242	2.3999999999999996e-72	-	.	Parent=AX25_00065;Name=PF04131;Note=NanE;Description=Putative N-acetylmannosamine-6-phosphate epimerase
+accn|CP007172	HMMER	phypat+PGL	34142	34490	3.9999999999999995e-31	-	.	Parent=AX25_00180;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	146045	146570	3.2000000000000001e-45	+	.	Parent=AX25_00670;Name=PF00596;Note=Aldolase_II;Description=Class II Aldolase and Adducin N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	146734	147448	1.3000000000000001e-37	+	.	Parent=AX25_00675;Name=PF00370;Note=FGGY_N;Description=FGGY family of carbohydrate kinases, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	150785	151004	1.3999999999999999e-18	-	.	Parent=AX25_00690;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	157204	157333	3.7999999999999998e-10	-	.	Parent=AX25_00730;Name=PF02311;Note=AraC_binding;Description=AraC-like ligand binding domain
+accn|CP007172	HMMER	phypat+PGL	169201	169585	3.5000000000000004e-24	+	.	Parent=AX25_00780;Name=PF02311;Note=AraC_binding;Description=AraC-like ligand binding domain
+accn|CP007172	HMMER	phypat+PGL	195778	195979	1.8999999999999999e-20	+	.	Parent=AX25_00910;Name=PF01188;Note=MR_MLE;Description=Mandelate racemase / muconate lactonizing enzyme, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	258476	258767	9.4000000000000006e-36	+	.	Parent=AX25_01190;Name=PF02559;Note=CarD_CdnL_TRCF;Description=CarD-like/TRCF domain
+accn|CP007172	HMMER	phypat+PGL	299998	300583	4.2000000000000005e-52	+	.	Parent=AX25_01390;Name=PF04131;Note=NanE;Description=Putative N-acetylmannosamine-6-phosphate epimerase
+accn|CP007172	HMMER	phypat+PGL	346894	347239	2.2e-24	+	.	Parent=AX25_01615;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	380710	381874	6.4999999999999992e-48	-	.	Parent=AX25_01805;Name=PF00501;Note=AMP-binding;Description=AMP-binding enzyme
+accn|CP007172	HMMER	phypat+PGL	384072	384420	3.7999999999999996e-26	+	.	Parent=AX25_01815;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	451846	452578	1.3000000000000002e-18	-	.	Parent=AX25_02165;Name=PF00668;Note=Condensation;Description=Condensation domain
+accn|CP007172	HMMER	phypat+PGL	460209	460359	4.6999999999999999e-11	-	.	Parent=AX25_02195;Name=PF13559;Note=DUF4129;Description=Domain of unknown function (DUF4129)
+accn|CP007172	HMMER	phypat+PGL	593520	594249	1.5999999999999996e-79	+	.	Parent=AX25_02870;Name=PF00370;Note=FGGY_N;Description=FGGY family of carbohydrate kinases, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	646650	647007	5.0000000000000002e-26	-	.	Parent=AX25_03145;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	982205	982670	5.0999999999999991e-36	-	.	Parent=AX25_04775;Name=PF13231;Note=PMT_2;Description=Dolichyl-phosphate-mannose-protein mannosyltransferase
+accn|CP007172	HMMER	phypat+PGL	1015408	1015579	8.3000000000000003e-10	-	.	Parent=AX25_04965;Name=PF13432;Note=TPR_16;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	1021955	1023155	4.4999999999999989e-95	-	.	Parent=AX25_05005;Name=PF00501;Note=AMP-binding;Description=AMP-binding enzyme
+accn|CP007172	HMMER	phypat+PGL	1078312	1078969	8.2999999999999996e-64	+	.	Parent=AX25_05300;Name=PF00370;Note=FGGY_N;Description=FGGY family of carbohydrate kinases, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1215586	1215775	2.1999999999999999e-12	+	.	Parent=AX25_06035;Name=PF05899;Note=Cupin_3;Description=Protein of unknown function (DUF861)
+accn|CP007172	HMMER	phypat+PGL	1299564	1299777	4.3e-23	+	.	Parent=AX25_06440;Name=PF03880;Note=DbpA;Description=DbpA RNA binding domain
+accn|CP007172	HMMER	phypat+PGL	1379479	1379704	2.0000000000000001e-27	+	.	Parent=AX25_06850;Name=PF04296;Note=DUF448;Description=Protein of unknown function (DUF448)
+accn|CP007172	HMMER	phypat+PGL	1576926	1577100	1.0999999999999999e-09	-	.	Parent=AX25_07835;Name=PF13432;Note=TPR_16;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	1607475	1608216	5.7999999999999991e-88	-	.	Parent=AX25_07975;Name=PF00370;Note=FGGY_N;Description=FGGY family of carbohydrate kinases, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1613848	1614085	5.1000000000000006e-27	-	.	Parent=AX25_08015;Name=PF03775;Note=MinC_C;Description=Septum formation inhibitor MinC, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	1695313	1695520	8.4000000000000013e-22	-	.	Parent=AX25_08375;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|CP007172	HMMER	phypat+PGL	1770803	1771715	1.3999999999999997e-86	-	.	Parent=AX25_08730;Name=PF00733;Note=Asn_synthase;Description=Asparagine synthase
+accn|CP007172	HMMER	phypat+PGL	1777299	1778400	2.2999999999999994e-76	-	.	Parent=AX25_08770;Name=PF00501;Note=AMP-binding;Description=AMP-binding enzyme
+accn|CP007172	HMMER	phypat+PGL	1812034	1812817	1.2e-18	-	.	Parent=AX25_09010;Name=PF03706;Note=UPF0104;Description=Uncharacterised protein family (UPF0104)
+accn|CP007172	HMMER	phypat+PGL	1842891	1843233	3.7000000000000004e-26	-	.	Parent=AX25_09165;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	1850125	1850332	4.1999999999999991e-25	-	.	Parent=AX25_09180;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|CP007172	HMMER	phypat+PGL	1987395	1987749	3.6000000000000003e-20	-	.	Parent=AX25_09845;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	2039659	2039938	2.5000000000000002e-10	-	.	Parent=AX25_10115;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	2056848	2057016	1.4000000000000001e-09	-	.	Parent=AX25_10190;Name=PF13432;Note=TPR_16;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	2191398	2191740	1.3e-22	-	.	Parent=AX25_10820;Name=PF02620;Note=DUF177;Description=Uncharacterized ACR, COG1399
+accn|CP007172	HMMER	phypat+PGL	2202181	2202400	4.4000000000000001e-22	+	.	Parent=AX25_10875;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	2218227	2218482	4.9000000000000007e-10	-	.	Parent=AX25_10970;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	2242534	2243077	2.9999999999999996e-34	-	.	Parent=AX25_11100;Name=PF00596;Note=Aldolase_II;Description=Class II Aldolase and Adducin N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2254468	2255089	4.9999999999999994e-115	+	.	Parent=AX25_11155;Name=PF01680;Note=SOR_SNZ;Description=SOR/SNZ family
+accn|CP007172	HMMER	phypat+PGL	2313513	2313855	2.5999999999999999e-30	-	.	Parent=AX25_11480;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	2317027	2317393	6.7999999999999995e-37	-	.	Parent=AX25_11500;Name=PF01408;Note=GFO_IDH_MocA;Description=Oxidoreductase family, NAD-binding Rossmann fold
+accn|CP007172	HMMER	phypat+PGL	2318255	2318597	2.7999999999999996e-10	-	.	Parent=AX25_11505;Name=PF02311;Note=AraC_binding;Description=AraC-like ligand binding domain
+accn|CP007172	HMMER	phypat+PGL	2397708	2398296	9.4999999999999982e-57	+	.	Parent=AX25_11840;Name=PF01595;Note=DUF21;Description=Domain of unknown function DUF21
+accn|CP007172	HMMER	phypat+PGL	2423494	2423710	1.0000000000000001e-20	-	.	Parent=AX25_11975;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
+accn|CP007172	HMMER	phypat+PGL	2496359	2496938	2.5999999999999997e-54	-	.	Parent=AX25_12380;Name=PF01595;Note=DUF21;Description=Domain of unknown function DUF21
+accn|CP007172	HMMER	phypat+PGL	2623732	2623927	6.8000000000000001e-15	-	.	Parent=AX25_13010;Name=PF01188;Note=MR_MLE;Description=Mandelate racemase / muconate lactonizing enzyme, C-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2656901	2657789	1.4999999999999999e-41	-	.	Parent=AX25_13195;Name=PF03706;Note=UPF0104;Description=Uncharacterised protein family (UPF0104)
+accn|CP007172	HMMER	phypat+PGL	2849292	2850018	4.3999999999999992e-68	-	.	Parent=AX25_14265;Name=PF00370;Note=FGGY_N;Description=FGGY family of carbohydrate kinases, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2859942	2861142	6.0999999999999997e-84	+	.	Parent=AX25_14305;Name=PF00501;Note=AMP-binding;Description=AMP-binding enzyme
+accn|CP007172	HMMER	phypat+PGL	2871930	2872506	4.2000000000000006e-54	-	.	Parent=AX25_14385;Name=PF01595;Note=DUF21;Description=Domain of unknown function DUF21

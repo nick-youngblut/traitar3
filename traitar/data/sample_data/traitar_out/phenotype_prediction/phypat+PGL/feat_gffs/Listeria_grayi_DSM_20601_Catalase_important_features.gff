@@ -1,0 +1,14 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	10543	10681	1.2e-20	+	.	Parent=HMPREF0556_0012;Name=PF08338;Note=DUF1731;Description=Domain of unknown function (DUF1731)
+accn|NZ_GG692936	HMMER	phypat+PGL	54764	55613	3.7999999999999992e-119	-	.	Parent=HMPREF0556_0052;Name=PF04898;Note=Glu_syn_central;Description=Glutamate synthase central domain
+accn|NZ_GG692936	HMMER	phypat+PGL	55793	56171	1.5999999999999999e-37	-	.	Parent=HMPREF0556_0052;Name=PF01645;Note=Glu_synthase;Description=Conserved region in glutamate synthase
+accn|NZ_GG692933	HMMER	phypat+PGL	454293	454800	5.0999999999999995e-53	-	.	Parent=HMPREF0556_0543;Name=PF04264;Note=YceI;Description=YceI-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	464878	465154	6.7000000000000005e-21	+	.	Parent=HMPREF0556_0552;Name=PF13806;Note=Rieske_2;Description=Rieske-like [2Fe-2S] domain
+accn|NZ_GG692933	HMMER	phypat+PGL	511717	512557	6.9000000000000001e-61	-	.	Parent=HMPREF0556_0605;Name=PF02628;Note=COX15-CtaA;Description=Cytochrome oxidase assembly protein
+accn|NZ_GG692932	HMMER	phypat+PGL	113466	113790	1.0999999999999999e-44	+	.	Parent=HMPREF0556_0989;Name=PF03960;Note=ArsC;Description=ArsC family
+accn|NZ_GG692932	HMMER	phypat+PGL	419739	420426	3.4999999999999993e-91	+	.	Parent=HMPREF0556_1320;Name=PF00198;Note=2-oxoacid_dh;Description=2-oxoacid dehydrogenases acyltransferase (catalytic domain)
+accn|NZ_GG692932	HMMER	phypat+PGL	921959	922634	1.1e-83	-	.	Parent=HMPREF0556_1802;Name=PF00198;Note=2-oxoacid_dh;Description=2-oxoacid dehydrogenases acyltransferase (catalytic domain)
+accn|NZ_GG692935	HMMER	phypat+PGL	3331	3649	6.3999999999999995e-38	+	.	Parent=HMPREF0556_1995;Name=PF14748;Note=P5CR_dimer;Description=Pyrroline-5-carboxylate reductase dimerisation
+accn|NZ_GG692935	HMMER	phypat+PGL	199661	199985	6.8000000000000001e-34	+	.	Parent=HMPREF0556_2180;Name=PF03960;Note=ArsC;Description=ArsC family
+accn|NZ_GG692934	HMMER	phypat+PGL	137926	139069	1.9999999999999993e-176	-	.	Parent=HMPREF0556_2392;Name=PF00199;Note=Catalase;Description=Catalase
+accn|NZ_GG692934	HMMER	phypat+PGL	312658	313243	4.9999999999999999e-13	-	.	Parent=HMPREF0556_2575;Name=PF02230;Note=Abhydrolase_2;Description=Phospholipase/Carboxylesterase

@@ -1,0 +1,2 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	101569	102724	5.5999999999999991e-95	+	.	Parent=AX25_00465;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase

@@ -1,7 +1,3 @@
 ##gff-version 3
-accn|CP007172	HMMER	phypat+PGL	434292	435372	7.8999999999999989e-68	+	.	Parent=AX25_02120;Name=PF01425;Note=Amidase;Description=Amidase
-accn|CP007172	HMMER	phypat+PGL	847008	847890	1.0999999999999998e-93	+	.	Parent=AX25_04130;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
-accn|CP007172	HMMER	phypat+PGL	1562950	1563457	1.7e-33	-	.	Parent=AX25_07775;Name=PF01596;Note=Methyltransf_3;Description=O-methyltransferase
-accn|CP007172	HMMER	phypat+PGL	1881087	1882404	1.6999999999999995e-152	-	.	Parent=AX25_09315;Name=PF01425;Note=Amidase;Description=Amidase
-accn|CP007172	HMMER	phypat+PGL	2322150	2323038	2.4999999999999997e-90	-	.	Parent=AX25_11535;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
-nknown function DUF59
+accn|CP007172	HMMER	phypat	847008	847890	1.0999999999999998e-93	+	.	Parent=AX25_04130;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
+accn|CP007172	HMMER	phypat	2322150	2323038	2.4999999999999997e-90	-	.	Parent=AX25_11535;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase

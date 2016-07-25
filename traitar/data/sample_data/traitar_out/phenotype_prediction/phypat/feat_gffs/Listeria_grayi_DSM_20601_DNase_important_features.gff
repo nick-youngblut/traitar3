@@ -1,13 +1,7 @@
 ##gff-version 3
-accn|NZ_GG692933	HMMER	phypat+PGL	166272	167082	1.1999999999999999e-11	+	.	Parent=HMPREF0556_0247;Name=PF01443;Note=Viral_helicase1;Description=Viral (Superfamily 1) RNA helicase
-accn|NZ_GG692933	HMMER	phypat+PGL	470172	470409	2.6e-13	+	.	Parent=HMPREF0556_0559;Name=PF02030;Note=Lipoprotein_8;Description=Hypothetical lipoprotein (MG045 family)
-accn|NZ_GG692933	HMMER	phypat+PGL	771432	772146	2.4e-31	-	.	Parent=HMPREF0556_0869;Name=PF03372;Note=Exo_endo_phos;Description=Endonuclease/Exonuclease/phosphatase family
-accn|NZ_GG692932	HMMER	phypat+PGL	180501	180711	2.6000000000000003e-10	+	.	Parent=HMPREF0556_1054;Name=PF02450;Note=LCAT;Description=Lecithin:cholesterol acyltransferase
-accn|NZ_GG692932	HMMER	phypat+PGL	339558	339954	3.3999999999999999e-11	+	.	Parent=HMPREF0556_1238;Name=PF05569;Note=Peptidase_M56;Description=BlaR1 peptidase M56
-accn|NZ_GG692932	HMMER	phypat+PGL	499726	499966	6.7999999999999993e-12	+	.	Parent=HMPREF0556_1397;Name=PF14595;Note=Thioredoxin_9;Description=Thioredoxin
-accn|NZ_GG692932	HMMER	phypat+PGL	633392	633701	4.5999999999999996e-11	+	.	Parent=HMPREF0556_1527;Name=PF02958;Note=EcKinase;Description=Ecdysteroid kinase
-accn|NZ_GG692932	HMMER	phypat+PGL	637587	637809	3.7000000000000001e-11	+	.	Parent=HMPREF0556_1534;Name=PF14595;Note=Thioredoxin_9;Description=Thioredoxin
-accn|NZ_GG692932	HMMER	phypat+PGL	662055	662640	8.3999999999999991e-70	+	.	Parent=HMPREF0556_1556;Name=PF02568;Note=ThiI;Description=Thiamine biosynthesis protein (ThiI)
-accn|NZ_GG692932	HMMER	phypat+PGL	1015057	1015315	4.7999999999999996e-11	-	.	Parent=HMPREF0556_1902;Name=PF03096;Note=Ndr;Description=Ndr family
-accn|NZ_GG692934	HMMER	phypat+PGL	10499	11108	2.2000000000000001e-14	+	.	Parent=HMPREF0556_2255;Name=PF03372;Note=Exo_endo_phos;Description=Endonuclease/Exonuclease/phosphatase family
-accn|NZ_GG692934	HMMER	phypat+PGL	264927	265224	1.3999999999999998e-10	+	.	Parent=HMPREF0556_2524;Name=PF05971;Note=Methyltransf_10;Description=Protein of unknown function (DUF890)
+accn|NZ_GG692932	HMMER	phypat	55503	55746	6.3000000000000004e-18	+	.	Parent=HMPREF0556_0929;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692932	HMMER	phypat	535749	535989	3.4999999999999997e-13	-	.	Parent=HMPREF0556_1437;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692932	HMMER	phypat	633125	633665	1.3e-15	+	.	Parent=HMPREF0556_1527;Name=PF01633;Note=Choline_kinase;Description=Choline/ethanolamine kinase
+accn|NZ_GG692932	HMMER	phypat	910609	910852	8.9000000000000008e-19	-	.	Parent=HMPREF0556_1790;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692935	HMMER	phypat	75325	75565	1.6999999999999999e-19	+	.	Parent=HMPREF0556_2069;Name=PF02588;Note=DUF161;Description=Uncharacterized BCR, YitT family COG1284
+accn|NZ_GG692935	HMMER	phypat	169006	169681	5.4000000000000002e-94	+	.	Parent=HMPREF0556_2156;Name=PF06415;Note=iPGM_N;Description=BPG-independent PGAM N-terminus (iPGM_N)

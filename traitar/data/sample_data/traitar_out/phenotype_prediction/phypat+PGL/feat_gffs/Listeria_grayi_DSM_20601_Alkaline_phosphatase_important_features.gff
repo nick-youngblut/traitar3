@@ -1,0 +1,18 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	67301	67514	9.9999999999999998e-17	+	.	Parent=HMPREF0556_0159;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692933	HMMER	phypat+PGL	269290	269737	3.2e-51	+	.	Parent=HMPREF0556_0356;Name=PF01262;Note=AlaDh_PNT_C;Description=Alanine dehydrogenase/PNT, C-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	335050	335260	6.8000000000000001e-14	+	.	Parent=HMPREF0556_0417;Name=PF08211;Note=dCMP_cyt_deam_2;Description=Cytidine and deoxycytidylate deaminase zinc-binding region
+accn|NZ_GG692933	HMMER	phypat+PGL	424146	424353	4.9000000000000003e-13	-	.	Parent=HMPREF0556_0514;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692932	HMMER	phypat+PGL	190014	190161	6.2000000000000003e-10	+	.	Parent=HMPREF0556_1066;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692932	HMMER	phypat+PGL	325954	326359	7.200000000000001e-10	-	.	Parent=HMPREF0556_1221;Name=PF07819;Note=PGAP1;Description=PGAP1-like protein
+accn|NZ_GG692932	HMMER	phypat+PGL	353497	353719	3.3e-15	+	.	Parent=HMPREF0556_1254;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692932	HMMER	phypat+PGL	364462	364666	8.6999999999999997e-11	+	.	Parent=HMPREF0556_1263;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692932	HMMER	phypat+PGL	499741	499912	1.4999999999999999e-13	+	.	Parent=HMPREF0556_1397;Name=PF13905;Note=Thioredoxin_8;Description=Thioredoxin-like
+accn|NZ_GG692932	HMMER	phypat+PGL	581249	581399	7.5999999999999996e-10	+	.	Parent=HMPREF0556_1483;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692932	HMMER	phypat+PGL	799555	799861	1e-10	+	.	Parent=HMPREF0556_1687;Name=PF03848;Note=TehB;Description=Tellurite resistance protein TehB
+accn|NZ_GG692932	HMMER	phypat+PGL	985368	985827	5.0999999999999997e-30	+	.	Parent=HMPREF0556_1869;Name=PF02872;Note=5_nucleotid_C;Description=5'-nucleotidase, C-terminal domain
+accn|NZ_GG692937	HMMER	phypat+PGL	5726	5999	3.4000000000000002e-13	-	.	Parent=HMPREF0556_1916;Name=PF12846;Note=AAA_10;Description=AAA-like domain
+accn|NZ_GG692937	HMMER	phypat+PGL	32369	33386	1.0999999999999999e-53	-	.	Parent=HMPREF0556_1951;Name=PF12846;Note=AAA_10;Description=AAA-like domain
+accn|NZ_GG692935	HMMER	phypat+PGL	233709	234093	6.3999999999999992e-14	+	.	Parent=HMPREF0556_2208;Name=PF02872;Note=5_nucleotid_C;Description=5'-nucleotidase, C-terminal domain
+accn|NZ_GG692934	HMMER	phypat+PGL	217206	217425	1.4999999999999998e-24	+	.	Parent=HMPREF0556_2471;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain
+accn|NZ_GG692934	HMMER	phypat+PGL	260597	260810	1.5e-16	+	.	Parent=HMPREF0556_2518;Name=PF13545;Note=HTH_Crp_2;Description=Crp-like helix-turn-helix domain

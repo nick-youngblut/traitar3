@@ -1,50 +1,9 @@
 ##gff-version 3
-accn|NZ_GG692936	HMMER	phypat+PGL	10543	10681	1.2e-20	+	.	Parent=HMPREF0556_0012;Name=PF08338;Note=DUF1731;Description=Domain of unknown function (DUF1731)
-accn|NZ_GG692936	HMMER	phypat+PGL	22805	23015	5.2999999999999999e-28	+	.	Parent=HMPREF0556_0026;Name=PF06569;Note=DUF1128;Description=Protein of unknown function (DUF1128)
-accn|NZ_GG692936	HMMER	phypat+PGL	37208	37565	5.7999999999999993e-46	-	.	Parent=HMPREF0556_0041;Name=PF02803;Note=Thiolase_C;Description=Thiolase, C-terminal domain
-accn|NZ_GG692936	HMMER	phypat+PGL	36419	37178	4.2999999999999993e-95	-	.	Parent=HMPREF0556_0041;Name=PF00108;Note=Thiolase_N;Description=Thiolase, N-terminal domain
-accn|NZ_GG692936	HMMER	phypat+PGL	54764	55613	3.7999999999999992e-119	-	.	Parent=HMPREF0556_0052;Name=PF04898;Note=Glu_syn_central;Description=Glutamate synthase central domain
-accn|NZ_GG692936	HMMER	phypat+PGL	55793	56171	1.5999999999999999e-37	-	.	Parent=HMPREF0556_0052;Name=PF01645;Note=Glu_synthase;Description=Conserved region in glutamate synthase
-accn|NZ_GG692936	HMMER	phypat+PGL	65063	65243	6.4000000000000006e-19	-	.	Parent=HMPREF0556_0065;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	141093	141288	1.3000000000000001e-12	-	.	Parent=HMPREF0556_0228;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	174489	174840	4.6999999999999999e-40	+	.	Parent=HMPREF0556_0255;Name=PF02803;Note=Thiolase_C;Description=Thiolase, C-terminal domain
-accn|NZ_GG692933	HMMER	phypat+PGL	173712	174450	4.8999999999999989e-71	+	.	Parent=HMPREF0556_0255;Name=PF00108;Note=Thiolase_N;Description=Thiolase, N-terminal domain
-accn|NZ_GG692933	HMMER	phypat+PGL	229897	230089	3.1e-14	+	.	Parent=HMPREF0556_0314;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	284834	285116	2.2e-13	+	.	Parent=HMPREF0556_0369;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	287951	288116	2.2000000000000002e-10	+	.	Parent=HMPREF0556_0371;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	289192	289480	8.9000000000000013e-12	+	.	Parent=HMPREF0556_0372;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	290438	290606	2.3999999999999999e-13	+	.	Parent=HMPREF0556_0373;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	445325	445514	1.3e-14	+	.	Parent=HMPREF0556_0530;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692933	HMMER	phypat+PGL	448816	448990	3.8000000000000001e-09	-	.	Parent=HMPREF0556_0535;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692933	HMMER	phypat+PGL	454293	454800	5.0999999999999995e-53	-	.	Parent=HMPREF0556_0543;Name=PF04264;Note=YceI;Description=YceI-like domain
-accn|NZ_GG692933	HMMER	phypat+PGL	464878	465154	6.7000000000000005e-21	+	.	Parent=HMPREF0556_0552;Name=PF13806;Note=Rieske_2;Description=Rieske-like [2Fe-2S] domain
-accn|NZ_GG692933	HMMER	phypat+PGL	470223	470949	8.0000000000000006e-17	+	.	Parent=HMPREF0556_0559;Name=PF13531;Note=SBP_bac_11;Description=Bacterial extracellular solute-binding protein
-accn|NZ_GG692933	HMMER	phypat+PGL	470328	471054	4.5999999999999997e-33	+	.	Parent=HMPREF0556_0559;Name=PF13343;Note=SBP_bac_6;Description=Bacterial extracellular solute-binding protein
-accn|NZ_GG692933	HMMER	phypat+PGL	511717	512557	6.9000000000000001e-61	-	.	Parent=HMPREF0556_0605;Name=PF02628;Note=COX15-CtaA;Description=Cytochrome oxidase assembly protein
-accn|NZ_GG692933	HMMER	phypat+PGL	695529	695727	2.1000000000000002e-20	+	.	Parent=HMPREF0556_0799;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692933	HMMER	phypat+PGL	759669	759798	6.0999999999999996e-10	+	.	Parent=HMPREF0556_0857;Name=PF13727;Note=CoA_binding_3;Description=CoA-binding domain
-accn|NZ_GG692932	HMMER	phypat+PGL	22876	23119	6.4e-13	-	.	Parent=HMPREF0556_0902;Name=PF08447;Note=PAS_3;Description=PAS fold
-accn|NZ_GG692932	HMMER	phypat+PGL	93585	94488	1.2999999999999998e-78	+	.	Parent=HMPREF0556_0970;Name=PF00762;Note=Ferrochelatase;Description=Ferrochelatase
-accn|NZ_GG692932	HMMER	phypat+PGL	101776	102118	1.4000000000000001e-09	+	.	Parent=HMPREF0556_0978;Name=PF00108;Note=Thiolase_N;Description=Thiolase, N-terminal domain
-accn|NZ_GG692932	HMMER	phypat+PGL	113466	113790	1.0999999999999999e-44	+	.	Parent=HMPREF0556_0989;Name=PF03960;Note=ArsC;Description=ArsC family
-accn|NZ_GG692932	HMMER	phypat+PGL	184824	185085	6.1999999999999996e-34	+	.	Parent=HMPREF0556_1060;Name=PF04241;Note=DUF423;Description=Protein of unknown function (DUF423)
-accn|NZ_GG692932	HMMER	phypat+PGL	329981	330137	1.8000000000000002e-13	+	.	Parent=HMPREF0556_1227;Name=PF13594;Note=Amidohydro_5;Description=Amidohydrolase
-accn|NZ_GG692932	HMMER	phypat+PGL	419739	420426	3.4999999999999993e-91	+	.	Parent=HMPREF0556_1320;Name=PF00198;Note=2-oxoacid_dh;Description=2-oxoacid dehydrogenases acyltransferase (catalytic domain)
-accn|NZ_GG692932	HMMER	phypat+PGL	452147	452462	3.2000000000000001e-12	+	.	Parent=HMPREF0556_1350;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692932	HMMER	phypat+PGL	513591	514116	3.3000000000000001e-22	+	.	Parent=HMPREF0556_1413;Name=PF13727;Note=CoA_binding_3;Description=CoA-binding domain
-accn|NZ_GG692932	HMMER	phypat+PGL	610776	611172	1.3999999999999999e-30	+	.	Parent=HMPREF0556_1505;Name=PF04715;Note=Anth_synt_I_N;Description=Anthranilate synthase component I, N terminal region
-accn|NZ_GG692932	HMMER	phypat+PGL	695730	696774	2.0999999999999994e-135	+	.	Parent=HMPREF0556_1587;Name=PF00285;Note=Citrate_synt;Description=Citrate synthase
-accn|NZ_GG692932	HMMER	phypat+PGL	879415	880066	5.7999999999999994e-11	-	.	Parent=HMPREF0556_1766;Name=PF13347;Note=MFS_2;Description=MFS/sugar transport protein
-accn|NZ_GG692932	HMMER	phypat+PGL	921959	922634	1.1e-83	-	.	Parent=HMPREF0556_1802;Name=PF00198;Note=2-oxoacid_dh;Description=2-oxoacid dehydrogenases acyltransferase (catalytic domain)
-accn|NZ_GG692935	HMMER	phypat+PGL	3331	3649	6.3999999999999995e-38	+	.	Parent=HMPREF0556_1995;Name=PF14748;Note=P5CR_dimer;Description=Pyrroline-5-carboxylate reductase dimerisation
-accn|NZ_GG692935	HMMER	phypat+PGL	6004	6178	6.8999999999999994e-11	+	.	Parent=HMPREF0556_1999;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692935	HMMER	phypat+PGL	65854	66019	7.0000000000000008e-24	-	.	Parent=HMPREF0556_2060;Name=PF09186;Note=DUF1949;Description=Domain of unknown function (DUF1949)
-accn|NZ_GG692935	HMMER	phypat+PGL	88964	89645	2.6000000000000003e-10	+	.	Parent=HMPREF0556_2081;Name=PF13531;Note=SBP_bac_11;Description=Bacterial extracellular solute-binding protein
-accn|NZ_GG692935	HMMER	phypat+PGL	199661	199985	6.8000000000000001e-34	+	.	Parent=HMPREF0556_2180;Name=PF03960;Note=ArsC;Description=ArsC family
-accn|NZ_GG692934	HMMER	phypat+PGL	655	970	9.7e-37	-	.	Parent=HMPREF0556_2243;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692934	HMMER	phypat+PGL	1679	1994	8.8e-39	-	.	Parent=HMPREF0556_2244;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692934	HMMER	phypat+PGL	116119	116431	1.8999999999999999e-18	-	.	Parent=HMPREF0556_2375;Name=PF07943;Note=PBP5_C;Description=Penicillin-binding protein 5, C-terminal domain
-accn|NZ_GG692934	HMMER	phypat+PGL	137926	139069	1.9999999999999993e-176	-	.	Parent=HMPREF0556_2392;Name=PF00199;Note=Catalase;Description=Catalase
-accn|NZ_GG692934	HMMER	phypat+PGL	139141	139333	3.4000000000000004e-17	-	.	Parent=HMPREF0556_2392;Name=PF06628;Note=Catalase-rel;Description=Catalase-related immune-responsive
-accn|NZ_GG692934	HMMER	phypat+PGL	279914	280295	4.7999999999999997e-30	-	.	Parent=HMPREF0556_2543;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
-accn|NZ_GG692934	HMMER	phypat+PGL	312658	313243	4.9999999999999999e-13	-	.	Parent=HMPREF0556_2575;Name=PF02230;Note=Abhydrolase_2;Description=Phospholipase/Carboxylesterase
+accn|NZ_GG692936	HMMER	phypat	37208	37565	5.7999999999999993e-46	-	.	Parent=HMPREF0556_0041;Name=PF02803;Note=Thiolase_C;Description=Thiolase, C-terminal domain
+accn|NZ_GG692933	HMMER	phypat	174489	174840	4.6999999999999999e-40	+	.	Parent=HMPREF0556_0255;Name=PF02803;Note=Thiolase_C;Description=Thiolase, C-terminal domain
+accn|NZ_GG692933	HMMER	phypat	454293	454800	5.0999999999999995e-53	-	.	Parent=HMPREF0556_0543;Name=PF04264;Note=YceI;Description=YceI-like domain
+accn|NZ_GG692933	HMMER	phypat	505800	506088	1.2e-29	+	.	Parent=HMPREF0556_0601;Name=PF04234;Note=CopC;Description=CopC domain
+accn|NZ_GG692933	HMMER	phypat	511717	512557	6.9000000000000001e-61	-	.	Parent=HMPREF0556_0605;Name=PF02628;Note=COX15-CtaA;Description=Cytochrome oxidase assembly protein
+accn|NZ_GG692932	HMMER	phypat	92529	93537	3.3999999999999997e-113	+	.	Parent=HMPREF0556_0969;Name=PF01208;Note=URO-D;Description=Uroporphyrinogen decarboxylase (URO-D)
+accn|NZ_GG692932	HMMER	phypat	184824	185085	6.1999999999999996e-34	+	.	Parent=HMPREF0556_1060;Name=PF04241;Note=DUF423;Description=Protein of unknown function (DUF423)
+accn|NZ_GG692934	HMMER	phypat	137926	139069	1.9999999999999993e-176	-	.	Parent=HMPREF0556_2392;Name=PF00199;Note=Catalase;Description=Catalase

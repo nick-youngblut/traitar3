@@ -1,0 +1,13 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	361353	361782	8.9999999999999997e-54	+	.	Parent=HMPREF0556_0445;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain
+accn|NZ_GG692933	HMMER	phypat+PGL	419983	420397	6.2000000000000008e-26	+	.	Parent=HMPREF0556_0510;Name=PF04203;Note=Sortase;Description=Sortase family
+accn|NZ_GG692933	HMMER	phypat+PGL	536286	536502	9.9999999999999993e-35	+	.	Parent=HMPREF0556_0632;Name=PF04472;Note=DUF552;Description=Protein of unknown function (DUF552)
+accn|NZ_GG692932	HMMER	phypat+PGL	312906	313266	6.1000000000000005e-30	+	.	Parent=HMPREF0556_1204;Name=PF04203;Note=Sortase;Description=Sortase family
+accn|NZ_GG692932	HMMER	phypat+PGL	334583	335018	2.2000000000000001e-48	-	.	Parent=HMPREF0556_1233;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain
+accn|NZ_GG692932	HMMER	phypat+PGL	574022	574268	4.0999999999999998e-37	+	.	Parent=HMPREF0556_1475;Name=PF03951;Note=Gln-synt_N;Description=Glutamine synthetase, beta-Grasp domain
+accn|NZ_GG692932	HMMER	phypat+PGL	968838	969066	2.9999999999999998e-18	-	.	Parent=HMPREF0556_1857;Name=PF14480;Note=DNA_pol3_a_NI;Description=DNA polymerase III polC-type N-terminus I
+accn|NZ_GG692935	HMMER	phypat+PGL	63871	64327	4.5000000000000002e-49	-	.	Parent=HMPREF0556_2058;Name=PF03816;Note=LytR_cpsA_psr;Description=Cell envelope-related transcriptional attenuator domain
+accn|NZ_GG692935	HMMER	phypat+PGL	140111	140366	3.3999999999999998e-40	+	.	Parent=HMPREF0556_2129;Name=PF02650;Note=HTH_WhiA;Description=WhiA C-terminal HTH domain
+accn|NZ_GG692935	HMMER	phypat+PGL	139826	140102	3.1e-41	+	.	Parent=HMPREF0556_2129;Name=PF14527;Note=LAGLIDADG_WhiA;Description=WhiA LAGLIDADG-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	76140	76464	5.1999999999999995e-54	-	.	Parent=HMPREF0556_2334;Name=PF06153;Note=DUF970;Description=Protein of unknown function (DUF970)
+accn|NZ_GG692934	HMMER	phypat+PGL	307439	307664	3.3999999999999997e-38	+	.	Parent=HMPREF0556_2569;Name=PF06257;Note=DUF1021;Description=Protein of unknown function (DUF1021)

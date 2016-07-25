@@ -1,0 +1,17 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	417260	417575	3.6e-46	-	.	Parent=AX25_02010;Name=PF14748;Note=P5CR_dimer;Description=Pyrroline-5-carboxylate reductase dimerisation
+accn|CP007172	HMMER	phypat+PGL	596879	597293	1.6999999999999999e-19	+	.	Parent=AX25_02890;Name=PF02230;Note=Abhydrolase_2;Description=Phospholipase/Carboxylesterase
+accn|CP007172	HMMER	phypat+PGL	790095	790668	5.7000000000000003e-11	+	.	Parent=AX25_03850;Name=PF02230;Note=Abhydrolase_2;Description=Phospholipase/Carboxylesterase
+accn|CP007172	HMMER	phypat+PGL	822340	822847	1.6e-52	-	.	Parent=AX25_04005;Name=PF04264;Note=YceI;Description=YceI-like domain
+accn|CP007172	HMMER	phypat+PGL	1097013	1097700	3.6999999999999997e-90	+	.	Parent=AX25_05400;Name=PF00198;Note=2-oxoacid_dh;Description=2-oxoacid dehydrogenases acyltransferase (catalytic domain)
+accn|CP007172	HMMER	phypat+PGL	1425108	1425777	9.4999999999999985e-82	+	.	Parent=AX25_07105;Name=PF00198;Note=2-oxoacid_dh;Description=2-oxoacid dehydrogenases acyltransferase (catalytic domain)
+accn|CP007172	HMMER	phypat+PGL	1439514	1439817	7.1e-16	-	.	Parent=AX25_07175;Name=PF14748;Note=P5CR_dimer;Description=Pyrroline-5-carboxylate reductase dimerisation
+accn|CP007172	HMMER	phypat+PGL	1811759	1811900	1.3000000000000002e-18	+	.	Parent=AX25_09005;Name=PF08338;Note=DUF1731;Description=Domain of unknown function (DUF1731)
+accn|CP007172	HMMER	phypat+PGL	1856790	1857639	2.599999999999999e-112	-	.	Parent=AX25_09205;Name=PF04898;Note=Glu_syn_central;Description=Glutamate synthase central domain
+accn|CP007172	HMMER	phypat+PGL	1857819	1858923	5.399999999999998e-159	-	.	Parent=AX25_09205;Name=PF01645;Note=Glu_synthase;Description=Conserved region in glutamate synthase
+accn|CP007172	HMMER	phypat+PGL	2200814	2201657	1.0999999999999998e-63	+	.	Parent=AX25_10870;Name=PF02628;Note=COX15-CtaA;Description=Cytochrome oxidase assembly protein
+accn|CP007172	HMMER	phypat+PGL	2315547	2316195	2.2999999999999999e-52	-	.	Parent=AX25_11490;Name=PF06283;Note=ThuA;Description=Trehalose utilisation
+accn|CP007172	HMMER	phypat+PGL	2355151	2355475	5.999999999999999e-45	-	.	Parent=AX25_11635;Name=PF03960;Note=ArsC;Description=ArsC family
+accn|CP007172	HMMER	phypat+PGL	2517718	2518045	9.1000000000000004e-35	-	.	Parent=AX25_12500;Name=PF03960;Note=ArsC;Description=ArsC family
+accn|CP007172	HMMER	phypat+PGL	2915692	2915986	7.0999999999999982e-45	-	.	Parent=AX25_14595;Name=PF00199;Note=Catalase;Description=Catalase
+accn|CP007172	HMMER	phypat+PGL	2916125	2916515	2.5000000000000001e-60	-	.	Parent=AX25_14600;Name=PF00199;Note=Catalase;Description=Catalase

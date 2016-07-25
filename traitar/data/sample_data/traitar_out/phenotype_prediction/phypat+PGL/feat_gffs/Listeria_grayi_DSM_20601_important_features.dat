@@ -1,0 +1,490 @@
+Phenotype	gene_id	acc	description	cor
+Acetate utilization	HMPREF0556_0273	PF06779	Protein of unknown function (DUF1228)	0.597
+Acetate utilization	HMPREF0556_2438	PF02274	Amidinotransferase	0.574
+Acetate utilization	HMPREF0556_0335	PF02517	CAAX protease self-immunity	0.309
+Acetate utilization	HMPREF0556_0581	PF02517	CAAX protease self-immunity	0.309
+Acetate utilization	HMPREF0556_1276	PF02517	CAAX protease self-immunity	0.309
+Alkaline phosphatase	HMPREF0556_1869	PF02872	5'-nucleotidase, C-terminal domain	0.589
+Alkaline phosphatase	HMPREF0556_2208	PF02872	5'-nucleotidase, C-terminal domain	0.589
+Alkaline phosphatase	HMPREF0556_1397	PF13905	Thioredoxin-like	0.35
+Alkaline phosphatase	HMPREF0556_0417	PF08211	Cytidine and deoxycytidylate deaminase zinc-binding region	0.3
+Alkaline phosphatase	HMPREF0556_1221	PF07819	PGAP1-like protein	0.289
+Alkaline phosphatase	HMPREF0556_0159	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_0514	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_1066	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_1254	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_1263	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_1483	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_2471	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_2518	PF13545	Crp-like helix-turn-helix domain	0.256
+Alkaline phosphatase	HMPREF0556_1916	PF12846	AAA-like domain	0.213
+Alkaline phosphatase	HMPREF0556_1951	PF12846	AAA-like domain	0.213
+Alkaline phosphatase	HMPREF0556_0356	PF01262	Alanine dehydrogenase/PNT, C-terminal domain	0.192
+Alkaline phosphatase	HMPREF0556_1687	PF03848	Tellurite resistance protein TehB	0.18899999999999997
+Catalase	HMPREF0556_2392	PF00199	Catalase	0.885
+Catalase	HMPREF0556_0543	PF04264	YceI-like domain	0.769
+Catalase	HMPREF0556_0552	PF13806	Rieske-like [2Fe-2S] domain	0.6659999999999999
+Catalase	HMPREF0556_0012	PF08338	Domain of unknown function (DUF1731)	0.6459999999999999
+Catalase	HMPREF0556_0605	PF02628	Cytochrome oxidase assembly protein	0.609
+Catalase	HMPREF0556_0052	PF04898	Glutamate synthase central domain	0.575
+Catalase	HMPREF0556_1320	PF00198	2-oxoacid dehydrogenases acyltransferase (catalytic domain)	0.516
+Catalase	HMPREF0556_1802	PF00198	2-oxoacid dehydrogenases acyltransferase (catalytic domain)	0.516
+Catalase	HMPREF0556_0052	PF01645	Conserved region in glutamate synthase	0.45799999999999996
+Catalase	HMPREF0556_2575	PF02230	Phospholipase/Carboxylesterase	0.447
+Catalase	HMPREF0556_1995	PF14748	Pyrroline-5-carboxylate reductase dimerisation	0.381
+Catalase	HMPREF0556_0989	PF03960	ArsC family	0.252
+Catalase	HMPREF0556_2180	PF03960	ArsC family	0.252
+Citrate	HMPREF0556_0248	PF00135	Carboxylesterase family	0.45799999999999996
+Citrate	HMPREF0556_0278	PF00135	Carboxylesterase family	0.45799999999999996
+Citrate	HMPREF0556_0492	PF00135	Carboxylesterase family	0.45799999999999996
+Citrate	HMPREF0556_0566	PF00135	Carboxylesterase family	0.45799999999999996
+Citrate	HMPREF0556_0895	PF11975	Family 4 glycosyl hydrolase C-terminal domain	0.42700000000000005
+Citrate	HMPREF0556_0900	PF11975	Family 4 glycosyl hydrolase C-terminal domain	0.42700000000000005
+Citrate	HMPREF0556_2575	PF02230	Phospholipase/Carboxylesterase	0.40299999999999997
+Citrate	HMPREF0556_1583	PF06833	Malonate decarboxylase gamma subunit (MdcE)	0.369
+Citrate	HMPREF0556_0635	PF02829	3H domain	0.297
+Citrate	HMPREF0556_0294	PF02746	Mandelate racemase / muconate lactonizing enzyme, N-terminal domain	0.276
+Citrate	HMPREF0556_2056	PF02746	Mandelate racemase / muconate lactonizing enzyme, N-terminal domain	0.276
+Citrate	HMPREF0556_0090	PF10397	Adenylosuccinate lyase C-terminus	0.204
+Citrate	HMPREF0556_2217	PF13434	L-lysine 6-monooxygenase (NADPH-requiring)	0.193
+Coagulase production	HMPREF0556_0912	PF03051	Peptidase C1-like family	0.588
+Coagulase production	HMPREF0556_0964	PF12732	YtxH-like protein	0.5489999999999999
+Coagulase production	HMPREF0556_1541	PF12732	YtxH-like protein	0.5489999999999999
+Coagulase production	HMPREF0556_2227	PF13244	Domain of unknown function (DUF4040)	0.29100000000000004
+Coagulase production	HMPREF0556_1843	PF13014	KH domain	0.262
+Coagulase production	HMPREF0556_1402	PF01138	3' exoribonuclease family, domain 1	0.16699999999999998
+Coagulase production	HMPREF0556_1402	PF03725	3' exoribonuclease family, domain 2	0.16699999999999998
+Coagulase production	HMPREF0556_1843	PF03726	Polyribonucleotide nucleotidyltransferase, RNA binding domain	0.16699999999999998
+Coagulase production	HMPREF0556_1843	PF01138	3' exoribonuclease family, domain 1	0.16699999999999998
+Coagulase production	HMPREF0556_1843	PF03725	3' exoribonuclease family, domain 2	0.16699999999999998
+D-Mannitol	HMPREF0556_2493	PF01232	Mannitol dehydrogenase Rossmann domain	0.711
+D-Mannose	HMPREF0556_0207	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_0295	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_0319	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_1014	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_1878	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_2303	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_2432	PF00367	phosphotransferase system, EIIB	0.5539999999999999
+D-Mannose	HMPREF0556_2145	PF03611	PTS system sugar-specific permease component	0.515
+D-Mannose	HMPREF0556_2245	PF03611	PTS system sugar-specific permease component	0.515
+D-Mannose	HMPREF0556_0675	PF11798	IMS family HHH motif	0.49700000000000005
+D-Mannose	HMPREF0556_0758	PF11798	IMS family HHH motif	0.49700000000000005
+D-Mannose	HMPREF0556_1987	PF11798	IMS family HHH motif	0.49700000000000005
+D-Mannose	HMPREF0556_1129	PF01238	Phosphomannose isomerase type I	0.496
+D-Mannose	HMPREF0556_0152	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_0156	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_0164	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_0197	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_0361	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_0494	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_1751	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_2382	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_2430	PF00232	Glycosyl hydrolase family 1	0.48700000000000004
+D-Mannose	HMPREF0556_0135	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0191	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0195	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0207	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0291	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0295	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0299	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0319	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0362	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0385	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0400	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0890	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0891	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0920	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_1014	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_1878	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2303	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2322	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2350	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2383	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2432	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2490	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_2535	PF02378	Phosphotransferase system, EIIC	0.45299999999999996
+D-Mannose	HMPREF0556_0045	PF14310	Fibronectin type III-like domain	0.439
+D-Mannose	HMPREF0556_0399	PF14310	Fibronectin type III-like domain	0.439
+D-Mannose	HMPREF0556_0168	PF13597	Anaerobic ribonucleoside-triphosphate reductase	0.34299999999999997
+D-Mannose	HMPREF0556_0248	PF00135	Carboxylesterase family	0.318
+D-Mannose	HMPREF0556_0278	PF00135	Carboxylesterase family	0.318
+D-Mannose	HMPREF0556_0492	PF00135	Carboxylesterase family	0.318
+D-Mannose	HMPREF0556_0566	PF00135	Carboxylesterase family	0.318
+D-Mannose	HMPREF0556_0904	PF09863	Uncharacterized protein conserved in bacteria (DUF2090)	0.305
+D-Mannose	HMPREF0556_2433	PF02805	Metal binding domain of Ada	0.282
+D-Mannose	HMPREF0556_0197	PF00150	Cellulase (glycosyl hydrolase family 5)	0.275
+D-Mannose	HMPREF0556_2141	PF00150	Cellulase (glycosyl hydrolase family 5)	0.275
+D-Mannose	HMPREF0556_0826	PF07005	Protein of unknown function, DUF1537	0.248
+D-Mannose	HMPREF0556_1205	PF13483	Beta-lactamase superfamily domain	0.245
+D-Mannose	HMPREF0556_1578	PF13483	Beta-lactamase superfamily domain	0.245
+D-Mannose	HMPREF0556_1024	PF02698	DUF218 domain	0.228
+D-Mannose	HMPREF0556_1284	PF02698	DUF218 domain	0.228
+D-Mannose	HMPREF0556_0992	PF01432	Peptidase family M3	0.213
+D-Mannose	HMPREF0556_1679	PF01432	Peptidase family M3	0.213
+D-Mannose	HMPREF0556_0857	PF13727	CoA-binding domain	0.156
+D-Mannose	HMPREF0556_1413	PF13727	CoA-binding domain	0.156
+D-Mannose	HMPREF0556_2486	PF14542	GCN5-related N-acetyl-transferase	0.151
+D-Mannose	HMPREF0556_1916	PF12846	AAA-like domain	0.11199999999999999
+D-Mannose	HMPREF0556_1951	PF12846	AAA-like domain	0.11199999999999999
+D-Mannose	HMPREF0556_1203	PF02245	Methylpurine-DNA glycosylase (MPG)	0.043
+DNase	HMPREF0556_1556	PF02568	Thiamine biosynthesis protein (ThiI)	0.20800000000000002
+Esculin hydrolysis	HMPREF0556_2098	PF13345	Domain of unknown function (DUF4098)	0.5539999999999999
+Esculin hydrolysis	HMPREF0556_2099	PF13345	Domain of unknown function (DUF4098)	0.5539999999999999
+Esculin hydrolysis	HMPREF0556_2102	PF02065	Melibiase	0.49
+Esculin hydrolysis	HMPREF0556_2103	PF02065	Melibiase	0.49
+Esculin hydrolysis	HMPREF0556_0236	PF02903	Alpha amylase, N-terminal ig-like domain	0.439
+Esculin hydrolysis	HMPREF0556_0655	PF03306	Alpha-acetolactate decarboxylase	0.439
+Esculin hydrolysis	HMPREF0556_1362	PF08713	DNA alkylation repair enzyme	0.426
+Esculin hydrolysis	HMPREF0556_1305	PF03932	CutC family	0.387
+Esculin hydrolysis	HMPREF0556_0045	PF14310	Fibronectin type III-like domain	0.38299999999999995
+Esculin hydrolysis	HMPREF0556_0399	PF14310	Fibronectin type III-like domain	0.38299999999999995
+Esculin hydrolysis	HMPREF0556_1336	PF14501	GHKL domain	0.37200000000000005
+Esculin hydrolysis	HMPREF0556_2185	PF14501	GHKL domain	0.37200000000000005
+Esculin hydrolysis	HMPREF0556_2445	PF14501	GHKL domain	0.37200000000000005
+Esculin hydrolysis	HMPREF0556_1707	PF10662	Ethanolamine utilisation - propanediol utilisation	0.298
+Esculin hydrolysis	HMPREF0556_2318	PF00722	Glycosyl hydrolases family 16	0.285
+Esculin hydrolysis	HMPREF0556_2009	PF01361	Tautomerase enzyme	0.27399999999999997
+Esculin hydrolysis	HMPREF0556_0500	PF06347	Bacterial SH3 domain	0.27
+Esculin hydrolysis	HMPREF0556_1637	PF06347	Bacterial SH3 domain	0.27
+Esculin hydrolysis	HMPREF0556_0530	PF13602	Zinc-binding dehydrogenase	0.22
+Esculin hydrolysis	HMPREF0556_1999	PF13602	Zinc-binding dehydrogenase	0.22
+Esculin hydrolysis	HMPREF0556_2243	PF13602	Zinc-binding dehydrogenase	0.22
+Esculin hydrolysis	HMPREF0556_2244	PF13602	Zinc-binding dehydrogenase	0.22
+Esculin hydrolysis	HMPREF0556_0687	PF02784	Pyridoxal-dependent decarboxylase, pyridoxal binding domain	0.16
+Esculin hydrolysis	HMPREF0556_1656	PF04371	Porphyromonas-type peptidyl-arginine deiminase	0.157
+Esculin hydrolysis	HMPREF0556_0687	PF00278	Pyridoxal-dependent decarboxylase, C-terminal sheet domain	0.147
+Esculin hydrolysis	HMPREF0556_1082	PF13704	Glycosyl transferase family 2	0.147
+Esculin hydrolysis	HMPREF0556_1955	PF02534	Type IV secretory system Conjugative DNA transfer	0.115
+Esculin hydrolysis	HMPREF0556_0638	PF01678	Diaminopimelate epimerase	0.10800000000000001
+Esculin hydrolysis	HMPREF0556_2150	PF01244	Membrane dipeptidase (Peptidase family M19)	0.098
+Esculin hydrolysis	HMPREF0556_0511	PF00561	alpha/beta hydrolase fold	0.05
+Esculin hydrolysis	HMPREF0556_1054	PF00561	alpha/beta hydrolase fold	0.05
+Esculin hydrolysis	HMPREF0556_1163	PF00561	alpha/beta hydrolase fold	0.05
+Esculin hydrolysis	HMPREF0556_1902	PF00561	alpha/beta hydrolase fold	0.05
+Esculin hydrolysis	HMPREF0556_2463	PF00561	alpha/beta hydrolase fold	0.05
+Esculin hydrolysis	HMPREF0556_0663	PF00670	S-adenosyl-L-homocysteine hydrolase, NAD binding domain	-0.015
+Facultative	HMPREF0556_0559	PF02030	Hypothetical lipoprotein (MG045 family)	0.5870000000000001
+Facultative	HMPREF0556_0325	PF03123	CAT RNA binding domain	0.48200000000000004
+Facultative	HMPREF0556_1013	PF03123	CAT RNA binding domain	0.48200000000000004
+Facultative	HMPREF0556_2172	PF03123	CAT RNA binding domain	0.48200000000000004
+Facultative	HMPREF0556_0168	PF01228	Glycine radical	0.47600000000000003
+Facultative	HMPREF0556_1769	PF01228	Glycine radical	0.47600000000000003
+Facultative	HMPREF0556_0029	PF07972	NrdI Flavodoxin like	0.44299999999999995
+Facultative	HMPREF0556_1001	PF07972	NrdI Flavodoxin like	0.44299999999999995
+Facultative	HMPREF0556_1579	PF07085	DRTGG domain	0.41600000000000004
+Facultative	HMPREF0556_1481	PF03672	Uncharacterised protein family (UPF0154)	0.41100000000000003
+Facultative	HMPREF0556_1487	PF03672	Uncharacterised protein family (UPF0154)	0.41100000000000003
+Facultative	HMPREF0556_0005	PF04167	Protein of unknown function (DUF402)	0.40700000000000003
+Facultative	HMPREF0556_0042	PF01154	Hydroxymethylglutaryl-coenzyme A synthase N terminal	0.369
+Facultative	HMPREF0556_0986	PF12911	N-terminal TM domain of oligopeptide transport permease C	0.318
+Facultative	HMPREF0556_0302	PF08352	Oligopeptide/dipeptide transporter, C-terminal region	0.302
+Facultative	HMPREF0556_0303	PF08352	Oligopeptide/dipeptide transporter, C-terminal region	0.302
+Facultative	HMPREF0556_0987	PF08352	Oligopeptide/dipeptide transporter, C-terminal region	0.302
+Facultative	HMPREF0556_0988	PF08352	Oligopeptide/dipeptide transporter, C-terminal region	0.302
+Facultative	HMPREF0556_0983	PF13038	Domain of unknown function (DUF3899)	0.293
+Facultative	HMPREF0556_0309	PF13273	Protein of unknown function (DUF4064)	0.247
+Facultative	HMPREF0556_0653	PF13273	Protein of unknown function (DUF4064)	0.247
+Facultative	HMPREF0556_1223	PF13273	Protein of unknown function (DUF4064)	0.247
+Facultative	HMPREF0556_1430	PF13273	Protein of unknown function (DUF4064)	0.247
+Facultative	HMPREF0556_0024	PF01712	Deoxynucleoside kinase	0.239
+Facultative	HMPREF0556_0415	PF01676	Metalloenzyme superfamily	0.231
+Facultative	HMPREF0556_2156	PF01676	Metalloenzyme superfamily	0.231
+Facultative	HMPREF0556_0762	PF01268	Formate--tetrahydrofolate ligase	0.191
+Facultative	HMPREF0556_0050	PF03486	HI0933-like protein	0.18
+Facultative	HMPREF0556_0279	PF03486	HI0933-like protein	0.18
+Facultative	HMPREF0556_0720	PF03486	HI0933-like protein	0.18
+Facultative	HMPREF0556_1035	PF03486	HI0933-like protein	0.18
+Facultative	HMPREF0556_1321	PF03486	HI0933-like protein	0.18
+Facultative	HMPREF0556_1549	PF03486	HI0933-like protein	0.18
+Facultative	HMPREF0556_2263	PF10592	AIPR protein	0.04
+Facultative	HMPREF0556_0716	PF13432	Tetratricopeptide repeat	-0.205
+Facultative	HMPREF0556_1647	PF13432	Tetratricopeptide repeat	-0.205
+Glucose fermenter	HMPREF0556_1129	PF01238	Phosphomannose isomerase type I	0.6970000000000001
+Glucose fermenter	HMPREF0556_0157	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_0924	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_0973	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_1057	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_1316	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_1364	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_1996	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_2508	PF05116	Sucrose-6F-phosphate phosphohydrolase	0.657
+Glucose fermenter	HMPREF0556_1467	PF02664	S-Ribosylhomocysteinase (LuxS)	0.632
+Glucose fermenter	HMPREF0556_2119	PF10509	Galactokinase galactose-binding signature	0.631
+Glucose fermenter	HMPREF0556_0207	PF00358	phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1	0.63
+Glucose fermenter	HMPREF0556_0295	PF00358	phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1	0.63
+Glucose fermenter	HMPREF0556_1014	PF00358	phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1	0.63
+Glucose fermenter	HMPREF0556_1304	PF00358	phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1	0.63
+Glucose fermenter	HMPREF0556_2432	PF00358	phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1	0.63
+Glucose fermenter	HMPREF0556_2121	PF02744	Galactose-1-phosphate uridyl transferase, C-terminal domain	0.597
+Glucose fermenter	HMPREF0556_0235	PF00128	Alpha amylase, catalytic domain	0.524
+Glucose fermenter	HMPREF0556_0236	PF00128	Alpha amylase, catalytic domain	0.524
+Glucose fermenter	HMPREF0556_0242	PF00128	Alpha amylase, catalytic domain	0.524
+Glucose fermenter	HMPREF0556_0913	PF00455	DeoR C terminal sensor domain	0.425
+Glucose fermenter	HMPREF0556_1018	PF02457	DisA bacterial checkpoint controller nucleotide-binding	0.377
+Glucose fermenter	HMPREF0556_0298	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_0384	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_0889	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_0896	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_1658	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_1881	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_2386	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_2467	PF01418	Helix-turn-helix domain, rpiR family	0.37
+Glucose fermenter	HMPREF0556_0909	PF00854	POT family	0.349
+Glucose fermenter	HMPREF0556_0458	PF01487	Type I 3-dehydroquinase	0.33799999999999997
+Glucose fermenter	HMPREF0556_1267	PF02386	Cation transport protein	0.316
+Glucose fermenter	HMPREF0556_1735	PF11611	Domain of unknown function (DUF4352)	0.27699999999999997
+Glucose fermenter	HMPREF0556_0986	PF12911	N-terminal TM domain of oligopeptide transport permease C	0.175
+Glucose fermenter	HMPREF0556_2201	PF12161	HsdM N-terminal domain	0.099
+Glucose fermenter	HMPREF0556_0416	PF00591	Glycosyl transferase family, a/b domain	0.07400000000000001
+Glucose fermenter	HMPREF0556_1507	PF00591	Glycosyl transferase family, a/b domain	0.07400000000000001
+Glucose fermenter	HMPREF0556_1818	PF08443	RimK-like ATP-grasp domain	-0.036000000000000004
+Gram positive	HMPREF0556_0510	PF04203	Sortase family	0.938
+Gram positive	HMPREF0556_1204	PF04203	Sortase family	0.938
+Gram positive	HMPREF0556_0445	PF03816	Cell envelope-related transcriptional attenuator domain	0.907
+Gram positive	HMPREF0556_1233	PF03816	Cell envelope-related transcriptional attenuator domain	0.907
+Gram positive	HMPREF0556_2058	PF03816	Cell envelope-related transcriptional attenuator domain	0.907
+Gram positive	HMPREF0556_0632	PF04472	Protein of unknown function (DUF552)	0.904
+Gram positive	HMPREF0556_2129	PF02650	WhiA C-terminal HTH domain	0.8759999999999999
+Gram positive	HMPREF0556_2129	PF14527	WhiA LAGLIDADG-like domain	0.8759999999999999
+Gram positive	HMPREF0556_2569	PF06257	Protein of unknown function (DUF1021)	0.7290000000000001
+Gram positive	HMPREF0556_1857	PF14480	DNA polymerase III polC-type N-terminus I	0.6829999999999999
+Gram positive	HMPREF0556_2334	PF06153	Protein of unknown function (DUF970)	0.506
+Gram positive	HMPREF0556_1475	PF03951	Glutamine synthetase, beta-Grasp domain	0.25
+Growth at 42°C	HMPREF0556_1205	PF13483	Beta-lactamase superfamily domain	0.418
+Growth at 42°C	HMPREF0556_1578	PF13483	Beta-lactamase superfamily domain	0.418
+Growth at 42°C	HMPREF0556_2438	PF02274	Amidinotransferase	0.35700000000000004
+Growth at 42°C	HMPREF0556_1185	PF14635	Helix-hairpin-helix motif	0.35200000000000004
+Growth at 42°C	HMPREF0556_1805	PF02737	3-hydroxyacyl-CoA dehydrogenase, NAD binding domain	0.34
+Growth at 42°C	HMPREF0556_2601	PF02737	3-hydroxyacyl-CoA dehydrogenase, NAD binding domain	0.34
+Growth at 42°C	HMPREF0556_0584	PF14659	Phage integrase, N-terminal SAM-like domain	0.276
+Growth at 42°C	HMPREF0556_2261	PF14659	Phage integrase, N-terminal SAM-like domain	0.276
+Growth at 42°C	HMPREF0556_0783	PF02583	Metal-sensitive transcriptional repressor	0.22699999999999998
+Growth at 42°C	HMPREF0556_1530	PF02583	Metal-sensitive transcriptional repressor	0.22699999999999998
+Growth at 42°C	HMPREF0556_1496	PF00176	SNF2 family N-terminal domain	0.17600000000000002
+Growth at 42°C	HMPREF0556_0932	PF01883	Domain of unknown function DUF59	0.16699999999999998
+Growth in 6.5% NaCl	HMPREF0556_0759	PF13456	Reverse transcriptase-like	0.721
+Growth in 6.5% NaCl	HMPREF0556_1240	PF13743	Thioredoxin	0.6990000000000001
+Growth in 6.5% NaCl	HMPREF0556_0359	PF03881	Fructosamine kinase	0.535
+Growth in 6.5% NaCl	HMPREF0556_0012	PF08338	Domain of unknown function (DUF1731)	0.504
+Growth in 6.5% NaCl	HMPREF0556_0416	PF07831	Pyrimidine nucleoside phosphorylase C-terminal domain	0.47600000000000003
+Growth in 6.5% NaCl	HMPREF0556_1469	PF13653	Glycerophosphoryl diester phosphodiesterase family	0.475
+Growth in 6.5% NaCl	HMPREF0556_1334	PF02436	Conserved carboxylase domain	0.46399999999999997
+Growth in 6.5% NaCl	HMPREF0556_2173	PF00282	Pyridoxal-dependent decarboxylase conserved domain	0.428
+Growth in KCN	HMPREF0556_0259	PF03060	Nitronate monooxygenase	0.8290000000000001
+Growth in KCN	HMPREF0556_0503	PF03060	Nitronate monooxygenase	0.8290000000000001
+Growth in KCN	HMPREF0556_0803	PF03060	Nitronate monooxygenase	0.8290000000000001
+Growth in KCN	HMPREF0556_2380	PF03060	Nitronate monooxygenase	0.8290000000000001
+Growth on ordinary blood agar	HMPREF0556_0015	PF01545	Cation efflux family	0.535
+Growth on ordinary blood agar	HMPREF0556_1997	PF01545	Cation efflux family	0.535
+Growth on ordinary blood agar	HMPREF0556_2183	PF01545	Cation efflux family	0.535
+Growth on ordinary blood agar	HMPREF0556_0614	PF02620	Uncharacterized ACR, COG1399	0.496
+Growth on ordinary blood agar	HMPREF0556_0955	PF01451	Low molecular weight phosphotyrosine protein phosphatase	0.48
+Growth on ordinary blood agar	HMPREF0556_1212	PF01451	Low molecular weight phosphotyrosine protein phosphatase	0.48
+Growth on ordinary blood agar	HMPREF0556_2037	PF01451	Low molecular weight phosphotyrosine protein phosphatase	0.48
+Growth on ordinary blood agar	HMPREF0556_2496	PF01451	Low molecular weight phosphotyrosine protein phosphatase	0.48
+Growth on ordinary blood agar	HMPREF0556_0801	PF02787	Carbamoyl-phosphate synthetase large chain, oligomerisation domain	0.469
+Growth on ordinary blood agar	HMPREF0556_0699	PF00710	Asparaginase	0.435
+Growth on ordinary blood agar	HMPREF0556_0812	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_0813	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_1011	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_1049	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_1139	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_1501	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_2079	PF12698	ABC-2 family transporter protein	0.42700000000000005
+Growth on ordinary blood agar	HMPREF0556_2127	PF03668	P-loop ATPase protein family	0.414
+Growth on ordinary blood agar	HMPREF0556_0071	PF00781	Diacylglycerol kinase catalytic domain	0.405
+Growth on ordinary blood agar	HMPREF0556_0537	PF00781	Diacylglycerol kinase catalytic domain	0.405
+Growth on ordinary blood agar	HMPREF0556_0031	PF05977	Transmembrane secretion effector	0.38
+Growth on ordinary blood agar	HMPREF0556_0867	PF05977	Transmembrane secretion effector	0.38
+Growth on ordinary blood agar	HMPREF0556_1251	PF05977	Transmembrane secretion effector	0.38
+Growth on ordinary blood agar	HMPREF0556_1524	PF05977	Transmembrane secretion effector	0.38
+Growth on ordinary blood agar	HMPREF0556_1766	PF05977	Transmembrane secretion effector	0.38
+Growth on ordinary blood agar	HMPREF0556_2473	PF06114	Domain of unknown function (DUF955)	0.332
+Growth on ordinary blood agar	HMPREF0556_0786	PF01471	Putative peptidoglycan binding domain	0.32299999999999995
+Growth on ordinary blood agar	HMPREF0556_0946	PF01507	Phosphoadenosine phosphosulfate reductase family	0.23399999999999999
+Growth on ordinary blood agar	HMPREF0556_0842	PF06470	SMC proteins Flexible Hinge Domain	0.078
+Lactose	HMPREF0556_0912	PF03051	Peptidase C1-like family	0.5489999999999999
+Lactose	HMPREF0556_2309	PF04205	FMN-binding domain	0.31
+Lactose	HMPREF0556_1940	PF13154	Protein of unknown function (DUF3991)	0.272
+Lactose	HMPREF0556_1142	PF06874	Firmicute fructose-1,6-bisphosphatase	0.25
+Lactose	HMPREF0556_0500	PF01476	LysM domain	0.228
+Lactose	HMPREF0556_0590	PF01476	LysM domain	0.228
+Lactose	HMPREF0556_0698	PF01476	LysM domain	0.228
+Lactose	HMPREF0556_1277	PF01476	LysM domain	0.228
+Lactose	HMPREF0556_2054	PF01476	LysM domain	0.228
+Lactose	HMPREF0556_2333	PF01476	LysM domain	0.228
+Lactose	HMPREF0556_0014	PF04892	VanZ like family	0.22699999999999998
+Lactose	HMPREF0556_0527	PF04892	VanZ like family	0.22699999999999998
+Lactose	HMPREF0556_0761	PF02742	Iron dependent repressor, metal binding and dimerisation domain	0.218
+Lactose	HMPREF0556_0186	PF03390	2-hydroxycarboxylate transporter family	0.217
+Lactose	HMPREF0556_0716	PF12895	Anaphase-promoting complex, cyclosome, subunit 3	0.209
+Lactose	HMPREF0556_1647	PF12895	Anaphase-promoting complex, cyclosome, subunit 3	0.209
+Lactose	HMPREF0556_1690	PF13567	Domain of unknown function (DUF4131)	0.191
+Lactose	HMPREF0556_0530	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_0535	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_1350	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_1999	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_2243	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_2244	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_2543	PF08240	Alcohol dehydrogenase GroES-like domain	0.174
+Lactose	HMPREF0556_0810	PF07730	Histidine kinase	0.15
+Lactose	HMPREF0556_1308	PF07730	Histidine kinase	0.15
+Lactose	HMPREF0556_2586	PF07730	Histidine kinase	0.15
+Lactose	HMPREF0556_2367	PF13506	Glycosyl transferase family 21	0.115
+Malonate	HMPREF0556_1583	PF06833	Malonate decarboxylase gamma subunit (MdcE)	0.7490000000000001
+Malonate	HMPREF0556_0230	PF09364	XFP N-terminal domain	0.25
+Maltose	HMPREF0556_0137	PF01263	Aldose 1-epimerase	0.508
+Maltose	HMPREF0556_1462	PF01263	Aldose 1-epimerase	0.508
+Maltose	HMPREF0556_2108	PF01263	Aldose 1-epimerase	0.508
+Maltose	HMPREF0556_0298	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_0384	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_0889	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_0896	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_1658	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_1881	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_2386	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_2467	PF01418	Helix-turn-helix domain, rpiR family	0.385
+Maltose	HMPREF0556_0208	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_0293	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_0313	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_0360	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_0495	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_1229	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_2305	PF07702	UTRA domain	0.374
+Maltose	HMPREF0556_0417	PF08211	Cytidine and deoxycytidylate deaminase zinc-binding region	0.369
+Maltose	HMPREF0556_0045	PF01915	Glycosyl hydrolase family 3 C-terminal domain	0.32299999999999995
+Maltose	HMPREF0556_0399	PF01915	Glycosyl hydrolase family 3 C-terminal domain	0.32299999999999995
+Maltose	HMPREF0556_1517	PF01943	Polysaccharide biosynthesis protein	0.316
+Maltose	HMPREF0556_2604	PF01943	Polysaccharide biosynthesis protein	0.316
+Maltose	HMPREF0556_2608	PF11734	TilS substrate C-terminal domain	0.312
+Maltose	HMPREF0556_2018	PF13439	Glycosyltransferase Family 4	0.298
+Maltose	HMPREF0556_0901	PF06993	Protein of unknown function (DUF1304)	0.289
+Maltose	HMPREF0556_1082	PF10111	Glycosyltransferase like family 2	0.252
+Maltose	HMPREF0556_1152	PF10111	Glycosyltransferase like family 2	0.252
+Maltose	HMPREF0556_1153	PF10111	Glycosyltransferase like family 2	0.252
+Maltose	HMPREF0556_1353	PF10111	Glycosyltransferase like family 2	0.252
+Maltose	HMPREF0556_1354	PF10111	Glycosyltransferase like family 2	0.252
+Maltose	HMPREF0556_2006	PF10111	Glycosyltransferase like family 2	0.252
+Maltose	HMPREF0556_1553	PF13185	GAF domain	0.233
+Maltose	HMPREF0556_0415	PF01676	Metalloenzyme superfamily	0.19699999999999998
+Maltose	HMPREF0556_2156	PF01676	Metalloenzyme superfamily	0.19699999999999998
+Maltose	HMPREF0556_2577	PF01978	Sugar-specific transcriptional regulator TrmB	0.11199999999999999
+Maltose	HMPREF0556_1238	PF05569	BlaR1 peptidase M56	0.1
+Maltose	HMPREF0556_0699	PF00710	Asparaginase	0.085
+Motile	HMPREF0556_1080	PF13677	Membrane MotB of proton-channel complex MotA/MotB	0.8029999999999999
+Motile	HMPREF0556_1091	PF07559	Flagellar basal body protein FlaE	0.6809999999999999
+Motile	HMPREF0556_1086	PF07194	P2 response regulator binding domain	0.44799999999999995
+Motile	HMPREF0556_1082	PF09976	Tetratricopeptide repeat	0.39799999999999996
+Motile	HMPREF0556_2046	PF09378	HAS barrel domain	0.301
+Motile	HMPREF0556_1690	PF13567	Domain of unknown function (DUF4131)	0.25
+Motile	HMPREF0556_1336	PF14501	GHKL domain	0.226
+Motile	HMPREF0556_2185	PF14501	GHKL domain	0.226
+Motile	HMPREF0556_2445	PF14501	GHKL domain	0.226
+Motile	HMPREF0556_0341	PF13527	Acetyltransferase (GNAT) domain	0.18899999999999997
+Motile	HMPREF0556_0972	PF13527	Acetyltransferase (GNAT) domain	0.18899999999999997
+Motile	HMPREF0556_2599	PF13527	Acetyltransferase (GNAT) domain	0.18899999999999997
+Motile	HMPREF0556_0705	PF01227	GTP cyclohydrolase I	0.177
+Motile	HMPREF0556_0210	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_0243	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_0784	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_0924	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_1057	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_1283	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_1680	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_1937	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_2114	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_2210	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_2361	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_2508	PF00702	haloacid dehalogenase-like hydrolase	0.068
+Motile	HMPREF0556_2438	PF02274	Amidinotransferase	0.066
+Salicin	HMPREF0556_0325	PF03123	CAT RNA binding domain	0.585
+Salicin	HMPREF0556_1013	PF03123	CAT RNA binding domain	0.585
+Salicin	HMPREF0556_2172	PF03123	CAT RNA binding domain	0.585
+Salicin	HMPREF0556_0152	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_0156	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_0164	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_0197	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_0361	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_0494	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_1751	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_2382	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_2430	PF00232	Glycosyl hydrolase family 1	0.509
+Salicin	HMPREF0556_0131	PF05043	Mga helix-turn-helix domain	0.505
+Salicin	HMPREF0556_0188	PF05043	Mga helix-turn-helix domain	0.505
+Salicin	HMPREF0556_0198	PF05043	Mga helix-turn-helix domain	0.505
+Salicin	HMPREF0556_0288	PF05043	Mga helix-turn-helix domain	0.505
+Salicin	HMPREF0556_2491	PF05043	Mga helix-turn-helix domain	0.505
+Salicin	HMPREF0556_2538	PF05043	Mga helix-turn-helix domain	0.505
+Salicin	HMPREF0556_0039	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0131	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0188	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0198	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0201	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0288	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0325	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_1013	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_2143	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_2172	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_2248	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_2491	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_2538	PF00874	PRD domain	0.47700000000000004
+Salicin	HMPREF0556_0236	PF02903	Alpha amylase, N-terminal ig-like domain	0.466
+Salicin	HMPREF0556_0655	PF03306	Alpha-acetolactate decarboxylase	0.447
+Salicin	HMPREF0556_1129	PF01238	Phosphomannose isomerase type I	0.344
+Salicin	HMPREF0556_0287	PF06800	Sugar transport protein	0.32799999999999996
+Salicin	HMPREF0556_2540	PF06800	Sugar transport protein	0.32799999999999996
+Salicin	HMPREF0556_2545	PF06800	Sugar transport protein	0.32799999999999996
+Salicin	HMPREF0556_2098	PF13345	Domain of unknown function (DUF4098)	0.315
+Salicin	HMPREF0556_2099	PF13345	Domain of unknown function (DUF4098)	0.315
+Salicin	HMPREF0556_2553	PF12538	DNA transporter	0.21100000000000002
+Salicin	HMPREF0556_1394	PF02674	Colicin V production protein	0.193
+Salicin	HMPREF0556_1082	PF13704	Glycosyl transferase family 2	0.091
+Salicin	HMPREF0556_0389	PF04794	YdjC-like protein	0.07400000000000001
+Salicin	HMPREF0556_0893	PF04794	YdjC-like protein	0.07400000000000001
+Salicin	HMPREF0556_1174	PF01402	Ribbon-helix-helix protein, copG family	-0.026000000000000002
+Starch hydrolysis	HMPREF0556_1200	PF09323	Domain of unknown function (DUF1980)	0.493
+Starch hydrolysis	HMPREF0556_2205	PF00041	Fibronectin type III domain	0.465
+Starch hydrolysis	HMPREF0556_0127	PF06580	Histidine kinase	0.33799999999999997
+Starch hydrolysis	HMPREF0556_0126	PF04854	Protein of unknown function, DUF624	0.33399999999999996
+Starch hydrolysis	HMPREF0556_1036	PF04266	ASCH domain	0.22
+Starch hydrolysis	HMPREF0556_0498	PF02229	Transcriptional Coactivator p15 (PC4)	0.20800000000000002
+Trehalose	HMPREF0556_0208	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_0293	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_0313	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_0360	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_0495	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_1229	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_2305	PF07702	UTRA domain	0.564
+Trehalose	HMPREF0556_0152	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_0156	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_0164	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_0197	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_0361	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_0494	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_1751	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_2382	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_2430	PF00232	Glycosyl hydrolase family 1	0.561
+Trehalose	HMPREF0556_1305	PF03932	CutC family	0.5479999999999999
+Trehalose	HMPREF0556_1303	PF04069	Substrate binding domain of ABC-type glycine betaine transport system	0.523
+Trehalose	HMPREF0556_1741	PF04069	Substrate binding domain of ABC-type glycine betaine transport system	0.523
+Trehalose	HMPREF0556_1744	PF04069	Substrate binding domain of ABC-type glycine betaine transport system	0.523
+Trehalose	HMPREF0556_1755	PF04069	Substrate binding domain of ABC-type glycine betaine transport system	0.523
+Trehalose	HMPREF0556_0516	PF03551	Transcriptional regulator PadR-like family	0.469
+Trehalose	HMPREF0556_1708	PF03551	Transcriptional regulator PadR-like family	0.469
+Trehalose	HMPREF0556_1767	PF03551	Transcriptional regulator PadR-like family	0.469
+Trehalose	HMPREF0556_1058	PF12464	Maltose acetyltransferase	0.433
+Trehalose	HMPREF0556_2337	PF02733	Dak1 domain	0.41200000000000003
+Trehalose	HMPREF0556_1769	PF02901	Pyruvate formate lyase	0.39899999999999997
+Trehalose	HMPREF0556_0312	PF04657	Protein of unknown function, DUF606	0.38799999999999996
+Trehalose	HMPREF0556_0438	PF13906	C-terminus of AA_permease	0.31
+Trehalose	HMPREF0556_0598	PF13906	C-terminus of AA_permease	0.31
+Trehalose	HMPREF0556_1045	PF13906	C-terminus of AA_permease	0.31
+Trehalose	HMPREF0556_0389	PF04794	YdjC-like protein	0.278
+Trehalose	HMPREF0556_0893	PF04794	YdjC-like protein	0.278
+Trehalose	HMPREF0556_0664	PF13710	ACT domain	0.264
+Trehalose	HMPREF0556_0406	PF03949	Malic enzyme, NAD binding domain	0.249
+Trehalose	HMPREF0556_0406	PF00390	Malic enzyme, N-terminal domain	0.249
+Trehalose	HMPREF0556_0382	PF13376	Bacteriocin-protection, YdeI or OmpD-Associated	0.23199999999999998
+Trehalose	HMPREF0556_1940	PF13154	Protein of unknown function (DUF3991)	0.18100000000000002
+Trehalose	HMPREF0556_0265	PF01174	SNO glutamine amidotransferase family	0.136
+Voges Proskauer	HMPREF0556_0655	PF03306	Alpha-acetolactate decarboxylase	0.746

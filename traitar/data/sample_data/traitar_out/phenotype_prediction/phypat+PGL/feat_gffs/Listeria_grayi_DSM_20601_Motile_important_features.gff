@@ -1,0 +1,27 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	126629	127163	2.9999999999999998e-13	+	.	Parent=HMPREF0556_0210;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692933	HMMER	phypat+PGL	160625	161156	3.8000000000000002e-15	+	.	Parent=HMPREF0556_0243;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692933	HMMER	phypat+PGL	254394	254805	9.1999999999999992e-11	+	.	Parent=HMPREF0556_0341;Name=PF13527;Note=Acetyltransf_9;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692933	HMMER	phypat+PGL	608292	608826	1.5999999999999998e-82	+	.	Parent=HMPREF0556_0705;Name=PF01227;Note=GTP_cyclohydroI;Description=GTP cyclohydrolase I
+accn|NZ_GG692933	HMMER	phypat+PGL	680939	681587	7.2999999999999994e-45	+	.	Parent=HMPREF0556_0784;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	45677	46355	3.2000000000000001e-12	+	.	Parent=HMPREF0556_0924;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	95603	95870	6.0999999999999996e-10	+	.	Parent=HMPREF0556_0972;Name=PF13527;Note=Acetyltransf_9;Description=Acetyltransferase (GNAT) domain
+accn|NZ_GG692932	HMMER	phypat+PGL	182884	183622	3.9e-10	-	.	Parent=HMPREF0556_1057;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	201322	201445	2.7000000000000001e-19	+	.	Parent=HMPREF0556_1080;Name=PF13677;Note=MotB_plug;Description=Membrane MotB of proton-channel complex MotA/MotB
+accn|NZ_GG692932	HMMER	phypat+PGL	203132	203396	1.3000000000000002e-10	+	.	Parent=HMPREF0556_1082;Name=PF09976;Note=TPR_21;Description=Tetratricopeptide repeat
+accn|NZ_GG692932	HMMER	phypat+PGL	207501	207747	5.1000000000000006e-27	+	.	Parent=HMPREF0556_1086;Name=PF07194;Note=P2;Description=P2 response regulator binding domain
+accn|NZ_GG692932	HMMER	phypat+PGL	211879	212188	5.9000000000000003e-11	+	.	Parent=HMPREF0556_1091;Name=PF07559;Note=FlaE;Description=Flagellar basal body protein FlaE
+accn|NZ_GG692932	HMMER	phypat+PGL	385382	386024	6.4000000000000005e-42	+	.	Parent=HMPREF0556_1283;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	437759	438071	2.9999999999999999e-16	-	.	Parent=HMPREF0556_1336;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|NZ_GG692932	HMMER	phypat+PGL	795241	795517	1.0000000000000001e-11	+	.	Parent=HMPREF0556_1680;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	801572	801953	5.7000000000000002e-20	+	.	Parent=HMPREF0556_1690;Name=PF13567;Note=DUF4131;Description=Domain of unknown function (DUF4131)
+accn|NZ_GG692937	HMMER	phypat+PGL	19405	20014	9.4e-35	+	.	Parent=HMPREF0556_1937;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692935	HMMER	phypat+PGL	51375	51561	2.0999999999999999e-12	+	.	Parent=HMPREF0556_2046;Name=PF09378;Note=HAS-barrel;Description=HAS barrel domain
+accn|NZ_GG692935	HMMER	phypat+PGL	122148	122664	1.4999999999999999e-14	+	.	Parent=HMPREF0556_2114;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692935	HMMER	phypat+PGL	203380	203677	7.5e-10	+	.	Parent=HMPREF0556_2185;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|NZ_GG692935	HMMER	phypat+PGL	234543	235173	1.1e-12	+	.	Parent=HMPREF0556_2210;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692934	HMMER	phypat+PGL	101777	102275	3.9000000000000001e-11	-	.	Parent=HMPREF0556_2361;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692934	HMMER	phypat+PGL	187223	188375	5.6999999999999999e-91	+	.	Parent=HMPREF0556_2438;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|NZ_GG692934	HMMER	phypat+PGL	191773	192082	2.9999999999999999e-21	+	.	Parent=HMPREF0556_2445;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|NZ_GG692934	HMMER	phypat+PGL	251204	251891	4.0999999999999999e-12	+	.	Parent=HMPREF0556_2508;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|NZ_GG692934	HMMER	phypat+PGL	332298	332547	2.8e-11	+	.	Parent=HMPREF0556_2599;Name=PF13527;Note=Acetyltransf_9;Description=Acetyltransferase (GNAT) domain

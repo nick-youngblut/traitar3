@@ -1,0 +1,45 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	96647	97694	1.1999999999999996e-147	+	.	Parent=AX25_00440;Name=PF04371;Note=PAD_porph;Description=Porphyromonas-type peptidyl-arginine deiminase
+accn|CP007172	HMMER	phypat+PGL	98799	99846	1.4999999999999996e-141	+	.	Parent=AX25_00450;Name=PF04371;Note=PAD_porph;Description=Porphyromonas-type peptidyl-arginine deiminase
+accn|CP007172	HMMER	phypat+PGL	107046	107352	2.5000000000000002e-19	+	.	Parent=AX25_00500;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|CP007172	HMMER	phypat+PGL	150785	151004	1.3999999999999999e-18	-	.	Parent=AX25_00690;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	156614	156944	3.6000000000000001e-61	+	.	Parent=AX25_00725;Name=PF09966;Note=DUF2200;Description=Uncharacterized protein conserved in bacteria (DUF2200)
+accn|CP007172	HMMER	phypat+PGL	252933	253506	2.7999999999999999e-30	-	.	Parent=AX25_01165;Name=PF08713;Note=DNA_alkylation;Description=DNA alkylation repair enzyme
+accn|CP007172	HMMER	phypat+PGL	543498	543945	6.7000000000000006e-10	+	.	Parent=AX25_02620;Name=PF00990;Note=GGDEF;Description=GGDEF domain
+accn|CP007172	HMMER	phypat+PGL	615469	616219	3.3000000000000003e-25	-	.	Parent=AX25_02960;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	618054	618264	1.9999999999999999e-22	+	.	Parent=AX25_02970;Name=PF03729;Note=DUF308;Description=Short repeat of unknown function (DUF308)
+accn|CP007172	HMMER	phypat+PGL	623224	623443	4.8999999999999999e-15	+	.	Parent=AX25_03000;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
+accn|CP007172	HMMER	phypat+PGL	634919	635285	2.9000000000000001e-28	+	.	Parent=AX25_03060;Name=PF13602;Note=ADH_zinc_N_2;Description=Zinc-binding dehydrogenase
+accn|CP007172	HMMER	phypat+PGL	721822	722050	4.9999999999999999e-13	+	.	Parent=AX25_03490;Name=PF13704;Note=Glyco_tranf_2_4;Description=Glycosyl transferase family 2
+accn|CP007172	HMMER	phypat+PGL	778127	778811	3.0999999999999999e-15	+	.	Parent=AX25_03780;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	899713	899965	4.7000000000000002e-13	+	.	Parent=AX25_04350;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	998498	998738	3.4999999999999999e-09	-	.	Parent=AX25_04865;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	1062710	1063298	3.9999999999999999e-48	+	.	Parent=AX25_05220;Name=PF03932;Note=CutC;Description=CutC family
+accn|CP007172	HMMER	phypat+PGL	1166555	1167287	8.4000000000000004e-16	+	.	Parent=AX25_05740;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	1179084	1179507	1.2999999999999998e-63	+	.	Parent=AX25_05820;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
+accn|CP007172	HMMER	phypat+PGL	1530819	1531284	4.8e-10	-	.	Parent=AX25_07590;Name=PF10662;Note=PduV-EutP;Description=Ethanolamine utilisation - propanediol utilisation
+accn|CP007172	HMMER	phypat+PGL	1588583	1588727	3.0999999999999999e-13	+	.	Parent=AX25_07890;Name=PF06347;Note=SH3_4;Description=Bacterial SH3 domain
+accn|CP007172	HMMER	phypat+PGL	1695313	1695520	8.4000000000000013e-22	-	.	Parent=AX25_08375;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|CP007172	HMMER	phypat+PGL	1779644	1780283	2.2999999999999999e-28	-	.	Parent=AX25_08780;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	1850125	1850332	4.1999999999999991e-25	-	.	Parent=AX25_09180;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|CP007172	HMMER	phypat+PGL	2043822	2044293	2.9999999999999997e-47	+	.	Parent=AX25_10135;Name=PF00990;Note=GGDEF;Description=GGDEF domain
+accn|CP007172	HMMER	phypat+PGL	2044974	2045448	1.8e-45	+	.	Parent=AX25_10140;Name=PF00990;Note=GGDEF;Description=GGDEF domain
+accn|CP007172	HMMER	phypat+PGL	2065523	2065919	1.3000000000000002e-10	-	.	Parent=AX25_10235;Name=PF07021;Note=MetW;Description=Methionine biosynthesis protein MetW
+accn|CP007172	HMMER	phypat+PGL	2085707	2086490	5.5999999999999991e-77	-	.	Parent=AX25_10340;Name=PF02784;Note=Orn_Arg_deC_N;Description=Pyridoxal-dependent decarboxylase, pyridoxal binding domain
+accn|CP007172	HMMER	phypat+PGL	2086514	2086826	2.1000000000000003e-22	-	.	Parent=AX25_10340;Name=PF00278;Note=Orn_DAP_Arg_deC;Description=Pyridoxal-dependent decarboxylase, C-terminal sheet domain
+accn|CP007172	HMMER	phypat+PGL	2123261	2123447	3.5000000000000002e-11	+	.	Parent=AX25_10515;Name=PF00670;Note=AdoHcyase_NAD;Description=S-adenosyl-L-homocysteine hydrolase, NAD binding domain
+accn|CP007172	HMMER	phypat+PGL	2130427	2131081	2.4999999999999998e-94	+	.	Parent=AX25_10545;Name=PF03306;Note=AAL_decarboxy;Description=Alpha-acetolactate decarboxylase
+accn|CP007172	HMMER	phypat+PGL	2160831	2161134	2.3999999999999999e-20	-	.	Parent=AX25_10675;Name=PF01678;Note=DAP_epimerase;Description=Diaminopimelate epimerase
+accn|CP007172	HMMER	phypat+PGL	2202181	2202400	4.4000000000000001e-22	+	.	Parent=AX25_10875;Name=PF07885;Note=Ion_trans_2;Description=Ion channel
+accn|CP007172	HMMER	phypat+PGL	2284373	2284742	4.9000000000000002e-48	-	.	Parent=AX25_11295;Name=PF02903;Note=Alpha-amylase_N;Description=Alpha amylase, N-terminal ig-like domain
+accn|CP007172	HMMER	phypat+PGL	2409088	2409721	1.3999999999999999e-69	-	.	Parent=AX25_11895;Name=PF08713;Note=DNA_alkylation;Description=DNA alkylation repair enzyme
+accn|CP007172	HMMER	phypat+PGL	2451301	2451514	1.7e-21	-	.	Parent=AX25_12090;Name=PF03729;Note=DUF308;Description=Short repeat of unknown function (DUF308)
+accn|CP007172	HMMER	phypat+PGL	2514769	2515075	6.4999999999999994e-12	-	.	Parent=AX25_12475;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|CP007172	HMMER	phypat+PGL	2547188	2547398	2.7e-11	-	.	Parent=AX25_12640;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	2557304	2558213	2.2999999999999993e-95	-	.	Parent=AX25_12685;Name=PF01244;Note=Peptidase_M19;Description=Membrane dipeptidase (Peptidase family M19)
+accn|CP007172	HMMER	phypat+PGL	2585347	2585563	3.5999999999999998e-11	-	.	Parent=AX25_12835;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
+accn|CP007172	HMMER	phypat+PGL	2586563	2586767	9.1999999999999996e-15	-	.	Parent=AX25_12840;Name=PF13345;Note=DUF4098;Description=Domain of unknown function (DUF4098)
+accn|CP007172	HMMER	phypat+PGL	2668405	2668579	2.7000000000000004e-26	+	.	Parent=AX25_13250;Name=PF01361;Note=Tautomerase;Description=Tautomerase enzyme
+accn|CP007172	HMMER	phypat+PGL	2675973	2676399	1.8000000000000002e-13	-	.	Parent=AX25_13295;Name=PF13602;Note=ADH_zinc_N_2;Description=Zinc-binding dehydrogenase
+accn|CP007172	HMMER	phypat+PGL	2779107	2779725	5.400000000000001e-14	-	.	Parent=AX25_13900;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold
+accn|CP007172	HMMER	phypat+PGL	645955	646543	4.7999999999999999e-15	-	.	Parent=AX25_03140;Name=PF00561;Note=Abhydrolase_1;Description=alpha/beta hydrolase fold

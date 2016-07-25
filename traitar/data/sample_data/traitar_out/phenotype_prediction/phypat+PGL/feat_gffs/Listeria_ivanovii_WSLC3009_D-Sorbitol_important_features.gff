@@ -1,0 +1,5 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	199702	200485	4.4999999999999991e-104	+	.	Parent=AX25_00930;Name=PF04951;Note=Peptidase_M55;Description=D-aminopeptidase
+accn|CP007172	HMMER	phypat+PGL	558315	558636	3.5000000000000004e-24	-	.	Parent=AX25_02695;Name=PF06923;Note=GutM;Description=Glucitol operon activator protein (GutM)
+accn|CP007172	HMMER	phypat+PGL	779761	780109	3.3999999999999999e-11	+	.	Parent=AX25_03790;Name=PF13577;Note=SnoaL_4;Description=SnoaL-like domain
+accn|CP007172	HMMER	phypat+PGL	2104126	2105491	3.1999999999999995e-115	-	.	Parent=AX25_10435;Name=PF05935;Note=Arylsulfotrans;Description=Arylsulfotransferase (ASST)

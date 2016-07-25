@@ -1,0 +1,9 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	101569	102724	5.5999999999999991e-95	+	.	Parent=AX25_00465;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|CP007172	HMMER	phypat+PGL	464434	465547	6.2999999999999994e-35	+	.	Parent=AX25_02215;Name=PF02133;Note=Transp_cyt_pur;Description=Permease for cytosine/purines, uracil, thiamine, allantoin
+accn|CP007172	HMMER	phypat+PGL	779761	780109	3.3999999999999999e-11	+	.	Parent=AX25_03790;Name=PF13577;Note=SnoaL_4;Description=SnoaL-like domain
+accn|CP007172	HMMER	phypat+PGL	1044681	1044945	4.2000000000000004e-14	-	.	Parent=AX25_05120;Name=PF02517;Note=Abi;Description=CAAX protease self-immunity
+accn|CP007172	HMMER	phypat+PGL	1523406	1523685	1.1999999999999999e-11	-	.	Parent=AX25_07555;Name=PF13362;Note=Toprim_3;Description=Toprim domain
+accn|CP007172	HMMER	phypat+PGL	1576707	1576791	1.8e-09	-	.	Parent=AX25_07835;Name=PF07719;Note=TPR_2;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	2217433	2217694	1.4e-22	+	.	Parent=AX25_10960;Name=PF02517;Note=Abi;Description=CAAX protease self-immunity
+accn|CP007172	HMMER	phypat+PGL	2286724	2286991	5.4999999999999999e-14	+	.	Parent=AX25_11300;Name=PF02517;Note=Abi;Description=CAAX protease self-immunity
