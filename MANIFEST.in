@@ -1,2 +1,5 @@
 include README.md
 recursive-include traitar *
+recursive-exclude traitar config.json
+recursive-exclude traitar *.pyc
+recursive-exclude traitar *.swp
