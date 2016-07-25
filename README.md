@@ -96,5 +96,5 @@ which will take ~30 minutes. Note there is a problem with parallel usage so -c o
 If you use Traitar in your research, please cite our preprint:
 
 **From genomes to phenotypes: Traitar, the microbial trait analyzer**  
-Aaron Weimann, Jeremy Frank, Phillip B Pope, Andreas Bremges, Alice C McHardy  
+Aaron Weimann, Kyra Mooren, Jeremy Frank, Phillip B Pope, Andreas Bremges, Alice C McHardy  
 *bioRxiv* (2016) doi:[10.1101/043315](http://dx.doi.org/10.1101/043315)
