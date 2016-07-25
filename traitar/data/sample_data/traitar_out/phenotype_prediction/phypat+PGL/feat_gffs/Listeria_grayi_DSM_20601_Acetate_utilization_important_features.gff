@@ -1,0 +1,6 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	185775	185970	5.1e-10	+	.	Parent=HMPREF0556_0273;Name=PF06779;Note=DUF1228;Description=Protein of unknown function (DUF1228)
+accn|NZ_GG692933	HMMER	phypat+PGL	249098	249422	1.3e-17	+	.	Parent=HMPREF0556_0335;Name=PF02517;Note=Abi;Description=CAAX protease self-immunity
+accn|NZ_GG692933	HMMER	phypat+PGL	492426	492687	8.8000000000000009e-23	-	.	Parent=HMPREF0556_0581;Name=PF02517;Note=Abi;Description=CAAX protease self-immunity
+accn|NZ_GG692932	HMMER	phypat+PGL	378393	378651	9.4999999999999999e-14	-	.	Parent=HMPREF0556_1276;Name=PF02517;Note=Abi;Description=CAAX protease self-immunity
+accn|NZ_GG692934	HMMER	phypat+PGL	187223	188375	5.6999999999999999e-91	+	.	Parent=HMPREF0556_2438;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase

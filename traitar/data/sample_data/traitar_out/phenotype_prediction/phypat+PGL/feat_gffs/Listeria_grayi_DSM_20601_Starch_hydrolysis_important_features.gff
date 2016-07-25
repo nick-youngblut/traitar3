@@ -1,0 +1,7 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	26740	26959	1.2999999999999999e-16	+	.	Parent=HMPREF0556_0126;Name=PF04854;Note=DUF624;Description=Protein of unknown function, DUF624
+accn|NZ_GG692933	HMMER	phypat+PGL	28416	28653	1.4e-27	+	.	Parent=HMPREF0556_0127;Name=PF06580;Note=His_kinase;Description=Histidine kinase
+accn|NZ_GG692933	HMMER	phypat+PGL	406518	406671	2.6e-24	+	.	Parent=HMPREF0556_0498;Name=PF02229;Note=PC4;Description=Transcriptional Coactivator p15 (PC4)
+accn|NZ_GG692932	HMMER	phypat+PGL	161648	161990	2.0000000000000001e-25	-	.	Parent=HMPREF0556_1036;Name=PF04266;Note=ASCH;Description=ASCH domain
+accn|NZ_GG692932	HMMER	phypat+PGL	307746	308292	5.5999999999999992e-65	+	.	Parent=HMPREF0556_1200;Name=PF09323;Note=DUF1980;Description=Domain of unknown function (DUF1980)
+accn|NZ_GG692935	HMMER	phypat+PGL	227300	227513	2.2000000000000002e-11	+	.	Parent=HMPREF0556_2205;Name=PF00041;Note=fn3;Description=Fibronectin type III domain

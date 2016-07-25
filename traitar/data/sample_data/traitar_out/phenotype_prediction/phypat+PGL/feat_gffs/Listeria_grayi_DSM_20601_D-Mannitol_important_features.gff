@@ -1,0 +1,2 @@
+##gff-version 3
+accn|NZ_GG692934	HMMER	phypat+PGL	237179	237542	5.5999999999999999e-27	+	.	Parent=HMPREF0556_2493;Name=PF01232;Note=Mannitol_dh;Description=Mannitol dehydrogenase Rossmann domain

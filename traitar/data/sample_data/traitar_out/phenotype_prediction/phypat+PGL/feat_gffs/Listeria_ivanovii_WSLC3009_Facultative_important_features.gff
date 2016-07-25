@@ -1,0 +1,37 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	85626	85857	2.3000000000000001e-10	+	.	Parent=AX25_00395;Name=PF13273;Note=DUF4064;Description=Protein of unknown function (DUF4064)
+accn|CP007172	HMMER	phypat+PGL	184710	184857	8.6999999999999997e-11	+	.	Parent=AX25_00865;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|CP007172	HMMER	phypat+PGL	243373	244771	2.1999999999999992e-258	+	.	Parent=AX25_01130;Name=PF01289;Note=Thiol_cytolysin;Description=Thiol-activated cytolysin
+accn|CP007172	HMMER	phypat+PGL	351046	351361	7.5000000000000003e-27	+	.	Parent=AX25_01625;Name=PF01228;Note=Gly_radical;Description=Glycine radical
+accn|CP007172	HMMER	phypat+PGL	367672	367834	2.6e-23	+	.	Parent=AX25_01705;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
+accn|CP007172	HMMER	phypat+PGL	382573	383137	1.8999999999999999e-10	+	.	Parent=AX25_01810;Name=PF03486;Note=HI0933_like;Description=HI0933-like protein
+accn|CP007172	HMMER	phypat+PGL	423800	424097	4.2000000000000004e-14	+	.	Parent=AX25_02060;Name=PF13273;Note=DUF4064;Description=Protein of unknown function (DUF4064)
+accn|CP007172	HMMER	phypat+PGL	764238	764535	3.6999999999999997e-17	+	.	Parent=AX25_03710;Name=PF13273;Note=DUF4064;Description=Protein of unknown function (DUF4064)
+accn|CP007172	HMMER	phypat+PGL	833874	834153	6.1999999999999998e-13	+	.	Parent=AX25_04065;Name=PF02030;Note=Lipoprotein_8;Description=Hypothetical lipoprotein (MG045 family)
+accn|CP007172	HMMER	phypat+PGL	899638	899995	9.7999999999999998e-11	+	.	Parent=AX25_04350;Name=PF05728;Note=UPF0227;Description=Uncharacterised protein family (UPF0227)
+accn|CP007172	HMMER	phypat+PGL	999146	999500	1.1999999999999998e-27	+	.	Parent=AX25_04870;Name=PF13273;Note=DUF4064;Description=Protein of unknown function (DUF4064)
+accn|CP007172	HMMER	phypat+PGL	1015408	1015579	8.3000000000000003e-10	-	.	Parent=AX25_04965;Name=PF13432;Note=TPR_16;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	1039938	1040202	3.3000000000000005e-14	-	.	Parent=AX25_05100;Name=PF13273;Note=DUF4064;Description=Protein of unknown function (DUF4064)
+accn|CP007172	HMMER	phypat+PGL	1217565	1218120	7.1999999999999999e-17	+	.	Parent=AX25_06050;Name=PF13500;Note=AAA_26;Description=AAA domain
+accn|CP007172	HMMER	phypat+PGL	1231524	1232199	6.0000000000000002e-27	+	.	Parent=AX25_06135;Name=PF13500;Note=AAA_26;Description=AAA domain
+accn|CP007172	HMMER	phypat+PGL	1360440	1360629	1.4999999999999998e-34	+	.	Parent=AX25_06765;Name=PF03672;Note=UPF0154;Description=Uncharacterised protein family (UPF0154)
+accn|CP007172	HMMER	phypat+PGL	1464082	1464400	3.1999999999999995e-46	+	.	Parent=AX25_07275;Name=PF01228;Note=Gly_radical;Description=Glycine radical
+accn|CP007172	HMMER	phypat+PGL	1482198	1482687	7.9000000000000004e-24	+	.	Parent=AX25_07365;Name=PF01154;Note=HMG_CoA_synt_N;Description=Hydroxymethylglutaryl-coenzyme A synthase N terminal
+accn|CP007172	HMMER	phypat+PGL	1576926	1577100	1.0999999999999999e-09	-	.	Parent=AX25_07835;Name=PF13432;Note=TPR_16;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	1652228	1652534	2.7000000000000001e-33	-	.	Parent=AX25_08170;Name=PF07085;Note=DRTGG;Description=DRTGG domain
+accn|CP007172	HMMER	phypat+PGL	1804276	1804471	1.6000000000000001e-25	-	.	Parent=AX25_08965;Name=PF04167;Note=DUF402;Description=Protein of unknown function (DUF402)
+accn|CP007172	HMMER	phypat+PGL	1821274	1821700	1e-42	+	.	Parent=AX25_09060;Name=PF01712;Note=dNK;Description=Deoxynucleoside kinase
+accn|CP007172	HMMER	phypat+PGL	1824859	1825171	6.900000000000001e-10	+	.	Parent=AX25_09085;Name=PF07972;Note=Flavodoxin_NdrI;Description=NrdI Flavodoxin like
+accn|CP007172	HMMER	phypat+PGL	1854361	1854463	7.0999999999999993e-10	-	.	Parent=AX25_09200;Name=PF03486;Note=HI0933_like;Description=HI0933-like protein
+accn|CP007172	HMMER	phypat+PGL	2007170	2008835	1.3999999999999993e-268	-	.	Parent=AX25_09945;Name=PF01268;Note=FTHFS;Description=Formate--tetrahydrofolate ligase
+accn|CP007172	HMMER	phypat+PGL	2044479	2044818	7.6999999999999999e-12	+	.	Parent=AX25_10140;Name=PF07694;Note=5TM-5TMR_LYT;Description=5TMR of 5TMR-LYT
+accn|CP007172	HMMER	phypat+PGL	2052110	2052410	5.2e-22	+	.	Parent=AX25_10165;Name=PF01228;Note=Gly_radical;Description=Glycine radical
+accn|CP007172	HMMER	phypat+PGL	2052824	2054054	1.5999999999999998e-157	-	.	Parent=AX25_10170;Name=PF03486;Note=HI0933_like;Description=HI0933-like protein
+accn|CP007172	HMMER	phypat+PGL	2056848	2057016	1.4000000000000001e-09	-	.	Parent=AX25_10190;Name=PF13432;Note=TPR_16;Description=Tetratricopeptide repeat
+accn|CP007172	HMMER	phypat+PGL	2087935	2089081	1.6000000000000001e-55	-	.	Parent=AX25_10350;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily
+accn|CP007172	HMMER	phypat+PGL	2356553	2356661	4.3e-11	-	.	Parent=AX25_11640;Name=PF08352;Note=oligo_HPY;Description=Oligopeptide/dipeptide transporter, C-terminal region
+accn|CP007172	HMMER	phypat+PGL	2357515	2357704	2.2000000000000002e-20	-	.	Parent=AX25_11645;Name=PF08352;Note=oligo_HPY;Description=Oligopeptide/dipeptide transporter, C-terminal region
+accn|CP007172	HMMER	phypat+PGL	2357988	2358165	1.2999999999999998e-19	-	.	Parent=AX25_11650;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|CP007172	HMMER	phypat+PGL	2362543	2362783	1.7e-24	+	.	Parent=AX25_11665;Name=PF13038;Note=DUF3899;Description=Domain of unknown function (DUF3899)
+accn|CP007172	HMMER	phypat+PGL	2526690	2526861	1.7000000000000001e-26	-	.	Parent=AX25_12550;Name=PF03123;Note=CAT_RBD;Description=CAT RNA binding domain
+accn|CP007172	HMMER	phypat+PGL	2549614	2551111	1.3999999999999995e-90	-	.	Parent=AX25_12655;Name=PF01676;Note=Metalloenzyme;Description=Metalloenzyme superfamily

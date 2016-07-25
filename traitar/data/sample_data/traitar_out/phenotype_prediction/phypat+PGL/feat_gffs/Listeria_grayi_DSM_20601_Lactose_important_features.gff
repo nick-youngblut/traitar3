@@ -1,0 +1,29 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	13574	14024	3.4e-16	-	.	Parent=HMPREF0556_0014;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|NZ_GG692933	HMMER	phypat+PGL	94387	94927	6.4999999999999992e-71	+	.	Parent=HMPREF0556_0186;Name=PF03390;Note=2HCT;Description=2-hydroxycarboxylate transporter family
+accn|NZ_GG692933	HMMER	phypat+PGL	408673	408796	1.3999999999999999e-18	-	.	Parent=HMPREF0556_0500;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692933	HMMER	phypat+PGL	436269	436719	2.9999999999999997e-20	-	.	Parent=HMPREF0556_0527;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|NZ_GG692933	HMMER	phypat+PGL	445325	445514	1.3e-14	+	.	Parent=HMPREF0556_0530;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	448816	448990	3.8000000000000001e-09	-	.	Parent=HMPREF0556_0535;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	499288	499414	4.5999999999999996e-19	+	.	Parent=HMPREF0556_0590;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692933	HMMER	phypat+PGL	601654	601798	8.3999999999999995e-13	+	.	Parent=HMPREF0556_0698;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692933	HMMER	phypat+PGL	618857	619091	2.0999999999999999e-13	+	.	Parent=HMPREF0556_0716;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|NZ_GG692933	HMMER	phypat+PGL	660000	660189	8.1000000000000001e-23	+	.	Parent=HMPREF0556_0761;Name=PF02742;Note=Fe_dep_repr_C;Description=Iron dependent repressor, metal binding and dimerisation domain
+accn|NZ_GG692933	HMMER	phypat+PGL	708774	708972	8.8000000000000004e-14	+	.	Parent=HMPREF0556_0810;Name=PF07730;Note=HisKA_3;Description=Histidine kinase
+accn|NZ_GG692932	HMMER	phypat+PGL	33791	35081	6.4999999999999975e-193	-	.	Parent=HMPREF0556_0912;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|NZ_GG692932	HMMER	phypat+PGL	257290	259207	0.0	-	.	Parent=HMPREF0556_1142;Name=PF06874;Note=FBPase_2;Description=Firmicute fructose-1,6-bisphosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	379956	380100	2.6e-14	+	.	Parent=HMPREF0556_1277;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692932	HMMER	phypat+PGL	407582	407786	3.3000000000000002e-23	+	.	Parent=HMPREF0556_1308;Name=PF07730;Note=HisKA_3;Description=Histidine kinase
+accn|NZ_GG692932	HMMER	phypat+PGL	452147	452462	3.2000000000000001e-12	+	.	Parent=HMPREF0556_1350;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692932	HMMER	phypat+PGL	761273	761504	1e-10	+	.	Parent=HMPREF0556_1647;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|NZ_GG692932	HMMER	phypat+PGL	801572	801953	5.7000000000000002e-20	+	.	Parent=HMPREF0556_1690;Name=PF13567;Note=DUF4131;Description=Domain of unknown function (DUF4131)
+accn|NZ_GG692937	HMMER	phypat+PGL	22006	22234	5.4999999999999998e-13	-	.	Parent=HMPREF0556_1940;Name=PF13154;Note=DUF3991;Description=Protein of unknown function (DUF3991)
+accn|NZ_GG692935	HMMER	phypat+PGL	6004	6178	6.8999999999999994e-11	+	.	Parent=HMPREF0556_1999;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692935	HMMER	phypat+PGL	59821	59941	3.1999999999999996e-14	+	.	Parent=HMPREF0556_2054;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692934	HMMER	phypat+PGL	655	970	9.7e-37	-	.	Parent=HMPREF0556_2243;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	1679	1994	8.8e-39	-	.	Parent=HMPREF0556_2244;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	50963	51224	8.6999999999999995e-14	-	.	Parent=HMPREF0556_2309;Name=PF04205;Note=FMN_bind;Description=FMN-binding domain
+accn|NZ_GG692934	HMMER	phypat+PGL	75886	76009	5.9000000000000009e-20	+	.	Parent=HMPREF0556_2333;Name=PF01476;Note=LysM;Description=LysM domain
+accn|NZ_GG692934	HMMER	phypat+PGL	107615	108068	3.6000000000000003e-16	-	.	Parent=HMPREF0556_2367;Name=PF13506;Note=Glyco_transf_21;Description=Glycosyl transferase family 21
+accn|NZ_GG692934	HMMER	phypat+PGL	279914	280295	4.7999999999999997e-30	-	.	Parent=HMPREF0556_2543;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	320528	320723	2.0000000000000001e-13	-	.	Parent=HMPREF0556_2586;Name=PF07730;Note=HisKA_3;Description=Histidine kinase

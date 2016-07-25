@@ -1,0 +1,47 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	34553	34715	1.9000000000000001e-09	-	.	Parent=AX25_00180;Name=PF02894;Note=GFO_IDH_MocA_C;Description=Oxidoreductase family, C-terminal alpha/beta domain
+accn|CP007172	HMMER	phypat+PGL	75739	77149	1.6999999999999993e-140	+	.	Parent=AX25_00345;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	137112	137520	1.5999999999999999e-38	-	.	Parent=AX25_00640;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	137693	138428	2.6000000000000001e-74	+	.	Parent=AX25_00645;Name=PF04794;Note=YdjC;Description=YdjC-like protein
+accn|CP007172	HMMER	phypat+PGL	159549	160992	2.3999999999999993e-120	+	.	Parent=AX25_00740;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	232187	232886	1.4999999999999997e-64	+	.	Parent=AX25_01075;Name=PF04794;Note=YdjC;Description=YdjC-like protein
+accn|CP007172	HMMER	phypat+PGL	333151	334585	5.5999999999999992e-135	+	.	Parent=AX25_01545;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	340767	342171	5.4999999999999981e-174	-	.	Parent=AX25_01580;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	366227	367613	9.1999999999999985e-146	+	.	Parent=AX25_01700;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	392576	392975	6.6000000000000001e-35	-	.	Parent=AX25_01865;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	393179	394544	1.9999999999999999e-126	+	.	Parent=AX25_01870;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	477006	477468	1.2999999999999999e-30	+	.	Parent=AX25_02285;Name=PF06445;Note=GyrI-like;Description=GyrI-like small molecule binding domain
+accn|CP007172	HMMER	phypat+PGL	588561	589941	3.1999999999999992e-136	+	.	Parent=AX25_02850;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	590281	590689	2.7000000000000001e-40	+	.	Parent=AX25_02855;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	621622	621826	2.9999999999999997e-20	+	.	Parent=AX25_02990;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|CP007172	HMMER	phypat+PGL	691219	691369	7.4000000000000001e-20	+	.	Parent=AX25_03305;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|CP007172	HMMER	phypat+PGL	705119	705272	2.3999999999999999e-21	+	.	Parent=AX25_03385;Name=PF12464;Note=Mac;Description=Maltose acetyltransferase
+accn|CP007172	HMMER	phypat+PGL	752666	752879	8.0999999999999998e-24	+	.	Parent=AX25_03650;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|CP007172	HMMER	phypat+PGL	950429	950825	1.6999999999999999e-40	+	.	Parent=AX25_04605;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	952332	952503	1.8e-17	+	.	Parent=AX25_04625;Name=PF13376;Note=OmdA;Description=Bacteriocin-protection, YdeI or OmpD-Associated
+accn|CP007172	HMMER	phypat+PGL	963377	964796	1.0999999999999997e-121	+	.	Parent=AX25_04690;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	1007768	1008182	9.7999999999999998e-43	+	.	Parent=AX25_04925;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	1061160	1061592	3.3999999999999997e-48	+	.	Parent=AX25_05210;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|CP007172	HMMER	phypat+PGL	1062710	1063298	3.9999999999999999e-48	+	.	Parent=AX25_05220;Name=PF03932;Note=CutC;Description=CutC family
+accn|CP007172	HMMER	phypat+PGL	1233654	1234074	4.9999999999999997e-50	-	.	Parent=AX25_06145;Name=PF04657;Note=DUF606;Description=Protein of unknown function, DUF606
+accn|CP007172	HMMER	phypat+PGL	1234115	1234538	4.3000000000000002e-49	-	.	Parent=AX25_06150;Name=PF04657;Note=DUF606;Description=Protein of unknown function, DUF606
+accn|CP007172	HMMER	phypat+PGL	1235252	1235447	5.8999999999999994e-19	+	.	Parent=AX25_06160;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|CP007172	HMMER	phypat+PGL	1296443	1296602	5.1e-15	-	.	Parent=AX25_06420;Name=PF13376;Note=OmdA;Description=Bacteriocin-protection, YdeI or OmpD-Associated
+accn|CP007172	HMMER	phypat+PGL	1307774	1308185	2.2000000000000001e-33	+	.	Parent=AX25_06510;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	1462276	1464034	3.5999999999999986e-211	+	.	Parent=AX25_07275;Name=PF02901;Note=PFL;Description=Pyruvate formate lyase
+accn|CP007172	HMMER	phypat+PGL	1465351	1465552	3.4999999999999996e-17	-	.	Parent=AX25_07285;Name=PF03551;Note=PadR;Description=Transcriptional regulator PadR-like family
+accn|CP007172	HMMER	phypat+PGL	1490511	1491306	5.6999999999999994e-63	+	.	Parent=AX25_07400;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|CP007172	HMMER	phypat+PGL	1494579	1495377	1.9e-62	-	.	Parent=AX25_07420;Name=PF04069;Note=OpuAC;Description=Substrate binding domain of ABC-type glycine betaine transport system
+accn|CP007172	HMMER	phypat+PGL	2048088	2048856	1.3999999999999997e-84	+	.	Parent=AX25_10155;Name=PF03949;Note=Malic_M;Description=Malic enzyme, NAD binding domain
+accn|CP007172	HMMER	phypat+PGL	2047512	2048058	2.3999999999999997e-66	+	.	Parent=AX25_10155;Name=PF00390;Note=malic;Description=Malic enzyme, N-terminal domain
+accn|CP007172	HMMER	phypat+PGL	2050250	2052026	8.1999999999999975e-165	+	.	Parent=AX25_10165;Name=PF02901;Note=PFL;Description=Pyruvate formate lyase
+accn|CP007172	HMMER	phypat+PGL	2122691	2122880	2.0999999999999999e-19	+	.	Parent=AX25_10510;Name=PF13710;Note=ACT_5;Description=ACT domain
+accn|CP007172	HMMER	phypat+PGL	2140440	2140803	9.9999999999999998e-13	-	.	Parent=AX25_10600;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2141129	2141528	2.7999999999999995e-34	-	.	Parent=AX25_10605;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2255357	2255903	5.6999999999999986e-65	+	.	Parent=AX25_11160;Name=PF01174;Note=SNO;Description=SNO glutamine amidotransferase family
+accn|CP007172	HMMER	phypat+PGL	2313975	2314182	1.8e-09	-	.	Parent=AX25_11480;Name=PF02894;Note=GFO_IDH_MocA_C;Description=Oxidoreductase family, C-terminal alpha/beta domain
+accn|CP007172	HMMER	phypat+PGL	2567983	2568133	7.3e-23	-	.	Parent=AX25_12730;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
+accn|CP007172	HMMER	phypat+PGL	2804068	2804962	2.3999999999999996e-112	+	.	Parent=AX25_14025;Name=PF02733;Note=Dak1;Description=Dak1 domain
+accn|CP007172	HMMER	phypat+PGL	2833859	2835221	4.5999999999999982e-126	-	.	Parent=AX25_14175;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|CP007172	HMMER	phypat+PGL	2840378	2840789	7.6000000000000004e-39	-	.	Parent=AX25_14200;Name=PF07702;Note=UTRA;Description=UTRA domain
+accn|CP007172	HMMER	phypat+PGL	2900176	2901580	1.2999999999999996e-171	+	.	Parent=AX25_14510;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1

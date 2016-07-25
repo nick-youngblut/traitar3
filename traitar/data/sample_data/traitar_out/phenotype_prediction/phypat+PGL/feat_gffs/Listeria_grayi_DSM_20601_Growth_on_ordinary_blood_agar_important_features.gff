@@ -1,0 +1,30 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	14243	15122	7.1999999999999998e-43	+	.	Parent=HMPREF0556_0015;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|NZ_GG692936	HMMER	phypat+PGL	26982	27882	9.9999999999999998e-13	+	.	Parent=HMPREF0556_0031;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692936	HMMER	phypat+PGL	70750	71125	4.7000000000000003e-36	-	.	Parent=HMPREF0556_0071;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	449903	450275	4.8999999999999993e-37	+	.	Parent=HMPREF0556_0537;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	519455	519794	1.8000000000000002e-20	+	.	Parent=HMPREF0556_0614;Name=PF02620;Note=DUF177;Description=Uncharacterized ACR, COG1399
+accn|NZ_GG692933	HMMER	phypat+PGL	601891	602818	2.7999999999999999e-81	+	.	Parent=HMPREF0556_0699;Name=PF00710;Note=Asparaginase;Description=Asparaginase
+accn|NZ_GG692933	HMMER	phypat+PGL	683478	683643	2.1000000000000001e-16	+	.	Parent=HMPREF0556_0786;Name=PF01471;Note=PG_binding_1;Description=Putative peptidoglycan binding domain
+accn|NZ_GG692933	HMMER	phypat+PGL	699094	699451	1.6999999999999998e-48	+	.	Parent=HMPREF0556_0801;Name=PF02787;Note=CPSase_L_D3;Description=Carbamoyl-phosphate synthetase large chain, oligomerisation domain
+accn|NZ_GG692933	HMMER	phypat+PGL	710462	711482	2.2000000000000002e-27	+	.	Parent=HMPREF0556_0812;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692933	HMMER	phypat+PGL	711581	712619	2e-41	+	.	Parent=HMPREF0556_0813;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692933	HMMER	phypat+PGL	742709	743066	9.4000000000000004e-32	+	.	Parent=HMPREF0556_0842;Name=PF06470;Note=SMC_hinge;Description=SMC proteins Flexible Hinge Domain
+accn|NZ_GG692933	HMMER	phypat+PGL	768693	769212	1.8e-09	-	.	Parent=HMPREF0556_0867;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	68635	68884	4.8e-10	-	.	Parent=HMPREF0556_0946;Name=PF01507;Note=PAPS_reduct;Description=Phosphoadenosine phosphosulfate reductase family
+accn|NZ_GG692932	HMMER	phypat+PGL	77377	77755	9.1999999999999992e-11	-	.	Parent=HMPREF0556_0955;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	132786	133866	2.2999999999999997e-53	-	.	Parent=HMPREF0556_1011;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	174927	175356	1.6e-12	+	.	Parent=HMPREF0556_1049;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	255186	255753	7.4999999999999996e-14	+	.	Parent=HMPREF0556_1139;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	318673	319087	7.7999999999999996e-40	-	.	Parent=HMPREF0556_1212;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692932	HMMER	phypat+PGL	349894	350290	6.8000000000000003e-10	-	.	Parent=HMPREF0556_1251;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	605225	606209	2.0999999999999999e-12	-	.	Parent=HMPREF0556_1501;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692932	HMMER	phypat+PGL	629347	630286	1.0000000000000001e-11	-	.	Parent=HMPREF0556_1524;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692932	HMMER	phypat+PGL	879088	880153	3.7999999999999998e-11	-	.	Parent=HMPREF0556_1766;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|NZ_GG692935	HMMER	phypat+PGL	4653	5472	4.9999999999999992e-80	+	.	Parent=HMPREF0556_1997;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|NZ_GG692935	HMMER	phypat+PGL	44479	44821	5.8999999999999996e-23	+	.	Parent=HMPREF0556_2037;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|NZ_GG692935	HMMER	phypat+PGL	86861	87914	9.9999999999999986e-52	+	.	Parent=HMPREF0556_2079;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|NZ_GG692935	HMMER	phypat+PGL	137619	138465	3.0999999999999997e-118	+	.	Parent=HMPREF0556_2127;Name=PF03668;Note=ATP_bind_2;Description=P-loop ATPase protein family
+accn|NZ_GG692935	HMMER	phypat+PGL	200937	201771	2.2999999999999992e-77	+	.	Parent=HMPREF0556_2183;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|NZ_GG692934	HMMER	phypat+PGL	217815	218130	3.1999999999999999e-18	-	.	Parent=HMPREF0556_2473;Name=PF06114;Note=DUF955;Description=Domain of unknown function (DUF955)
+accn|NZ_GG692934	HMMER	phypat+PGL	239650	239977	1.8999999999999998e-32	-	.	Parent=HMPREF0556_2496;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase

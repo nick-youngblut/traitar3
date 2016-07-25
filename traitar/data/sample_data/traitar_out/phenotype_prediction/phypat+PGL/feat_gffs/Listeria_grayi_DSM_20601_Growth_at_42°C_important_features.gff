@@ -1,0 +1,13 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	495176	495338	1.2e-15	-	.	Parent=HMPREF0556_0584;Name=PF14659;Note=Phage_int_SAM_3;Description=Phage integrase, N-terminal SAM-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	679389	679632	3.7999999999999999e-33	+	.	Parent=HMPREF0556_0783;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|NZ_GG692932	HMMER	phypat+PGL	57888	58110	1.4999999999999998e-20	+	.	Parent=HMPREF0556_0932;Name=PF01883;Note=DUF59;Description=Domain of unknown function DUF59
+accn|NZ_GG692932	HMMER	phypat+PGL	296628	296898	8.2999999999999998e-11	+	.	Parent=HMPREF0556_1185;Name=PF14635;Note=HHH_7;Description=Helix-hairpin-helix motif
+accn|NZ_GG692932	HMMER	phypat+PGL	313467	313932	6.7000000000000001e-11	+	.	Parent=HMPREF0556_1205;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|NZ_GG692932	HMMER	phypat+PGL	599575	600373	2.2e-56	+	.	Parent=HMPREF0556_1496;Name=PF00176;Note=SNF2_N;Description=SNF2 family N-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	635521	635749	1.3000000000000001e-20	+	.	Parent=HMPREF0556_1530;Name=PF02583;Note=Trns_repr_metal;Description=Metal-sensitive transcriptional repressor
+accn|NZ_GG692932	HMMER	phypat+PGL	683270	683840	2.0000000000000002e-29	+	.	Parent=HMPREF0556_1578;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|NZ_GG692932	HMMER	phypat+PGL	925257	925446	6.8000000000000003e-10	-	.	Parent=HMPREF0556_1805;Name=PF02737;Note=3HCDH_N;Description=3-hydroxyacyl-CoA dehydrogenase, NAD binding domain
+accn|NZ_GG692934	HMMER	phypat+PGL	16707	16869	1.3000000000000001e-09	+	.	Parent=HMPREF0556_2261;Name=PF14659;Note=Phage_int_SAM_3;Description=Phage integrase, N-terminal SAM-like domain
+accn|NZ_GG692934	HMMER	phypat+PGL	187223	188375	5.6999999999999999e-91	+	.	Parent=HMPREF0556_2438;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|NZ_GG692934	HMMER	phypat+PGL	333503	333692	9.900000000000001e-10	+	.	Parent=HMPREF0556_2601;Name=PF02737;Note=3HCDH_N;Description=3-hydroxyacyl-CoA dehydrogenase, NAD binding domain

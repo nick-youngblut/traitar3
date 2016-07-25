@@ -1,0 +1,14 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	92888	93122	7.1999999999999993e-33	-	.	Parent=HMPREF0556_0090;Name=PF10397;Note=ADSL_C;Description=Adenylosuccinate lyase C-terminus
+accn|NZ_GG692933	HMMER	phypat+PGL	167486	167636	3.7000000000000007e-10	-	.	Parent=HMPREF0556_0248;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	189027	189177	8.400000000000001e-10	+	.	Parent=HMPREF0556_0278;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	207893	208181	5.0999999999999999e-29	-	.	Parent=HMPREF0556_0294;Name=PF02746;Note=MR_MLE_N;Description=Mandelate racemase / muconate lactonizing enzyme, N-terminal domain
+accn|NZ_GG692933	HMMER	phypat+PGL	400555	400714	1.6000000000000001e-09	+	.	Parent=HMPREF0556_0492;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	477969	478329	3.4000000000000002e-13	+	.	Parent=HMPREF0556_0566;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	537965	538256	1.8e-37	+	.	Parent=HMPREF0556_0635;Name=PF02829;Note=3H;Description=3H domain
+accn|NZ_GG692932	HMMER	phypat+PGL	16371	17031	1.3000000000000002e-60	-	.	Parent=HMPREF0556_0895;Name=PF11975;Note=Glyco_hydro_4C;Description=Family 4 glycosyl hydrolase C-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	21522	22185	5.5999999999999989e-48	+	.	Parent=HMPREF0556_0900;Name=PF11975;Note=Glyco_hydro_4C;Description=Family 4 glycosyl hydrolase C-terminal domain
+accn|NZ_GG692932	HMMER	phypat+PGL	691105	691612	8.2999999999999998e-11	+	.	Parent=HMPREF0556_1583;Name=PF06833;Note=MdcE;Description=Malonate decarboxylase gamma subunit (MdcE)
+accn|NZ_GG692935	HMMER	phypat+PGL	61412	61733	1.2e-15	+	.	Parent=HMPREF0556_2056;Name=PF02746;Note=MR_MLE_N;Description=Mandelate racemase / muconate lactonizing enzyme, N-terminal domain
+accn|NZ_GG692935	HMMER	phypat+PGL	239695	240079	1.3000000000000002e-10	-	.	Parent=HMPREF0556_2217;Name=PF13434;Note=K_oxygenase;Description=L-lysine 6-monooxygenase (NADPH-requiring)
+accn|NZ_GG692934	HMMER	phypat+PGL	312658	313243	4.9999999999999999e-13	-	.	Parent=HMPREF0556_2575;Name=PF02230;Note=Abhydrolase_2;Description=Phospholipase/Carboxylesterase

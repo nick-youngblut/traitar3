@@ -1,0 +1,9 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	51982	52327	4.7000000000000005e-26	-	.	Parent=AX25_00235;Name=PF04266;Note=ASCH;Description=ASCH domain
+accn|CP007172	HMMER	phypat+PGL	165019	165232	2.8000000000000002e-13	+	.	Parent=AX25_00765;Name=PF00041;Note=fn3;Description=Fibronectin type III domain
+accn|CP007172	HMMER	phypat+PGL	596500	596653	6.6000000000000004e-23	+	.	Parent=AX25_02885;Name=PF02229;Note=PC4;Description=Transcriptional Coactivator p15 (PC4)
+accn|CP007172	HMMER	phypat+PGL	969790	970339	1.4999999999999997e-64	+	.	Parent=AX25_04710;Name=PF09323;Note=DUF1980;Description=Domain of unknown function (DUF1980)
+accn|CP007172	HMMER	phypat+PGL	2044479	2044818	7.6999999999999999e-12	+	.	Parent=AX25_10140;Name=PF07694;Note=5TM-5TMR_LYT;Description=5TMR of 5TMR-LYT
+accn|CP007172	HMMER	phypat+PGL	2150855	2151098	3.9e-28	-	.	Parent=AX25_10640;Name=PF06580;Note=His_kinase;Description=Histidine kinase
+accn|CP007172	HMMER	phypat+PGL	2151579	2151807	4.3999999999999998e-29	-	.	Parent=AX25_10645;Name=PF04854;Note=DUF624;Description=Protein of unknown function, DUF624
+accn|CP007172	HMMER	phypat+PGL	784981	785938	2.1999999999999997e-57	+	.	Parent=AX25_03830;Name=PF00962;Note=A_deaminase;Description=Adenosine/AMP deaminase

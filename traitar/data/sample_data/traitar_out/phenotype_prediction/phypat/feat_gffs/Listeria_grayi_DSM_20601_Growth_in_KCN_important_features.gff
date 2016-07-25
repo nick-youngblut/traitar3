@@ -1,7 +1,5 @@
 ##gff-version 3
-accn|NZ_GG692936	HMMER	phypat+PGL	73330	74647	2.6999999999999996e-156	-	.	Parent=HMPREF0556_0073;Name=PF01425;Note=Amidase;Description=Amidase
-accn|NZ_GG692933	HMMER	phypat+PGL	176224	176893	1.0999999999999999e-49	+	.	Parent=HMPREF0556_0259;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
-accn|NZ_GG692933	HMMER	phypat+PGL	414016	414394	4.0999999999999993e-10	+	.	Parent=HMPREF0556_0503;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
-accn|NZ_GG692933	HMMER	phypat+PGL	702457	702619	3.3000000000000002e-09	+	.	Parent=HMPREF0556_0803;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
-accn|NZ_GG692932	HMMER	phypat+PGL	788718	789267	3.5999999999999997e-35	+	.	Parent=HMPREF0556_1672;Name=PF01596;Note=Methyltransf_3;Description=O-methyltransferase
-accn|NZ_GG692934	HMMER	phypat+PGL	122588	122798	2.4e-09	-	.	Parent=HMPREF0556_2380;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
+accn|NZ_GG692933	HMMER	phypat	176224	176893	1.0999999999999999e-49	+	.	Parent=HMPREF0556_0259;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
+accn|NZ_GG692933	HMMER	phypat	414016	414394	4.0999999999999993e-10	+	.	Parent=HMPREF0556_0503;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
+accn|NZ_GG692933	HMMER	phypat	702457	702619	3.3000000000000002e-09	+	.	Parent=HMPREF0556_0803;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase
+accn|NZ_GG692934	HMMER	phypat	122588	122798	2.4e-09	-	.	Parent=HMPREF0556_2380;Name=PF03060;Note=NMO;Description=Nitronate monooxygenase

@@ -1,27 +1,2 @@
 ##gff-version 3
-accn|CP007172	HMMER	phypat+PGL	51982	52327	4.7000000000000005e-26	-	.	Parent=AX25_00235;Name=PF04266;Note=ASCH;Description=ASCH domain
-accn|CP007172	HMMER	phypat+PGL	165019	165232	2.8000000000000002e-13	+	.	Parent=AX25_00765;Name=PF00041;Note=fn3;Description=Fibronectin type III domain
-accn|CP007172	HMMER	phypat+PGL	462708	463107	1.8000000000000002e-28	+	.	Parent=AX25_02210;Name=PF07905;Note=PucR;Description=Purine catabolism regulatory protein-like family
-accn|CP007172	HMMER	phypat+PGL	596500	596653	6.6000000000000004e-23	+	.	Parent=AX25_02885;Name=PF02229;Note=PC4;Description=Transcriptional Coactivator p15 (PC4)
-accn|CP007172	HMMER	phypat+PGL	691219	691369	7.4000000000000001e-20	+	.	Parent=AX25_03305;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
-accn|CP007172	HMMER	phypat+PGL	705119	705272	2.3999999999999999e-21	+	.	Parent=AX25_03385;Name=PF12464;Note=Mac;Description=Maltose acetyltransferase
-accn|CP007172	HMMER	phypat+PGL	813074	813836	1.4000000000000001e-37	+	.	Parent=AX25_03970;Name=PF01869;Note=BcrAD_BadFG;Description=BadF/BadG/BcrA/BcrD ATPase family
-accn|CP007172	HMMER	phypat+PGL	969790	970339	1.4999999999999997e-64	+	.	Parent=AX25_04710;Name=PF09323;Note=DUF1980;Description=Domain of unknown function (DUF1980)
-accn|CP007172	HMMER	phypat+PGL	1244182	1244410	9.0000000000000018e-27	+	.	Parent=AX25_06225;Name=PF05598;Note=DUF772;Description=Transposase domain (DUF772)
-accn|CP007172	HMMER	phypat+PGL	1261549	1262026	1.3999999999999999e-36	+	.	Parent=AX25_06290;Name=PF02674;Note=Colicin_V;Description=Colicin V production protein
-accn|CP007172	HMMER	phypat+PGL	1392337	1392532	3.8999999999999999e-12	+	.	Parent=AX25_06920;Name=PF13414;Note=TPR_11;Description=TPR repeat
-accn|CP007172	HMMER	phypat+PGL	1576914	1577100	2e-14	-	.	Parent=AX25_07835;Name=PF13414;Note=TPR_11;Description=TPR repeat
-accn|CP007172	HMMER	phypat+PGL	1582819	1584004	9.8999999999999989e-138	+	.	Parent=AX25_07865;Name=PF00909;Note=Ammonium_transp;Description=Ammonium Transporter Family
-accn|CP007172	HMMER	phypat+PGL	1808085	1808313	5.6999999999999999e-26	+	.	Parent=AX25_08985;Name=PF05598;Note=DUF772;Description=Transposase domain (DUF772)
-accn|CP007172	HMMER	phypat+PGL	1821274	1821700	1e-42	+	.	Parent=AX25_09060;Name=PF01712;Note=dNK;Description=Deoxynucleoside kinase
-accn|CP007172	HMMER	phypat+PGL	1982649	1982832	5.5999999999999999e-22	-	.	Parent=AX25_09815;Name=PF00403;Note=HMA;Description=Heavy-metal-associated domain
-accn|CP007172	HMMER	phypat+PGL	1982886	1983066	1.3000000000000002e-18	-	.	Parent=AX25_09820;Name=PF00403;Note=HMA;Description=Heavy-metal-associated domain
-accn|CP007172	HMMER	phypat+PGL	2044479	2044818	7.6999999999999999e-12	+	.	Parent=AX25_10140;Name=PF07694;Note=5TM-5TMR_LYT;Description=5TMR of 5TMR-LYT
-accn|CP007172	HMMER	phypat+PGL	2056833	2057001	8.7999999999999997e-12	-	.	Parent=AX25_10190;Name=PF13414;Note=TPR_11;Description=TPR repeat
-accn|CP007172	HMMER	phypat+PGL	2150855	2151098	3.9e-28	-	.	Parent=AX25_10640;Name=PF06580;Note=His_kinase;Description=Histidine kinase
-accn|CP007172	HMMER	phypat+PGL	2151579	2151807	4.3999999999999998e-29	-	.	Parent=AX25_10645;Name=PF04854;Note=DUF624;Description=Protein of unknown function, DUF624
-accn|CP007172	HMMER	phypat+PGL	2411024	2411606	2.3999999999999998e-28	+	.	Parent=AX25_11905;Name=PF01865;Note=PhoU_div;Description=Protein of unknown function DUF47
-accn|CP007172	HMMER	phypat+PGL	2528241	2528733	9.4999999999999987e-65	-	.	Parent=AX25_12560;Name=PF08020;Note=DUF1706;Description=Protein of unknown function (DUF1706)
-accn|CP007172	HMMER	phypat+PGL	2567983	2568133	7.3e-23	-	.	Parent=AX25_12730;Name=PF13906;Note=AA_permease_C;Description=C-terminus of AA_permease
-accn|CP007172	HMMER	phypat+PGL	2577883	2578036	5.2999999999999996e-12	-	.	Parent=AX25_12780;Name=PF13414;Note=TPR_11;Description=TPR repeat
-accn|CP007172	HMMER	phypat+PGL	784981	785938	2.1999999999999997e-57	+	.	Parent=AX25_03830;Name=PF00962;Note=A_deaminase;Description=Adenosine/AMP deaminase
+accn|CP007172	HMMER	phypat	165019	165232	2.8000000000000002e-13	+	.	Parent=AX25_00765;Name=PF00041;Note=fn3;Description=Fibronectin type III domain

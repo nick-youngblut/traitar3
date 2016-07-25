@@ -1,0 +1,30 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	30197	30737	2.8000000000000001e-15	-	.	Parent=AX25_00165;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	86010	86688	2.7000000000000005e-10	-	.	Parent=AX25_00400;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	101569	102724	5.5999999999999991e-95	+	.	Parent=AX25_00465;Name=PF02274;Note=Amidinotransf;Description=Amidinotransferase
+accn|CP007172	HMMER	phypat+PGL	107046	107352	2.5000000000000002e-19	+	.	Parent=AX25_00500;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|CP007172	HMMER	phypat+PGL	194208	194895	3.1e-09	+	.	Parent=AX25_00905;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	332610	332913	2.5000000000000001e-11	+	.	Parent=AX25_01540;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	678877	679267	8.3999999999999998e-12	+	.	Parent=AX25_03245;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	685335	685980	5.3999999999999996e-48	+	.	Parent=AX25_03285;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	704067	704805	5.4999999999999997e-11	-	.	Parent=AX25_03380;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	720428	720593	1.3e-23	+	.	Parent=AX25_03480;Name=PF13677;Note=MotB_plug;Description=Membrane MotB of proton-channel complex MotA/MotB
+accn|CP007172	HMMER	phypat+PGL	726772	727012	1.7000000000000001e-26	+	.	Parent=AX25_03510;Name=PF07194;Note=P2;Description=P2 response regulator binding domain
+accn|CP007172	HMMER	phypat+PGL	731008	731317	5.9999999999999997e-13	+	.	Parent=AX25_03535;Name=PF07559;Note=FlaE;Description=Flagellar basal body protein FlaE
+accn|CP007172	HMMER	phypat+PGL	751016	751781	1.4000000000000001e-29	+	.	Parent=AX25_03645;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	849690	850575	1.2e-40	+	.	Parent=AX25_04140;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	881860	882778	1.8999999999999999e-36	+	.	Parent=AX25_04255;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	1549451	1549838	1.9000000000000001e-17	-	.	Parent=AX25_07695;Name=PF13567;Note=DUF4131;Description=Domain of unknown function (DUF4131)
+accn|CP007172	HMMER	phypat+PGL	1557664	1557934	1.3000000000000002e-10	-	.	Parent=AX25_07745;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	1861062	1861431	6.5000000000000001e-14	-	.	Parent=AX25_09215;Name=PF13527;Note=Acetyltransf_9;Description=Acetyltransferase (GNAT) domain
+accn|CP007172	HMMER	phypat+PGL	1984137	1984782	1.4999999999999997e-46	-	.	Parent=AX25_09820;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2066977	2067511	4.7999999999999989e-81	-	.	Parent=AX25_10245;Name=PF01227;Note=GTP_cyclohydroI;Description=GTP cyclohydrolase I
+accn|CP007172	HMMER	phypat+PGL	2418307	2418835	8.6999999999999994e-16	-	.	Parent=AX25_11940;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2422573	2422909	4.0000000000000004e-21	-	.	Parent=AX25_11970;Name=PF13527;Note=Acetyltransf_9;Description=Acetyltransferase (GNAT) domain
+accn|CP007172	HMMER	phypat+PGL	2498181	2498817	8.3999999999999995e-13	-	.	Parent=AX25_12390;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2514769	2515075	6.4999999999999994e-12	-	.	Parent=AX25_12475;Name=PF14501;Note=HATPase_c_5;Description=GHKL domain
+accn|CP007172	HMMER	phypat+PGL	2581510	2581783	1.3000000000000001e-12	-	.	Parent=AX25_12810;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2633365	2633551	2.0999999999999999e-12	-	.	Parent=AX25_13065;Name=PF09378;Note=HAS-barrel;Description=HAS barrel domain
+accn|CP007172	HMMER	phypat+PGL	2784683	2785370	7.4000000000000011e-38	-	.	Parent=AX25_13920;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2793271	2794111	2.2999999999999997e-24	-	.	Parent=AX25_13960;Name=PF00702;Note=Hydrolase;Description=haloacid dehalogenase-like hydrolase
+accn|CP007172	HMMER	phypat+PGL	2863110	2863452	1.2e-09	+	.	Parent=AX25_14320;Name=PF13527;Note=Acetyltransf_9;Description=Acetyltransferase (GNAT) domain

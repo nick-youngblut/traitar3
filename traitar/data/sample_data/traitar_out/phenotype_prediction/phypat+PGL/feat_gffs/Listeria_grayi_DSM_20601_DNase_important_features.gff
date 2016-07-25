@@ -1,0 +1,2 @@
+##gff-version 3
+accn|NZ_GG692932	HMMER	phypat+PGL	662055	662640	8.3999999999999991e-70	+	.	Parent=HMPREF0556_1556;Name=PF02568;Note=ThiI;Description=Thiamine biosynthesis protein (ThiI)

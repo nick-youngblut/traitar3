@@ -382,15 +382,14 @@ class Traitar:
                 h2gff_commands.append(cmd)
             if not len(predicted_pts_phypat_pgl) == 0:
                 if not self.secondary_models is None:
-                    cmd = hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_dir, "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" :  self.secondary_models.get_archive_f(), "predicted_pts": ",".join(predicted_pts_phypat), "hmm_name" : self.secondary_models.get_hmm_name()}
+                    cmd = hmm2gff % {"out_gff_dir" : "%s/feat_gffs/" % self.phypat_pgl_dir, "out_dir" : self.output_dir, "phenolyzer" : self.phenolyzer_dir, "sample" : in_samples[i], "model_tar" :  self.secondary_models.get_archive_f(), "predicted_pts": ",".join(predicted_pts_phypat), "hmm_name" : self.secondary_models.get_hmm_name()}
                     if gene_gffs is not None:
                         cmd += gene_gff_extd % {"gene_gff" : ("%s/gene_prediction/%s.gff" % (self.output_dir, in_samples[i])) if gene_gffs is None else os.path.join(self.input_dir, gene_gffs[i])}
-                h2gff_commands.append(cmd)
-            #create output dirs for feature tracks
+                    h2gff_commands.append(cmd)
+        #create output dirs for feature tracks
         is_recompute = self.check_dir(os.path.join(self.phypat_dir, "feat_gffs"))
         if is_recompute:
-            if not os.path.exists(os.path.join(self.phypat_dir, "feat_gffs")):
-                os.mkdir(os.path.join(self.phypat_dir, "feat_gffs"))
+            os.mkdir(os.path.join(self.phypat_pgl_dir, "feat_gffs"))
             self.execute_commands(h2gff_commands) 
         if mode != "from_nucleotides" and gene_gffs is None:
             ftco = os.path.join(self.pred_dir, "feature_track_commands.txt")

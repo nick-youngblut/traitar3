@@ -1,0 +1,27 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	172895	173240	2.7000000000000005e-14	-	.	Parent=AX25_00800;Name=PF06114;Note=DUF955;Description=Domain of unknown function (DUF955)
+accn|CP007172	HMMER	phypat+PGL	694495	694936	1.4999999999999999e-12	+	.	Parent=AX25_03330;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|CP007172	HMMER	phypat+PGL	754365	754935	3.2000000000000003e-20	+	.	Parent=AX25_03665;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|CP007172	HMMER	phypat+PGL	797669	798038	5.0999999999999992e-34	+	.	Parent=AX25_03890;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|CP007172	HMMER	phypat+PGL	972525	973560	6.4999999999999997e-46	+	.	Parent=AX25_04725;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|CP007172	HMMER	phypat+PGL	987151	987574	5.2999999999999994e-40	-	.	Parent=AX25_04805;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|CP007172	HMMER	phypat+PGL	1466126	1467164	2.1999999999999999e-12	+	.	Parent=AX25_07290;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector
+accn|CP007172	HMMER	phypat+PGL	1641791	1642112	2.2e-28	-	.	Parent=AX25_08135;Name=PF04186;Note=FxsA;Description=FxsA cytoplasmic membrane protein
+accn|CP007172	HMMER	phypat+PGL	1815477	1816350	2.7000000000000003e-42	+	.	Parent=AX25_09020;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|CP007172	HMMER	phypat+PGL	1878512	1878890	2.7000000000000002e-34	-	.	Parent=AX25_09305;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|CP007172	HMMER	phypat+PGL	1932072	1932429	5.1999999999999999e-34	-	.	Parent=AX25_09575;Name=PF06470;Note=SMC_hinge;Description=SMC proteins Flexible Hinge Domain
+accn|CP007172	HMMER	phypat+PGL	1964872	1965229	1.7e-45	-	.	Parent=AX25_09730;Name=PF02787;Note=CPSase_L_D3;Description=Carbamoyl-phosphate synthetase large chain, oligomerisation domain
+accn|CP007172	HMMER	phypat+PGL	1982242	1982407	2.7999999999999996e-16	-	.	Parent=AX25_09810;Name=PF01471;Note=PG_binding_1;Description=Putative peptidoglycan binding domain
+accn|CP007172	HMMER	phypat+PGL	2074202	2075129	7.3999999999999978e-81	-	.	Parent=AX25_10280;Name=PF00710;Note=Asparaginase;Description=Asparaginase
+accn|CP007172	HMMER	phypat+PGL	2191398	2191740	1.3e-22	-	.	Parent=AX25_10820;Name=PF02620;Note=DUF177;Description=Uncharacterized ACR, COG1399
+accn|CP007172	HMMER	phypat+PGL	2300084	2301173	5.6000000000000007e-49	+	.	Parent=AX25_11400;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|CP007172	HMMER	phypat+PGL	2391831	2392377	4.5e-11	-	.	Parent=AX25_11810;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|CP007172	HMMER	phypat+PGL	2396123	2396483	5.2999999999999996e-13	+	.	Parent=AX25_11830;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|CP007172	HMMER	phypat+PGL	2396612	2397425	9.6999999999999981e-63	+	.	Parent=AX25_11835;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|CP007172	HMMER	phypat+PGL	2453637	2454204	9.9999999999999998e-17	-	.	Parent=AX25_12105;Name=PF12698;Note=ABC2_membrane_3;Description=ABC-2 family transporter protein
+accn|CP007172	HMMER	phypat+PGL	2515872	2516703	6.2999999999999984e-70	-	.	Parent=AX25_12485;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|CP007172	HMMER	phypat+PGL	2571860	2572703	9.0999999999999967e-122	-	.	Parent=AX25_12755;Name=PF03668;Note=ATP_bind_2;Description=P-loop ATPase protein family
+accn|CP007172	HMMER	phypat+PGL	2641606	2641990	4.1999999999999998e-33	-	.	Parent=AX25_13110;Name=PF01451;Note=LMWPc;Description=Low molecular weight phosphotyrosine protein phosphatase
+accn|CP007172	HMMER	phypat+PGL	2661552	2661900	4.5999999999999997e-31	-	.	Parent=AX25_13215;Name=PF00781;Note=DAGK_cat;Description=Diacylglycerol kinase catalytic domain
+accn|CP007172	HMMER	phypat+PGL	2676899	2677706	8.299999999999999e-78	-	.	Parent=AX25_13305;Name=PF01545;Note=Cation_efflux;Description=Cation efflux family
+accn|CP007172	HMMER	phypat+PGL	2874480	2875482	5.4999999999999996e-10	-	.	Parent=AX25_14400;Name=PF05977;Note=MFS_3;Description=Transmembrane secretion effector

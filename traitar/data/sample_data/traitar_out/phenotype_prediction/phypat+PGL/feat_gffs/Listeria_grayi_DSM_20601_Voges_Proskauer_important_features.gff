@@ -1,0 +1,2 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	558881	559535	1.5999999999999999e-93	-	.	Parent=HMPREF0556_0655;Name=PF03306;Note=AAL_decarboxy;Description=Alpha-acetolactate decarboxylase

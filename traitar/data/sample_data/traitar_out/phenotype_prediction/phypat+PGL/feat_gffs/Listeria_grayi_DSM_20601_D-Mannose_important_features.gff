@@ -1,0 +1,70 @@
+##gff-version 3
+accn|NZ_GG692936	HMMER	phypat+PGL	46498	46705	2.0999999999999996e-25	-	.	Parent=HMPREF0556_0045;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	35865	36645	4.2000000000000004e-20	+	.	Parent=HMPREF0556_0135;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	59891	61319	2.5999999999999994e-135	+	.	Parent=HMPREF0556_0152;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	63696	65103	8.2999999999999975e-181	-	.	Parent=HMPREF0556_0156;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	71200	72544	2.8999999999999991e-144	+	.	Parent=HMPREF0556_0164;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	76388	78158	7.0999999999999987e-79	+	.	Parent=HMPREF0556_0168;Name=PF13597;Note=NRDD;Description=Anaerobic ribonucleoside-triphosphate reductase
+accn|NZ_GG692933	HMMER	phypat+PGL	98974	99763	2e-16	+	.	Parent=HMPREF0556_0191;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	107143	108049	4.5999999999999997e-33	+	.	Parent=HMPREF0556_0195;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	108954	109368	9.2000000000000003e-10	+	.	Parent=HMPREF0556_0197;Name=PF00150;Note=Cellulase;Description=Cellulase (glycosyl hydrolase family 5)
+accn|NZ_GG692933	HMMER	phypat+PGL	108714	110133	1.9999999999999998e-122	+	.	Parent=HMPREF0556_0197;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	120962	121064	3.7000000000000003e-18	-	.	Parent=HMPREF0556_0207;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692933	HMMER	phypat+PGL	121271	122156	1.2e-40	-	.	Parent=HMPREF0556_0207;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	167486	167636	3.7000000000000007e-10	-	.	Parent=HMPREF0556_0248;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	189027	189177	8.400000000000001e-10	+	.	Parent=HMPREF0556_0278;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	203287	204112	2.7999999999999996e-16	+	.	Parent=HMPREF0556_0291;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	209317	209416	6.2000000000000001e-18	+	.	Parent=HMPREF0556_0295;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692933	HMMER	phypat+PGL	209623	210460	2.8000000000000002e-33	+	.	Parent=HMPREF0556_0295;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	214035	215004	1.7000000000000002e-62	+	.	Parent=HMPREF0556_0299;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	235378	235474	4.9000000000000001e-17	+	.	Parent=HMPREF0556_0319;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692933	HMMER	phypat+PGL	235678	236554	5.7999999999999991e-30	+	.	Parent=HMPREF0556_0319;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	273170	274535	9.9999999999999995e-127	+	.	Parent=HMPREF0556_0361;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	274675	275680	3.7999999999999994e-48	+	.	Parent=HMPREF0556_0362;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	300312	301227	9.2999999999999987e-64	+	.	Parent=HMPREF0556_0385;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	315906	316113	6.0999999999999993e-17	+	.	Parent=HMPREF0556_0399;Name=PF14310;Note=Fn3-like;Description=Fibronectin type III-like domain
+accn|NZ_GG692933	HMMER	phypat+PGL	316255	317215	1.3000000000000002e-44	+	.	Parent=HMPREF0556_0400;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692933	HMMER	phypat+PGL	400555	400714	1.6000000000000001e-09	+	.	Parent=HMPREF0556_0492;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	402951	404328	1.3999999999999997e-137	+	.	Parent=HMPREF0556_0494;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692933	HMMER	phypat+PGL	477969	478329	3.4000000000000002e-13	+	.	Parent=HMPREF0556_0566;Name=PF00135;Note=COesterase;Description=Carboxylesterase family
+accn|NZ_GG692933	HMMER	phypat+PGL	579466	579559	9.9999999999999998e-13	+	.	Parent=HMPREF0556_0675;Name=PF11798;Note=IMS_HHH;Description=IMS family HHH motif
+accn|NZ_GG692933	HMMER	phypat+PGL	658047	658143	3.9e-10	+	.	Parent=HMPREF0556_0758;Name=PF11798;Note=IMS_HHH;Description=IMS family HHH motif
+accn|NZ_GG692933	HMMER	phypat+PGL	725545	726103	6.3999999999999995e-33	-	.	Parent=HMPREF0556_0826;Name=PF07005;Note=DUF1537;Description=Protein of unknown function, DUF1537
+accn|NZ_GG692933	HMMER	phypat+PGL	759669	759798	6.0999999999999996e-10	+	.	Parent=HMPREF0556_0857;Name=PF13727;Note=CoA_binding_3;Description=CoA-binding domain
+accn|NZ_GG692932	HMMER	phypat+PGL	12741	13011	2.2e-13	+	.	Parent=HMPREF0556_0890;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692932	HMMER	phypat+PGL	13073	13700	6.9999999999999986e-47	+	.	Parent=HMPREF0556_0891;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692932	HMMER	phypat+PGL	26062	26503	3.7000000000000007e-10	-	.	Parent=HMPREF0556_0904;Name=PF09863;Note=DUF2090;Description=Uncharacterized protein conserved in bacteria (DUF2090)
+accn|NZ_GG692932	HMMER	phypat+PGL	41495	42488	1.1e-55	-	.	Parent=HMPREF0556_0920;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692932	HMMER	phypat+PGL	116586	117726	5.6999999999999984e-81	+	.	Parent=HMPREF0556_0992;Name=PF01432;Note=Peptidase_M3;Description=Peptidase family M3
+accn|NZ_GG692932	HMMER	phypat+PGL	136060	136153	3.5000000000000002e-14	+	.	Parent=HMPREF0556_1014;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692932	HMMER	phypat+PGL	136366	137212	1.6000000000000001e-29	+	.	Parent=HMPREF0556_1014;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692932	HMMER	phypat+PGL	150204	150645	1.3e-39	+	.	Parent=HMPREF0556_1024;Name=PF02698;Note=DUF218;Description=DUF218 domain
+accn|NZ_GG692932	HMMER	phypat+PGL	246468	247386	4.2999999999999994e-54	-	.	Parent=HMPREF0556_1129;Name=PF01238;Note=PMI_typeI;Description=Phosphomannose isomerase type I
+accn|NZ_GG692932	HMMER	phypat+PGL	311986	312538	2.3999999999999995e-60	+	.	Parent=HMPREF0556_1203;Name=PF02245;Note=Pur_DNA_glyco;Description=Methylpurine-DNA glycosylase (MPG)
+accn|NZ_GG692932	HMMER	phypat+PGL	313467	313932	6.7000000000000001e-11	+	.	Parent=HMPREF0556_1205;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|NZ_GG692932	HMMER	phypat+PGL	386866	387280	2.9999999999999996e-37	+	.	Parent=HMPREF0556_1284;Name=PF02698;Note=DUF218;Description=DUF218 domain
+accn|NZ_GG692932	HMMER	phypat+PGL	513591	514116	3.3000000000000001e-22	+	.	Parent=HMPREF0556_1413;Name=PF13727;Note=CoA_binding_3;Description=CoA-binding domain
+accn|NZ_GG692932	HMMER	phypat+PGL	683270	683840	2.0000000000000002e-29	+	.	Parent=HMPREF0556_1578;Name=PF13483;Note=Lactamase_B_3;Description=Beta-lactamase superfamily domain
+accn|NZ_GG692932	HMMER	phypat+PGL	793815	794955	3.0999999999999999e-25	-	.	Parent=HMPREF0556_1679;Name=PF01432;Note=Peptidase_M3;Description=Peptidase family M3
+accn|NZ_GG692932	HMMER	phypat+PGL	863304	864681	7.0999999999999986e-126	-	.	Parent=HMPREF0556_1751;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692932	HMMER	phypat+PGL	991034	991133	6.9000000000000009e-14	-	.	Parent=HMPREF0556_1878;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692932	HMMER	phypat+PGL	991421	992267	3.7000000000000003e-34	-	.	Parent=HMPREF0556_1878;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692937	HMMER	phypat+PGL	5726	5999	3.4000000000000002e-13	-	.	Parent=HMPREF0556_1916;Name=PF12846;Note=AAA_10;Description=AAA-like domain
+accn|NZ_GG692937	HMMER	phypat+PGL	32369	33386	1.0999999999999999e-53	-	.	Parent=HMPREF0556_1951;Name=PF12846;Note=AAA_10;Description=AAA-like domain
+accn|NZ_GG692937	HMMER	phypat+PGL	64317	64413	2.7e-11	-	.	Parent=HMPREF0556_1987;Name=PF11798;Note=IMS_HHH;Description=IMS family HHH motif
+accn|NZ_GG692935	HMMER	phypat+PGL	151808	152546	5.8999999999999999e-29	+	.	Parent=HMPREF0556_2141;Name=PF00150;Note=Cellulase;Description=Cellulase (glycosyl hydrolase family 5)
+accn|NZ_GG692935	HMMER	phypat+PGL	157607	158789	2.7999999999999991e-139	+	.	Parent=HMPREF0556_2145;Name=PF03611;Note=EIIC-GAT;Description=PTS system sugar-specific permease component
+accn|NZ_GG692934	HMMER	phypat+PGL	2718	3870	2.1999999999999996e-100	-	.	Parent=HMPREF0556_2245;Name=PF03611;Note=EIIC-GAT;Description=PTS system sugar-specific permease component
+accn|NZ_GG692934	HMMER	phypat+PGL	44549	44624	2.3e-14	+	.	Parent=HMPREF0556_2303;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692934	HMMER	phypat+PGL	44849	45677	9.9999999999999997e-29	+	.	Parent=HMPREF0556_2303;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692934	HMMER	phypat+PGL	64426	65392	1.1999999999999999e-62	+	.	Parent=HMPREF0556_2322;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692934	HMMER	phypat+PGL	87509	88553	9.4999999999999981e-68	-	.	Parent=HMPREF0556_2350;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692934	HMMER	phypat+PGL	126373	127774	4.2999999999999976e-174	+	.	Parent=HMPREF0556_2382;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat+PGL	128019	129018	3.4999999999999995e-55	+	.	Parent=HMPREF0556_2383;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692934	HMMER	phypat+PGL	177435	178845	1.5999999999999996e-136	+	.	Parent=HMPREF0556_2430;Name=PF00232;Note=Glyco_hydro_1;Description=Glycosyl hydrolase family 1
+accn|NZ_GG692934	HMMER	phypat+PGL	180180	180282	5.3999999999999999e-20	+	.	Parent=HMPREF0556_2432;Name=PF00367;Note=PTS_EIIB;Description=phosphotransferase system, EIIB
+accn|NZ_GG692934	HMMER	phypat+PGL	180483	181362	1.9000000000000002e-30	+	.	Parent=HMPREF0556_2432;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692934	HMMER	phypat+PGL	182221	182413	2.8999999999999997e-35	+	.	Parent=HMPREF0556_2433;Name=PF02805;Note=Ada_Zn_binding;Description=Metal binding domain of Ada
+accn|NZ_GG692934	HMMER	phypat+PGL	231413	231620	3.8e-19	+	.	Parent=HMPREF0556_2486;Name=PF14542;Note=Acetyltransf_CG;Description=GCN5-related N-acetyl-transferase
+accn|NZ_GG692934	HMMER	phypat+PGL	233256	234030	7.6e-19	+	.	Parent=HMPREF0556_2490;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC
+accn|NZ_GG692934	HMMER	phypat+PGL	273382	274324	1.6e-49	-	.	Parent=HMPREF0556_2535;Name=PF02378;Note=PTS_EIIC;Description=Phosphotransferase system, EIIC

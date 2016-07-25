@@ -1,0 +1,32 @@
+##gff-version 3
+accn|CP007172	HMMER	phypat+PGL	414009	414483	2.5000000000000003e-12	-	.	Parent=AX25_01990;Name=PF13506;Note=Glyco_transf_21;Description=Glycosyl transferase family 21
+accn|CP007172	HMMER	phypat+PGL	477006	477468	1.2999999999999999e-30	+	.	Parent=AX25_02285;Name=PF06445;Note=GyrI-like;Description=GyrI-like small molecule binding domain
+accn|CP007172	HMMER	phypat+PGL	502970	503288	6.0000000000000001e-32	+	.	Parent=AX25_02445;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	540135	540621	1.2e-16	+	.	Parent=AX25_02610;Name=PF13506;Note=Glyco_transf_21;Description=Glycosyl transferase family 21
+accn|CP007172	HMMER	phypat+PGL	599231	599354	1.8999999999999999e-20	-	.	Parent=AX25_02900;Name=PF01476;Note=LysM;Description=LysM domain
+accn|CP007172	HMMER	phypat+PGL	634442	634631	2.1999999999999999e-15	+	.	Parent=AX25_03060;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	796601	796775	7.7000000000000006e-11	-	.	Parent=AX25_03885;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	801402	801804	3e-23	+	.	Parent=AX25_03920;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|CP007172	HMMER	phypat+PGL	869633	871553	0.0	-	.	Parent=AX25_04210;Name=PF06874;Note=FBPase_2;Description=Firmicute fructose-1,6-bisphosphatase
+accn|CP007172	HMMER	phypat+PGL	931266	931389	2.3999999999999999e-14	+	.	Parent=AX25_04485;Name=PF01476;Note=LysM;Description=LysM domain
+accn|CP007172	HMMER	phypat+PGL	1065643	1065847	1.1999999999999998e-23	+	.	Parent=AX25_05235;Name=PF07730;Note=HisKA_3;Description=Histidine kinase
+accn|CP007172	HMMER	phypat+PGL	1134650	1134962	1.1999999999999999e-12	+	.	Parent=AX25_05555;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	1483599	1483935	2e-12	-	.	Parent=AX25_07370;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|CP007172	HMMER	phypat+PGL	1484064	1485273	3.2999999999999998e-71	-	.	Parent=AX25_07375;Name=PF11700;Note=ATG22;Description=Vacuole effluxer Atg22 like
+accn|CP007172	HMMER	phypat+PGL	1549451	1549838	1.9000000000000001e-17	-	.	Parent=AX25_07695;Name=PF13567;Note=DUF4131;Description=Domain of unknown function (DUF4131)
+accn|CP007172	HMMER	phypat+PGL	1576539	1576782	1.3000000000000001e-12	-	.	Parent=AX25_07835;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|CP007172	HMMER	phypat+PGL	1705151	1706234	1.3e-106	+	.	Parent=AX25_08435;Name=PF00872;Note=Transposase_mut;Description=Transposase, Mutator family
+accn|CP007172	HMMER	phypat+PGL	1754364	1754472	8.7999999999999997e-12	-	.	Parent=AX25_08655;Name=PF01476;Note=LysM;Description=LysM domain
+accn|CP007172	HMMER	phypat+PGL	1814753	1815212	8.8000000000000009e-18	-	.	Parent=AX25_09015;Name=PF04892;Note=VanZ;Description=VanZ like family
+accn|CP007172	HMMER	phypat+PGL	2009187	2009379	7.6000000000000002e-23	-	.	Parent=AX25_09950;Name=PF02742;Note=Fe_dep_repr_C;Description=Iron dependent repressor, metal binding and dimerisation domain
+accn|CP007172	HMMER	phypat+PGL	2056773	2057004	2.3999999999999999e-14	-	.	Parent=AX25_10190;Name=PF12895;Note=Apc3;Description=Anaphase-promoting complex, cyclosome, subunit 3
+accn|CP007172	HMMER	phypat+PGL	2075807	2075951	1.6999999999999998e-12	-	.	Parent=AX25_10285;Name=PF01476;Note=LysM;Description=LysM domain
+accn|CP007172	HMMER	phypat+PGL	2440584	2441883	9.3999999999999964e-206	+	.	Parent=AX25_12045;Name=PF03051;Note=Peptidase_C1_2;Description=Peptidase C1-like family
+accn|CP007172	HMMER	phypat+PGL	2625445	2625568	6.8000000000000001e-15	-	.	Parent=AX25_13020;Name=PF01476;Note=LysM;Description=LysM domain
+accn|CP007172	HMMER	phypat+PGL	2675499	2675667	2.2000000000000002e-10	-	.	Parent=AX25_13295;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	2730869	2731142	1.8000000000000001e-15	-	.	Parent=AX25_13650;Name=PF04205;Note=FMN_bind;Description=FMN-binding domain
+accn|CP007172	HMMER	phypat+PGL	2766935	2767250	1.6000000000000001e-36	-	.	Parent=AX25_13830;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	2767962	2768274	3.1999999999999999e-37	-	.	Parent=AX25_13835;Name=PF08240;Note=ADH_N;Description=Alcohol dehydrogenase GroES-like domain
+accn|CP007172	HMMER	phypat+PGL	2796907	2797033	1.8000000000000002e-20	+	.	Parent=AX25_13975;Name=PF01476;Note=LysM;Description=LysM domain
+accn|CP007172	HMMER	phypat+PGL	2897498	2897843	9.499999999999999e-45	-	.	Parent=AX25_14495;Name=PF01661;Note=Macro;Description=Macro domain
+accn|CP007172	HMMER	phypat+PGL	2236056	2236137	3.7000000000000006e-14	+	.	Parent=AX25_11070;Name=PF02661;Note=Fic;Description=Fic/DOC family

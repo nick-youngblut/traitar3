@@ -1,0 +1,40 @@
+##gff-version 3
+accn|NZ_GG692933	HMMER	phypat+PGL	65755	65965	2.8999999999999998e-13	-	.	Parent=HMPREF0556_0157;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692933	HMMER	phypat+PGL	122435	122819	5.5999999999999989e-46	-	.	Parent=HMPREF0556_0207;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|NZ_GG692933	HMMER	phypat+PGL	148917	149958	1.6999999999999997e-86	+	.	Parent=HMPREF0556_0235;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	151025	151937	1.0999999999999999e-88	+	.	Parent=HMPREF0556_0236;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	159042	160044	3.4999999999999995e-112	+	.	Parent=HMPREF0556_0242;Name=PF00128;Note=Alpha-amylase;Description=Alpha amylase, catalytic domain
+accn|NZ_GG692933	HMMER	phypat+PGL	210676	211063	3.8000000000000001e-47	+	.	Parent=HMPREF0556_0295;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|NZ_GG692933	HMMER	phypat+PGL	212918	213101	6.9e-17	+	.	Parent=HMPREF0556_0298;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692933	HMMER	phypat+PGL	299286	299457	5.7000000000000005e-18	-	.	Parent=HMPREF0556_0384;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692933	HMMER	phypat+PGL	333957	334641	9.799999999999999e-49	+	.	Parent=HMPREF0556_0416;Name=PF00591;Note=Glycos_transf_3;Description=Glycosyl transferase family, a/b domain
+accn|NZ_GG692933	HMMER	phypat+PGL	373632	374301	3.8999999999999996e-75	+	.	Parent=HMPREF0556_0458;Name=PF01487;Note=DHquinase_I;Description=Type I 3-dehydroquinase
+accn|NZ_GG692932	HMMER	phypat+PGL	11949	12129	9.6999999999999998e-17	-	.	Parent=HMPREF0556_0889;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692932	HMMER	phypat+PGL	17328	17523	3.9e-19	+	.	Parent=HMPREF0556_0896;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692932	HMMER	phypat+PGL	30657	31722	1.4e-57	+	.	Parent=HMPREF0556_0909;Name=PF00854;Note=PTR2;Description=POT family
+accn|NZ_GG692932	HMMER	phypat+PGL	35434	35896	8.9000000000000004e-51	+	.	Parent=HMPREF0556_0913;Name=PF00455;Note=DeoRC;Description=DeoR C terminal sensor domain
+accn|NZ_GG692932	HMMER	phypat+PGL	46133	46400	4.2999999999999993e-14	+	.	Parent=HMPREF0556_0924;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	96492	96732	5.1000000000000002e-09	+	.	Parent=HMPREF0556_0973;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	110179	110341	1.7999999999999999e-21	+	.	Parent=HMPREF0556_0986;Name=PF12911;Note=OppC_N;Description=N-terminal TM domain of oligopeptide transport permease C
+accn|NZ_GG692932	HMMER	phypat+PGL	137425	137812	2.6999999999999998e-48	+	.	Parent=HMPREF0556_1014;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|NZ_GG692932	HMMER	phypat+PGL	142378	142738	1.4000000000000002e-49	+	.	Parent=HMPREF0556_1018;Name=PF02457;Note=DisA_N;Description=DisA bacterial checkpoint controller nucleotide-binding
+accn|NZ_GG692932	HMMER	phypat+PGL	183409	183715	8.7000000000000003e-13	-	.	Parent=HMPREF0556_1057;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	246468	247386	4.2999999999999994e-54	-	.	Parent=HMPREF0556_1129;Name=PF01238;Note=PMI_typeI;Description=Phosphomannose isomerase type I
+accn|NZ_GG692932	HMMER	phypat+PGL	368692	369640	2.1999999999999996e-71	+	.	Parent=HMPREF0556_1267;Name=PF02386;Note=TrkH;Description=Cation transport protein
+accn|NZ_GG692932	HMMER	phypat+PGL	404067	404454	2.0999999999999998e-50	+	.	Parent=HMPREF0556_1304;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|NZ_GG692932	HMMER	phypat+PGL	414520	415276	3.2000000000000002e-16	+	.	Parent=HMPREF0556_1316;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	465373	465706	2.4999999999999999e-13	-	.	Parent=HMPREF0556_1364;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692932	HMMER	phypat+PGL	565627	566065	1.0999999999999998e-63	+	.	Parent=HMPREF0556_1467;Name=PF02664;Note=LuxS;Description=S-Ribosylhomocysteinase (LuxS)
+accn|NZ_GG692932	HMMER	phypat+PGL	612900	613650	1.7999999999999994e-95	+	.	Parent=HMPREF0556_1507;Name=PF00591;Note=Glycos_transf_3;Description=Glycosyl transferase family, a/b domain
+accn|NZ_GG692932	HMMER	phypat+PGL	774776	774977	4.7999999999999997e-17	+	.	Parent=HMPREF0556_1658;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692932	HMMER	phypat+PGL	848415	848637	1.5e-10	+	.	Parent=HMPREF0556_1735;Name=PF11611;Note=DUF4352;Description=Domain of unknown function (DUF4352)
+accn|NZ_GG692932	HMMER	phypat+PGL	936573	937116	2.3999999999999998e-11	-	.	Parent=HMPREF0556_1818;Name=PF08443;Note=RimK;Description=RimK-like ATP-grasp domain
+accn|NZ_GG692932	HMMER	phypat+PGL	994650	994869	2.8999999999999996e-23	-	.	Parent=HMPREF0556_1881;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692935	HMMER	phypat+PGL	4186	4459	1e-14	+	.	Parent=HMPREF0556_1996;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase
+accn|NZ_GG692935	HMMER	phypat+PGL	126748	126895	1.5000000000000001e-26	+	.	Parent=HMPREF0556_2119;Name=PF10509;Note=GalKase_gal_bdg;Description=Galactokinase galactose-binding signature
+accn|NZ_GG692935	HMMER	phypat+PGL	129640	130219	8.7999999999999989e-41	+	.	Parent=HMPREF0556_2121;Name=PF02744;Note=GalP_UDP_tr_C;Description=Galactose-1-phosphate uridyl transferase, C-terminal domain
+accn|NZ_GG692935	HMMER	phypat+PGL	221516	221948	2.9999999999999999e-19	+	.	Parent=HMPREF0556_2201;Name=PF12161;Note=HsdM_N;Description=HsdM N-terminal domain
+accn|NZ_GG692934	HMMER	phypat+PGL	130668	130857	4.5999999999999996e-23	-	.	Parent=HMPREF0556_2386;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692934	HMMER	phypat+PGL	181611	181995	9.0999999999999985e-54	+	.	Parent=HMPREF0556_2432;Name=PF00358;Note=PTS_EIIA_1;Description=phosphoenolpyruvate-dependent sugar phosphotransferase system, EIIA 1
+accn|NZ_GG692934	HMMER	phypat+PGL	212509	212722	1.1e-21	-	.	Parent=HMPREF0556_2467;Name=PF01418;Note=HTH_6;Description=Helix-turn-helix domain, rpiR family
+accn|NZ_GG692934	HMMER	phypat+PGL	251684	252008	3.1e-14	+	.	Parent=HMPREF0556_2508;Name=PF05116;Note=S6PP;Description=Sucrose-6F-phosphate phosphohydrolase

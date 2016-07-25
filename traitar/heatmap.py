@@ -216,11 +216,11 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
     for i in range(x.shape[1]):
         if not column_method is None and x.shape[1] > 1:
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i-0.5, -0.5, ' '+ column_header[idx2[i]], fontdict = {'fontsize': 8}, rotation=270, verticalalignment="top") # rotation could also be degrees
+            axm.text(i-0.5, -0.5, ' '+ column_header[idx2[i]], fontdict = {'fontsize': 7}, rotation=270, verticalalignment="top") # rotation could also be degrees
             new_column_header.append(column_header[idx2[i]])
         else: ### When not clustering columns
             axm.plot([i-0.5, i-0.5], [-0.5, len(row_header) - 0.5], color = 'black', ls = '-')
-            axm.text(i-0.5, -0.8, ' '+column_header[i], fontdict = {'fontsize': 8}, rotation=270, verticalalignment="top")
+            axm.text(i-0.5, -0.8, ' '+column_header[i], fontdict = {'fontsize': 7}, rotation=270, verticalalignment="top")
             new_column_header.append(column_header[i])
     
     pt2acc = primary_pt_models.get_pt2acc()
