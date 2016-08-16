@@ -264,7 +264,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
             axc.set_yticks([])
     
     # Plot rowside colors
-    if sample_f is not None :
+    if sample_f is not None and x.shape[0] > 1:
         samples = ps.read_csv(sample_f, sep = "\t", index_col = "sample_name")
         if "category" in samples.columns:
             #get unique sample categories and sort according to the order they appear in the sampling file
@@ -274,7 +274,7 @@ def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method
             cmap_p = mpl.colors.ListedColormap(cmaplist.values)
             axr = fig.add_axes([axr_x, axr_y, axr_w, axr_h])  # axes for row side colorbar
             dr = numpy.array([cat2col[samples.loc[i, "category"]]  for i in row_header]).T
-            if x.shape[1] > 1 and row_method is not None:
+            if row_method is not None:
                 dr = dr[idx1]
             dr.shape = (samples.shape[0], 1)
             #cmap_r = mpl.colors.ListedColormap(['r', 'g', 'b', 'y', 'w', 'k', 'm'])
