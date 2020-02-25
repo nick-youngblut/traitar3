@@ -16,9 +16,6 @@ def gene2hmm(domtblout_list, pt_models, gene2hmm_out = None, is_gene2hmm = False
     filtered and aggregated hmmer output files """
     #read accession file 
     accs = pt_models.get_pf2desc()
-    #f = open(domtblout_fs, 'r')
-    #domtblout_list = [i.strip() for i in f.readlines()] 
-    #f.close()
     sum_df = ps.DataFrame(ps.np.zeros((len(domtblout_list), accs.shape[0])))
     #set index to the actual files by getting rid of the preceding path
     sum_df.index = [i.split("/")[-1].replace("_filtered_best.dat", "") for i in domtblout_list]
@@ -58,8 +55,7 @@ def main(archive_f, in_filtered_best_fs, outfile):
       archive_f : str, archive (dat) file
       in_filtered_best_fs : list, filtered hmm file paths
       outfile : str, output file path
-    """
-    
+    """    
     outdir = os.path.split(outfile)[0]
     if not os.path.isdir(outdir):
         os.makedirs(outdir)

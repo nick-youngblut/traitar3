@@ -20,7 +20,6 @@ class evaluate:
         #read in gold standard
         gs = pd.read_csv(gold_standard_f, index_col = 0,
                          sep = "\t", na_values = "?", encoding = "utf-8" )
-        #gs.replace(["-", "+"], [0, 1], inplace = True)
         #check if gold_standard uses phenotype ids and replace with accessions in that case
         if are_pt_ids: 
             #read in phenotype mapping

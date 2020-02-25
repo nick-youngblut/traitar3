@@ -18,7 +18,6 @@ def validate(model_dir, pts):
     """validate that there is a model for each phenotype"""
     for i in pts.index:
         for j in mfs:
-            #if not os.path.exists(os.path.join(model_dir, j % str(int(i)-1))):
             mfs_file = os.path.join(model_dir, j.format(i))
             if not os.path.exists(mfs_file):
                 sys.stderr.write('{} does not exist'.format(mfs_file))
@@ -74,7 +73,7 @@ def new(models_dir, pf2acc_f, pt2desc_f, hmm_name, hmm_model_f,  archive_name):
 def create_tar(models_dir, pf2acc_f, pt2desc_f, hmm_name, hmm_model_f,  archive_name):
     #create tar archive
     pt2desc = pd.read_csv(pt2desc_f, sep = "\t", index_col = 0) 
-    t = tarfile.open("%s.tar.gz" % archive_name, "w:gz")
+    t = tarfile.open("{}.tar.gz".format(archive_name), "w:gz")
     t.add(pf2acc_f, arcname = "pf2acc_desc.txt")
     t.add(pt2desc_f, arcname = "pt2acc.txt")
     config = [archive_name, hmm_name, hmm_model_f]

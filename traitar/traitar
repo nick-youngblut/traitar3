@@ -383,75 +383,7 @@ class Traitar:
                                         in_filtered_best_fs = dat_best_files,
                                         archive_f = pt_models.get_archive_f())        
 
-        # else:
-        #     logging.info('Checking if the annotation is complete')
-        #     for pt_models in models:
-        #         a_dir = os.path.join(a_dir_base, pt_models.get_hmm_name())
-        #         if not os.path.isdir(a_dir):
-        #             os.makedirs(a_dir)
-        #         hmmer_commands = []
-        #         fae_commands = []
-        #         for i in range(len(out_samples)):
-        #             # TODO: automatically get pfam
-        #             fname_hmm = os.path.join(a_dir, out_samples[i] + '_domtblout.dat')
-        #             fname_filtered = os.path.join(a_dir, out_samples[i] + '_filtered_best.dat')
-        #             # check which annotation files are missing
-        #             if not os.path.isfile(fname_hmm):
-        #                 msg = 'hmmer output "{}" is missing; recomputing ...'
-        #                 logging.info(msg.format(fname_hmm))
-        #                 # add the command to the list of commands to execute
-        #                 f_ext = '.faa' if file_extension else ''
-        #                 hmms_path = os.path.join(self.config['hmms'], pt_models.get_hmm_f())
-        #                 cmd = hmmer.format(file_extension = f_ext,
-        #                                    in_sample = in_samples[i],
-        #                                    out_sample = out_samples[i],
-        #                                    a_dir = a_dir,
-        #                                    phenolyzer = self.phenolyzer_dir,
-        #                                    in_dir = in_dir,
-        #                                    hmms = hmms_path,
-        #                                    cpu = self.cpu)
-        #                 hmmer_commands.append(cmd)
-
-        #             # check which filtered file is missing
-        #             if not os.path.isfile(fname_filtered):
-        #                 msg = 'Filtered hmmer output "{}" is missing; recomputing ...'
-        #                 logging.info(msg.format(fname_filtered))
-        #                 x = filter_and_aggregate.format(a_dir = a_dir,
-        #                                                 in_sample = in_samples[i],
-        #                                                 out_sample = out_samples[i],
-        #                                                 phenolyzer = self.phenolyzer_dir,
-        #                                                 hmm_name = pt_models.get_hmm_name())
-        #                 fae_commands.append(x)
-        #         # recompute the missing files
-        #         x = os.path.join(a_dir, 'joblog_hmmer_recompute.txt')
-        #         utils.execute_commands(hmmer_commands, self.parallel, joblog = x)
-        #         x = os.path.join(a_dir, 'joblog_filter_and_aggregate_recompute.txt')
-        #         utils.execute_commands(fae_commands, self.parallel, joblog = x)
-                
-        #         # check if the summary.dat file was generated, if not recompute
-        #         annot_sum_file = os.path.join(a_dir, 'summary.dat')
-        #         if not os.path.exists(annot_sum_file):
-        #             msg = 'Annotation summary matrix "{}" is missing; recomputing ...'
-        #             logging.info(msg.format(annot_sum_file))
-        #             dat_file = os.path.join(a_dir, 'summary.dat')
-        #             dat_best_files = glob.glob('{a_dir}/*_filtered_best.dat'.format(a_dir))
-        #             domtblout2gene_generic.main(outfile = dat_file,
-        #                                         in_filtered_best_fs=' '.join(dat_best_files),
-        #                                         archive_f=pt_models.get_archive_f())        
-
     def run_phenotype_prediction(self):
-        #create output directory for the phenotype prediction 
-        #if not os.path.exists(self.phypat_dir):
-        #    os.mkdir(self.phypat_dir)
-        #run phenotype prediction for primary and secondary models 
-        #x = 'predict.py {primary_models} {pred_dir}'
-        #x += ' {out_dir}/annotation/{hmm_f}/summary.dat -k 5  '
-        #predict_phypat = x.format(out_dir =  self.output_dir,
-        #                          pred_dir =  self.phypat_dir,
-        #                          primary_models = self.primary_models.get_archive_f(),
-        #                          hmm_f =  self.primary_models.get_hmm_name())
-        #                          primary_models = self.primary_models.get_archive_f(),
-        #                          hmm_f =  self.primary_models.get_hmm_name()
         logging.info('Predicting with primary models')
         pred_files = {}
         dat_file = '{out_dir}/annotation/{hmm_f}/summary.dat'
@@ -473,18 +405,6 @@ class Traitar:
                              voters = 5,
                              cpus = self.cpu)
             pred_files['secondary'] = x
-            # including merge_preds
-            # if not os.path.exists(self.phypat_pgl_dir):
-            #     os.mkdir(self.phypat_pgl_dir)
-            # x = 'predict.py {secondary_models} {pred_dir}'
-            # x += ' {out_dir}/annotation/{hmm_f}/summary.dat -k 5  '
-            # archive_f = self.secondary_models.get_archive_f(),
-            # predict_phypat_pgl = x.format(out_dir =  self.output_dir,
-            #                               pred_dir = self.phypat_pgl_dir,
-            #                               secondary_models = archive_f,
-            #                               hmm_f = self.secondary_models.get_hmm_name())
-            #logging.info(predict_phypat_pgl)
-            
             #combine phypat and phypat+PGL predictions
             logging.info('Merging primary & secondary predictions')
             outdir = os.path.join(self.output_dir, 'phenotype_prediction')
@@ -493,22 +413,6 @@ class Traitar:
                              secondary_name = self.secondary_models.get_name(),
                              out_dir = outdir,
                              voters = 5)
-                             
-            # x = 'merge_preds.py {out_dir} {phypat_dir} {phypat_pgl_dir}'
-            # x += ' {primary_name} {secondary_name} -k 5'
-            # merge_preds = x.format(out_dir = os.path.join(self.output_dir,
-            #                                               'phenotype_prediction'), 
-            #                        phypat_dir = self.phypat_dir,
-            #                        phypat_pgl_dir = self.phypat_pgl_dir,
-            #                        phenolyzer = self.phenolyzer_dir,
-            #                        primary_name =  self.primary_models.get_name(),
-            #                        secondary_name = self.secondary_models.get_name())
-            # running commands
-            #utils.execute_commands([predict_phypat, predict_phypat_pgl])
-            #utils.execute_commands([merge_preds])
-        #else:
-            # just predict
-        #    utils.execute_commands([predict_phypat])
         return pred_files
     
     def run_feature_track_generation(self, pred_files, in_samples, mode, gene_gffs = None,
@@ -561,7 +465,8 @@ class Traitar:
                     outfile = os.path.join(self.output_dir, 'annotation',
                                            self.secondary_models.get_hmm_name(),
                                            '{}_filtered_best.dat'.format(in_samples[i]))
-                    cmd = hmm2gff.format(out_gff_dir = os.path.join(self.phypat_pgl_dir, 'feat_gffs'),
+                    cmd = hmm2gff.format(out_gff_dir = os.path.join(self.phypat_pgl_dir,
+                                                                    'feat_gffs'),
                                          outfile = outfile,
                                          sample = in_samples[i],
                                          model_tar = self.secondary_models.get_archive_f(),

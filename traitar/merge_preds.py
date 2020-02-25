@@ -23,16 +23,12 @@ def flatten_df(df1, df2, name1, name2, out):
 
 def comb_preds(pred_files, primary_name, secondary_name, out_dir, k):
     #phypat only predictions
-    #infile = os.path.join(phypat_dir, 'predictions_majority-vote.txt')
     m1_maj = ps.read_csv(pred_files['primary']['majority-vote'],
                          index_col = 0, sep = '\t')
-    #infile = os.path.join(phypat_dir, 'predictions_single-votes.txt')
     m1 = ps.read_csv(pred_files['primary']['single-votes'],
                      index_col = 0, sep = '\t')
-    #infile = os.path.join(, 'predictions_majority-vote.txt')
     m2_maj = ps.read_csv(pred_files['secondary']['majority-vote'],
                          index_col = 0, sep = '\t')
-    #infile = os.path.join(phypat_PGL_dir, 'predictions_single-votes.txt')
     m2 = ps.read_csv(pred_files['secondary']['single-votes'],
                      index_col = 0, sep = '\t')
     #write to disk a single vote version of the predictions
@@ -55,7 +51,6 @@ def comb_preds(pred_files, primary_name, secondary_name, out_dir, k):
     m_maj.loc[:, set(m1.columns).difference(set(m2.columns))] = m1_maj.loc[:, set(m1.columns).difference(set(m2.columns))] * 2
     m_maj.loc[:, set(m2.columns).difference(set(m1.columns))] = m2_maj.loc[:, set(m2.columns).difference(set(m1.columns))] 
     m_temp = m_maj.loc[:, set(m2.columns).intersection(set(m1.columns))]
-    #sys.stderr.write(str((m1_maj.loc[:, set(m2.columns).intersection(set(m1.columns))] == 1) & (m2_maj.loc[:, set(m2.columns).intersection(set(m1.columns))] == 1)))
     if not set(m2.columns).intersection(set(m1.columns)) == set():
         m_temp[(m1_maj.loc[:, set(m2.columns).intersection(set(m1.columns))] == 1) & (m2_maj.loc[:, set(m2.columns).intersection(set(m1.columns))] == 1)] = 3
         m_temp[(m1_maj.loc[:, set(m2.columns).intersection(set(m1.columns))] == 1) & (m2_maj.loc[:, set(m2.columns).intersection(set(m1.columns))] == 0)] = 1

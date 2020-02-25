@@ -53,6 +53,4 @@ def download(args):
     if not os.path.exists(os.path.join(args.download_dir, 'Pfam-A.hmm')):
         msg = 'ERROR: no Pfam-A.hmms file in {}'
         sys.exit(msg.format(args.download_dir))
-    #print(json.dumps({"hmms": os.path.abspath(os.path.join(args.download))}))
-    #config.write(json.dumps({"hmms": os.path.abspath(os.path.join(args.download))}))
 
