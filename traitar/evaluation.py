@@ -1,15 +1,25 @@
-import pandas as pd
+#!/usr/bin/env python
+from __future__ import print_function
+
+# import
+## batteries
 import os
 import sys
+## 3rd party
+import pandas as pd
+## application
 from traitar.PhenotypeCollection import PhenotypeCollection
 
+# class init
 class evaluate:
     
     @staticmethod
-    def evaluate(out, gold_standard_f, traitar_pred_f, min_samples, are_pt_ids = True, phenotype_archive = None):
+    def evaluate(out, gold_standard_f, traitar_pred_f, min_samples,
+                 are_pt_ids = True, phenotype_archive = None):
         """compare traitar predictions with a given gold standard"""
         #read in gold standard
-        gs = pd.read_csv(gold_standard_f, index_col = 0, sep = "\t", na_values = "?", encoding = "utf-8" )
+        gs = pd.read_csv(gold_standard_f, index_col = 0,
+                         sep = "\t", na_values = "?", encoding = "utf-8" )
         #gs.replace(["-", "+"], [0, 1], inplace = True)
         #check if gold_standard uses phenotype ids and replace with accessions in that case
         if are_pt_ids: 
@@ -25,23 +35,10 @@ class evaluate:
         samples = list(set(gs.index.tolist()).intersection(set(tp.index.tolist())))
         gs = gs.loc[samples, :]
         tp = tp.loc[samples, :]
-        #combine positive predictions
-        #tp[(tp == 2.0) | (tp == 1.0) | (tp == 3.0)] = 1
-        #conservative classification
-        #tp[(tp == 2.0) | (tp == 1.0) ] = 0
-        #either both or primary 
-        #tp[(tp == 3.0)] = 1
-        #tp[(tp == 2.0) ] = 0
-        #either both or secondary 
-        #tp[(tp == 1.0) ] = 0
-        #tp[(tp == 3.0) ] = 1
-        #tp[(tp == 2.0) ] = 1
 
         pt_gold_too_few_samples = gs.apply(lambda x: pd.Series(((x[~pd.isnull(x) & (x == 0)].sum() >= min_samples) & (x[~pd.isnull(x) & (x == 1)].sum() >= min_samples))))
-        #print pd.concat([(gs > 0).sum(), (gs == 0).sum()], axis = 1)
-        #print pt_gold_too_few_samples
         if len(pts) == 0:
-            sys.exit("No phenotypes shared between traitar predictions and gold standard")
+            sys.exit('No phenotypes shared between traitar predictions and gold standard')
         #confusion matrix per phenotype
         conf_per_pt = pd.DataFrame(pd.np.zeros(shape = (len(pts), 4)))
         conf_per_pt.index = pts
@@ -51,8 +48,9 @@ class evaluate:
         perf_per_pt.columns = ["recall pos", "recall neg", "macro accuracy", "precision"]
         for pt in pts:
             not_null = gs.loc[~pd.isnull(gs.loc[:, pt]),].index
-            print not_null
-            conf_per_pt.loc[pt, ] = evaluate.confusion_m(gs.loc[not_null, pt], tp.loc[not_null, pt])
+            print(not_null)
+            conf_per_pt.loc[pt, ] = evaluate.confusion_m(gs.loc[not_null, pt],
+                                                         tp.loc[not_null, pt])
             perf_per_pt.loc[pt, ] = evaluate.get_performance(conf_per_pt.loc[pt, ]) 
             miscl = evaluate.get_miscl(gs.loc[:, pt], tp.loc[:, pt])
             if not len(miscl) == 0:
@@ -73,19 +71,15 @@ class evaluate:
         res.columns = ["micro",  "macro"]
         res.to_csv(os.path.join(out, "perf_overall.txt"), sep = "\t")
         #write to disk confusion matrix
-        conf_per_pt.columns = ["True negatives", "False positives", "False negatives", "True positives"] 
-        conf_per_pt.to_csv(os.path.join(out, "confusion_matrix_per_pt.txt"), sep = "\t", encoding = "utf-8")
+        conf_per_pt.columns = ["True negatives", "False positives",
+                               "False negatives", "True positives"] 
+        conf_per_pt.to_csv(os.path.join(out, "confusion_matrix_per_pt.txt"),
+                           sep = "\t", encoding = "utf-8")
         
   
     @staticmethod
     def get_miscl(y, y_pred):
         """get misclassified samples""" 
-        #print y[y == 1]
-        #print y[y == 0]
-        #print y_pred[y == 1]
-        #print y_pred[y == 0]
-        #print y[y == 1] != y_pred[y == 1]
-        #print y[y == 0] != y_pred[y == 0]
         FN =  y[y == 1].loc[y[y == 1] != y_pred[y == 1],].index
         FP =  y[y == 0].loc[y[y == 0] != y_pred[y == 0], ].index
         return FN.tolist() + FP.tolist()

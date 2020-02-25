@@ -1,3 +1,7 @@
 *.pyc
 config.json
 *.swp
+build/
+dist/
+*.egg-info/
+tmp/

@@ -1,14 +1,24 @@
 #!/usr/bin/env python
+from __future__ import print_function
 """script to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
-from traitar.PhenotypeCollection import PhenotypeCollection 
+# import
+import os
+import sys
+import logging
+## 3rd party
 import pandas as ps
-def gene2hmm(domtblout_fs, pt_models, gene2hmm_out = None, is_gene2hmm = False):
-    """function to create a summary matrix and a gene2hmm mapping from filtered and aggregated hmmer output files"""
+## application
+from traitar.PhenotypeCollection import PhenotypeCollection
+
+# functions
+def gene2hmm(domtblout_list, pt_models, gene2hmm_out = None, is_gene2hmm = False):
+    """ Function to create a summary matrix and a gene2hmm mapping from
+    filtered and aggregated hmmer output files """
     #read accession file 
     accs = pt_models.get_pf2desc()
-    f = open(domtblout_fs, 'r')
-    domtblout_list = [i.strip() for i in f.readlines()] 
-    f.close()
+    #f = open(domtblout_fs, 'r')
+    #domtblout_list = [i.strip() for i in f.readlines()] 
+    #f.close()
     sum_df = ps.DataFrame(ps.np.zeros((len(domtblout_list), accs.shape[0])))
     #set index to the actual files by getting rid of the preceding path
     sum_df.index = [i.split("/")[-1].replace("_filtered_best.dat", "") for i in domtblout_list]
@@ -36,21 +46,47 @@ def gene2hmm(domtblout_fs, pt_models, gene2hmm_out = None, is_gene2hmm = False):
             try:
                 sum_df.loc[f_mod, query] += 1
             except KeyError:
-                print query
+                print(query)
     #write annotation summary to disk
     if not is_gene2hmm:
         sum_df.to_csv(gene2hmm_out, sep = "\t")
-    #write gene2hmm to disk 
-    #for i in gene2hmm:
-    #    with open(gene2hmm_out, 'w') as out: 
-    #        out.write("%s\t%s\n" (i, ",".join(gene2hmm[i])))
     return sum_df, gene2hmm
+
+def main(archive_f, in_filtered_best_fs, outfile):
+    """ Main interface 
+    Params:
+      archive_f : str, archive (dat) file
+      in_filtered_best_fs : list, filtered hmm file paths
+      outfile : str, output file path
+    """
+    
+    outdir = os.path.split(outfile)[0]
+    if not os.path.isdir(outdir):
+        os.makedirs(outdir)
+    pt_models = PhenotypeCollection(archive_f)
+    sum_df, gene2hmms = gene2hmm(in_filtered_best_fs,
+                                 pt_models,
+                                 gene2hmm_out = outfile)
+    logging.info('File written: {}'.format(outfile))
+
+def best_fs_list(infile):
+    x = []
+    with open(infile) as inF:
+        for line in inF:
+            x.append(line.rstrip())
+    return x
+    
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser("generate summary matrix from the filtered best hmmer annotation files")
-    parser.add_argument("outfile", help='summary matrix output file')
-    parser.add_argument("in_filtered_best_fs", help='file with filtered.best file name per row')
-    parser.add_argument("archive_f", help = "phenotype archive file")
+    msg = 'Generate a summary matrix from the filtered best hmmer annotation files'
+    parser = argparse.ArgumentParser(msg)
+    parser.add_argument("outfile",
+                        help='summary matrix output file')
+    parser.add_argument("in_filtered_best_fs",
+                        help='file with filtered.best file name per row')
+    parser.add_argument("archive_f",
+                        help = "phenotype archive file")
     args = parser.parse_args()
-    pt_models = PhenotypeCollection(args.archive_f)
-    sum_df, gene2hmm = gene2hmm(args.in_filtered_best_fs, pt_models, gene2hmm_out = args.outfile)
+
+    args.in_filtered_best_fs = best_fs_list(args.in_filtered_best_fs)
+    main(args.archive_f, args.in_filtered_best_fs, args.outfile)

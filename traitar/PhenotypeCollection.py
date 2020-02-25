@@ -1,7 +1,13 @@
-import pandas as pd
-import tarfile
+#!/usr/bin/env python
+from __future__ import print_function
+# import
+## batteris
 import sys
+import tarfile
+# 3rd party
+import pandas as pd
 
+# class init
 class PhenotypeCollection:
 
     def __init__(self, archive_f):
@@ -32,7 +38,8 @@ class PhenotypeCollection:
         return pt2acc
 
     def get_pf2desc(self):
-        pfam_mapping = pd.read_csv(self.tar.extractfile("pf2acc_desc.txt"), index_col = 0, sep = "\t")
+        pfam_mapping = pd.read_csv(self.tar.extractfile("pf2acc_desc.txt"),
+                                   index_col = 0, sep = "\t")
         return pfam_mapping
 
     def get_name(self):
@@ -49,13 +56,13 @@ class PhenotypeCollection:
         return self.hmm_name
 
     def get_bias(self, pt):
-        bias_f = self.tar.extractfile("%s_bias.txt"%(pt))
+        bias_f = self.tar.extractfile("{}_bias.txt".format(pt))
         bias = pd.read_csv(bias_f, sep = "\t", index_col = 0, header = None)
         return bias
 
     def get_predictors(self, pt):
-        extracted_f = self.tar.extractfile("%s_feats.txt"%(pt))
-        predictors = pd.read_csv(extracted_f, sep = "\t",  index_col = 0 )
+        extracted_f = self.tar.extractfile("{}_feats.txt".format(pt))
+        predictors = pd.read_csv(extracted_f, sep = "\t", index_col = 0)
         return predictors
 
     def get_selected_features(self, pt, strategy, include_negative):
@@ -65,9 +72,10 @@ class PhenotypeCollection:
         except:
             pt_id = pt
         try:
-            extracted_f = self.tar.extractfile("%s_non-zero+weights.txt" % pt_id)
+            extracted_f = self.tar.extractfile("{}_non-zero+weights.txt".format(pt_id))
         except KeyError:
-            sys.stderr.write("target phenotype %s has no associated model in the phenotype collection\n" % pt)
+            msg = "target phenotype {{ has no associated model in the phenotype collection"
+            sys.stderr.write(msg.format(pt))
             sys.exit(1)
         feats = pd.read_csv(extracted_f, sep = "\t", index_col = 0)
         #use the 5 best models
