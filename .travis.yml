@@ -37,7 +37,6 @@ install:
   - conda create -n traitar3 python=$TRAVIS_PYTHON_VERSION bioconda::hmmer scipy pandas numpy matplotlib pytest
   - conda activate traitar3
   # traitar install
-  - python setup.py build_ext --inplace
   - python setup.py build
   - python setup.py install
   - conda list

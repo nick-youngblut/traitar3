@@ -13,7 +13,7 @@ if mo:
 else: 
     raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
 
-long_description = open('README.rst', 'r').read()
+long_description = """Traitar3 - The microbial trait analyzer for Python3"""
 
 data_files = [os.path.join('data', 'colors.txt'),
               os.path.join('data', 'models', 'phypat.tar.gz'),           
@@ -27,13 +27,12 @@ data_files = [os.path.join('data', 'colors.txt'),
 
 setup(name='traitar',
       version = verstr,
-      description='traitar3 - The microbial trait analyzer for Python3',
+      description='Traitar3 - The microbial trait analyzer for Python3',
       long_description = long_description,
       url = 'git@github.com:nick-youngblut/traitar',
       author='Nick Youngblut',
       author_email='nyoungb2@gmail.com',
       license='GNU General Public License, version 3 (GPL-3.0)',
-#      include_package_data = True,
       packages = find_packages(),
       package_dir={'traitar' : 'traitar'},       
       package_data={'traitar': data_files},
