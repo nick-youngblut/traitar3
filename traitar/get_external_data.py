@@ -30,7 +30,7 @@ def download(args):
                 logging.info('Download directory: {}'.format(args.download_dir))         
                 # downloading
                 logging.info('Downloading: {}'.format(url))
-                response = urlopen(url, timeout = 5)
+                response = urlopen(url, timeout = 20)
                 with open(os.path.join(args.download_dir, "Pfam-A.hmm.gz"), 'wb') as outF:
                     CHUNK = 1000000
                     while True:
