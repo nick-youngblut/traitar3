@@ -5,7 +5,7 @@ from __future__ import print_function
 import os
 import sys
 import tarfile
-import StringIO
+from io import StringIO     
 ## 3rd party
 import pandas as pd
 ## application

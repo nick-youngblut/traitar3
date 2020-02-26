@@ -4,11 +4,12 @@ from __future__ import print_function
 
 # import
 ## batteries
+import os
 import sys
 import tarfile
-import StringIO
 import warnings
 import logging
+from io import StringIO     
 ## 3rd party
 import pandas as ps
 ## application
@@ -28,9 +29,9 @@ def read_rel_feats(pt_models, pts):
     rel_feat_list = []
     #extract pfam lists
     for pt in pts:
-        rel_feat_list.append(pt_models.get_selected_features(pt,
-                                                             strategy = "majority",
-                                                             include_negative = False))
+        x = pt_models.get_selected_features(pt, strategy = "majority",
+                                            include_negative = False)
+        rel_feat_list.append(x)
     #process pfam lists
     for pfs, pt in zip(rel_feat_list, pts): 
         for pf in pfs.index:
@@ -44,7 +45,6 @@ def read_rel_feats(pt_models, pts):
                 if not pt in pf2pt[pf]:
                     pf2pt[pf].append((pt, pfs.loc[pf, "cor"]))
     return pf2pt
-
 
 def read_gff(gff_file, mode):
     """read a gene calling gff"""
@@ -172,7 +172,7 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes,
         acc2desc = pt_models.get_pf2desc()
         id2desc = pt_models.get_pt2acc()
         #change dtype of index to string
-        id2desc.index = id2desc.index.values.astype('string')
+        id2desc.index = id2desc.index.values.astype(str)
     out_table = []
     with open(hmmer_file, 'r') as hmmer_fo:
         # skip param line and header
@@ -232,13 +232,11 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes,
                 for i in pf2pt[acc]:
                     if not gene_dict is None:
                         out_gffs[i[0]].write(gff_line)
-                    out_table.append('\t'.join([id2desc.loc[i[0],"accession"],
-                                                gid, acc,
-                                                acc2desc.loc[acc, "description"],
-                                                i[1]
-                    ]))
+                    x = [id2desc.loc[i[0],"accession"], gid, acc,
+                         acc2desc.loc[acc, "description"], i[1]]
+                    out_table.append('\t'.join([str(y) for y in x]))
     if not len(out_table) == 0:
-        out_table_df = ps.read_csv(StringIO.StringIO("".join(out_table)),
+        out_table_df = ps.read_csv(StringIO("".join(out_table)),
                                    sep = "\t", header = None)
         out_table_df.columns = ["Phenotype", "gene_id", "acc", "description", "cor"]
         outfile = "{}/{}_important_features.dat".format(out_gff_dir, sample)
@@ -252,10 +250,17 @@ def write_hmm_gff(hmmer_file, out_gff_dir, gene_dict, sample, skip_genes,
 
 def run(in_file, out_gff_f, gene_gff_f, sample, gene_gff_mode, pt_models, predicted_pts = None):
     """run feature mapping"""
+    # output directory
+    outdir = os.path.split(out_gff_f)[0]
+    if not os.path.isdir(outdir):
+        os.makedirs(outdir)
+    # reading in gene prediction track
     gene_dict = None
     if not gene_gff_f is None:
         gene_dict = read_gff(gene_gff_f, gene_gff_mode)
-    write_hmm_gff(in_file, out_gff_f, gene_dict, sample, False, gene_gff_mode, pt_models, predicted_pts, True)
+    # writing hmm-gff
+    write_hmm_gff(in_file, out_gff_f, gene_dict, sample, False,
+                  gene_gff_mode, pt_models, predicted_pts, True)
 
 if __name__ == "__main__":
     import argparse

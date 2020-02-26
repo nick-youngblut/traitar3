@@ -7,12 +7,15 @@ import sys
 import gzip 
 import json
 import logging
-import urllib2
-## application
+try:
+    from urllib.parse import urlparse, urlencode
+    from urllib.request import urlopen, Request
+    from urllib.error import HTTPError, URLError
+except ImportError:
+    from urlparse import urlparse
+    from urllib import urlencode
+    from urllib2 import urlopen, Request, HTTPError, URLError
 import traitar
-
-# logging
-logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.DEBUG)
 
 # function init
 def download(args):
@@ -24,28 +27,28 @@ def download(args):
             try:
                 if not os.path.exists(args.download_dir):
                     os.makedirs(args.download_dir)
-                logging.info('Download dir: {}'.format(args.download_dir))         
+                logging.info('Download directory: {}'.format(args.download_dir))         
                 # downloading
                 logging.info('Downloading: {}'.format(url))
-                response = urllib2.urlopen(url, timeout = 5)
-                with open(os.path.join(args.download_dir, "Pfam-A.hmm.gz"), 'w' ) as f:
+                response = urlopen(url, timeout = 5)
+                with open(os.path.join(args.download_dir, "Pfam-A.hmm.gz"), 'wb') as outF:
                     CHUNK = 1000000
                     while True:
                         chunk = response.read(CHUNK)
                         if not chunk:
                             break
                         else:
-                            f.write(chunk)
+                            outF.write(chunk)
                 # uncompress
                 infile = os.path.join(args.download_dir, "Pfam-A.hmm.gz")
                 outfile = os.path.join(args.download_dir, "Pfam-A.hmm")
                 logging.info('Uncompressing {} to {}'.format(infile, outfile))
-                with gzip.open(infile, 'rb') as zf:
-                    with open(outfile, 'wb') as out_f:
-                        for l in zf:
-                            out_f.write(l)
+                with gzip.open(infile, 'rb') as inF:
+                    with open(outfile, 'w') as outF:
+                        for line in inF:
+                            outF.write(line.decode('utf8'))
                 break
-            except urllib2.URLError as e:
+            except URLError as e:
                 attempts += 1
                 print(e)
 

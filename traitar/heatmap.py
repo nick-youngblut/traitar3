@@ -1,22 +1,28 @@
 #!/usr/bin/env python
+from __future__ import print_function
 #adapted from Nathan Salomonis: http://code.activestate.com/recipes/578175-hierarchical-clustering-heatmap-python/
 
-import matplotlib as mpl
-#pick non-x display
-mpl.use('Agg')
-import matplotlib.pyplot as pylab
+# import
+## batteries
+import sys, os
+import getopt
+import string
+import time
+import warnings
+## 3rd party
+import numpy as np
+import pandas as ps
+import numpy
 import scipy
 import scipy.cluster.hierarchy as sch
 import scipy.spatial.distance as dist
-import numpy
-import string
-import time
-import sys, os
-import getopt
-import numpy as np
-import pandas as ps
+import matplotlib.pyplot as pylab
+import matplotlib as mpl
+mpl.use('Agg')
+## application
 from traitar.PhenotypeCollection import PhenotypeCollection
-import warnings
+
+# warnings
 warnings.filterwarnings("ignore", category=FutureWarning) 
 #ignore these warnings
 #/usr/lib/pymodules/python2.7/matplotlib/collections.py:548: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
@@ -29,8 +35,8 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 def heatmap(x, row_header, column_header, primary_pt_models, color_f, row_method,
             column_method, row_metric, column_metric,
             filename, sample_f, secondary_pt_models):
-    
-    print "\nrunning hiearchical clustering using %s for columns and %s for rows" % (column_metric,row_metric)
+    msg = '\nrunning hiearchical clustering using {} for columns and {} for rows'
+    print(msg.format(column_metric,row_metric))
         
     """
     This below code is based in large part on the protype methods:
@@ -476,9 +482,9 @@ if __name__ == '__main__':
     try:
         heatmap(matrix, row_header, column_header, primary_pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric, args.mode, args.out_f, args.sample_f, secondary_pt_models)
     except Exception:
-        print 'Error using %s ... trying euclidean instead' % row_metric
+        print('Error using {} ... trying euclidean instead'.format(row_metric))
         args.row_metric = 'euclidean'
         try:
             heatmap(matrix, row_header, column_header, primary_pt_models, args.color_f, args.row_method, args.column_method, args.row_metric, args.column_metric,   args.out_f, args.sample_f, secondary_pt_models)
         except IOError:
-            print 'Error with clustering encountered'
+            print('Error with clustering encountered')

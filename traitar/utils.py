@@ -4,17 +4,20 @@ from __future__ import print_function
 ## batteries
 import os
 import sys
+import signal
 import logging
 import subprocess
 import multiprocessing as mp
 
+def init_worker():
+    signal.signal(signal.SIGINT, signal.SIG_IGN)
 
 def execute_commands(commands, parallel = 1, joblog = None):
     """ (parallel) execution of >=1 subcommand """
     if len(commands) == 0:            
         return
     if parallel > 1:
-        pool = mp.Pool(parallel)
+        pool = mp.Pool(parallel, init_worker)
         pool.map(execute_command, commands)
     else:
         map(execute_command, commands)

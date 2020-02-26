@@ -7,7 +7,7 @@ import os
 import sys
 import logging
 import argparse
-from StringIO import StringIO
+from io import StringIO     
 ## 3rd party
 import pandas as ps
 

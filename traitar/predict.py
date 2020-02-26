@@ -32,11 +32,11 @@ def filter_pred(scores, is_majority, k):
 def aggregate(pred_df, k, out_dir, pt2acc):
     """employ different prediction strategies"""
     out = ["majority-vote", "conservative-vote", "single-votes"]
-    maj_pred_dfs = ps.DataFrame(ps.np.zeros(shape = (pred_df.shape[0], pred_df.shape[1] / k)),
-                                columns = [str(i) for i in range(pred_df.shape[1]/k)])
+    maj_pred_dfs = ps.DataFrame(ps.np.zeros(shape = (pred_df.shape[0], pred_df.shape[1] // k)),
+                                columns = [str(i) for i in range(pred_df.shape[1]//k)])
     maj_pred_dfs.index = pred_df.index
     maj_pred_dfs_columns = maj_pred_dfs.columns.tolist()
-    for i in range(pred_df.shape[1] / k):
+    for i in range(pred_df.shape[1] // k):
         maj_pred_dfs_columns[i] = pred_df.columns.values[i * k].split("_")[0] 
         maj_pred_dfs.iloc[:, i] = pred_df.iloc[:, (i * k) : (i * k + k)].apply(lambda x: (x > 0).sum(), axis = 1).astype('int')
     maj_pred_dfs.columns = pt2acc.loc[maj_pred_dfs_columns, :].iloc[:, 0]
