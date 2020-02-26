@@ -45,4 +45,5 @@ script:
   - traitar -h
   - traitar pfam -h
   - traitar phenotype -h
+  - traitar pfam db
 
