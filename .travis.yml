@@ -44,6 +44,5 @@ install:
 script:
   - traitar -h
   - traitar pfam -h
-  - traitar pfam db
   - traitar phenotype -h
 
