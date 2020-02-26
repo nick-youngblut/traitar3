@@ -16,8 +16,13 @@ except ImportError:
     from urllib import urlencode
     from urllib2 import urlopen, Request, HTTPError, URLError
 import traitar
+from traitar.utils import retry
 
 # function init
+@retry(URLError, tries=5, delay=5, backoff=2)
+def urlopen_with_retry(url, timeout=10):
+    return urlopen(url, timeout)
+
 def download(args):
     """download Pfam HMMs and write download destination into config file"""
     url = "ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz"
@@ -30,7 +35,7 @@ def download(args):
                 logging.info('Download directory: {}'.format(args.download_dir))         
                 # downloading
                 logging.info('Downloading: {}'.format(url))
-                response = urlopen(url, timeout = 60)
+                response = urlopen_with_retry(url, timeout = 30)
                 with open(os.path.join(args.download_dir, "Pfam-A.hmm.gz"), 'wb') as outF:
                     CHUNK = 1000000
                     while True:
