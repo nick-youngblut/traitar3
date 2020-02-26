@@ -20,7 +20,7 @@ Traitar(3) can accurately phenotype [67 diverse traits](traits.tsv).
 <a name="citing-traitar"/>
 
 # Installation
-Please see [INSTALL.md](INSTALL.md) for installation instructions.
+See the [.travis.yml](.travis.yml) file for installation instructions.
 
 # Basic usage
 
