@@ -27,6 +27,7 @@ def download(args):
     """download Pfam HMMs and write download destination into config file"""
     url = "ftp://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam27.0/Pfam-A.hmm.gz"
     attempts = 0
+    timeout = 20
     if not args.local: 
         while attempts < 3:
             try:
@@ -35,7 +36,7 @@ def download(args):
                 logging.info('Download directory: {}'.format(args.download_dir))         
                 # downloading
                 logging.info('Downloading: {}'.format(url))
-                response = urlopen_with_retry(url, timeout = 30)
+                response = urlopen_with_retry(url, timeout = timeout)
                 with open(os.path.join(args.download_dir, "Pfam-A.hmm.gz"), 'wb') as outF:
                     CHUNK = 1000000
                     while True:
@@ -55,6 +56,7 @@ def download(args):
                 break
             except URLError as e:
                 attempts += 1
+                timeout *= 2
                 print(e)
 
     # checking output
