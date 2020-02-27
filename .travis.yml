@@ -43,3 +43,4 @@ script:
   - traitar phenotype -h
   - traitar pfam db
   - traitar phenotype --overwrite db traitar/data/sample_data/ traitar/data/sample_data/samples.txt from_genes tmp 
+  - traitar phenotype --cpus 2 --overwrite db traitar/data/sample_data/ traitar/data/sample_data/samples.txt from_genes tmp 
