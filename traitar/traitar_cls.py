@@ -309,7 +309,8 @@ class Traitar:
                 pool.map(fae_func, params)
                 pool.close()
             else:
-                map(fae_func, params)
+                for p in params:
+                    fae_func(p)
                 
             # summary matrix from all best hmms
             logging.info('Creating a summary matrix')

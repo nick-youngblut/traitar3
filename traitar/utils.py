@@ -22,7 +22,8 @@ def execute_commands(commands, parallel = 1, joblog = None):
         pool = mp.Pool(parallel, init_worker)
         pool.map(execute_command, commands)
     else:
-        map(execute_command, commands)
+        for cmd in commands:
+            execute_command(cmd)
         
 def execute_command(cmd):
     """ subcommand execution """
