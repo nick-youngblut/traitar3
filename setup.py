@@ -13,7 +13,10 @@ if mo:
 else: 
     raise RuntimeError("Unable to find version string in %s." % (VERSIONFILE,))
 
-long_description = """Traitar3 - The microbial trait analyzer for Python3"""
+long_description = """Traitar3 - The microbial trait analyzer for Python3
+
+See https://github.com/nick-youngblut/traitar3 for more information.
+"""
 
 data_files = [os.path.join('data', 'colors.txt'),
               os.path.join('data', 'models', 'phypat.tar.gz'),           
@@ -25,7 +28,7 @@ data_files = [os.path.join('data', 'colors.txt'),
               os.path.join('data', 'sample_data', 'samples_gene_gff.txt'),
               os.path.join('data', 'sample_data', 'samples.txt')]              
 
-setup(name='traitar',
+setup(name='traitar3',
       version = verstr,
       description='Traitar3 - The microbial trait analyzer for Python3',
       long_description = long_description,
