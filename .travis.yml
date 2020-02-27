@@ -11,6 +11,10 @@ python:
   - "3.6"
   - "3.7"
 
+addons:
+    apt_packages:
+        - parallel
+
 install:
   - sudo apt-get update
   # miniconda install
