@@ -10,7 +10,6 @@ matrix:
 python:
   - "3.6"
   - "3.7"
-  - "3.8"
 
 install:
   - sudo apt-get update
@@ -43,4 +42,4 @@ script:
   - traitar pfam -h
   - traitar phenotype -h
   - traitar pfam db
-
+  - traitar phenotype --overwrite db traitar/data/sample_data/ traitar/data/sample_data/samples.txt from_genes tmp 
