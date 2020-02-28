@@ -94,6 +94,7 @@ class Traitar:
         if not os.path.exists(self.sample2file):
             sys.exit("sample file %s does not exist" % self.sample2file)
         s2f = ps.read_csv(self.sample2file, dtype = 'string', sep = "\t")
+        # column check
         col_check_cols = ["sample_file_name", "sample_name", "category", "gene_gff"]
         col_check = dict((i, False) for i in col_check_cols)
         for i in s2f.columns:
@@ -103,16 +104,18 @@ class Traitar:
         for x in ['sample_file_name', 'sample_name']:
             if x not in s2f.columns:
                 sys.exit('"{}" column in input sample_file missing'.format(x))
+        # input files exist?
         for i in s2f.loc[:, "sample_file_name"]:
-            if not os.path.exists(os.path.join(self.input_dir,i)):
-                pass
-        for i in s2f.loc[:, 'sample_name']:
-            if not self._special_match(i):
-                msg = 'Knvalid character in sample name %s; only [a-zA-Z0-9.-_] allowed'
-                sys.exit(msg.format(i))
-            if len(i) > 41:
-                msg = 'sample name too long: {}; names may only have 40 characters'
-                sys.ext(msg.format(i))
+            F = os.path.join(self.input_dir,i)
+            if not os.path.exists(F):
+                sys.exit('Cannot find file: {}'.format(F))
+        # sample name formatting
+        s2f['sample_name'] = s2f['sample_name'].str.replace(r'[^a-zA-Z0-9.-_]', '_', regex=True)
+        for x in s2f.loc[:, 'sample_name']:
+            if not self._special_match(x):
+                msg = 'Invalid character in sample name "{}"; only [a-zA-Z0-9.-_] allowed'
+                sys.exit(msg.format(x))
+        # category column format
         if col_check['category']:
             uq = s2f.loc[:, 'category'].unique()
             max_cats = 12
@@ -124,6 +127,7 @@ class Traitar:
                 msg += ';sample categories may not be longer than 30 characters'
                 if len(i) > 30:
                     sys.exit(msg.format(i))
+        # gene_gff column format
         if col_check['gene_gff']:
             for i in s2f.loc[:, 'gene_gff']:
                 if not os.path.exists(os.path.join(self.input_dir,i)):

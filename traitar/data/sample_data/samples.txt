@@ -1,3 +1,3 @@
 sample_file_name	sample_name	category
-1457190.3.RefSeq.faa	Listeria_ivanovii_WSLC3009	environment_1
-525367.9.RefSeq.faa	Listeria_grayi_DSM_20601	environment_2
+1457190.3.RefSeq.faa	Listeria ivanovii_WSLC3009	environment_1
+525367.9.RefSeq.faa	Listeria_grayi-DSM_20601	environment_2
