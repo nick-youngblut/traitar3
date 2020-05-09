@@ -19,7 +19,7 @@ jobs:
         miniconda-version: 'latest'
         python-version: ${{ matrix.python-version }}
         channels: conda-forge,bioconda
-	activate-environment: traitar3
+        activate-environment: traitar3
     - name: conda env create
       shell: bash -l {0}
       run: |
