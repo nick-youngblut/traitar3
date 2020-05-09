@@ -30,16 +30,12 @@ jobs:
     - name: package install
       shell: bash -l {0}
       run: |
-        pwd
-        cd $HOME
-        pwd
+        ls -thlc
         python -m pip install --upgrade pip
         pip install pytest pytest-dependency pytest-console-scripts
         python setup.py install
     - name: Test with pytest
       shell: bash -l {0}
       run: |
-        pwd
-        cd $HOME
-        pwd
+        ls -thlc 
         pytest -s --script-launch-mode=subprocess
