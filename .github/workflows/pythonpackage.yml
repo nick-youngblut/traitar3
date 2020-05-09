@@ -32,7 +32,7 @@ jobs:
       run: |
         pwd
         cd $HOME
-	pwd
+        pwd
         python -m pip install --upgrade pip
         pip install pytest pytest-dependency pytest-console-scripts
         python setup.py install
@@ -41,5 +41,5 @@ jobs:
       run: |
         pwd
         cd $HOME
-	pwd
+        pwd
         pytest -s --script-launch-mode=subprocess
