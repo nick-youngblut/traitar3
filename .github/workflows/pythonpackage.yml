@@ -37,7 +37,6 @@ jobs:
         conda config --add channels conda-forge
         conda config --add channels bioconda
         conda info -a
-        conda env setup
         conda create -n traitar3 python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib pytest
         conda activate traitar3
     - name: Install dependencies
