@@ -38,6 +38,7 @@ def ParseArgs(test_args=None, subparsers=None, parents=None):
     desc = 'Phenotype'
     epi = """DESCRIPTION:
     Annotate genomes and then run phenotyping
+    NOTE: you will likely want to use `--overwrite`
     """
     if subparsers:
         parser = subparsers.add_parser('phenotype', description=desc,

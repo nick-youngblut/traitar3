@@ -11,14 +11,15 @@ import pandas as ps
 
 # functions
 def flatten_df(df1, df2, name1, name2, out):
-    with open(out, 'w') as f:
-        f.write("sample\tphenotype\tphenotype model\n")
+    with open(out, 'w') as outF:
+        header = ['sample', 'phenotype' , 'score', 'phenotype_model']
+        outF.write('\t'.join(header) + '\n')
         for i in set(df1.index).union(set(df2.index)):
             for j in set(df1.columns).union(set(df2.columns)):
                 if i in df1.index and j in df1.columns and  not df1.loc[i,j] == 0:
-                    f.write("\t".join([str(i), str(j), str(df1.loc[i,j]), name1]) + "\n")
+                    outF.write("\t".join([str(i), str(j), str(df1.loc[i,j]), name1]) + "\n")
                 if i in df2.index and j in df2.columns and not df2.loc[i,j] == 0:
-                    f.write("\t".join([str(i), str(j), str(df2.loc[i,j]), name2]) + "\n")
+                    outF.write("\t".join([str(i), str(j), str(df2.loc[i,j]), name2]) + "\n")
     logging.info('File written: {}'.format(out))
 
 def comb_preds(pred_files, primary_name, secondary_name, out_dir, k):
