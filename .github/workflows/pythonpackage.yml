@@ -16,17 +16,22 @@ jobs:
     steps:
     - uses: goanpeca/setup-miniconda@v1
       with:
-        auto-update-conda: true
+        miniconda-version: 'latest'
         python-version: ${{ matrix.python-version }}
+        channels: conda-forge,bioconda
+	activate-environment: traitar3
     - name: conda env create
+      shell: bash -l {0}
       run: |
-        conda create -n traitar3 python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
-        conda activate traitar3
+        conda info -a
+        conda install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
     - name: package install
+      shell: bash -l {0}
       run: |
         python -m pip install --upgrade pip
         pip install pytest pytest-dependency pytest-console-scripts
         python setup.py install
     - name: Test with pytest
+      shell: bash -l {0}
       run: |
         pytest -s --script-launch-mode=subprocess
