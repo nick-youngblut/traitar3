@@ -1,3 +1,5 @@
+![traitar3](https://github.com/nick-youngblut/traitar3/workflows/traitar3/badge.svg)
+
 # Traitar3 &ndash; the microbial trait analyzer (for Python3)
 Traitar3 is a Python3 implementation of [Traitar](https://github.com/aweimann/traitar),
 which is a software for characterizing microbial samples from nucleotide or protein sequences.
