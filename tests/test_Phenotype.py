@@ -15,9 +15,12 @@ def test_help(script_runner):
 @pytest.mark.dependency(depends=['tests/test_Pfam.py::test_pfam[inprocess]'], scope='session')    
 def test_phenotype(script_runner, tests_tmpdir):
     pfam_dir = os.path.join(tests_tmpdir, 'pfam')
+    assert os.path.isdir(pfam_dir)
     sample_file = os.path.join(data_dir, 'samples.txt')
     out_dir = os.path.join(tests_tmpdir, 'phenotype_out')
     ret = script_runner.run('traitar', 'phenotype', '--overwrite',
                             pfam_dir, data_dir, sample_file, 'from_genes', out_dir)
+    print(ret.stdout)
+    print(ret.stderr)
     assert ret.success
 

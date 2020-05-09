@@ -23,6 +23,23 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+    - name: miniconda install
+      run: |
+        wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+        bash miniconda.sh -b -p $HOME/miniconda
+        source "$HOME/miniconda/etc/profile.d/conda.sh"
+    - name: conda setup
+      run: |
+        hash -r
+        conda config --set always_yes yes --set changeps1 no
+        conda update -y -q conda
+        conda config --add channels defaults
+        conda config --add channels conda-forge
+        conda config --add channels bioconda
+        conda info -a
+        conda env setup
+        conda create -n traitar3 python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib pytest
+        conda activate traitar3
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -31,4 +48,4 @@ jobs:
         python setup.py install
     - name: Test with pytest
       run: |
-        pytest -s
+        pytest -s --script-launch-mode=subprocess
