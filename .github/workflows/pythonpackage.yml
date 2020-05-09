@@ -14,19 +14,19 @@ jobs:
       matrix:
         python-version: [3.6, 3.7, 3.8]
     steps:
-    - uses: goanpeca/setup-miniconda@v1
-      with:
-        miniconda-version: 'latest'
-        auto-update-conda: true
-        python-version: ${{ matrix.python-version }}
-        channels: conda-forge,bioconda
-        activate-environment: traitar3
-    - name: conda env create
-      shell: bash -l {0}
-      run: |
-        pwd
-        conda info -a
-        conda install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
+    # - uses: goanpeca/setup-miniconda@v1
+    #   with:
+    #     miniconda-version: 'latest'
+    #     auto-update-conda: true
+    #     python-version: ${{ matrix.python-version }}
+    #     channels: conda-forge,bioconda
+    #     activate-environment: traitar3
+    # - name: conda env create
+    #   shell: bash -l {0}
+    #   run: |
+    #     pwd
+    #     conda info -a
+    #     conda install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
     - name: package install
       shell: bash -l {0}
       run: |
