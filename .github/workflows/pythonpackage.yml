@@ -28,15 +28,10 @@ jobs:
         conda info -a
         conda install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
     - name: package install
-      uses: actions/setup-python@v1
-      with:
-        python-version: ${{ matrix.python-version }}
-      shell: bash -l {0}
       run: |
         python -m pip install --upgrade pip
         pip install pytest pytest-dependency pytest-console-scripts
         python setup.py install
     - name: Test with pytest
-      shell: bash -l {0}
       run: |
         pytest -s --script-launch-mode=subprocess
