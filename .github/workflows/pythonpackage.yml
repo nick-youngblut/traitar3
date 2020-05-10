@@ -20,22 +20,21 @@ jobs:
         auto-update-conda: true
         python-version: ${{ matrix.python-version }}
         channels: conda-forge,bioconda
-        activate-environment: traitar3    
+        activate-environment: traitar3
     - name: conda env create
       shell: bash -l {0}
       run: |
         pwd
         conda info -a
         conda install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
+    - uses: actions/checkout@v2	
     - name: package install
-      uses: actions/checkout@v2
       shell: bash -l {0}
       run: |
         python -m pip install --upgrade pip
         pip install pytest pytest-dependency pytest-console-scripts
         python setup.py install
     - name: Test with pytest
-      uses: actions/checkout@v2
       shell: bash -l {0}
       run: |
         pytest -s --script-launch-mode=subprocess
