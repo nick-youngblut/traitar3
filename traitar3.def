@@ -1,0 +1,51 @@
+# Singularity definition file for traitar
+
+bootstrap: docker
+from: ubuntu:16.04
+
+# To Build: sudo /opt/ohpc/pub/libs/singularity/3.2.1/bin/singularity build traitar.sif traitar.def 
+# singularity build --fakeroot traitar3.sif traitar3.def
+%help
+    A simple container to run traitar
+
+%environment
+    PATH="$PATH:/usr/local/anaconda/bin/"
+    LC_ALL=C
+%post
+    apt-get update
+    apt-get install -y eatmydata wget curl sudo nano perl elfutils build-essential
+    apt-get install -y gfortran emboss
+    eatmydata apt-get install -y bzip2
+    sudo apt-get install -y libdatetime-perl libxml-simple-perl libdigest-md5-perl git default-jre bioperl
+    apt-get clean
+    #install anaconda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ./anaconda.sh && \
+    bash ./anaconda.sh -b -p /usr/local/anaconda ; rm ./anaconda.sh
+    # set anaconda path
+    export PATH="$PATH:/usr/local/anaconda/bin/"
+    #configure conda
+    conda config --set always_yes yes --set changeps1 no
+    conda update -y -q conda
+    conda config --add channels defaults
+    conda config --add channels conda-forge
+    conda config --add channels bioconda
+    #install dependencies
+    conda install python=3.7
+    # conda env setup
+    conda install bioconda::hmmer scipy pandas numpy matplotlib pytest
+    pip3 install setuptools
+    PATH="$PATH:/usr/local/anaconda/lib/python3.7/site-packages/"
+    # traitar install
+    git clone https://github.com/nick-youngblut/traitar3.git
+    cd traitar3
+    python3 setup.py build
+    python3 setup.py install
+    cd ../
+    conda install -c bioconda prodigal
+    #House Keeping
+    conda clean --tarballs
+    #install db
+    traitar pfam db
+
+%runscript
+    echo "Traitar Singularity"
