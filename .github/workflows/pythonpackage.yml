@@ -25,8 +25,8 @@ jobs:
       shell: bash -l {0}
       run: |
         pwd
-        mamba info -a
-        mamba install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
+        conda info -a
+        conda install python=${{ matrix.python-version }} bioconda::hmmer scipy pandas numpy matplotlib
     - uses: actions/checkout@v2	
     - name: package install
       shell: bash -l {0}
