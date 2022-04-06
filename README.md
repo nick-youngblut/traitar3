@@ -33,7 +33,7 @@ singularity pull library://a_gihawi/traitar3/traitar3
 singularity exec traitar3_latest.sif traitar phenotype -c 1 --overwrite /db /traitar3/tests/data /traitar3/tests/data/samples.txt from_genes traitar_test_results
 ```
 
-If all went well the results should be available in the ``traitar_test_results/`
+If all went well the results should be available in the ``traitar_test_results/``
 
 Note: If your data directory is in a distant directory, they may need binding when launching the singularity. *i.e.* ``singularity exec --bind data/ traitar3_latest.sif traitar phenotype (options)``
 
