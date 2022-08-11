@@ -35,6 +35,8 @@ from: ubuntu:16.04
     conda install bioconda::hmmer scipy pandas numpy matplotlib pytest
     pip3 install setuptools
     PATH="$PATH:/usr/local/anaconda/lib/python3.7/site-packages/"
+    # install parallel
+    sudo apt-get install -y parallel
     # traitar install
     git clone https://github.com/nick-youngblut/traitar3.git
     cd traitar3
