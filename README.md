@@ -89,7 +89,7 @@ Traitar provides the gene prediction results in ``<out_dir>/gene_prediction``, t
 ### Heatmaps
 The phenotype prediction is summarized in heatmaps individually for the phyletic pattern classifier in ``heatmap_phypat.png``, for the phylogeny-aware classifier in ``heatmap_phypat_ggl.png`` and for both classifiers combined in ```heatmap_comb.png``` and provide hierarchical clustering dendrograms for phenotypes and the samples.
 
-![Alt text](/traitar/data/sample_data/traitar_out/phenotype_prediction/heatmap_combined.png?raw=true "Optional Title")
+![Alt text](tests/data/traitar_out/phenotype_prediction/heatmap_combined.png?raw=true "Phenotype heatmap")
 
 ### Phenotype prediction - Tables and flat files
 These heatmaps are based on tab separated text files e.g. ``predictions_majority-vote_combined.txt``. A negative prediction is encoded as 0, a prediction made only by the pure phyletic classifier as 1, one made by the phylogeny-aware classifier by 2 and a prediction supported by both algorithms as 3. ``predictions_flat_majority-votes_combined.txt`` provides a flat version of this table with one prediction per row. The expert user might also want to access the individual results for each algorithm in the respective sub folders ``phypat`` and ``phypat+PGL``.
